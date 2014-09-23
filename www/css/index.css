@@ -142,12 +142,12 @@ body {
     padding-top: 30px;
     color: #333 !important;
     text-decoration: none !important;
-    
+    padding-bottom: 30px;
 }
 
 .container-fluid{
 
-    padding-top: 38px;
+    padding-top: 45px;
 }
 
 .mainmenunews{
@@ -239,7 +239,7 @@ body {
     height: 20%;
     text-align: center;
     border-bottom: 1px solid gray;
-    font-size:18px;
+    font-size:22px;
     padding:15px;
     clear: both;
 }
@@ -249,6 +249,12 @@ body {
     text-align: center;
     vertical-align: middle;
     color: #000000;
+
+}
+
+.divmain:hover{
+    background-color: #458007;
+    color: white;
 
 }
 
