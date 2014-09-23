@@ -36,6 +36,12 @@ function checkfavteam_success(tx, results) {
 
         $("#divclearfav").css('color', '#333');
     }
+
+    var stringapp = device.name;
+
+    $("#deviceid").empty();
+    $("#deviceid").append(stringapp);
+
 }
 function syncnewdata(){
     $('#busy').show();

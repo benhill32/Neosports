@@ -8,7 +8,7 @@ var month = d.getMonth();
 var year = d.getFullYear();
 var hours= d.getHours();
 
-var datenow = (day + '' + month+ '' + year + '' + hours);
+var datenow = (day + '' + month+ '' + year);
 var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
@@ -144,6 +144,7 @@ function getchecksync(tx, results) {
              });
 
 
+
             $.each(obj.App_Schedule_Menu, function (idx, obj) {
                 db.transaction(function(tx) {
                     tx.executeSql('INSERT INTO MobileApp_Schedule_Menu (_id, DivisionName,DivisionID ,UpdateDateUTC ,DatetimeStart,DivisionOrderID ) VALUES (' + obj._id + ',"' + obj.DivisionName + '", ' + obj.DivisionID + ',"' + obj.UpdateDateUTC + '", "' + obj.DatetimeStart + '", ' + obj.DivisionOrderID + ' )');
@@ -158,7 +159,7 @@ function getchecksync(tx, results) {
                 });
             });
 
-
+        }
 
         $.each(obj.App_Results, function (idx, obj) {
             db.transaction(function(tx) {
@@ -262,14 +263,14 @@ function getchecksync(tx, results) {
             console.log("INSERT INTO MobileScoringTable is created");
         });
     });
-        }
+
 
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + datenowsec + '",datemenus= "' + datenow + '"');
             console.log("Update INTO MobileApp_LastUpdatesec");
         });
 
-    $('#busy').hide();
+  //  $('#busy').hide();
 
 }
 

@@ -45,6 +45,15 @@
 
     <script type="text/javascript" src="js/CreateOpenDB.js"></script>
      <script type="text/javascript" src="js/loaddata.js"></script>
+        <script type="text/javascript">
+
+            function weblink(htmllink){
+                window.location.href=htmllink;
+            }
+
+
+        </script>
+
     </head>
     <body>
     <div class="divmainmenu">
@@ -54,33 +63,33 @@
 
             Neosportz Football
 
-         <img src="img/Loading.gif" id="busy" align="right"  height="30px" >
+         <img src="img/Loading.gif" id="busy" align="right"  height="30px"  >
     </div>
-
+    <div class="container-fluid">
 
     <div id="mainmenu" style="">
-    <div class="divmain">
-    <a href="pages/ScheduleMenu.html">Schedules</a>
+    <div class="divmain" onclick="weblink('pages/ScheduleMenu.html')">
+    Schedules
     </div>
-    <div class="divmain">
-        <a href="pages/ResultsMenu.html">Results</a>
+    <div class="divmain"  onclick="weblink('pages/ResultsMenu.html')">
+        Results
     </div>
     <div class="divmain">
         <a href="">Standings</a>
     </div>
-    <div class="divmain">
-        <a href="pages/clubs.html">Clubs</a>
+    <div class="divmain"  onclick="weblink('pages/clubs.html')">
+        Clubs
     </div>
-    <div class="divmain">
-        <a href="pages/news.html">News</a>
+    <div class="divmain"  onclick="weblink('pages/news.html')">
+       News
     </div>
-    <div class="divmain">
-        <a href="pages/settings.html">Settings</a>
+    <div class="divmain"  onclick="weblink('pages/settings.html')">
+        Settings
+    </div>
+
     </div>
 
     </div>
-
-
     <div class="footer">
         <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
         <img src="img/neocom.jpg" Height="50px">

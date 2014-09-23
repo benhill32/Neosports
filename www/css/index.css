@@ -47,12 +47,16 @@ body {
 }
 .divmainmenu
 {
-    padding:2px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    padding:8px;
     border-bottom: 1px solid grey;
     text-align: left;
     font-size:18px;
     background-color: #458007;
     color: #ffffff;
+
 }
 .imgheader{
 
@@ -95,7 +99,7 @@ body {
 }
 
 #mainmenu{
-
+   // padding-top: 30px;
     padding-bottom: 50px;
 }
 .mainmenuresultcancel{
@@ -124,7 +128,7 @@ body {
 //    margin-bottom: 5px;
     left:5%;
 //  width:80%;
-    padding:5px;
+    padding:8px;
     clear: both;
 
 }
@@ -134,13 +138,17 @@ body {
     font-size: 13px;
     margin-bottom: 0px;
 }
-.newsmain,a:hover, a:focus{
-
+#newsmain,a:hover, a:focus{
+    padding-top: 30px;
     color: #333 !important;
     text-decoration: none !important;
     
 }
 
+.container-fluid{
+
+    padding-top: 38px;
+}
 
 .mainmenunews{
     height: 20%;
@@ -213,7 +221,7 @@ body {
     text-align: center;
     border-bottom: 1px solid blue;
     font-size:18px;
-    padding:10px;
+    padding:15px;
     clear: both;
     color: blue;
 }
@@ -232,7 +240,7 @@ body {
     text-align: center;
     border-bottom: 1px solid gray;
     font-size:18px;
-    padding:10px;
+    padding:15px;
     clear: both;
 }
 
