@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../Bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/clubs.js"></script>
-
+    <script type="text/javascript" src="../js/functions.js"></script>
 
 
 
@@ -27,15 +27,19 @@
 </head>
 <body>
 <div class="divmainmenu">
-    <a href="../index.html"  class="imgheader"><img src="../img/back_off.png"  style="vertical-align:middle;height:20px;" ></a>
+    <div class="mainheaderimg"  onclick="weblink('../index.html')">
+
+        <img src="../img/back_off.png"  style="vertical-align:middle;height:20px;">
 
 
         <img src="../img/neosportz.png"  style="vertical-align:middle;height:30px;" align="middle">
-
-    Neosportz Football
-
-    <img src="../img/Loading.gif" id="busy" align="right"  height="30px" >
-
+    </div>
+    <div class="mainheaderimg">
+        Neosportz Football
+    </div>
+    <div class="mainheaderimgright">
+        <img src="../img/Loading.gif" id="busy" align="right"  height="30px" >
+    </div>
 
 </div>
 <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

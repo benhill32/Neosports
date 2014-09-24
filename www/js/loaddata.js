@@ -14,16 +14,11 @@ var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 
 
-//alert (datenowsec);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(populateDB, errorCB, successCB);
-}
-//db.transaction(populateDB, errorCB, successCB);
+
 
 function loadnewtable(){
     $('#busy').show();
@@ -124,8 +119,8 @@ function getchecksync(tx, results) {
 
        // alert("datemenus=" +  row.datemenus);
 
-        if(datemenus != datenow) {
-
+        //if(datemenus != datenow) {
+            if(datemenus != datemenus) {
             db.transaction(function(tx) {
                 tx.executeSql('Drop TABLE MobileApp_Results_Menu ');
                 console.log("MobileApp_Results_Menu table is Dropped");
@@ -270,7 +265,7 @@ function getchecksync(tx, results) {
             console.log("Update INTO MobileApp_LastUpdatesec");
         });
 
-  //  $('#busy').hide();
+    $('#busy').hide();
 
 }
 

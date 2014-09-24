@@ -3,13 +3,7 @@ var id = getUrlVars()["ID"];
 var favtop  = 0;
 var followtop =0;
 
-document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
-}
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
 db.transaction(getdata, errorCB, successCB);
@@ -23,7 +17,7 @@ function errorCB(err) {
 
 function getdata(tx) {
     var sql = "select ID ,_id,Base64 ,ClubID ,DivisionID,DivisionName,UpdateDateUTC from MobileApp_vwApp_Teams where ClubID=" + id;
-    //alert(sql);
+   // alert(sql);
     tx.executeSql(sql, [], getteam_success);
 }
 function getimgfav(tx) {
@@ -93,15 +87,15 @@ function updatefollow(){
 function getteam_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-//alert(len);
+
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
         var imgg = "";
         if(menu.Base64 != "null"){
             imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;"  align="left" height="40" >';
         }
-
-        $('#mainmenu').append('<Div class="mainmenuresult" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
+       // alert(menu.DivisionName);
+        $('#mainmenu').append('<Div class="mainmenuteam" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
             '<div class="bold size13"  >' + imgg +  menu.DivisionName +
            '</div>' +
             '</Div>');

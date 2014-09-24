@@ -74,6 +74,9 @@ body {
     text-align: left;
     padding-bottom: 3px;
 }
+
+
+
 #homescore,#awayscore{
 
     font-size: 25px;
@@ -92,6 +95,26 @@ body {
     padding:1px;
 
 }
+#backimg{
+
+    width: 40px;
+    
+    
+}
+.mainheaderimgright{
+
+
+    padding:1px;
+    
+}
+.mainheaderimg{
+    float:left;
+    
+    padding:1px;
+
+}
+
+
 .mainmenuscore{
 
     text-align: left;
@@ -199,6 +222,23 @@ body {
     padding:10px;
     clear: both;
 }
+
+.mainmenuteam
+{
+    height: 20%;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid gray;
+    font-size:15px;
+    margin-bottom: 10px;
+    left:5%;
+//  width: 92%;
+    padding:13px;
+    clear: both;
+
+}
+
+
 .bold{
     font-weight: bold;
 
