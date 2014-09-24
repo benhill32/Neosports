@@ -120,7 +120,7 @@ function getchecksync(tx, results) {
 
     if(dif >= "600000") {
 
-     //   alert("sync " + dif);
+        alert("sync " + dif);
 
 
        // alert('http://centralfootball.neosportz.com/databen.aspx?sec=' + row.Datesecs);

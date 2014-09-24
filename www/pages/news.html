@@ -12,6 +12,7 @@
 
     <script type="text/javascript" src="../js/news.js"></script>
     <script type="text/javascript" src="../js/loaddata.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
     <title></title>
 
     <script type="application/javascript">
@@ -32,16 +33,19 @@
     </style>
 </head>
 <body>
+
 <div class="divmainmenu">
-    <a href="../index.html"  class="imgheader"><img src="../img/back_off.png"  style="vertical-align:middle;height:20px;" ></a>
-
-
-    <img src="../img/neosportz.png"  style="vertical-align:middle;height:30px;" align="middle">
-
-    Neosportz Football
-
-    <img src="../img/Loading.gif" id="busy"  align="right"  height="30px" >
-    <img src="../img/refresh.png"  onclick="loadnewdata()" align="right"  height="25px" >
+    <div id="backicondiv"   onclick="weblink('../index.html')">
+        <img src="../img/back_off.png"  style="vertical-align:middle;height:20px;">
+    </div>
+    <div class="mainheaderimgicon"  onclick="weblink('../index.html')">
+        <img src="../img/neosportz.png"  style="vertical-align:middle;height:40px;" align="middle">
+        Neosportz Football
+    </div>
+    <div>
+        <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
+        <img src="../img/refresh.png"  onclick="loadnewdata()" align="right"  height="25px" >
+    </div>
 </div>
 <div class="container-fluid-news">
 <div id="newsmain">

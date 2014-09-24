@@ -5,6 +5,10 @@ var followtop =0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+
+
+
+
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
@@ -80,7 +84,7 @@ function getteamplayer_success(tx, results) {
             imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;margin-right: 15px;"  align="left" height="40" >';
         }
 
-        $('#mainmenu').append('<Div class="mainmenuplayers" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
+        $('#teamsdiv').append('<Div class="mainmenuplayers" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
             '<div class="bold size13"  >' + imgg +  menu.FullName + '</div><div class="size11"  >' + menu.Position + '</div>' +
 
             '</Div>');

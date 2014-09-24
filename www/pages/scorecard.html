@@ -21,17 +21,21 @@
     <script type="text/javascript" src="../js/loaddata.js"></script>
     <script type="text/javascript" src="../js/CreateOpenDB.js"></script>
     <script type="text/javascript" src="../js/scorecard.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
     <title></title>
 </head>
 <body>
 <div class="divmainmenu">
-
-    <a href="../index.html"  class="imgheader"><img src="../img/back_off.png"  style="vertical-align:middle;height:20px;" ></a>
-    <img src="../img/neosportz.png"  style="vertical-align:middle;height:30px;" align="middle">
-
-    Score Card
-
-    <img src="../img/Loading.gif" id="busy" align="right"  height="30px" >
+    <div id="backicondiv"   onclick="weblink('../index.html')">
+        <img src="../img/back_off.png"  style="vertical-align:middle;height:20px;">
+    </div>
+    <div class="mainheaderimgicon"  onclick="weblink('../index.html')">
+        <img src="../img/neosportz.png"  style="vertical-align:middle;height:40px;" align="middle">
+        Score Card
+    </div>
+    <div>
+        <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
+    </div>
 </div>
 <div class="container-fluid">
 <div id="scorecard">

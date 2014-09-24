@@ -45,6 +45,12 @@ body {
     width:100%;
 
 }
+#backicondiv{
+    width: 20px;
+   padding-top: 6px;
+    float: left;
+
+}
 .divmainmenu
 {
     width: 100%;
@@ -54,7 +60,7 @@ body {
     border-bottom: 1px solid grey;
     text-align: left;
     font-size:18px;
-    background-color: #458007;
+    background-color: #339900;
     color: #ffffff;
 
 }
@@ -126,10 +132,46 @@ body {
     padding-bottom: 3px;
 }
 
+#divresults {
+    margin-top: 10px;
+    padding-bottom: 50px;
+    padding-left:15px;
+    padding-right: 15px;
+
+}
+
+#divschedules {
+    margin-top: 10px;
+    padding-bottom: 50px;
+ padding-left:15px;
+  padding-right: 15px;
+
+}
+
 #mainmenu{
    // padding-top: 30px;
     padding-bottom: 50px;
+    padding-left:15px;
+    padding-right: 15px;
 }
+
+
+#teamsdiv{
+// padding-top: 30px;
+    padding-bottom: 50px;
+   // padding-left:15px;
+   // padding-right: 15px;
+    text-align: left;
+}
+
+
+#indexdiv{
+// padding-top: 30px;
+    padding-bottom: 50px;
+  //  padding-left:15px;
+  //  padding-right: 15px;
+}
+
 .mainmenuresultcancel{
     height: 20%;
     text-align: left;
@@ -174,8 +216,9 @@ body {
 }
 
 .container-fluid{
-
-    padding-top: 45px;
+    padding-left:0px !important;
+    padding-right: 0px !important;
+    padding-top: 40px;
 }
 
 .mainmenunews{
@@ -307,10 +350,15 @@ body {
     color: #000000;
 
 }
+.modal-footer{
+
+text-align: center !important;
+}
 
 .divmain:hover{
-    background-color: #458007;
+    background-color: #339900;
     color: white;
+    opacity:0.7;
 
 }
 

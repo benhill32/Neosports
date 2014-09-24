@@ -51,7 +51,7 @@ function getMenu_success(tx, results) {
 
         var date2 = new Date(menu.DatetimeStart);
        // alert(date2);
-        $('#mainmenu').append('<Div class="mainmenuresult" align="left" >' +
+        $('#divresults').append('<Div class="mainmenuresult" align="left" >' +
             '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName + '</div>' +
             '<div class="bold size13" >' + menu.HomeScore + ' - ' + menu.AwayScore + '</div>' +
             '<div class="size11"  >' + menu.DivisionName + '</div>' +

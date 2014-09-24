@@ -52,7 +52,7 @@ function getMenu_success(tx, results) {
         var ampm = h > 12 ? h-12 +'PM' : h +'AM';
 
         if(menu.Cancel== 0) {
-            $('#mainmenu').append('<Div class="mainmenuresult" align="left" >' +
+            $('#divschedules').append('<Div class="mainmenuresult" align="left" >' +
                 '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName  +
                 '<img height="20px" src="../img/schedule.png" onclick="loadinfo(' + menu.ID + ')" align="right" data-toggle="modal" data-target="#basicModal">' +
 
@@ -62,7 +62,7 @@ function getMenu_success(tx, results) {
                 '<div class="size11">' + menu.Field + '</div>' +
                 '</Div>');
         }else{
-            $('#mainmenu').append('<Div class="mainmenuresultcancel" align="left" >' +
+            $('#divschedules').append('<Div class="mainmenuresultcancel" align="left" >' +
                 '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName + '</div>' +
                 '<div class="size11">' + ampm + '  ' + day + '/' + month + '/' + year + '</div>' +
                 '<div class="size11">' + menu.TournamentName + ' ' + ' Cancelled ' + '</div>' +

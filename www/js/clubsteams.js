@@ -59,6 +59,12 @@ function updatefollow(){
             tx.executeSql('Update MobileApp_clubs set Fav = 0,Follow= 0 where ID=' + id);
             console.log("Update INTO MobileApp_clubs");
         });
+
+        db.transaction(function(tx) {
+            tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0');
+            console.log("Update MobileApp_LastUpdatesec");
+        });
+
         favtop = 0;
         followtop = 0;
     }else if(favtop == 0 && followtop ==1){
@@ -70,6 +76,11 @@ function updatefollow(){
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_clubs set Fav = 0 where ID != ' + id);
             console.log("Update INTO MobileApp_clubs");
+        });
+
+        db.transaction(function(tx) {
+            tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1');
+            console.log("Update MobileApp_LastUpdatesec");
         });
 
         favtop = 1;
@@ -95,7 +106,7 @@ function getteam_success(tx, results) {
             imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;"  align="left" height="40" >';
         }
        // alert(menu.DivisionName);
-        $('#mainmenu').append('<Div class="mainmenuteam" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
+        $('#teamsdiv').append('<Div class="mainmenuteam" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
             '<div class="bold size13"  >' + imgg +  menu.DivisionName +
            '</div>' +
             '</Div>');
