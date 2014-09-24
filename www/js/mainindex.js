@@ -4,6 +4,7 @@ console.log("LOCALDB - Database ready");
 
 function loadindexmessage()
 {
+
     db.transaction(gethasclub, errorCB, successCB);
 }
 
@@ -25,12 +26,17 @@ function gethasclub_success(tx, results) {
     var hasclub = menu.hasclub;
     var hasclubdate =menu.hasclubdate;
 
-    var da = new Date();
-    var na = d.getTime();
 
-    var dif = na-hasclubdate;
 
-    if(hasclub == 0 && dif > "603600000"){
+
+    var da4 = new Date();
+    var na4 = da4.getTime();
+
+    var dif = na4-hasclubdate;
+
+
+
+    if(hasclub == 0 && dif > "600000"){
             $('#basicModal').modal('show');
 
     }
@@ -47,11 +53,11 @@ function hadclubfunction(){
 
 
 function hadclubchecklater(){
-    var da = new Date();
-    var na = d.getTime();
+    var daa = new Date();
+    var naa = daa.getTime();
 
     db.transaction(function(tx) {
-        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0, hasclubdate = "' + na + '"');
+        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0, hasclubdate = "' + naa + '"');
         console.log("Update MobileApp_LastUpdatesec");
     });
 }
@@ -62,11 +68,11 @@ function choosefacteam(ID){
 
     addfavteam(ID);
 
-    var da = new Date();
-    var na = d.getTime();
+    var daaa = new Date();
+    var naaa = daaa.getTime();
 
     db.transaction(function(tx) {
-        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1, hasclubdate = "' + na + '"');
+        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1, hasclubdate = "' + naaa + '"');
         console.log("Update MobileApp_LastUpdatesec");
     });
 
