@@ -60,6 +60,9 @@ function populateDB1(tx,results) {
     }else{
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
         tx.executeSql(sql, [], getchecksync,getchecksyncerror);
+
+
+
     }
 
 }
@@ -101,6 +104,8 @@ function passdatatoserver(){
 }
 
 function getchecksync(tx, results) {
+
+    loadindexmessage();
 
         var row = results.rows.item(0);
 
@@ -264,6 +269,9 @@ function getchecksync(tx, results) {
             tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + datenowsec + '",datemenus= "' + datenow + '"');
             console.log("Update INTO MobileApp_LastUpdatesec");
         });
+
+
+
 
    // $('#busy').hide();
 

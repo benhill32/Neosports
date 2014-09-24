@@ -50,7 +50,7 @@ body {
     width: 100%;
     position: fixed;
     top:0;
-    padding:8px;
+   // padding:8px;
     border-bottom: 1px solid grey;
     text-align: left;
     font-size:18px;
@@ -101,19 +101,24 @@ body {
     
     
 }
-.mainheaderimgright{
+.mainheaderimgicon{
 
+    float:left;
 
-    padding:1px;
     
 }
 .mainheaderimg{
     float:left;
     
     padding:1px;
+    padding-bottom: 10px;
+    padding-top:10px;
 
 }
+.mainheaderimgicon{
 
+
+}
 
 .mainmenuscore{
 

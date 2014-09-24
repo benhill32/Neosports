@@ -1,10 +1,18 @@
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(gethasclub, errorCB, successCB);
+
+
+function loadindexmessage()
+{
+    db.transaction(gethasclub, errorCB, successCB);
+}
+
+
+
 
 function gethasclub(tx) {
     var sql = "select hasclub,hasclubdate from MobileApp_LastUpdatesec";
-    //   alert(sql);
+    //  alert(sql);
     tx.executeSql(sql, [], gethasclub_success);
 }
 
@@ -22,7 +30,7 @@ function gethasclub_success(tx, results) {
 
     var dif = na-hasclubdate;
 
-    if(hasclub == 0 && dif < "603600000"){
+    if(hasclub == 0 && dif > "603600000"){
             $('#basicModal').modal('show');
 
     }
