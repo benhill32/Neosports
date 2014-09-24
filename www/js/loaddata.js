@@ -23,7 +23,7 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
     db.transaction(populateDB, errorCB, successCB);
 }
-db.transaction(populateDB, errorCB, successCB);
+//db.transaction(populateDB, errorCB, successCB);
 
 function loadnewtable(){
     $('#busy').show();
@@ -273,10 +273,6 @@ function getchecksync(tx, results) {
   //  $('#busy').hide();
 
 }
-
-
-
-
 
 function errorCB(err) {
     console.log("Error processing SQL: "+err.message);

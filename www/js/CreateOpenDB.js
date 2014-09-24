@@ -20,9 +20,9 @@ function onDeviceReady() {
     db.transaction(createDB, transaction_error, successCB);
 }
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(createDB, transaction_error, successCB);
+//db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+//console.log("LOCALDB - Database ready");
+//db.transaction(createDB, transaction_error, successCB);
 
 function droptables(){
 
