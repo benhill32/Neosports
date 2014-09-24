@@ -49,7 +49,7 @@ function populateDB1(tx,results) {
            var token = rand() + rand() + rand() + rand();
 
         db.transaction(function(tx) {
-            tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token) VALUES ("0", "0",0,0,"' + token + '")');
+            tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub) VALUES ("0", "0",0,0,"' + token + '",0)');
             console.log("INSERT INTO MobileApp_LastUpdatesec");
         });
 
@@ -265,7 +265,7 @@ function getchecksync(tx, results) {
             console.log("Update INTO MobileApp_LastUpdatesec");
         });
 
-    $('#busy').hide();
+   // $('#busy').hide();
 
 }
 

@@ -46,7 +46,14 @@
     <script type="text/javascript" src="js/CreateOpenDB.js"></script>
      <script type="text/javascript" src="js/loaddata.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/mainindex.js"></script>
+<style>
+    .modal-footer{
 
+        padding:0px !important;
+    }
+
+</style>
     </head>
     <body>
     <div class="divmainmenu">
@@ -69,7 +76,53 @@
 
 
     <div class="container-fluid">
+        <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
+                    <div class="modal-body">
+                      It appears to be that you haven't set your favourite club yet. Would you like to set it now?
+                       You can do this anythime by viewing the teams of a club an pressing the star button in the
+                        navigation bar.
+                    </div>
+
+                    <div class="modal-footer" data-dismiss="modal" align="center">
+
+                        <div class="modelfloatleft left"  align="center" onclick="hadclubfunction()">
+
+                            Don't show this again
+                        </div>
+
+                        <div class="modelfloatleft left" align="center"  onclick="hadclubchecklater()">
+                            Not now
+                        </div>
+                        <div class="modelfloatleft"  align="center">
+                            Yes
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="basicModalteams" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="divmainheader">
+
+                           Select a Favourite club
+                        </div>
+                    </div>
+                    <div class="modal-body" id="clubfav">
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
     <div id="mainmenu" style="">
     <div class="divmain" onclick="weblink('pages/schedules.html?id=48')">
     Schedules
@@ -93,7 +146,7 @@
     </div>
 
     </div>
-    <div class="footer">
+    <div class="footer" data-toggle="modal" data-target="#basicModalteams">
         <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
         <img src="img/neocom.jpg" Height="50px">
 

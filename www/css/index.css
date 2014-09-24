@@ -222,7 +222,18 @@ body {
     padding:10px;
     clear: both;
 }
+.modelfloatleft
+{
+    float:left;
+   padding:10px;
+    min-width: 25%;
+    align-content: center;
 
+}
+.left {
+    border-right: 1px solid #ccc;
+
+}
 .mainmenuteam
 {
     height: 20%;
