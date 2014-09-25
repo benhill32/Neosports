@@ -110,10 +110,6 @@ function getchecksync(tx, results) {
 
         loadindexmessage();
     }
-
-
-
-
         var row = results.rows.item(0);
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -121,7 +117,7 @@ function getchecksync(tx, results) {
         var datenow = new Date();
         var timenow = datenow.getTime();
 
-        var dif = timenow-(datenowsecsync);
+        var dif = (timenow/1000)-(datenowsecsync);
 
    // alert(timenow + "- " + datenowsecsync + " : " + dif);
 
@@ -129,11 +125,11 @@ function getchecksync(tx, results) {
     if(document.getElementById("newsmain")!=null){
         dif = 100000000;
     }
-
+   //alert(dif);
 
     if(dif >= "600000") {
 
-        //alert("sync " + dif);
+     //   alert("sync " + dif);
 
 
        // alert('http://centralfootball.neosportz.com/databen.aspx?sec=' + row.Datesecs);
@@ -196,6 +192,7 @@ function getchecksync(tx, results) {
 
         $.each(obj.App_Results, function (idx, obj) {
             db.transaction(function (tx) {
+
                 tx.executeSql('Delete from MobileApp_Results where ID =' + obj.ID);
                 console.log('Delete MobileApp_Results where ID');
             });
@@ -212,6 +209,7 @@ function getchecksync(tx, results) {
             });
             console.log('Delete MobileApp_clubs where ID');
             db.transaction(function (tx) {
+
                 tx.executeSql('INSERT INTO MobileApp_clubs(ID,_id ,name,UpdateDateUTC,UpdateDateUTCBase64 ,Base64,History,Contacts,UpdateSecondsUTC,UpdateSecondsUTCBase64,Color,Fav,Follow) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.name + '","' + obj.UpdateDateUTC + '","' + obj.UpdateDateUTCBase64 + '","' + obj.Base64 + '","' + obj.History + '","' + obj.Contacts + '","' + obj.UpdateSecondsUTC + '","' + obj.UpdateSecondsUTCBase64 + '", "' + obj.Color + '",0,0)');
                 console.log("INSERT INTO MobileApp_clubs is created");
             });
@@ -220,10 +218,12 @@ function getchecksync(tx, results) {
 
         $.each(obj.App_Schedule, function (idx, obj) {
             db.transaction(function (tx) {
+
                 tx.executeSql('Delete from MobileApp_Schedule where ID =' + obj.ID);
                 console.log('Delete MobileApp_Schedule where ID');
             });
             db.transaction(function (tx) {
+
                 tx.executeSql('INSERT INTO MobileApp_Schedule(ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,Cancel ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.DatetimeStart + '","' + obj.HomeName + '","' + obj.AwayName + '","' + obj.Field + '","' + obj.Latitude + '","' + obj.Longitude + '", ' + obj.DivisionID + ',"' + obj.DivisionName + '", ' + obj.HomeClubID + ', ' + obj.AwayClubID + ', ' + obj.HomeTeamID + ', ' + obj.AwayTeamID + ',"' + obj.UpdateDateUTC + '", "' + obj.TournamentName + '",' + obj.TournamentID + ', "' + obj.DatetimeStartSeconds + '",' + obj.DivisionOrderID + ',' + obj.ShowToAll + ',' + obj.Final + ',' + obj.Cancel + ' )');
                 console.log("INSERT INTO MobileApp_Schedule is created");
             });
@@ -299,7 +299,7 @@ function getchecksync(tx, results) {
 
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');
-            console.log("Update INTO MobileApp_LastUpdatesec");
+            console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
             $('#busy').hide();
         });
 
@@ -309,10 +309,6 @@ function getchecksync(tx, results) {
         }
 
     }
-
-
-
-
 
 
 

@@ -61,7 +61,7 @@ function displayupdatenow(){
 }
 
 function getsyncdate_success2(tx, results) {
-
+    $('#busy').show();
     var len = results.rows.length;
 
     var menu = results.rows.item(0);
@@ -83,8 +83,10 @@ function getsyncdate_success2(tx, results) {
     month[11] = "December";
 
     $('#lastsyncdate').empty();
-    $('#lastsyncdate').append("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2)   )
-console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
+    if(dateme.getFullYear() != 1970) {
+        $('#lastsyncdate').append("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2))
+    }
+        console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
 
 
 
@@ -103,6 +105,7 @@ console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth
     $('#busy').hide();
     $("#settingdeleteall").removeAttr('disabled');
     $("#settingsync").removeAttr('disabled');
+
 }
 
 function clearfavteam(){
