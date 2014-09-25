@@ -62,6 +62,12 @@ function droptables(){
         tx.executeSql('Drop TABLE MobileApp_Players_Images ');
         console.log("MobileApp_Players_Images table is Dropped");
     });
+    db.transaction(function(tx) {
+        tx.executeSql('Drop TABLE MobileStandings ');
+        console.log("MobileStandings table is Dropped");
+    });
+
+
 }
 
 function createDB(tx) {
@@ -96,6 +102,10 @@ function createDB(tx) {
 
     tx.executeSql('CREATE TABLE IF NOT EXISTS MobileScoringTable (Name TEXT NULL, Value INTEGER NOT NULL,UpdatedateUTC TEXT NULL)');
     console.log("MobileScoringTable table is created");
+
+    tx.executeSql('CREATE TABLE IF NOT EXISTS MobileStandings (_id INTEGER NOT NULL,Games INTEGER NOT NULL,Won INTEGER NOT NULL,Drawn INTEGER NOT NULL,Lost INTEGER NOT NULL,ForScore INTEGER NOT NULL,AgainstScore INTEGER NOT NULL,Difference INTEGER NOT NULL,ClubID INTEGER NOT NULL,Name TEXT NULL,TournamentID INTEGER NOT NULL,FlagPoints INTEGER NOT NULL,UpdateDateUTC TEXT NULL,TournamentName TEXT NULL)');
+    console.log("MobileScoringTable table is created");
+
 
 }
 

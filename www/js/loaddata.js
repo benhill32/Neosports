@@ -296,6 +296,18 @@ function getchecksync(tx, results) {
             });
         });
 
+        $.each(obj.Standings, function (idx, obj) {
+            db.transaction(function (tx) {
+                tx.executeSql('Delete from MobileStandings where _id =' + obj._id);
+                console.log('Delete MobileStandings');
+            });
+            db.transaction(function (tx) {
+                tx.executeSql('INSERT INTO MobileStandings(_id,Games,Won,Drawn,Lost,ForScore,AgainstScore,Difference,ClubID,Name,TournamentID,FlagPoints,UpdateDateUTC ,TournamentName ) VALUES (' + obj._id + ',' + obj.Games + ',' + obj.Won + ',' + obj.Drawn + ',' + obj.Lost + ',' + obj.ForScore + ',' + obj.AgainstScore + ',' + obj.Difference + ',' + obj.ClubID + ',"' + obj.Name + '",' + obj.TournamentID + ',' + obj.FlagPoints + ',"' + obj.UpdateDateUTC + '","' + obj.TournamentName + '")');
+                console.log("INSERT INTO MobileStandings is created");
+            });
+        });
+
+
 
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');

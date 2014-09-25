@@ -45,3 +45,29 @@ function goBack() {
     window.history.back()
 }
 
+
+
+function errorCBfunc(err) {
+    console.log("Error processing SQL: "+err.message);
+    //alert("Error processing SQL loaddata: "+err.code);
+}
+
+
+// Transaction success callback
+//
+function successCBfunc() {
+    //  alert("success!");
+}
+
+
+function getUrlVarsfunc() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}

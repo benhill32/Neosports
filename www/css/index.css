@@ -107,6 +107,52 @@ body {
     
     
 }
+.hide{
+
+    display: none;
+}
+
+.floatL{
+
+    float:left;
+    padding:10px;
+    padding-left:10px;
+    padding-right:8px;
+   // background-color: lightgray;
+}
+
+.floatLL{
+    width:40%;
+    float:left;
+    padding:8px;
+  //  background-color: lightgray;
+}
+#idteamname{
+    width:40%;
+    border-right:1px solid #333;
+   // padding:8px;
+    text-align: left;
+}
+.standheader{
+    border-bottom: 1px solid #333;
+    text-align: center;
+    padding:10px;
+    background-color: lightgray;
+}
+#idgamesp,#idgamesW,#idgamesD,#idgamesL,#idgamesFP{
+    width:12%;
+    border-right:1px solid #333;
+  // padding:8px;
+    text-align: left;
+
+}
+
+.mainmenuresultheader{
+    border-bottom: 1px solid #333;
+    width:100%;
+    background-color: lightgray;
+}
+
 .mainheaderimgicon{
 
     float:left;
