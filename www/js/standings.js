@@ -36,31 +36,23 @@ function getstandings_success(tx, results) {
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
 
-        $('#idteamname').append('<Div align="left" >' +
-            '<Div style="padding:5px;"  >' + menu.Name + '</Div>' +
+        $('#idteamname').append('<Div style="padding:5px;"  >' + menu.Name + '</Div>');
+        $('#idgamesp').append('<Div  style="padding:5px;" >' + menu.Games + '</Div>');
+        $('#idgamesW').append('<Div  style="padding:5px;" >' + menu.Won + '</Div>');
+        $('#idgamesD').append('<Div  style="padding:5px;" >' + menu.Drawn + '</Div>');
+        $('#idgamesL').append( '<Div  style="padding:5px;" >' + menu.Lost + '</Div>');
+        $('#idgamesFP').append('<Div  style="padding:5px;" >' + menu.FlagPoints + '</Div>');
 
-            '</Div>');
-        $('#idgamesp').append('<Div align="left" >' +
-            '<Div  style="padding:5px;" >' + menu.Games + '</Div>' +
-
-            '</Div>');
-        $('#idgamesW').append('<Div align="left" >' +
-            '<Div  style="padding:5px;" >' + menu.Won + '</Div>' +
-
-            '</Div>');
-        $('#idgamesD').append('<Div align="left" >' +
-            '<Div  style="padding:5px;" >' + menu.Drawn + '</Div>' +
-
-            '</Div>');
-        $('#idgamesL').append('<Div align="left" >' +
-            '<Div  style="padding:5px;" >' + menu.Lost + '</Div>' +
-
-            '</Div>');
-        $('#idgamesFP').append('<Div align="left" >' +
-            '<Div  style="padding:5px;" >' + menu.FlagPoints + '</Div>' +
-
-            '</Div>');
     }
+
+    $('#idteamname').append('<Div  class="standfooter" ></Div>');
+    $('#idgamesp').append('<Div  class="standfooter" ></Div>');
+    $('#idgamesW').append('<Div  class="standfooter" ></Div>');
+    $('#idgamesD').append('<Div  class="standfooter" ></Div>');
+    $('#idgamesL').append('<Div  class="standfooter" ></Div>');
+    $('#idgamesFP').append('<Div  class="standfooter" ></Div>');
+
+
 
  //   '<Div class="floatL hide">' + menu.AgainstScore + '</Div>' +
   //  '<Div class="floatL hide">' + menu.Difference + '</Div>' +

@@ -129,22 +129,26 @@ body {
 }
 #idteamname{
     width:40%;
-    border-right:1px solid #333;
+    border-right:1px solid lightgray;
    // padding:8px;
     text-align: left;
 }
 .standheader{
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid lightgray;
     text-align: center;
     padding:10px;
     background-color: lightgray;
 }
 #idgamesp,#idgamesW,#idgamesD,#idgamesL,#idgamesFP{
     width:12%;
-    border-right:1px solid #333;
+    border-right:1px solid lightgray;
   // padding:8px;
-    text-align: left;
+    text-align: center;
 
+}
+.standfooter{
+
+    border-top:1px solid lightgray;
 }
 
 .mainmenuresultheader{
