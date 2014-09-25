@@ -32,10 +32,10 @@ function checkfavteam_success(tx, results) {
         $("#divclearfav").css('color', '#333');
     }
 
-   // var stringapp = device.name;
+    var stringapp = device.model;
 
-    //$("#deviceid").empty();
-   // $("#deviceid").append(stringapp);
+    $("#deviceid").empty();
+    $("#deviceid").append(stringapp);
 
 }
 function syncnewdata(){
