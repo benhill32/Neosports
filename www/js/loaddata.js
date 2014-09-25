@@ -145,7 +145,7 @@ function getchecksync(tx, results) {
 
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + Math.round((datenowsecsync/1000)),false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + datenowsecsync,false);
         xmlHttp.send();
 
 
@@ -298,13 +298,17 @@ function getchecksync(tx, results) {
 
 
         db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + timenow + '",datemenus= "' + datenow + '"');
+            tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');
             console.log("Update INTO MobileApp_LastUpdatesec");
             $('#busy').hide();
         });
 
-    }
 
+        if(document.getElementById("settingsync")!=null){
+            db.transaction(getsyncdate, errorCB, successCB);
+        }
+
+    }
 
 
 
@@ -345,13 +349,19 @@ function failedinsert1(string) {
 }
 
 
+function onclicksyncloaddata(){
 
+    db.transaction(onclicksyncloaddata2, errorCB, successCB)
 
-function onclicksync(tx){
+}
+
+function onclicksyncloaddata2(tx){
+
 
     var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-    alert(sql);
+    // alert(sql);
     tx.executeSql(sql, [], onclickresync,getchecksyncerror);
+
 }
 
 
@@ -383,7 +393,7 @@ function onclickresync(tx, results) {
 
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + Math.round((datenowsecsync/1000)),false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + (datenowsecsync),false);
         xmlHttp.send();
 
 
@@ -536,12 +546,15 @@ function onclickresync(tx, results) {
 
 
         db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + timenow + '",datemenus= "' + datenow + '"');
+            tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');
             console.log("Update INTO MobileApp_LastUpdatesec");
             $('#busy').hide();
         });
 
 
+    if(document.getElementById("settingsync")!=null){
+        db.transaction(getsyncdate, errorCB, successCB);
+    }
 
 }
 

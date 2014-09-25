@@ -65,8 +65,8 @@ function getsyncdate_success2(tx, results) {
     var len = results.rows.length;
 
     var menu = results.rows.item(0);
-
-    var dateme = new Date(menu.Datesecs);
+ //   alert(menu.Datesecs);
+    var dateme = new Date((menu.Datesecs)*1000);
     var wifi = menu.syncwifi;
     var month = new Array();
     month[0] = "January";
