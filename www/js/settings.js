@@ -10,8 +10,8 @@ function errorCB(err) {
 
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
-   //   alert(sql);
-    tx.executeSql(sql, [], getsyncdate_success);
+   //  alert(sql);
+    tx.executeSql(sql, [], getsyncdate_success2);
 }
 
 function checkfavteam(tx) {
@@ -37,22 +37,20 @@ function checkfavteam_success(tx, results) {
         $("#divclearfav").css('color', '#333');
     }
 
-    var stringapp = device.name;
+   // var stringapp = device.name;
 
-    $("#deviceid").empty();
-    $("#deviceid").append(stringapp);
+    //$("#deviceid").empty();
+   // $("#deviceid").append(stringapp);
 
 }
 function syncnewdata(){
     $('#busy').show();
-    db.transaction(function(tx) {
-        tx.executeSql('Update MobileApp_LastUpdatesec set datemenus = 0');
-        console.log("Updated datemenus Fav Team");
-    });
+
 
     $("#settingdeleteall").attr('disabled','disabled');
     $("#settingsync").attr('disabled','disabled');
-    db.transaction(populateDB, errorCB, displayupdatenow);
+
+    db.transaction(onclicksync, errorCB, displayupdatenow);
 
 }
 
@@ -62,11 +60,13 @@ function displayupdatenow(){
 
 }
 
-function getsyncdate_success(tx, results) {
+function getsyncdate_success2(tx, results) {
 
     var len = results.rows.length;
+
     var menu = results.rows.item(0);
-    var dateme = new Date((menu.Datesecs)*1000);
+
+    var dateme = new Date(menu.Datesecs);
     var wifi = menu.syncwifi;
     var month = new Array();
     month[0] = "January";
