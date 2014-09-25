@@ -8,23 +8,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
+    db.transaction(getMenu, errorCBfunc, successCBfunc);
 }
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
-
-
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getdata(tx) {
     var sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,Cancel from MobileApp_Schedule where DivisionID = " + id + " order by DatetimeStart";
@@ -76,7 +65,7 @@ function getMenu_success(tx, results) {
 function loadinfo(ID) {
     IDhist = ID;
 
-    db.transaction(loadinfo_success1, errorCB, successCB);
+    db.transaction(loadinfo_success1, errorCBfunc, successCBfunc);
 
 }
 

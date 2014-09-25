@@ -1,12 +1,9 @@
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(checkfavteam, errorCB, successCB);
-db.transaction(getsyncdate, errorCB, successCB);
+db.transaction(checkfavteam, errorCBfunc, successCBfunc);
+db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
-function errorCB(err) {
-    console.log("Error processing SQL: " + err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
+
 
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
@@ -19,9 +16,7 @@ function checkfavteam(tx) {
    //   alert(sql);
     tx.executeSql(sql, [], checkfavteam_success);
 }
-function successCB() {
-    //  alert("success!");
-}
+
 function checkfavteam_success(tx, results) {
 
     var len = results.rows.length;
@@ -50,13 +45,13 @@ function syncnewdata(){
     $("#settingdeleteall").attr('disabled','disabled');
     $("#settingsync").attr('disabled','disabled');
 
-    db.transaction(onclicksync, errorCB, displayupdatenow);
+    db.transaction(onclicksync, errorCBfunc, displayupdatenow);
 
 }
 
 function displayupdatenow(){
     $('#busy').show();
-    db.transaction(getsyncdate, errorCB, successCB);
+    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
 }
 
@@ -116,7 +111,7 @@ function clearfavteam(){
     });
 
 
-    db.transaction(checkfavteam, errorCB, successCB);
+    db.transaction(checkfavteam, errorCBfunc, successCBfunc);
 }
 
 function cleardata(){
@@ -128,12 +123,12 @@ function cleardata(){
 
 
 
-    db.transaction(droptables, errorCB, createtables);
+    db.transaction(droptables, errorCBfunc, createtables);
 }
 
 function createtables(){
     $('#busy').show();
-    db.transaction(createDB, errorCB, loadnewtable);
+    db.transaction(createDB, errorCBfunc, loadnewtable);
 }
 
 

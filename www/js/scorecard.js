@@ -5,28 +5,12 @@ var id = getUrlVars()["ID"];
 var gtoken =0;
 var gdeviceID = "hdjsadaskjdhkas";
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
-}
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
-db.transaction(getscoredata, errorCB, successCB);
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
+db.transaction(getdata, errorCBfunc, successCBfunc);
+db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
 
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getscoredata(tx) {
     var sql = "select Name,Value,UpdatedateUTC from MobileScoringTable";
@@ -105,16 +89,10 @@ function getscore(team,value){
 
     }
 
-
-
-    db.transaction(getdata, errorCB, successCB);
-    db.transaction(getscoredata, errorCB, successCB);
-
-
-    db.transaction(gettoken, errorCB, successCB);
-
-
-    db.transaction(getscorefromtable,errorCB,successCB);
+    db.transaction(getdata, errorCBfunc, successCBfunc);
+    db.transaction(getscoredata, errorCBfunc, successCBfunc);
+    db.transaction(gettoken, errorCBfunc, successCBfunc);
+    db.transaction(getscorefromtable,errorCBfunc,successCBfunc);
 
 }
 
@@ -133,22 +111,7 @@ function getscorefromtable_success(tx, results) {
 
 }
 
-function passdatatoserver(testvar){
 
-
-    var http = new XMLHttpRequest();
-    var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
-    var params = "?token=" + gtoken + "&deviceid=" + gdeviceID + testvar;
-    http.open("POST", url + params, true);
-
-    http.onreadystatechange = function() {//Call a function when the state changes.
-        if(http.readyState == 4 && http.status == 200) {
-            // alert(http.responseText);
-        }
-    }
-    http.send();
-
-}
 
 
 function gettoken(tx) {

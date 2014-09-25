@@ -5,25 +5,15 @@ var followtop =0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-
-
-
-
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
+    db.transaction(getMenu, errorCBfunc, successCBfunc);
 }
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
-
-
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
 
 function getdata(tx) {
     var sql = "select ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position from MobilevwApp_Base_Players where TeamID=" + teamID;
@@ -65,7 +55,7 @@ function updatefollow(){
         followtop = 0;
     }
 
-    db.transaction(getimgfav, errorCB, successCB);
+    db.transaction(getimgfav, errorCBfunc, successCBfunc);
 
 }
 
@@ -99,11 +89,6 @@ function redirectplayer(ID){
     window.location = "../pages/clubteamplayers.html?ClubID=" + id + "&teamID=" + ID;
 }
 
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');

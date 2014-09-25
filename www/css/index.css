@@ -412,7 +412,21 @@ text-align: center !important;
 
 }
 
+#settingsync:hover
+{
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
 
+}
+
+#settingdeleteall:hover
+{
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
+
+}
 
 .footer
 {

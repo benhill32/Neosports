@@ -7,23 +7,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
+    db.transaction(getMenu, errorCBfunc, successCBfunc);
 }
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
-
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getdata(tx) {
     var sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final from MobileApp_Results where DivisionID = '" + id + "'  order by DatetimeStart DESC";

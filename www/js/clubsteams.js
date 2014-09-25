@@ -6,14 +6,11 @@ var followtop =0;
 
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
-db.transaction(getimgfav, errorCB, successCB);
+db.transaction(getimgfav, errorCBfunc, successCBfunc);
 
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
+
 
 function getdata(tx) {
     var sql = "select ID ,_id,Base64 ,ClubID ,DivisionID,DivisionName,UpdateDateUTC from MobileApp_vwApp_Teams where ClubID=" + id;
@@ -87,13 +84,9 @@ function updatefollow(){
         followtop = 0;
     }
 
-    db.transaction(getimgfav, errorCB, successCB);
+    db.transaction(getimgfav, errorCBfunc, successCBfunc);
 
 }
-
-
-
-
 
 function getteam_success(tx, results) {
     $('#busy').hide();
@@ -121,11 +114,6 @@ function redirectplayer(ID){
     window.location = "../pages/clubteamplayers.html?ClubID=" + id + "&teamID=" + ID;
 }
 
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');

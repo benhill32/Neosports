@@ -1,20 +1,23 @@
 var db;
 var dbCreated = false;
-var d = new Date();
-//alert(d);
-var day = d.getDate();
-var month = d.getMonth();
-var year = d.getFullYear();
-var hours= d.getHours();
-
-var datenow = (day + '' + month+ '' + year + '' + hours);
-var milliesecs = d.getTime();
-var datenowsec = Math.round((milliesecs/1000));
-
 
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(createDB, transaction_error, successCB);
+db.transaction(createDB, errorCBfunc, successCBfunc);
+
+//var d = new Date();
+//alert(d);
+//var day = d.getDate();
+//var month = d.getMonth();
+//var year = d.getFullYear();
+//var hours= d.getHours();
+
+//var datenow = (day + '' + month+ '' + year + '' + hours);
+//var milliesecs = d.getTime();
+//var datenowsec = Math.round((milliesecs/1000));
+
+
+
 
 function droptables(){
 
@@ -109,19 +112,6 @@ function createDB(tx) {
 
 }
 
-function errorCB(err) {
-    alert("Error processing SQL createopenDB: "+err.code);
-}
 
-//function will be called when process succeed
-function successCB() {
- //   alert("success!");
-
-}
-
-function transaction_error(tx, error) {
-
-  // alert("Database Error: " + error);
-}
 
 

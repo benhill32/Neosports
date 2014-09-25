@@ -8,25 +8,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
+    db.transaction(getMenu, errorCBfunc, successCBfunc);
 }
 
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCB, successCB);
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
-
-
-
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getdata(tx) {
     var sql = "select ID,_id ,name,UpdateDateUTC ,Base64,History,Contacts,UpdateSecondsUTC,Color from MobileApp_clubs order by name";
@@ -65,7 +53,7 @@ window.location = "../pages/clubteams.html?ID=" + ID
 function loadhistory(ID){
     IDhist = ID;
   //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(gethistory, errorCB, successCB);
+    db.transaction(gethistory, errorCBfunc, successCBfunc);
 
 }
 
@@ -90,7 +78,7 @@ function gethistory_success(tx, results) {
 function loadcontacts(ID){
     IDcon = ID;
    // db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(getcontacts, errorCB, successCB);
+    db.transaction(getcontacts, errorCBfunc, successCBfunc);
 
 }
 

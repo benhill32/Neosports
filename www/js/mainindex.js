@@ -5,7 +5,7 @@ console.log("LOCALDB - Database ready");
 function loadindexmessage()
 {
 
-    db.transaction(gethasclub, errorCB, successCB);
+    db.transaction(gethasclub, errorCBfunc, successCBfunc);
 }
 
 
@@ -84,21 +84,9 @@ function showclubsfun(){
 
     $('#basicModalteams').modal('show');
 
-    db.transaction(getclubsfav, errorCB, successCB);
+    db.transaction(getclubsfav, errorCBfunc, successCBfunc);
 }
 
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
-
-
-
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getclubsfav(tx) {
     var sql = "select ID,_id ,name,UpdateDateUTC ,Base64,History,Contacts,UpdateSecondsUTC,Color from MobileApp_clubs order by name";

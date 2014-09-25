@@ -8,24 +8,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCB, successCB);
+    db.transaction(getMenu, errorCBfunc, successCBfunc);
 }
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(getdatanews, errorCB, successCB);
-
-function errorCB(err) {
-    console.log("Error processing SQL: "+err.message);
-    //alert("Error processing SQL loaddata: "+err.code);
-}
+db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
 
-
-// Transaction success callback
-//
-function successCB() {
-    //  alert("success!");
-}
 
 function getdatanews(tx) {
     var sql = "select ID from MobileApp_clubs where Fav = 1";
@@ -47,7 +36,7 @@ function getClubID_success(tx, results) {
     if(len != 0) {
         var menu = results.rows.item(0);
         clubidtop = menu.ID;
-        db.transaction(getdata2, errorCB, successCB);
+        db.transaction(getdata2, errorCBfunc, successCBfunc);
      }else{
 
         alert("need fav team");
