@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../Bootstrap/js/bootstrap.js"></script>
+    <link href="../Bootstrap/css/docs.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script type="text/javascript" src="../js/news.js"></script>
+    <script type="text/javascript" src="../js/loaddata.js"></script>
+
+    <title></title>
+
+    <script type="application/javascript">
+
+        function loadnewdata() {
+            db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+            console.log("LOCALDB - Database ready");
+
+            db.transaction(populateDB, errorCB, successCB);
+            $('#mainmenu').empty();
+            db.transaction(getdatanews, errorCB, successCB);
+        }
+    </script>
+    <style>
+        a {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="divmainmenu">
+    <div id="backicondiv"   onclick="weblink('../index.html')">
+        <img src="../img/back_off.png"  style="vertical-align:middle;height:20px;">
+    </div>
+    <div class="mainheaderimgicon"  onclick="weblink('../index.html')">
+        <img src="../img/neosportz.png"  style="vertical-align:middle;height:40px;" align="middle">
+        Neosportz Football
+    </div>
+    <div>
+        <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
+        <img src="../img/refresh.png"  onclick="loadnewdata()"  align="right" style="padding-right: 5px;padding-top: 5px;"  height="35px" >
+    </div>
+</div>
+<div class="container-fluid-news">
+<div id="newsmain">
+
+
+</div>
+
+</div>
+
+<div class="footer">
+    <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
+        <img src="../img/neocom.jpg" Height="50px">
+
+    </a>
+</div>
+</body>
+</html>
