@@ -5,20 +5,6 @@ db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 2000
 console.log("LOCALDB - Database ready");
 db.transaction(createDB, errorCBfunc, successCBfunc);
 
-//var d = new Date();
-//alert(d);
-//var day = d.getDate();
-//var month = d.getMonth();
-//var year = d.getFullYear();
-//var hours= d.getHours();
-
-//var datenow = (day + '' + month+ '' + year + '' + hours);
-//var milliesecs = d.getTime();
-//var datenowsec = Math.round((milliesecs/1000));
-
-
-
-
 function droptables(){
 
     db.transaction(function(tx) {
