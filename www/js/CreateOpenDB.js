@@ -56,6 +56,16 @@ function droptables(){
         console.log("MobileStandings table is Dropped");
     });
 
+    db.transaction(function(tx) {
+        tx.executeSql('Drop TABLE Mobilesponsorsclub ');
+        console.log("Mobilesponsorsclub table is Dropped");
+    });
+
+
+    db.transaction(function(tx) {
+        tx.executeSql('Drop TABLE Mobilescreenimage ');
+        console.log("Mobilescreenimage table is Dropped");
+    });
 
 }
 
@@ -95,7 +105,12 @@ function createDB(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS MobileStandings (_id INTEGER NOT NULL,Games INTEGER NOT NULL,Won INTEGER NOT NULL,Drawn INTEGER NOT NULL,Lost INTEGER NOT NULL,ForScore INTEGER NOT NULL,AgainstScore INTEGER NOT NULL,Difference INTEGER NOT NULL,ClubID INTEGER NOT NULL,Name TEXT NULL,TournamentID INTEGER NOT NULL,FlagPoints INTEGER NOT NULL,UpdateDateUTC TEXT NULL,TournamentName TEXT NULL)');
     console.log("MobileScoringTable table is created");
 
+    tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilesponsorsclub (ID INTEGER NOT NULL,Datetime TEXT NULL,Club INTEGER NOT NULL,Name TEXT NOT NULL,Website TEXT NULL,Image TEXT NULL,UserID TEXT NULL,OrderBy INTEGER NULL,Base64 TEXT NULL,CreatedateUTC TEXT NULL,UpdatedateUTC TEXT NULL,DeletedateUTC TEXT NULL,UpdatedateUTCBase64 TEXT NULL)');
+    console.log("Mobilesponsorsclub table is created");
 
+
+    tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescreenimage (_id INTEGER NOT NULL,Base64 TEXT NULL,BackgroundColor TEXT NULL,SoftwareFade TEXT NULL,UpdateDateUTC TEXT NULL,TopText TEXT NULL,BottomText TEXT NULL)');
+    console.log("Mobilescreenimage table is created");
 }
 
 

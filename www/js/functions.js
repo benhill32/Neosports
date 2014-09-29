@@ -258,6 +258,27 @@ function syncmaintables(obj){
         });
     });
 
+    $.each(obj.sponsorsclub, function (idx, obj) {
+        db.transaction(function (tx) {
+            tx.executeSql('Delete from Mobilesponsorsclub where ID =' + obj.ID);
+            console.log('Delete Mobilesponsorsclub');
+        });
+        db.transaction(function (tx) {
+            tx.executeSql('INSERT INTO Mobilesponsorsclub(ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64  ) VALUES (' + obj.ID + ',"' + obj.Datetime + '",' + obj.Club + ',"' + obj.Name + '","' + obj.Website + '","' + obj.Image + '","' + obj.UserID + '",' + obj.OrderBy + ',"' + obj.Base64 + '","' + obj.CreatedateUTC + '","' + obj.UpdatedateUTC + '","' + obj.DeletedateUTC + '","' + obj.UpdatedateUTCBase64 + '")');
+            console.log("INSERT INTO Mobilesponsorsclub is created");
+        });
+    });
+
+    $.each(obj.screenimage, function (idx, obj) {
+        db.transaction(function (tx) {
+            tx.executeSql('Delete from Mobilescreenimage where _id =' + obj.id);
+            console.log('Delete Mobilescreenimage');
+        });
+        db.transaction(function (tx) {
+            tx.executeSql('INSERT INTO Mobilescreenimage(_id,Base64 ,BackgroundColor ,SoftwareFade ,UpdateDateUTC ,TopText ,BottomText ) VALUES ("' + obj.id + '","' + obj.Base64 + '","' + obj.BackgroundColor + '","' + obj.SoftwareFade + '","' + obj.UpdateDateUTC + '","' + obj.TopText + '","' + obj.BottomText + '")');
+            console.log("INSERT INTO Mobilescreenimage is created");
+        });
+    });
 
 
     db.transaction(function(tx) {

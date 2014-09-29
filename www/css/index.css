@@ -364,6 +364,11 @@ body {
     font-size:11px;
 
 }
+
+.size11 a{
+
+    color: #428bca;
+}
 .divmainheader
 {
     height: 20%;
