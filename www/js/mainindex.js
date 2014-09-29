@@ -10,6 +10,7 @@ function loadindexmessage()
 }
 
 function getbackground(tx) {
+    alert($('#mainfore').attr('class'));
     var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC  DESC LIMIT 1";
      //alert(sql);
     tx.executeSql(sql, [], getbackground_success);
