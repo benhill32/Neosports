@@ -53,9 +53,12 @@ function gethasclub_success(tx, results) {
 
 
     if(hasclub == 0 && dif > "600000"){
+        alert($('#mainfore').attr('class'));
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
 
+
+        alert($('#mainfore').attr('class'));
             $('#basicModal').modal('show');
 
     }
