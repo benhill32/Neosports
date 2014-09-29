@@ -15,7 +15,14 @@ var golbaltoken= "";
 
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
+
+function refreshdata(){
+
     db.transaction(populateDB, errorCBfunc, successCBfunc);
+}
+
+
+
 
 
 function loadnewtable(){
