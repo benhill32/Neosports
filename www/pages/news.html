@@ -15,17 +15,7 @@
 
     <title></title>
 
-    <script type="application/javascript">
 
-        function loadnewdata() {
-            db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-            console.log("LOCALDB - Database ready");
-
-            db.transaction(populateDB, errorCB, successCB);
-            $('#mainmenu').empty();
-            db.transaction(getdatanews, errorCB, successCB);
-        }
-    </script>
     <style>
         a {
             color: #333;
@@ -49,7 +39,7 @@
     </div>
 </div>
 <div class="container-fluid-news">
-    <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal" id="basicModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

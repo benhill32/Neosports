@@ -4,6 +4,7 @@ var IDNews = 0;
 var IDhist = 0;
 var IDcon = 0;
 var spon= 1;
+var spon2= 1;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -25,7 +26,14 @@ function getdatanews(tx) {
 }
 
 
+function loadnewdata(){
 
+    refreshdata();
+    $('#newsmain').empty();
+    spon = 1;
+    spon2 =1 ;
+    db.transaction(getdatanews, errorCBfunc, successCBfunc);
+}
 
 
 
@@ -115,11 +123,11 @@ function getnewfeed_success(tx, results) {
             }
         }else{
 
-            $('#newsmain').append('<Div id="spondiv' + spon + '"></div>');
+            $('#newsmain').append('<Div id="spondiv' + spon2 + '"></div>');
 
-
+            spon2++;
             db.transaction(getsponsors, errorCBfunc, successCBfunc);
-            count = 0;
+            count = -1;
 
         }
 
@@ -135,7 +143,7 @@ function redirectplayer(ID){
 
 function getsponsors(tx) {
     var sql = "select ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64   from Mobilesponsorsclub where Club=" + clubidtop + " and OrderBy =" + spon;
-  //  alert(sql);
+   // alert(sql);
     tx.executeSql(sql, [], getsponsors_success);
 }
 
@@ -149,9 +157,9 @@ function getsponsors_success(tx, results) {
             imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" >';
         }
 
-        //alert('#spondiv'+ spon);
+     //   alert('#spondiv'+ spon + ' - ' + menu.Website);
 
-        $('#spondiv' + spon).append('<Div  align="left"  >' +
+        $('#spondiv' + spon).append('<Div  align="center"  >' +
 
             '<a href="http://' + menu.Website + '" target="_blank">' + imgg + '</a></div>');
 

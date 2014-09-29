@@ -34,12 +34,12 @@ function getstandings_success(tx, results) {
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
 
-        $('#idteamname').append('<Div style="padding:5px;"  >' + menu.Name + '</Div>');
-        $('#idgamesp').append('<Div  style="padding:5px;" >' + menu.Games + '</Div>');
-        $('#idgamesW').append('<Div  style="padding:5px;" >' + menu.Won + '</Div>');
-        $('#idgamesD').append('<Div  style="padding:5px;" >' + menu.Drawn + '</Div>');
-        $('#idgamesL').append( '<Div  style="padding:5px;" >' + menu.Lost + '</Div>');
-        $('#idgamesFP').append('<Div  style="padding:5px;" >' + menu.FlagPoints + '</Div>');
+        $('#idteamname').append('<Div style="padding:2px;"  >' + menu.Name + '</Div>');
+        $('#idgamesp').append('<Div  style="padding:2px;" >' + menu.Games + '</Div>');
+        $('#idgamesW').append('<Div  style="padding:2px;" >' + menu.Won + '</Div>');
+        $('#idgamesD').append('<Div  style="padding:2px;" >' + menu.Drawn + '</Div>');
+        $('#idgamesL').append( '<Div  style="padding:2px;" >' + menu.Lost + '</Div>');
+        $('#idgamesFP').append('<Div  style="padding:2px;" >' + menu.FlagPoints + '</Div>');
 
     }
 

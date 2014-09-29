@@ -271,11 +271,11 @@ function syncmaintables(obj){
 
     $.each(obj.screenimage, function (idx, obj) {
         db.transaction(function (tx) {
-            tx.executeSql('Delete from Mobilescreenimage where _id =' + obj.id);
+            tx.executeSql('Delete from Mobilescreenimage where _id =' + obj._id);
             console.log('Delete Mobilescreenimage');
         });
         db.transaction(function (tx) {
-            tx.executeSql('INSERT INTO Mobilescreenimage(_id,Base64 ,BackgroundColor ,SoftwareFade ,UpdateDateUTC ,TopText ,BottomText ) VALUES ("' + obj.id + '","' + obj.Base64 + '","' + obj.BackgroundColor + '","' + obj.SoftwareFade + '","' + obj.UpdateDateUTC + '","' + obj.TopText + '","' + obj.BottomText + '")');
+            tx.executeSql('INSERT INTO Mobilescreenimage(_id,Base64 ,BackgroundColor ,SoftwareFade ,UpdateDateUTC ,TopText ,BottomText ) VALUES ("' + obj._id + '","' + obj.Base64 + '","' + obj.BackgroundColor + '","' + obj.SoftwareFade + '","' + obj.UpdateDateUTC + '","' + obj.TopText + '","' + obj.BottomText + '")');
             console.log("INSERT INTO Mobilescreenimage is created");
         });
     });

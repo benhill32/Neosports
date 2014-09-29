@@ -57,6 +57,7 @@
 </style>
     </head>
     <body>
+
     <div class="divmainmenu">
         <div id="backicondiv">
 
@@ -78,9 +79,11 @@
 
     </div>
 
-
+    <div id="mainbackground">
+    </div>
+    <div id="mainforeground">
     <div class="container-fluid">
-        <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal" id="basicModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -110,7 +113,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal" id="basicModalteams" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal" id="basicModalteams" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -128,7 +131,9 @@
                 </div>
             </div>
         </div>
-    <div id="indexdiv" style="">
+
+
+        <div id="indexdiv" style="">
     <div class="divmain" onclick="weblink('pages/schedules.html?id=48')">
     Schedules
     </div>
@@ -151,6 +156,8 @@
     </div>
 
     </div>
+    </div>
+
     <div class="footer" data-toggle="modal" data-target="#basicModalteams">
         <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
         <img src="img/neocom.jpg" Height="50px">

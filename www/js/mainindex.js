@@ -1,6 +1,7 @@
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
 
+db.transaction(getbackground, errorCBfunc, successCBfunc);
 
 function loadindexmessage()
 {
@@ -8,6 +9,21 @@ function loadindexmessage()
     db.transaction(gethasclub, errorCBfunc, successCBfunc);
 }
 
+function getbackground(tx) {
+    var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC  DESC LIMIT 1";
+     //alert(sql);
+    tx.executeSql(sql, [], getbackground_success);
+}
+
+function getbackground_success(tx, results) {
+
+    var len = results.rows.length;
+    var menu = results.rows.item(0);
+
+    var base64 = menu.Base64;
+
+    $('#mainbackground').css('background-image', 'url(data:image/png;base64,' + base64 + ')');
+}
 
 
 
