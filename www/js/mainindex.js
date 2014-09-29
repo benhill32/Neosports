@@ -53,6 +53,9 @@ function gethasclub_success(tx, results) {
 
 
     if(hasclub == 0 && dif > "600000"){
+            $('#mainfore').removeClass('mainforeground');
+            $('#mainfore').addClass('mainforeground2');
+
             $('#basicModal').modal('show');
 
     }
@@ -65,6 +68,9 @@ function hadclubfunction(){
         tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1');
         console.log("Update MobileApp_LastUpdatesec");
     });
+
+    $('#mainfore').removeClass('mainforeground2');
+    $('#mainfore').addClass('mainforeground');
 }
 
 
@@ -76,6 +82,10 @@ function hadclubchecklater(){
         tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0, hasclubdate = "' + naa + '"');
         console.log("Update MobileApp_LastUpdatesec");
     });
+    $('#mainfore').removeClass('mainforeground2');
+    $('#mainfore').addClass('mainforeground');
+
+
 }
 
 function choosefacteam(ID){
@@ -91,6 +101,8 @@ function choosefacteam(ID){
         tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1, hasclubdate = "' + naaa + '"');
         console.log("Update MobileApp_LastUpdatesec");
     });
+    $('#mainfore').removeClass('mainforeground2');
+    $('#mainfore').addClass('mainforeground');
 
 }
 
@@ -101,6 +113,9 @@ function showclubsfun(){
     $('#basicModalteams').modal('show');
 
     db.transaction(getclubsfav, errorCBfunc, successCBfunc);
+    $('#mainfore').removeClass('mainforeground');
+    $('#mainfore').addClass('mainforeground2');
+
 }
 
 

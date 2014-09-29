@@ -7146,7 +7146,7 @@ jQuery.fn.extend({
 			len = this.length;
 
 		if ( jQuery.isFunction( value ) ) {
-			return this.each(function( j ) {
+			return this.removeClass(function( j ) {
 				jQuery( this ).addClass( value.call( this, j, this.className ) );
 			});
 		}
