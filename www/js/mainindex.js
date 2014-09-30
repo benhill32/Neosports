@@ -10,7 +10,7 @@ function loadindexmessage()
 }
 
 function getbackground(tx) {
-    alert($('#mainbackground').css('opacity'));
+   // alert($('#mainbackground').css('opacity'));
 
     var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC  DESC LIMIT 1";
      //alert(sql);

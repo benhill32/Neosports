@@ -278,6 +278,9 @@ body {
      width:100%;
      height:100%;
      z-index: 10;
+   // background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+    top: 40px;
  }
 
 .mainforeground2{
@@ -285,15 +288,21 @@ body {
     width:100%;
     height:100%;
     z-index: 10;
+ //   background:#7f7f7f;
+    background:rgba(255,255,255,0.5);
+    top: 40px;
+
 }
 #mainbackground{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    opacity : 0.4;
+   // opacity : 0.4;
     width:100%;
     height:100%;
     position: absolute;
+    filter: alpha(opacity=50);
+   //background:rgba(255,255,255,0.5);
 
 }
 
