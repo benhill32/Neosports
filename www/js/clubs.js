@@ -67,7 +67,6 @@ function gethistory(tx) {
 function gethistory_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-//alert(len);
 
         var menu = results.rows.item(0);
         $('#modelhistory').empty();

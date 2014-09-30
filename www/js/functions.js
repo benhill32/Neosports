@@ -88,7 +88,7 @@ function getUrlVarsfunc() {
 function blankLastUpdatesec(token){
 
     db.transaction(function(tx) {
-        tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub) VALUES ("0", "0",0,0,"' + token + '",0)');
+        tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub,fliterON) VALUES ("0", "0",0,0,"' + token + '",0,0)');
         console.log("INSERT INTO MobileApp_LastUpdatesec");
     });
 

@@ -6,14 +6,23 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+    <link rel="stylesheet" type="text/css" href="../css/onoff.css" />
 
     <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../Bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/functions.js"></script>
     <script type="text/javascript" src="../js/schedule.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("ul li").click(function(){
+            $("ul li").removeClass("on");
+            $(this).addClass("on");
+        });
+    });
 
+
+</script>
 
 </head>
 <body>
@@ -24,6 +33,13 @@
     <div class="mainheaderimgicon"  onclick="weblink('../index.html')">
         <img src="../img/neosportz.png"  style="vertical-align:middle;height:40px;" align="middle">
         Neosportz Football
+    </div>
+    <div class="mainheaderimgicon" id="filterswitch">
+        <ul>
+            <li id="lioff" onclick="allowfilter(0)"><span>OFF</span></li>
+            <li  id="lion" onclick="allowfilter(1)" ><span>ON</span></li>
+        </ul>
+
     </div>
     <div>
         <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
