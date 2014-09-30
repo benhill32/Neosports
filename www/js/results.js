@@ -12,14 +12,36 @@ console.log("LOCALDB - Database ready");
 db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 
-function allowfilter(ID) {
+function allowfilter(id){
 
-    db.transaction(function(tx) {
-        tx.executeSql('Update MobileApp_LastUpdatesec set fliterON =' + ID);
-        console.log("Update MobileApp_LastUpdatesec");
-    });
+    if(id==1)
+    {
 
+        db.transaction(function(tx) {
+            tx.executeSql('Update MobileApp_LastUpdatesec set fliterON =' + id);
+            console.log("Update MobileApp_LastUpdatesec");
+        });
+
+        $('#btn2').removeClass("btn btn-xs btn-primary active");
+        $('#btn2').addClass("btn btn-xs btn-default");
+        $('#btn1').removeClass("btn btn-xs btn-default");
+        $('#btn1').addClass("btn btn-xs btn-primary active");
+
+    }
+    else if(id== 0)
+    {
+        db.transaction(function(tx) {
+            tx.executeSql('Update MobileApp_LastUpdatesec set fliterON =' + 0);
+            console.log("Update MobileApp_LastUpdatesec");
+        });
+
+        $('#btn1').removeClass("btn btn-xs btn-primary active");
+        $('#btn1').addClass("btn btn-xs btn-default");
+        $('#btn2').removeClass("btn btn-xs btn-default");
+        $('#btn2').addClass("btn btn-xs btn-primary active");
+    }
     db.transaction(getfliter, errorCBfunc, successCBfunc);
+
 }
 
 
@@ -108,13 +130,18 @@ function getdata2_success(tx, results) {
 function getdata(tx) {
     var sql = "";
     if(fliter == 0){
-        $("ul li").removeClass("on");
-        $("#lioff").addClass("on");
+
+        $('#btn1').removeClass("btn btn-xs btn-primary active");
+        $('#btn1').addClass("btn btn-xs btn-default");
+        $('#btn2').removeClass("btn btn-xs btn-default");
+        $('#btn2').addClass("btn btn-xs btn-primary active");
         sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final from MobileApp_Results where DivisionID = '" + id + "'  order by DatetimeStart DESC";
 
     }else{
-        $("ul li").removeClass("on");
-        $("#lion").addClass("on");
+        $('#btn2').removeClass("btn btn-xs btn-primary active");
+        $('#btn2').addClass("btn btn-xs btn-default");
+        $('#btn1').removeClass("btn btn-xs btn-default");
+        $('#btn1').addClass("btn btn-xs btn-primary active");
         sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final from MobileApp_Results where (HomeClubID IN (" + listfollow + ") or AwayClubID IN (" + listfollow + ")) and DivisionID = '" + id + "'  order by DatetimeStart DESC";
 
     }
