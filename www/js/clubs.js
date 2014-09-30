@@ -38,8 +38,8 @@ function getMenu_success(tx, results) {
                 '<img src="../img/info.png" height="20" align="right" data-toggle="modal" data-target="#basicModalContact" onclick="loadcontacts(' + menu.ID + ')">' +
                 '<img src="../img/team.png" onclick="redirectplayer(' + menu.ID + ')"    align="right" height="20">' +
                 '</div>' +
-                '<div class="size11">' + menu.History.substring(0,200) + '....<a href="#" ' +
-                'data-toggle="modal" class="size11" data-target="#basicModal" onclick="loadhistory(' + menu.ID + ')"  >Read More</a></div>' +
+                '<div class="size11">' + menu.History.substring(0,200) + '....<span ' +
+                'data-toggle="modal" class="size11 blue" data-target="#basicModal" onclick="loadhistory(' + menu.ID + ')"  >Read More</span></div>' +
                 '</Div>');
     }
 

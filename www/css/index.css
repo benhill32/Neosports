@@ -293,6 +293,10 @@ body {
     top: 40px;
 
 }
+.sponsordiv{
+
+    padding-left: 20px;
+}
 #mainbackground{
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -407,7 +411,10 @@ body {
     font-size:11px;
 
 }
+.blue{
 
+    color: blue;
+}
 .size11 a{
 
     color: #428bca;

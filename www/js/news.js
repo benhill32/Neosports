@@ -92,7 +92,7 @@ function getnewfeed_success(tx, results) {
 
                         '</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
-                        '  <a href="#" data-toggle="modal" class="size11" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</a></div>' +
+                        '  <span data-toggle="modal" class="size11" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
                         '</Div></a>');
                 }
 
@@ -115,7 +115,7 @@ function getnewfeed_success(tx, results) {
 
                         '</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
-                        '  <a href="#" data-toggle="modal" class="size11" data-target="#basicModal"  class="size11" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</a></div>' +
+                        '  <span data-toggle="modal" class="size11 blue" data-target="#basicModal"  class="size11" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
                         '</Div>');
 
                 }
@@ -123,7 +123,7 @@ function getnewfeed_success(tx, results) {
             }
         }else{
 
-            $('#newsmain').append('<Div id="spondiv' + spon2 + '"></div>');
+            $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
 
             spon2++;
             db.transaction(getsponsors, errorCBfunc, successCBfunc);
@@ -159,7 +159,7 @@ function getsponsors_success(tx, results) {
 
      //   alert('#spondiv'+ spon + ' - ' + menu.Website);
 
-        $('#spondiv' + spon).append('<Div  align="center"  >' +
+        $('#spondiv' + spon).append('<Div  align="left"  >' +
 
             '<a href="http://' + menu.Website + '" target="_blank">' + imgg + '</a></div>');
 
