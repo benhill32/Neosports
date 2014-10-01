@@ -40,14 +40,14 @@ function loadnewtable(){
 }
 
 
-function populateDB1(tx,results) {
-    var row = results.rows.item(0);
-    //alert(row.Count);
-    $('#busy').show();
+
+    $('#busy').show();function populateDB1(tx,results) {
+        var row = results.rows.item(0);
+        //alert(row.Count);
     if(row.Count ==0){
            var token = randfunc() + randfunc() + randfunc() + randfunc();
 
-        blankLastUpdatesec(token);
+       blankLastUpdatesec(token);
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{

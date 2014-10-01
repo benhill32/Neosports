@@ -5,13 +5,6 @@ var IDhist = 0;
 var IDcon = 0;
 var spon= 1;
 var spon2= 1;
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCBfunc, successCBfunc);
-}
 
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
@@ -48,10 +41,6 @@ function getClubID_success(tx, results) {
         clubidtop = menu.ID;
         db.transaction(getdata2, errorCBfunc, successCBfunc);
      }else{
-
-
-
-
 
         showclubsfun();
     }
