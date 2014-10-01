@@ -112,18 +112,13 @@ function getchecksync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-
-
-
         $('#busy').show();
         xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + datenowsecsync,false);
         xmlHttp.send();
 
-
         var json = xmlHttp.responseText;
 
         var obj = JSON.parse(json);
-
 
         //if(datemenus != datenow) {
         if(datemenus != datemenus) {
@@ -131,7 +126,6 @@ function getchecksync(tx, results) {
         }
 
         syncmaintables(obj);
-
 
         if(document.getElementById("settingsync")!=null){
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
