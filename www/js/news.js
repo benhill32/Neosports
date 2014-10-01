@@ -49,7 +49,11 @@ function getClubID_success(tx, results) {
         db.transaction(getdata2, errorCBfunc, successCBfunc);
      }else{
 
-        alert("need fav team");
+
+
+
+
+        showclubsfun();
     }
 
 }
@@ -203,4 +207,43 @@ function loadnewfeed_success(tx, results) {
 
 }
 
+function choosefacteam(ID){
+
+    clearfavteam();
+
+    addfavteam(ID);
+
+    db.transaction(getdatanews, errorCBfunc, successCBfunc);
+}
+
+function getclubsfav(tx) {
+    var sql = "select ID,_id ,name,UpdateDateUTC ,Base64,History,Contacts,UpdateSecondsUTC,Color from MobileApp_clubs order by name";
+    //alert(sql);
+    tx.executeSql(sql, [], getclubsfav_success);
+}
+
+
+function getclubsfav_success(tx, results) {
+    $('#busy').hide();
+    var len = results.rows.length;
+//alert(len);
+    for (var i=0; i<len; i++) {
+        var menu = results.rows.item(i);
+        var imgg = "";
+
+
+        $('#clubfav').append('<Div class="modal-body"  data-dismiss="modal" align="left" style="border-bottom: 1px solid #e5e5e5;" onclick="choosefacteam('+ menu.ID + ')"  >' +
+            '<div class="bold size13"   >' + menu.name  +
+            '</div>' +
+            '</Div>');
+    }
+
+}
+
+function showclubsfun(){
+
+    db.transaction(getclubsfav, errorCBfunc, successCBfunc);
+    $('#basicModalteams').modal('show');
+
+}
 

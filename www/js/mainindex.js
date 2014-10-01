@@ -114,10 +114,10 @@ function choosefacteam(ID){
 
 function showclubsfun(){
 
-
+    db.transaction(getclubsfav, errorCBfunc, successCBfunc);
     $('#basicModalteams').modal('show');
 
-    db.transaction(getclubsfav, errorCBfunc, successCBfunc);
+
     $('#mainfore').removeClass('mainforeground');
     $('#mainfore').addClass('mainforeground2');
 
