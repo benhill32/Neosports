@@ -1,7 +1,15 @@
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-db.transaction(checkfavteam, errorCBfunc, successCBfunc);
-db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
+function onDeviceReady() {
+    db.transaction(checkfavteam, errorCBfunc, successCBfunc);
+    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+}
+
+
 
 
 
@@ -32,10 +40,10 @@ function checkfavteam_success(tx, results) {
         $("#divclearfav").css('color', '#333');
     }
 
-   // var stringapp = device.model;
+    var stringapp = device.uuid;
 
-   //$("#deviceid").empty();
-   // $("#deviceid").append(stringapp);
+   $("#deviceid").empty();
+   $("#deviceid").append(stringapp);
 
 }
 function syncnewdata(){
