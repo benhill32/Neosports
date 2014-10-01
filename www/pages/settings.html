@@ -23,7 +23,11 @@
 
 
     <script  type="text/javascript">
-    document.addEventListener("deviceready", onDeviceReady, false);
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+
     function onDeviceReady() {
         alert(device.cordova);
     }
