@@ -105,8 +105,9 @@ function getchecksync(tx, results) {
         dif = 100000000;
     }
 
+    alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
-    if(dif >= "600000") {
+    if(dif >= "600") {
 
 
         var xmlHttp = null;

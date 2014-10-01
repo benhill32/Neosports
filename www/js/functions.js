@@ -141,6 +141,7 @@ function syncmaintables(obj){
     var timenow = datenow.getTime();
 
 
+
     $.each(obj.App_Results, function (idx, obj) {
         db.transaction(function (tx) {
 
