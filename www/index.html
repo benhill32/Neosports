@@ -46,12 +46,17 @@
     <script type="text/javascript" src="js/CreateOpenDB.js"></script>
         <script type="text/javascript" src="js/mainindex.js"></script>
         <script type="text/javascript" src="js/loaddata.js"></script>
-
+        <script type="text/javascript" src="cordova.js"></script>
 
         <script type="text/javascript">
     refreshdata();
 
-</script>
+   // var phoneName = window.device.name;
+    var phoneName = device.name;
+
+    alert(phoneName);
+
+        </script>
 <style>
     .modal-footer{
 
