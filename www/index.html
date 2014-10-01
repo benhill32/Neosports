@@ -46,17 +46,30 @@
     <script type="text/javascript" src="js/CreateOpenDB.js"></script>
         <script type="text/javascript" src="js/mainindex.js"></script>
         <script type="text/javascript" src="js/loaddata.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"  charset="utf-8"></script>
 
-        <script type="text/javascript">
+        <script type="text/javascript"  charset="utf-8">
     refreshdata();
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    alert("dsadasd");
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                'Device Cordova: '  + device.cordova + '<br />' +
+                'Device Platform: ' + device.platform + '<br />' +
+                'Device UUID: '     + device.uuid     + '<br />' +
+                'Device Model: '    + device.model     + '<br />' +
+                'Device Version: '  + device.version  + '<br />';
+
+
+
+    }
 
     alert("dsadasd");
-    var phoneName = window.device.name;
-    var phoneName = device.name;
-    alert("dsadasd");
-
-    alert(phoneName);
 
         </script>
 <style>
@@ -171,6 +184,7 @@
 
     </div>
     </div>
+    <p id="deviceProperties">Loading device properties...</p>
 
     <div class="footer" data-toggle="modal" data-target="#basicModalteams">
         <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
