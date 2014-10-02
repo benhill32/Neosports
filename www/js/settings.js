@@ -9,10 +9,6 @@ function onDeviceReady() {
     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 }
 
-
-
-
-
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
    //  alert(sql);

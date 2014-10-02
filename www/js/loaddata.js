@@ -200,7 +200,7 @@ function onclicksyncloaddata2(tx){
 
 
     var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-    // alert(sql);
+     alert(sql);
 
     alert(row.syncwifi + " - " + networkconnection);
 
