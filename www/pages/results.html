@@ -25,7 +25,10 @@
         });
 
 
-                refreshdata();
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            refreshdata();
+        }
 
 
     </script>

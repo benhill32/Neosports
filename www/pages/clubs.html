@@ -15,7 +15,10 @@
     <script type="text/javascript" src="../js/loaddata.js"></script>
 
     <script type="text/javascript">
-        refreshdata();
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            refreshdata();
+        }
     </script>
 
 
