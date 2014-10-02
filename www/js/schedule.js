@@ -19,8 +19,8 @@ function onDeviceReady() {
 }
 
 function getgeolocation(position) {
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
+   // lat = position.coords.latitude;
+   // long = position.coords.longitude;
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 }
@@ -244,7 +244,7 @@ function loadinfo_success2(tx, results) {
 
         $('#Directions').show();
         $("#Directions").click(function(){
-            window.location = "https://www.google.co.nz/maps/dir" + lat + "," + long + "/" + menu.Latitude + "," + menu.Longitude
+            window.location = "https://www.google.co.nz/maps/dir/Current+Location/" + menu.Latitude + "," + menu.Longitude
         });
 
 
@@ -256,7 +256,7 @@ function loadinfo_success2(tx, results) {
 
         $('#Directions').show();
         $("#Directions").click(function(){
-            window.location = "https://www.google.co.nz/maps/dir" + lat + "," + long + "/" + menu.Latitude + "," + menu.Longitude
+            window.location = "https://www.google.co.nz/maps/dir/Current+Location/" + menu.Latitude + "," + menu.Longitude
         });
         $('#remind').show();
 
