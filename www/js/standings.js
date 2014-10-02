@@ -30,9 +30,21 @@ function getstandings_success(tx, results) {
     var len = results.rows.length;
 //alert(orientationstand);
     $('#divstandings').empty();
+    $('#divstandings').append('<Div align="left" id="divmenustandings" style="float: left;" ></Div>');
+
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
     if (orientationstand == "landscape") {
+        $('#divmenustandings').append('<Div  class="standheaderteam" >Team name</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >P</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >W</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >D</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >L</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >F</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >A</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >GD</Div>');
+        $('#divmenustandings').append('<Div  class="standheader" >PTS</Div>');
+
     $('#divstandings').append('<Div align="left" id="idgamesp" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="left" id="idgamesW" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="left" id="idgamesD" class="score1"  style="float: left;" ></Div>');
@@ -43,25 +55,21 @@ function getstandings_success(tx, results) {
     $('#divstandings').append('<Div align="right" id="idgamesFP" class="score1"  style="float: left;" ></Div>');
     }
     if (orientationstand == "portrait") {
+        $('#divmenustandings').append('<Div  class="standheaderteam" >Team name</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2" >P</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2" >W</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2" >D</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2" >L</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2" >PTS</Div>');
+
         $('#divstandings').append('<Div align="left" id="idgamesp" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesW" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesD" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesL" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="right" id="idgamesFP" class="score2"  style="float: left;" ></Div>');
 
-
-
-
     }
-    $('#idteamname').append('<Div  class="standheader" >Team name</Div>');
-    $('#idgamesp').append('<Div  class="standheader" >P</Div>');
-    $('#idgamesW').append('<Div  class="standheader" >W</Div>');
-    $('#idgamesD').append('<Div  class="standheader" >D</Div>');
-    $('#idgamesL').append('<Div  class="standheader" >L</Div>');
-    $('#idgamesF').append('<Div  class="standheader" >F</Div>');
-    $('#idgamesA').append('<Div  class="standheader" >A</Div>');
-    $('#idgamesGD').append('<Div  class="standheader" >GD</Div>');
-    $('#idgamesFP').append('<Div  class="standheader" >PTS</Div>');
+
 
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);

@@ -139,11 +139,40 @@ body {
    // padding:8px;
     text-align: left;
 }
+.standheaderteam{
+    width: 40%;
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    background-color: lightgray;
+    float:left;
+    padding:10px;
+    border-right:1px solid lightgray;
+}
 .standheader{
+
     border-bottom: 1px solid lightgray;
     text-align: center;
     padding:10px;
     background-color: lightgray;
+    float:left;
+    width:7.5%;
+    border-right:1px solid lightgray;
+}
+.standheader2{
+
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+    padding:10px;
+    background-color: lightgray;
+    float:left;
+    width:12%;
+    border-right:1px solid lightgray;
+}
+#divmenustandings{
+
+    width:100%;
+    clear:both;
+    position: fixed;
 }
 .score1{
     width:7.5%;
@@ -152,6 +181,8 @@ body {
     text-align: center;
  //   padding-top:8px;
     padding-bottom: 8px;
+
+
 }
 
 .score2{
