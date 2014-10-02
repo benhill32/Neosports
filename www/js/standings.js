@@ -4,13 +4,21 @@ var id = getUrlVarsfunc()["id"];
 var orientation = 0;
 document.addEventListener("deviceready", onDeviceReadystand(0), false);
 
-function onDeviceReadystand(str) {
+function onDeviceReadystand() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(getstandings, errorCBfunc, successCBfunc);
-    orientation = str;
+
 
 }
+
+
+function getorient(strorein){
+    alert(strorein);
+    orientation = strorein;
+    db.transaction(getstandings, errorCBfunc, successCBfunc);
+}
+
 
 
 
