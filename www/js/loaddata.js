@@ -199,22 +199,8 @@ function onclicksyncloaddata(){
 function onclicksyncloaddata2(tx){
 
 
-    var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-     alert(sql);
-
-    alert(row.syncwifi + " - " + networkconnection);
-
-    if(row.syncwifi ==1 && networkconnection==2){
-        tx.executeSql(sql, [], onclickresync,errorCBfunc);
-      alert("sync");
-    }else if(row.syncwifi ==0){
-        tx.executeSql(sql, [], onclickresync,errorCBfunc);
-        alert("sync");
-    }else{
-        $('#busy').hide();
-        alert("no sync");
-    }
-
+    var sql = "select Datesecs,datemenus,syncwifi from MobileApp_LastUpdatesec";
+    tx.executeSql(sql, [], onclickresync,errorCBfunc);
 
 }
 
@@ -222,13 +208,23 @@ function onclicksyncloaddata2(tx){
 
 
 function onclickresync(tx, results) {
+
     $('#busy').hide();
+    var row = results.rows.item(0);
+
+    alert(row.syncwifi + " - " + networkconnection);
+
+    if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
+
+
+
+
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
 
         loadindexmessage();
     }
-    var row = results.rows.item(0);
+
     var datemenus= row.datemenus;
     var datenowsecsync = row.Datesecs;
 
@@ -260,7 +256,10 @@ function onclickresync(tx, results) {
     if(document.getElementById("settingsync")!=null){
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
     }
-
+    }else{
+        $('#busy').hide();
+        alert("no sync");
+    }
 }
 
 
