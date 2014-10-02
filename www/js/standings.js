@@ -15,7 +15,7 @@ function onDeviceReadystand() {
 
 function getorient(strorein){
     orientationstand = strorein;
-    alert(orientationstand);
+  //  alert(orientationstand);
     db.transaction(getstandings, errorCBfunc, successCBfunc);
 }
 
@@ -28,7 +28,7 @@ function getstandings(tx) {
 function getstandings_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-alert(orientationstand);
+//alert(orientationstand);
     $('#divstandings').empty();
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
