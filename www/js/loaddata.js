@@ -12,9 +12,27 @@ var datenow = (day + '' + month+ '' + year);
 var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
+var networkState= "";
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// Cordova is ready
+//
+
+function onDeviceReady() {
 
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
+
+   networkState = navigator.connection.type;
+    alert(networkState);
+}
+
+
+
+
+
+
+
 
 function refreshdata(){
 

@@ -42,8 +42,9 @@
         <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <script type="text/javascript" src="Bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="cordova.js"  charset="utf-8"></script>
         <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/CreateOpenDB.js"></script>
+        <script type="text/javascript" src="js/CreateOpenDB.js"></script>
         <script type="text/javascript" src="js/mainindex.js"></script>
         <script type="text/javascript" src="js/loaddata.js"></script>
         <script type="text/javascript" src="cordova.js"  charset="utf-8"></script>
@@ -65,7 +66,7 @@
                 'Device Model: '    + device.model     + '<br />' +
                 'Device Version: '  + device.version  + '<br />';
 
-        var networkState = navigator.connection.type;
+            var networkState = navigator.connection.type;
 
         var states = {};
         states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -76,7 +77,7 @@
         states[Connection.CELL_4G]  = 'Cell 4G connection';
         states[Connection.NONE]     = 'No network connection';
 
-        alert('Connection type: ' + states[networkState]);
+       // alert('Connection type: ' + states[networkState]);
 
 
     }
