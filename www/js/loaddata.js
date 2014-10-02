@@ -13,12 +13,12 @@ var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
 //
 
-function onDeviceReady() {
+function onDeviceReadyloaddata() {
 
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
@@ -27,16 +27,18 @@ function onDeviceReady() {
 
     var states = {};
     states[Connection.UNKNOWN]  = '0';
-    states[Connection.ETHERNET] = '1';
-    states[Connection.WIFI]     = '1';
-    states[Connection.CELL_2G]  = '0';
-    states[Connection.CELL_3G]  = '0';
-    states[Connection.CELL_4G]  = '0';
+    states[Connection.ETHERNET] = '2';
+    states[Connection.WIFI]     = '2';
+    states[Connection.CELL_2G]  = '1';
+    states[Connection.CELL_3G]  = '1';
+    states[Connection.CELL_4G]  = '1';
     states[Connection.NONE]     = '0';
 
     networkconnection = states[networkState];
 
-     alert(networkconnection);
+
+
+
 }
 
 
@@ -71,7 +73,9 @@ function loadnewtable(){
 
 
 
-    $('#busy').show();function populateDB1(tx,results) {
+
+
+function populateDB1(tx,results) {
         var row = results.rows.item(0);
         //alert(row.Count);
     if(row.Count ==0){
@@ -82,7 +86,19 @@ function loadnewtable(){
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-        tx.executeSql(sql, [], getchecksync,errorCBfunc);
+
+        alert(networkconnection);
+        if(row.syncwifi ==1 && networkconnection==2){
+            tx.executeSql(sql, [], getchecksync,errorCBfunc);
+            alert("sync");
+        }else if(row.syncwifi ==0){
+            tx.executeSql(sql, [], getchecksync,errorCBfunc);
+            alert("sync");
+        }else{
+
+            alert("no sync");
+        }
+
 
     }
 
@@ -91,7 +107,7 @@ function loadnewtable(){
 
 function populateDB(tx){
     $('#busy').show();
-    var sql = "select Count(Datesecs) as Count from MobileApp_LastUpdatesec";
+    var sql = "select Count(Datesecs) as Count,syncwifi from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
 }
@@ -117,7 +133,7 @@ function getchecksync(tx, results) {
     $('#busy').hide();
     var row = results.rows.item(0);
 
-if(row.syncwifi)
+
 
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
@@ -169,6 +185,8 @@ if(row.syncwifi)
         if(document.getElementById("settingsync")!=null){
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
+
+
     }
 }
 
@@ -183,7 +201,19 @@ function onclicksyncloaddata2(tx){
 
     var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
     // alert(sql);
-    tx.executeSql(sql, [], onclickresync,errorCBfunc);
+
+    alert(networkconnection);
+    if(row.syncwifi ==1 && networkconnection==2){
+        tx.executeSql(sql, [], onclickresync,errorCBfunc);
+        alert("sync");
+    }else if(row.syncwifi ==0){
+        tx.executeSql(sql, [], onclickresync,errorCBfunc);
+        alert("sync");
+    }else{
+
+        alert("no sync");
+    }
+
 
 }
 
