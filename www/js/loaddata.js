@@ -87,7 +87,7 @@ function populateDB1(tx,results) {
     }else{
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
 
-
+alert(row.syncwifi + " - " + networkconnection);
         if(row.syncwifi ==1 && networkconnection==2){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
        //     alert("sync");
