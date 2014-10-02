@@ -1,3 +1,22 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+var deviceIDfunc;
+var devicemodelfunc;
+var deviceCordovafunc;
+var devicePlatformfunc;
+var deviceVersionfunc;
+var databaseversion;
+var appversion = -1;
+
+function onDeviceReady() {
+    deviceIDfunc = device.uuid;
+    devicemodelfunc = device.model;
+    deviceCordovafunc = device.cordova;
+    devicePlatformfunc = device.platform;
+    deviceVersionfunc = device.version;
+    databaseversion = db.database_version;
+}
+
 
 
 function weblink(htmllink){
@@ -85,10 +104,26 @@ function getUrlVarsfunc() {
     return vars;
 }
 
-function blankLastUpdatesec(token){
+function blankLastUpdatesec(){
+
+
+
+
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+
+    $('#busy').show();
+    xmlHttp.open("GET", 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion,false);
+    xmlHttp.send();
+    alert('http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion);
+    var json = xmlHttp.responseText;
+
+
+alert(json)
+
 
     db.transaction(function(tx) {
-        tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub,fliterON) VALUES ("0", "0",0,0,"' + token + '",0,0)');
+        tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub,fliterON) VALUES ("0", "0",0,0,"' + json + '",0,0)');
         console.log("INSERT INTO MobileApp_LastUpdatesec");
     });
 

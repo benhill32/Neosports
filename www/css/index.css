@@ -102,6 +102,14 @@ body {
      padding:10px;
 
  }
+.floatleftsettings{
+    float:left;
+    width:50%;
+
+
+}
+
+
 .floatleft3{
 
     float:left;
@@ -311,7 +319,7 @@ body {
 
 }
 .mainmenuwifi{
-    height: 80px;
+    height: 60px;
     text-align: left;
     background-color: #ffffff;
     border-bottom: 1px solid gray;

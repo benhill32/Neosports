@@ -66,10 +66,10 @@ function refreshdata(){
 function loadnewtable(){
     $('#busy').show();
 
-    var token = randfunc() + randfunc() + randfunc() + randfunc();
-    golbaltoken = token;
 
-    blankLastUpdatesec(token);
+  //  golbaltoken = token;
+
+    blankLastUpdatesec();
 
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
 
@@ -86,9 +86,9 @@ function populateDB1(tx,results) {
         var row = results.rows.item(0);
         //alert(row.Count);
     if(row.Count ==0){
-           var token = randfunc() + randfunc() + randfunc() + randfunc();
 
-       blankLastUpdatesec(token);
+
+       blankLastUpdatesec();
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
