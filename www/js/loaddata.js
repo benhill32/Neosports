@@ -85,12 +85,16 @@ function passdatatoserver(){
 
 function getchecksync(tx, results) {
     $('#busy').hide();
+    var row = results.rows.item(0);
+
+if(row.syncwifi)
+
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
 
         loadindexmessage();
     }
-        var row = results.rows.item(0);
+
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
 
@@ -98,6 +102,9 @@ function getchecksync(tx, results) {
         var timenow = datenow.getTime();
 
         var dif = (timenow/1000)-(datenowsecsync);
+
+
+
 
 
     // forcing sync from new page
