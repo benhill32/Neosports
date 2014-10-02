@@ -76,6 +76,7 @@ function loadnewtable(){
 
 
 function populateDB1(tx,results) {
+    onDeviceReadyloaddata();
         var row = results.rows.item(0);
         //alert(row.Count);
     if(row.Count ==0){
@@ -88,12 +89,9 @@ function populateDB1(tx,results) {
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
 
 alert(row.syncwifi + " - " + networkconnection);
-        if(row.syncwifi ==1 && networkconnection==2){
+
+        if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
-       //     alert("sync");
-        }else if(row.syncwifi ==0){
-            tx.executeSql(sql, [], getchecksync,errorCBfunc);
-       //     alert("sync");
         }else{
             $('#busy').hide();
            alert("no sync");
@@ -197,7 +195,7 @@ function onclicksyncloaddata(){
 }
 
 function onclicksyncloaddata2(tx){
-
+    onDeviceReadyloaddata();
 
     var sql = "select Datesecs,datemenus,syncwifi from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
