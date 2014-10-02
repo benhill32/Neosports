@@ -10,12 +10,6 @@ function onDeviceReady() {
 
 }
 
-
-
-
-
-
-
 function getstandings(tx) {
 
     var sql = "select _id,Games,Won,Drawn,Lost,ForScore,AgainstScore,Difference,ClubID,Name,TournamentID,FlagPoints,UpdateDateUTC ,TournamentName from MobileStandings where TournamentID = '" + id + "'  order by Won DESC";
