@@ -28,9 +28,9 @@
 
         }
         $( window ).on( "orientationchange", function( event ) {
-            orientation = event.orientation;
-            alert(orientation);
-            onDeviceReadystand();
+           // orientation = event.orientation;
+           // alert(orientation);
+            onDeviceReadystand(event.orientation);
         });
         // You can also manually force this event to fire.
         $( window ).orientationchange();
