@@ -7,23 +7,17 @@ document.addEventListener("deviceready", onDeviceReadystand(0), false);
 function onDeviceReadystand() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getstandings, errorCBfunc, successCBfunc);
+   // db.transaction(getstandings, errorCBfunc, successCBfunc);
 
 
 }
 
 
 function getorient(strorein){
-    alert(strorein);
     orientation = strorein;
+    alert(orientation);
     db.transaction(getstandings, errorCBfunc, successCBfunc);
 }
-
-
-
-
-
-
 
 function getstandings(tx) {
 
@@ -34,7 +28,7 @@ function getstandings(tx) {
 function getstandings_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-//alert(len);
+alert(orientation);
     $('#divstandings').empty();
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
