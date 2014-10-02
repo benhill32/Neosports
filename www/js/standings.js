@@ -2,7 +2,7 @@ var db;
 var dbCreated = false;
 var id = getUrlVarsfunc()["id"];
 var orientation = 0;
-document.addEventListener("deviceready", onDeviceReadystand(0), false);
+document.addEventListener("deviceready", onDeviceReadystand(), false);
 
 function onDeviceReadystand() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
