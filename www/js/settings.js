@@ -9,6 +9,10 @@ function onDeviceReady() {
     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 }
 
+
+//https://www.google.co.nz/maps/dir/
+
+
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
    //  alert(sql);

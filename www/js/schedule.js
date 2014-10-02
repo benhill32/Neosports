@@ -14,16 +14,15 @@ function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     navigator.geolocation.getCurrentPosition(getgeolocation, onError);
-    db.transaction(getfliter, errorCBfunc, successCBfunc);
+
 
 }
 
-
 function getgeolocation(position) {
- lat = position.coords.latitude;
+    lat = position.coords.latitude;
     long = position.coords.longitude;
+    db.transaction(getfliter, errorCBfunc, successCBfunc);
 
-   alert(lat + " - " + long);
 }
 
 
@@ -31,11 +30,6 @@ function onError(error) {
     alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
 }
-
-
-
-
-
 
 function allowfilter(id){
 
@@ -249,12 +243,21 @@ function loadinfo_success2(tx, results) {
         $('#score').empty().append('<Div><hr><a href="scorecard.html?ID=' + menu.ID + '">Score Card</a></div>');
 
         $('#Directions').show();
+        $("#Directions").click(function(){
+            window.location = "https://www.google.co.nz/maps/dir" + lat + "," + long + "/" + menu.Latitude + "," + menu.Longitude
+        });
+
+
         $('#remind').hide();
 
     }else{
 
         $('#score').hide();
+
         $('#Directions').show();
+        $("#Directions").click(function(){
+            window.location = "https://www.google.co.nz/maps/dir" + lat + "," + long + "/" + menu.Latitude + "," + menu.Longitude
+        });
         $('#remind').show();
 
     }
