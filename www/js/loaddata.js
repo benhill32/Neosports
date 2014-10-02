@@ -13,7 +13,7 @@ var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
-
+var deviceIDfunc;
 
 
 
@@ -26,7 +26,7 @@ function onDeviceReadyloaddata() {
 
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-
+    deviceIDfunc = device.uuid;
     getnetworkdetails();
 
 
@@ -92,7 +92,7 @@ function populateDB1(tx,results) {
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
-        var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
+        var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
 //alert(row.syncwifi + " - " + networkconnection);
 
@@ -138,7 +138,6 @@ function getchecksync(tx, results) {
     var row = results.rows.item(0);
 
 
-
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
 
@@ -152,9 +151,6 @@ function getchecksync(tx, results) {
         var timenow = datenow.getTime();
 
         var dif = (timenow/1000)-(datenowsecsync);
-
-
-
 
 
     // forcing sync from new page
@@ -172,7 +168,7 @@ function getchecksync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + menu.token + '&sec=' + datenowsecsync,false);
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
@@ -203,7 +199,7 @@ function onclicksyncloaddata(){
 function onclicksyncloaddata2(tx){
     getnetworkdetails();
 
-    var sql = "select Datesecs,datemenus,syncwifi from MobileApp_LastUpdatesec";
+    var sql = "select Datesecs,datemenus,syncwifi,token,isadmin from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
 
 }
@@ -220,7 +216,7 @@ function onclickresync(tx, results) {
 
     if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
 
-
+    alert(row.isadmin);
 
 
     // only runs while on the index.html page.
@@ -241,7 +237,8 @@ function onclickresync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?sec=' + (datenowsecsync),false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + menu.token + '&sec=' + datenowsecsync,false);
+
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
