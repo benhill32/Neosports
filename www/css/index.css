@@ -145,12 +145,31 @@ body {
     padding:10px;
     background-color: lightgray;
 }
-#idgamesp,#idgamesW,#idgamesD,#idgamesL,#idgamesFP{
-    width:12%;
+.score1{
+    width:7.5%;
     border-right:1px solid lightgray;
   // padding:8px;
     text-align: center;
+ //   padding-top:8px;
+    padding-bottom: 8px;
+}
 
+.score2{
+    width:12%;
+    border-right:1px solid lightgray;
+// padding:8px;
+    text-align: center;
+  //  padding-top:8px;
+    padding-bottom: 8px;
+
+}
+
+.score3{
+
+    padding-right:2px;
+    padding-left:2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 .standfooter{
 

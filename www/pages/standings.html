@@ -16,13 +16,25 @@
     <script type="text/javascript" src="../Bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="../cordova.js"  charset="utf-8"></script>
     <script type="text/javascript" src="../js/functions.js"></script>
-    <script type="text/javascript" src="../js/standings.js"></script>
+
     <script type="text/javascript" src="../js/loaddata.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/standings.js"></script>
+
     <script type="text/javascript">
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             refreshdata();
         }
+
+        $( window ).on( "orientationchange", function( event ) {
+            orientation = event.orientation;
+          //  alert(orientation);
+            db.transaction(getstandings, errorCBfunc, successCBfunc);
+        });
+        // You can also manually force this event to fire.
+        $( window ).orientationchange();
+
     </script>
 </head>
 <body>
