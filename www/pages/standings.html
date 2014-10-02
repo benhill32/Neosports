@@ -29,7 +29,7 @@
 
         $( window ).on( "orientationchange", function( event ) {
             orientation = event.orientation;
-          //  alert(orientation);
+           alert(event.orientation);
             db.transaction(getstandings, errorCBfunc, successCBfunc);
         });
         // You can also manually force this event to fire.
