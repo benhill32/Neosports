@@ -4,13 +4,13 @@ var id = getUrlVars()["id"];
 var clubidtop =0;
 var listfollow = 0;
 var fliter = 0;
+document.addEventListener("deviceready", onDeviceReady, false);
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-//db.transaction(getdata, errorCBfunc, successCBfunc);
-
-db.transaction(getfliter, errorCBfunc, successCBfunc);
-
+function onDeviceReady() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
+    db.transaction(getfliter, errorCBfunc, successCBfunc);
+}
 
 function allowfilter(id){
 
