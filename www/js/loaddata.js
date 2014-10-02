@@ -23,6 +23,11 @@ function onDeviceReadyloaddata() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
 
+    getnetworkdetails();
+}
+
+function getnetworkdetails(){
+
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -35,12 +40,7 @@ function onDeviceReadyloaddata() {
     states[Connection.NONE]     = '0';
 
     networkconnection = states[networkState];
-
-
-
-
 }
-
 
 
 
@@ -76,7 +76,7 @@ function loadnewtable(){
 
 
 function populateDB1(tx,results) {
-    onDeviceReadyloaddata();
+    getnetworkdetails();
         var row = results.rows.item(0);
         //alert(row.Count);
     if(row.Count ==0){
@@ -88,13 +88,13 @@ function populateDB1(tx,results) {
     }else{
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
 
-alert(row.syncwifi + " - " + networkconnection);
+//alert(row.syncwifi + " - " + networkconnection);
 
         if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#busy').hide();
-           alert("no sync");
+         //  alert("no sync");
         }
 
 
@@ -195,7 +195,7 @@ function onclicksyncloaddata(){
 }
 
 function onclicksyncloaddata2(tx){
-    onDeviceReadyloaddata();
+    getnetworkdetails();
 
     var sql = "select Datesecs,datemenus,syncwifi from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
@@ -210,7 +210,7 @@ function onclickresync(tx, results) {
     $('#busy').hide();
     var row = results.rows.item(0);
 
-    alert(row.syncwifi + " - " + networkconnection);
+   // alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
 
