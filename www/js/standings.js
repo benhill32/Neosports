@@ -1,7 +1,7 @@
 var db;
 var dbCreated = false;
 var id = getUrlVarsfunc()["id"];
-var orientation = 0;
+var orientationstand = "";
 document.addEventListener("deviceready", onDeviceReadystand(), false);
 
 function onDeviceReadystand() {
@@ -14,8 +14,8 @@ function onDeviceReadystand() {
 
 
 function getorient(strorein){
-    orientation = strorein;
-    alert(orientation);
+    orientationstand = strorein;
+    alert(orientationstand);
     db.transaction(getstandings, errorCBfunc, successCBfunc);
 }
 
@@ -28,11 +28,11 @@ function getstandings(tx) {
 function getstandings_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-alert(orientation);
+alert(orientationstand);
     $('#divstandings').empty();
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
-    if (orientation == "landscape") {
+    if (orientationstand == "landscape") {
     $('#divstandings').append('<Div align="left" id="idgamesp" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="left" id="idgamesW" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="left" id="idgamesD" class="score1"  style="float: left;" ></Div>');
@@ -42,7 +42,7 @@ alert(orientation);
     $('#divstandings').append('<Div align="left" id="idgamesGD" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="right" id="idgamesFP" class="score1"  style="float: left;" ></Div>');
     }
-    if (orientation == "portrait") {
+    if (orientationstand == "portrait") {
         $('#divstandings').append('<Div align="left" id="idgamesp" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesW" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesD" class="score2"  style="float: left;" ></Div>');
