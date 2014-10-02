@@ -13,6 +13,10 @@ var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
+
+
+
+
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
@@ -24,6 +28,8 @@ function onDeviceReadyloaddata() {
     console.log("LOCALDB - Database ready");
 
     getnetworkdetails();
+
+
 }
 
 function getnetworkdetails(){

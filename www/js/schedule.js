@@ -5,20 +5,34 @@ var id = getUrlVars()["id"];
 var clubidtop =0;
 var listfollow = 0;
 var fliter = 0;
+var lat = 0;
+var long = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCBfunc, successCBfunc);
+    navigator.geolocation.getCurrentPosition(getgeolocation, onError);
+    db.transaction(getfliter, errorCBfunc, successCBfunc);
+
 }
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
 
-//db.transaction(getdata, errorCBfunc, successCBfunc);
 
-db.transaction(getfliter, errorCBfunc, successCBfunc);
+function getgeolocation(position) {
+ lat = position.coords.latitude;
+    long = position.coords.longitude;
+
+   alert(lat + " - " + long);
+}
+
+
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+        'message: ' + error.message + '\n');
+}
+
+
 
 
 
