@@ -17,7 +17,7 @@ function onDeviceReady() {
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 }
-db.transaction(getfliter, errorCBfunc, successCBfunc);
+//db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function getgeolocation(position) {
    // lat = position.coords.latitude;
