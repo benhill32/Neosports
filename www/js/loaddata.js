@@ -87,16 +87,16 @@ function populateDB1(tx,results) {
     }else{
         var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
 
-        alert(networkconnection);
+
         if(row.syncwifi ==1 && networkconnection==2){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
-            alert("sync");
+       //     alert("sync");
         }else if(row.syncwifi ==0){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
-            alert("sync");
+       //     alert("sync");
         }else{
-
-            alert("no sync");
+            $('#busy').hide();
+       //     alert("no sync");
         }
 
 
@@ -202,16 +202,16 @@ function onclicksyncloaddata2(tx){
     var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
     // alert(sql);
 
-    alert(networkconnection);
+
     if(row.syncwifi ==1 && networkconnection==2){
         tx.executeSql(sql, [], onclickresync,errorCBfunc);
-        alert("sync");
+     //   alert("sync");
     }else if(row.syncwifi ==0){
         tx.executeSql(sql, [], onclickresync,errorCBfunc);
-        alert("sync");
+       // alert("sync");
     }else{
-
-        alert("no sync");
+        $('#busy').hide();
+      //  alert("no sync");
     }
 
 
