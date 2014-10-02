@@ -96,7 +96,7 @@ function populateDB1(tx,results) {
        //     alert("sync");
         }else{
             $('#busy').hide();
-       //     alert("no sync");
+           alert("no sync");
         }
 
 
@@ -205,13 +205,13 @@ function onclicksyncloaddata2(tx){
 
     if(row.syncwifi ==1 && networkconnection==2){
         tx.executeSql(sql, [], onclickresync,errorCBfunc);
-     //   alert("sync");
+      alert("sync");
     }else if(row.syncwifi ==0){
         tx.executeSql(sql, [], onclickresync,errorCBfunc);
-       // alert("sync");
+        alert("sync");
     }else{
         $('#busy').hide();
-      //  alert("no sync");
+        alert("no sync");
     }
 
 
