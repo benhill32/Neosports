@@ -21,7 +21,14 @@
     <script type="text/javascript" src="../js/CreateOpenDB.js"></script>
     <script type="text/javascript" src="../js/settings.js"></script>
 
+<style>
+    #btn1,#btn2{
 
+        padding:10px;
+
+    }
+
+</style>
 
 
 </head>
@@ -41,16 +48,20 @@
     </div>
 </div>
 <div class="container-fluid">
-<Div class="mainmenusettings" align="left" >
-    <strong>Mobile Data</strong>
-
-    <div class="btn-group btn-toggle" style="padding-left: 40px;">
-        <button id="btn1" class="btn btn-xs btn-default"  onclick="chkmobiledata('btn1')">ON</button>
-        <button id="btn2" class="btn btn-xs btn-primary active"   onclick="chkmobiledata('btn2')">OFF</button>
-
-
+<Div class="mainmenuwifi" align="left" >
+    <div class="floatleft">
+        <strong>Mobile Data</strong>
+        <p>Only Sync on Wi-Fi network</p>
     </div>
-    <p>Only Sync on Wi-Fi network</p>
+
+    <div class="floatleft">
+        <div class="btn-group btn-toggle" style="padding-left: 40px;">
+            <button id="btn1" class="btn btn-xs btn-default"  onclick="chkmobiledata('btn1')">ON</button>
+            <button id="btn2" class="btn btn-xs btn-primary active"   onclick="chkmobiledata('btn2')">OFF</button>
+        </div>
+    </div>
+
+
 
 </Div>
 

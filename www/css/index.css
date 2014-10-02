@@ -70,6 +70,8 @@ body {
     vertical-align: middle;
 
 }
+
+
 .imgheader{
 
     height: 20px;
@@ -308,7 +310,24 @@ body {
     clear: both;
 
 }
+.mainmenuwifi{
+    height: 80px;
+    text-align: left;
+    background-color: #ffffff;
+    border-bottom: 1px solid gray;
+    font-size:15px;
+//    margin-bottom: 5px;
+    left:5%;
+//  width:80%;
+    padding:8px;
 
+
+}
+.mainmenuwifi p{
+
+    font-size: 13px;
+    margin-bottom: 0px;
+}
 .mainmenusettings p{
 
     font-size: 13px;
