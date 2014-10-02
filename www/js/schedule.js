@@ -241,25 +241,20 @@ function loadinfo_success2(tx, results) {
 
         $('#score').show();
         $('#score').empty().append('<Div><hr><a href="scorecard.html?ID=' + menu.ID + '">Score Card</a></div>');
-
-        $('#Directions').show();
-        $("#Directions").click(function(){
-            window.open("https://www.google.co.nz/maps/dir/Current+Location/" + menu.Latitude + ",+" + menu.Longitude, "_system")
-        });
-
-
         $('#remind').hide();
 
-    }else{
+    }else {
 
         $('#score').hide();
-
-        $('#Directions').show();
-        $("#Directions").click(function(){
-            window.open("https://www.google.co.nz/maps/dir/Current+Location/" + menu.Latitude + ",+" + menu.Longitude, "_system")
-        });
         $('#remind').show();
 
+    }
+
+    if(menu.Latitude != "null" || menu.Longitude != "null" ) {
+        $('#Directions').show();
+        $("#Directions").click(function () {
+            window.open("https://www.google.co.nz/maps/dir/Current+Location/" + menu.Latitude + ",+" + menu.Longitude, "_system")
+        });
     }
 }
 
