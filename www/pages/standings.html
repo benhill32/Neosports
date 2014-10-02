@@ -25,12 +25,12 @@
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
             refreshdata();
-        }
 
+        }
         $( window ).on( "orientationchange", function( event ) {
             orientation = event.orientation;
-           alert(event.orientation);
-            db.transaction(getstandings, errorCBfunc, successCBfunc);
+            alert(orientation);
+            onDeviceReadystand();
         });
         // You can also manually force this event to fire.
         $( window ).orientationchange();
