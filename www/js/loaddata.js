@@ -168,7 +168,7 @@ function getchecksync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + menu.token + '&sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
@@ -211,12 +211,12 @@ function onclickresync(tx, results) {
 
     $('#busy').hide();
     var row = results.rows.item(0);
-
+  //  alert(row.isadmin);
    // alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
 
-    alert(row.isadmin);
+
 
 
     // only runs while on the index.html page.
@@ -237,7 +237,9 @@ function onclickresync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + menu.token + '&sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+
+    //alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
 
         xmlHttp.send();
 
