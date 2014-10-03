@@ -232,7 +232,7 @@ function loadinfo_success2(tx, results) {
     var d = new Date();
 
    // alert(("0" + (d.getMonth()+1)).slice(-2));
-
+    $('#Directions').hide();
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
         if(isadmin==1) {
             $('#score').show();
