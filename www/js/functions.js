@@ -75,7 +75,7 @@ function successCBfunc() {
     //  alert("success!");
 }
 
-function passdatatoserver(testvar){
+function passscoretoserver(testvar){
 
     var http = new XMLHttpRequest();
     var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
