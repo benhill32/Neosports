@@ -18,15 +18,8 @@ function onDeviceReady() {
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 }
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
 
-function getgeolocation(position) {
-   // lat = position.coords.latitude;
-   // long = position.coords.longitude;
-
-
-}
-
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
@@ -243,7 +236,10 @@ function loadinfo_success2(tx, results) {
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
         if(isadmin==1) {
             $('#score').show();
-            $('#score').empty().append('<Div><hr><a href="scorecard.html?ID=' + menu.ID + '">Score Card</a></div>');
+            $('#score').empty().append('<Div onclick=""><hr>Score Card</div>');
+            $("#score").click(function () {
+                window.open("scorecard.html?ID=" + menu.ID);
+            });
         }
         $('#remind').hide();
 

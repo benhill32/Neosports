@@ -27,7 +27,7 @@ function onDeviceReadyloaddata() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
-    getnetworkdetails();
+  //  getnetworkdetails();
 
 
 }
