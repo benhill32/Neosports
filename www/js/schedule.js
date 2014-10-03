@@ -7,6 +7,7 @@ var listfollow = 0;
 var fliter = 0;
 var lat = 0;
 var long = 0;
+var isadmin = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -68,7 +69,7 @@ function allowfilter(id){
 
 
 function getfliter(tx) {
-    var sql = "select fliterON from MobileApp_LastUpdatesec";
+    var sql = "select fliterON,isadmin from MobileApp_LastUpdatesec";
     //alert(sql);
     tx.executeSql(sql, [], getfliter_success);
 }
@@ -82,6 +83,7 @@ function getfliter_success(tx, results) {
     if(len != 0) {
         var menu = results.rows.item(0);
         fliter = menu.fliterON;
+        isadmin = menu.isadmin;
     }
 
 
@@ -239,9 +241,10 @@ function loadinfo_success2(tx, results) {
    // alert(("0" + (d.getMonth()+1)).slice(-2));
 
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
-
-        $('#score').show();
-        $('#score').empty().append('<Div><hr><a href="scorecard.html?ID=' + menu.ID + '">Score Card</a></div>');
+        if(isadmin==1) {
+            $('#score').show();
+            $('#score').empty().append('<Div><hr><a href="scorecard.html?ID=' + menu.ID + '">Score Card</a></div>');
+        }
         $('#remind').hide();
 
     }else {

@@ -239,14 +239,14 @@ function onclickresync(tx, results) {
         $('#busy').show();
         xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
 
-    alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
+   // alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
 
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
 
         var obj = JSON.parse(json);
-        // alert(obj.vwApp_News_v_2[0].Body);
+        // alert(obj);
 
         //if(datemenus != datenow) {
         if(datemenus != datemenus) {
