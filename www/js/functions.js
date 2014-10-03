@@ -77,10 +77,9 @@ function successCBfunc() {
 
 function passdatatoserver(testvar){
 
-
     var http = new XMLHttpRequest();
     var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
-    var params = "?token=" + gtoken + "&deviceid=" + gdeviceID + testvar;
+    var params = "?" + testvar;
     http.open("POST", url + params, true);
 
     http.onreadystatechange = function() {//Call a function when the state changes.

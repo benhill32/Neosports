@@ -3,14 +3,19 @@ var dbCreated = false;
 var IDhist = 0;
 var id = getUrlVars()["ID"];
 var gtoken =0;
-var gdeviceID = "hdjsadaskjdhkas";
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCBfunc, successCBfunc);
-db.transaction(getscoredata, errorCBfunc, successCBfunc);
+var deviceIDscorecard;
+document.addEventListener("deviceready", onDeviceReady, false);
 
+function onDeviceReady() {
 
+    deviceIDscorecard = device.uuid;
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
+    db.transaction(getdata, errorCBfunc, successCBfunc);
+    db.transaction(getscoredata, errorCBfunc, successCBfunc);
+
+}
 
 function getscoredata(tx) {
     var sql = "select Name,Value,UpdatedateUTC from MobileScoringTable";
@@ -88,9 +93,11 @@ function getscore(team,value){
         });
 
     }
-
+    //update score;
     db.transaction(getdata, errorCBfunc, successCBfunc);
+    //update buttons
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
+    //getting token for sync
     db.transaction(gettoken, errorCBfunc, successCBfunc);
     db.transaction(getscorefromtable,errorCBfunc,successCBfunc);
 
@@ -107,7 +114,7 @@ function getscorefromtable_success(tx, results) {
     var len = results.rows.length;
     var menu = results.rows.item(0);
 
-    passdatatoserver("&gameid=" + menu.ID + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore)
+    passdatatoserver("gameid=" + menu.ID + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken)
 
 }
 
