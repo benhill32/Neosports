@@ -236,7 +236,7 @@ function loadinfo_success2(tx, results) {
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
         if(isadmin==1) {
             $('#score').show();
-            $('#score').empty().append('<Div onclick=""><hr>Score Card</div>');
+            $('#score').empty().append('<Div ><hr>Score Card</div>');
             $("#score").click(function () {
                 window.open("scorecard.html?ID=" + menu.ID);
             });
