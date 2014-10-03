@@ -247,6 +247,7 @@ function loadinfo_success2(tx, results) {
 
         $('#score').hide();
         $('#remind').show();
+        $("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
 
     }
 
@@ -270,8 +271,10 @@ function getUrlVars() {
     return vars;
 }
 
-function addreminder(){
+function addreminder(ID,DatetimeStart){
 
+    alert(ID + " - " + DatetimeStart);
+    
     var startDate = new Date(2014,10,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
     var endDate = new Date(2014,10,15,19,30,0,0,0);
     var title = "My nice event";
