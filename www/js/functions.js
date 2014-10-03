@@ -81,7 +81,7 @@ function passscoretoserver(testvar){
     var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
     var params = "?" + testvar;
     http.open("POST", url + params, true);
-    alert(url + params);
+   // alert(url + params);
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             // alert(http.responseText);
