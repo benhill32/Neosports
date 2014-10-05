@@ -309,7 +309,7 @@ function addreminder(){
 
 function createvarforremind(ID,DatetimeStart){
 
-    alert(ID);
+    alert("create" + ID + " - " +  DatetimeStart);
     remindID = ID;
     reminddate =DatetimeStart;
 }
