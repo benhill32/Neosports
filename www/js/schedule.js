@@ -9,7 +9,7 @@ var lat = 0;
 var long = 0;
 var isadmin = 0;
 
-var remindID = 0;
+var remindtext = 0;
 var reminddate =0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -234,6 +234,9 @@ function loadinfo_success2(tx, results) {
     var h = res[1].substring(0, 2)
     var d = new Date();
 
+    var text =  menu.HomeName + ' vs ' + menu.AwayName +  "||" + menu.TournamentName + "||" + menu.Field;
+
+
    // alert(("0" + (d.getMonth()+1)).slice(-2));
     $('#Directions').hide();
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
@@ -251,7 +254,7 @@ function loadinfo_success2(tx, results) {
         $('#score').hide();
         $('#remind').show();
         //$("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
-        $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(menu.ID,menu.DatetimeStart)" >  Remind Me <hr></div>');
+        $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(\'' + menu.DatetimeStart + '\',\'' + text + '\')" >  Remind Me <hr></div>');
 
     }
 
@@ -277,23 +280,27 @@ function getUrlVars() {
 
 function addreminder(){
 
-    alert(remindID);
+
 
     var res = (reminddate).split("T");
+    var text = (remindtext).split("||");
     var split = res[0].split("-");
-    var month = split[1];
+    var month = (split[1]-1);
     var year = split[0];
     var day = split[2];
 
-    var hours = res[1].substring(0,2)
-    var mins = res[1].substring(3,2)
 
-    var startDate = new Date(year,(month-1),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
-    alert(startDate);
-    var endDate = new Date(year,(month-1),day,hours,mins,0,0,0);
-    var title = "My nice event";
-    var location = "Home";
-    var notes = "Some notes about this event.";
+    var split2 = res[1].split(":");
+
+    var hours = split2[0]
+    var mins = split2[1]
+
+    var startDate = new Date(year,(month),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
+
+    var endDate = new Date(year,(month),day,hours,mins,0,0,0);
+    var title = text[0];
+    var location = text[2];
+    var notes = text[1];
     var success = function(message) { alert("Success: " + JSON.stringify(message)); };
     var error = function(message) { alert("Error: " + message); };
 
@@ -307,11 +314,10 @@ function addreminder(){
 }
 
 
-function createvarforremind(ID,DatetimeStart){
+function createvarforremind(DatetimeStart,text){
 
-    alert("create" + ID + " - " +  DatetimeStart);
-    remindID = ID;
     reminddate =DatetimeStart;
+    remindtext = text;
 }
 
 
