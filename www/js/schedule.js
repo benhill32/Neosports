@@ -301,14 +301,14 @@ function addreminder(){
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-    var error = function(message) { alert("Error: " + message); };
+    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
+    var errorremind = function(message) { alert("Error: " + message); };
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
     calOptions.firstReminderMinutes = 120; // default is 60, pass in null for no reminder (alarm)
     calOptions.secondReminderMinutes = 5;
 
-    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calOptions,success,error);
+    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
 
 
 }
