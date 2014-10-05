@@ -186,7 +186,7 @@ function getMenu_success(tx, results) {
         if(menu.Cancel== 0) {
             $('#divschedules').append('<Div class="mainmenuresult" align="left" >' +
                 '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName  +
-                '<img height="20px" src="../img/schedule.png" onclick="loadinfo(' + menu.ID + ')" align="right" data-toggle="modal" data-target="#basicModal">' +
+                '<img height="20px" class="imagesch" onclick="loadinfo(' + menu.ID + ')" align="right" data-toggle="modal" data-target="#basicModal">' +
 
                 '</div>' +
                 '<div class="size11">' + ampm + '  ' + day + '/' +  month + '/' + year + '</div>' +
@@ -242,7 +242,7 @@ function loadinfo_success2(tx, results) {
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
         if(isadmin==1) {
             $('#score').show();
-            $('#score').empty().append('<Div ><hr>Score Card</div>');
+            $('#score').empty().append('<Div >Score Card</div>');
             $("#score").click(function () {
                 window.open("scorecard.html?ID=" + menu.ID);
             });
@@ -254,7 +254,7 @@ function loadinfo_success2(tx, results) {
         $('#score').hide();
         $('#remind').show();
         //$("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
-        $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(\'' + menu.DatetimeStart + '\',\'' + text + '\')" >  Remind Me <hr></div>');
+        $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(\'' + menu.DatetimeStart + '\',\'' + text + '\')" >  Remind Me</div>');
 
     }
 
@@ -278,7 +278,7 @@ function getUrlVars() {
     return vars;
 }
 
-function addreminder(){
+function addreminder(IDd){
 
 
 
@@ -301,11 +301,11 @@ function addreminder(){
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
-    var errorremind = function(message) { alert("Error: " + message); };
+    var successremind = "";
+    var errorremind = "";
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
-    calOptions.firstReminderMinutes = 120; // default is 60, pass in null for no reminder (alarm)
+    calOptions.firstReminderMinutes = IDd; // default is 60, pass in null for no reminder (alarm)
     calOptions.secondReminderMinutes = 5;
 
     window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);

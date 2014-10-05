@@ -318,6 +318,16 @@ body {
     clear: both;
 
 }
+.imagesch{
+    content:url(../img/schedule.png);
+
+}
+
+.imagesch:hover{
+    content:url(../img/scheduleother.png);
+
+}
+
 .mainmenuwifi{
     height: 60px;
     text-align: left;
@@ -446,13 +456,35 @@ body {
     padding:0;
 
 }
+#modelfooter:hover{
 
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
+}
 
 .modelfloat50:hover{
     background-color: #339900;
     color: white;
+    opacity:0.7;
 
+}
 
+#basicModal .modal-body{
+
+    padding:0px;
+}
+#Directions,#score {
+    padding:15px;
+}
+#remind{
+    padding-left:15px
+
+}
+#Directions:hover,#score:hover,#remind:hover {
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
 }
 
 .modelfloat50 {
@@ -576,6 +608,18 @@ text-align: center !important;
     color: white;
     opacity:0.7;
 
+}
+
+#basicModaltime .modal-footer{
+
+    text-align:left !important
+}
+
+#basicModaltime .modal-footer:hover{
+
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
 }
 
 #settingdeleteall:hover

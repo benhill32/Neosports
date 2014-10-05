@@ -64,24 +64,17 @@
     <div class="modal" id="basicModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-footer" id="remind" data-dismiss="modal" align="center">
 
-                <div class="modal-body">
-                    <div id="remind" data-dismiss="modal">
-
-
-                    </div>
-                    <div id="Directions" >
-
-                        Directions to park
-
-                    </div>
-
-                    <div id="score">
-
-                    </div>
                 </div>
+                <div class="modal-footer" id="Directions" data-dismiss="modal" align="center">
+                    Directions to park
 
-                <div class="modal-footer" data-dismiss="modal" align="center">
+                </div>
+                <div class="modal-footer" id="score" data-dismiss="modal" align="center">
+
+                </div>
+                <div class="modal-footer" id="modelfooter" data-dismiss="modal" align="center">
                     Close
 
 
@@ -90,21 +83,46 @@
         </div>
     </div>
     <div class="modal" id="basicModalyesno" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Would you like to add a reminder for this game?
+
+            </div>
+            <div class="modal-footer" data-dismiss="modal" align="center">
+                <div class="modelfloat50 left"  align="center">
+
+                    No
+                </div>
+                <div class="modelfloat50"  align="center" data-toggle="modal" data-target="#basicModaltime">
+
+                    Yes
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="modal" id="basicModaltime" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    Would you like to add a reminder for this game?
+                    <div class="divmainheader">
 
+                       Remind Me
+                    </div>
                 </div>
-                <div class="modal-footer" data-dismiss="modal" align="center">
-                    <div class="modelfloat50 left"  align="center">
-
-                        No
-                    </div>
-                    <div class="modelfloat50"  align="center" onclick="addreminder()">
-
-                        Yes
-                    </div>
+                <div class="modal-footer" data-dismiss="modal" align="center" onclick="addreminder(1440)">
+                        1 Day before
+                </div>
+                <div class="modal-footer" data-dismiss="modal" align="center" onclick="addreminder(120)">
+                    2 Hours before
+                </div>
+                <div class="modal-footer" data-dismiss="modal" align="center" onclick="addreminder(60)">
+                    1 Hour before
+                </div>
+                <div class="modal-footer" data-dismiss="modal" align="center" onclick="addreminder(30)">
+                   30 Minutes before
                 </div>
             </div>
         </div>
@@ -116,7 +134,7 @@
 
 </div>
 
-<div class="footer" >
+<div class="footer" data-toggle="modal" data-target="#basicModaltime"   >
     <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
         <img src="../img/neocom.jpg" Height="50px">
 
