@@ -308,7 +308,7 @@ function addreminder(){
     calOptions.firstReminderMinutes = 120; // default is 60, pass in null for no reminder (alarm)
     calOptions.secondReminderMinutes = 5;
 
-    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
+    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
 
 
 }
