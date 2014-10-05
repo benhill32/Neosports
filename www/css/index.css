@@ -442,10 +442,30 @@ body {
     padding:10px;
     clear: both;
 }
+#basicModalyesno .modal-footer{
+    padding:0;
+
+}
 
 
+.modelfloat50:hover{
+    background-color: #339900;
+    color: white;
 
 
+}
+
+.modelfloat50 {
+
+    float:left;
+
+    min-width:49%;
+    align-content: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+   // padding-left: 5px;
+  //  padding-right: 5px;
+}
 .modelfloatleft
 {
     float:left;

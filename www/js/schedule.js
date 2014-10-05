@@ -9,6 +9,9 @@ var lat = 0;
 var long = 0;
 var isadmin = 0;
 
+var remindID = 0;
+var reminddate =0;
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -247,7 +250,8 @@ function loadinfo_success2(tx, results) {
 
         $('#score').hide();
         $('#remind').show();
-        $("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
+        //$("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
+        $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(menu.ID,menu.DatetimeStart)" >  Remind Me <hr></div>');
 
     }
 
@@ -271,12 +275,22 @@ function getUrlVars() {
     return vars;
 }
 
-function addreminder(ID,DatetimeStart){
+function addreminder(){
 
-    alert(ID + " - " + DatetimeStart);
-    
-    var startDate = new Date(2014,10,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
-    var endDate = new Date(2014,10,15,19,30,0,0,0);
+    alert(remindID);
+
+    var res = (reminddate).split("T");
+    var split = res[0].split("-");
+    var month = split[1];
+    var year = split[0];
+    var day = split[2];
+
+    var hours = res[1].substring(0,2)
+    var mins = res[1].substring(3,2)
+
+    var startDate = new Date(year,(month-1),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
+    alert(startDate);
+    var endDate = new Date(year,(month-1),day,hours,mins,0,0,0);
     var title = "My nice event";
     var location = "Home";
     var notes = "Some notes about this event.";
@@ -290,6 +304,14 @@ function addreminder(ID,DatetimeStart){
     window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calOptions,success,error);
 
 
+}
+
+
+function createvarforremind(ID,DatetimeStart){
+
+    alert(ID);
+    remindID = ID;
+    reminddate =DatetimeStart;
 }
 
 

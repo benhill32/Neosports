@@ -61,15 +61,14 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="modal" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal" id="basicModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
                 <div class="modal-body">
                     <div id="remind">
 
-                        Remind Me
-                        <hr>
+
                     </div>
                     <div id="Directions" >
 
@@ -90,13 +89,34 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="basicModalyesno" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Would you like to add a reminder for this game?
+
+                </div>
+                <div class="modal-footer" data-dismiss="modal" align="center">
+                    <div class="modelfloat50 left"  align="center">
+
+                        No
+                    </div>
+                    <div class="modelfloat50"  align="center" onclick="addreminder()">
+
+                        Yes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <div id="divschedules" align="center">
 
 </div>
 
 </div>
 
-<div class="footer">
+<div class="footer" >
     <a href="Http://www.neocom.co.nz" ID="hypnecom" Target="_blank">
         <img src="../img/neocom.jpg" Height="50px">
 
