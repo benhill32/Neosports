@@ -18,6 +18,11 @@ function onDeviceReady() {
 
     document.addEventListener("backbutton", onBackKeyDown, false);
 
+
+    if(devicePlatformfunc == "iOS"){
+
+
+    }
 }
 
 

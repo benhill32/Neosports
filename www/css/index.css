@@ -45,14 +45,21 @@ body {
     width:100%;
 
 }
+
+
+
+
+
+
+
 #backicondiv{
     width: 20px;
-   padding-top: 6px;
+   padding-top: 25px;
     float: left;
 
 }
 #filterswitch{
-    padding-top: 6px;
+    padding-top: 7px;
     padding-left: 10px;
     height: 30px;
 }
@@ -68,7 +75,7 @@ body {
     background-color: #339900;
     color: #ffffff;
     vertical-align: middle;
-
+    min-height: 50px;
 }
 
 
@@ -226,8 +233,14 @@ body {
 .mainheaderimgicon{
 
     float:left;
+    margin-top: 10px;
 
     
+}
+#busy{
+    margin-top:15px;
+    height: 30px;
+
 }
 .mainheaderimg{
     float:left;
@@ -249,7 +262,7 @@ body {
 }
 
 #divresults {
-    margin-top: 10px;
+    margin-top: 20px;
     padding-bottom: 50px;
     padding-left:15px;
     padding-right: 15px;
@@ -257,7 +270,7 @@ body {
 }
 
 #divschedules {
-    margin-top: 10px;
+    margin-top: 20px;
     padding-bottom: 50px;
  padding-left:15px;
   padding-right: 15px;
@@ -352,16 +365,22 @@ body {
     margin-bottom: 0px;
 }
 #newsmain,a:hover, a:focus{
-    padding-top: 30px;
+    padding-top: 50px;
     color: #333 !important;
     text-decoration: none !important;
     padding-bottom: 30px;
 }
+#loadnews{
+    height: 50px;
+    top: 15px;
+    float:right;
 
+    
+}
 .container-fluid{
     padding-left:0px !important;
     padding-right: 0px !important;
-    padding-top: 40px;
+    padding-top: 50px;
     width:100%;
     height:100%;
 
@@ -373,7 +392,7 @@ body {
      z-index: 10;
    // background:#7f7f7f;
     background:rgba(255,255,255,0.75);
-    top: 40px;
+    top: 50px;
  }
 
 .mainforeground2{
