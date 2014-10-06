@@ -96,11 +96,11 @@ function populateDB1(tx,results) {
 
 //alert(row.syncwifi + " - " + networkconnection);
 
-        if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
+        if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0)&& networkconnection!= 0)){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#busy').hide();
-         //  alert("no sync");
+           alert("no sync");
         }
 
 
@@ -217,7 +217,7 @@ function onclickresync(tx, results) {
   //  alert(row.isadmin);
    // alert(row.syncwifi + " - " + networkconnection);
 
-    if((row.syncwifi ==1 && networkconnection==2) || (row.syncwifi ==0)){
+    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0)&& networkconnection!= 0)){
 
 
 
@@ -259,9 +259,9 @@ function onclickresync(tx, results) {
          syncmaintables(obj);
 
 
-    if(document.getElementById("settingsync")!=null){
-        db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-    }
+        if(document.getElementById("settingsync")!=null){
+            db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+        }
     }else{
         $('#busy').hide();
         alert("no sync");

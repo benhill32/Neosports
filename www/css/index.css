@@ -374,7 +374,9 @@ body {
     float:right;
     height: 80px;
 }
-
+#modelnews{
+    padding:10px !important;
+}
 @media only screen and (max-width: 480px) {
     .touch .modal .modal-body {
         max-height: none;
