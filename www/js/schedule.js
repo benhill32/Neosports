@@ -310,26 +310,17 @@ function addreminder(IDd){
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var successremind = "";
-    var errorremind = "";
+    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
+    var errorremind = function(message) { alert("Error: " + message); };
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
     calOptions.firstReminderMinutes = IDd; // default is 60, pass in null for no reminder (alarm)
     calOptions.secondReminderMinutes = 5;
 
     if(devicePlatformsch == "iOS"){
-        window.plugins.calendar.createCalendar(calendarName,success,error);
+        window.plugins.calendar.createCalendar("Neosportz",successremind,errorremind);
         // if you want to create a calendar with a specific color, pass in a JS object like this:
-        var createCalOptions = window.plugins.calendar.getCreateCalendarOptions();
-        createCalOptions.calendarName = "Neosportz";
-        createCalOptions.calendarColor = "#FF0000"; // an optional hex color (with the # char), default is null, so the OS picks a color
-
         calOptions.calendarName = "Neosportz";
-
-        window.plugins.calendar.createCalendar(createCalOptions,success,error);
-
-
-
 
         window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
 
