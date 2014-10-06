@@ -8,6 +8,7 @@ var fliter = 0;
 var lat = 0;
 var long = 0;
 var isadmin = 0;
+var devicePlatformsch =0;
 
 var remindtext = 0;
 var reminddate =0;
@@ -20,6 +21,7 @@ function onDeviceReady() {
    //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
     db.transaction(getfliter, errorCBfunc, successCBfunc);
     $(".tooltip").draggable("enable");
+    devicePlatformsch = device.platform;
 }
 
 db.transaction(getfliter, errorCBfunc, successCBfunc);
@@ -315,7 +317,14 @@ function addreminder(IDd){
     calOptions.firstReminderMinutes = IDd; // default is 60, pass in null for no reminder (alarm)
     calOptions.secondReminderMinutes = 5;
 
-    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
+    if(devicePlatformsch == "iOS"){
+        window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,successremind,errorremind);
+    }else{
+
+        window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
+    }
+
+
 
 
 }
