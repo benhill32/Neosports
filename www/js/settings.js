@@ -94,11 +94,14 @@ function getsyncdate_success2(tx, results) {
 
 
     if(wifi==1) {
-
+        $('#btn2').removeClass("btn btn-xs btn-primary active");
+        $('#btn1').removeClass("btn btn-xs btn-default")
         $('#btn2').addClass("btn btn-xs btn-default");
         $('#btn1').addClass("btn btn-xs btn-primary active");
 
     }else if(wifi==0) {
+        $('#btn1').removeClass("btn btn-xs btn-primary active");
+        $('#btn2').removeClass("btn btn-xs btn-default")
         $('#btn1').addClass("btn btn-xs btn-default");
         $('#btn2').addClass("btn btn-xs btn-primary active");
 
