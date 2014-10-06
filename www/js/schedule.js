@@ -185,13 +185,20 @@ function getMenu_success(tx, results) {
 
         if(menu.Cancel== 0) {
             $('#divschedules').append('<Div class="mainmenuresult" align="left" >' +
+                '<div id="schleft">' +
                 '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName  +
-                '<img height="20px" class="imagesch" onclick="loadinfo(' + menu.ID + ')" align="right" data-toggle="modal" data-target="#basicModal">' +
+
 
                 '</div>' +
                 '<div class="size11">' + ampm + '  ' + day + '/' +  month + '/' + year + '</div>' +
-                '<div class="size11">' + menu.TournamentName +
+                '<div class="size11">' + menu.TournamentName + '</div>' +
                 '<div class="size11">' + menu.Field + '</div>' +
+                '</div>' +
+
+                '<div  id="schright" onclick="loadinfo(' + menu.ID + ')" data-toggle="modal" data-target="#basicModal">' +
+                '<img height="20px" class="imagesch"  align="right" >' +
+                '</div>' +
+
                 '</Div>');
         }else{
             $('#divschedules').append('<Div class="mainmenuresultcancel" align="left" >' +

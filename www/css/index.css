@@ -364,6 +364,16 @@ body {
     font-size: 13px;
     margin-bottom: 0px;
 }
+#schleft{
+    height: 100%;
+    float: left;
+    width:80%;
+}
+#schright{
+    width:20%;
+    float:right;
+    height: 100%;
+}
 
 @media only screen and (max-width: 480px) {
     .touch .modal .modal-body {
@@ -469,7 +479,7 @@ body {
 .mainmenuresult{
 
 
-    height: 20%;
+    height: 85px;
     text-align: center;
     background-color: #ffffff;
     border: 1px solid gray;
