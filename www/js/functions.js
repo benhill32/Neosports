@@ -21,8 +21,20 @@ function onDeviceReady() {
 }
 
 
+
+
+
 function onBackKeyDown() {
-alert($(location).attr('pathname'));
+var page = $(location).attr('pathname');
+
+    if(page =="/neosportz/www/index.html"){
+
+        navigator.app.exitApp();
+    }else{
+
+        parent.history.back();
+    }
+
 }
 
 
