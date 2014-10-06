@@ -30,7 +30,7 @@ function getMenu_success(tx, results) {
         var menu = results.rows.item(i);
         var imgg = "";
             if(menu.Base64 != "null"){
-                imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  align="right" height="20">';
+                imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  align="left" height="40">';
             }
 
             $('#mainmenu').append('<Div class="mainmenuresult" align="left"  >' +
