@@ -5,7 +5,6 @@ db.transaction(getbackground, errorCBfunc, successCBfunc);
 
 function loadindexmessage()
 {
-
     db.transaction(gethasclub, errorCBfunc, successCBfunc);
 }
 

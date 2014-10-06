@@ -15,8 +15,15 @@ function onDeviceReady() {
     devicePlatformfunc = device.platform;
     deviceVersionfunc = device.version;
     databaseversion = db.database_version;
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
+
 }
 
+
+function onBackKeyDown() {
+alert($(location).attr('pathname'));
+}
 
 
 function weblink(htmllink){
