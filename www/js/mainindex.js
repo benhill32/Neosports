@@ -61,7 +61,7 @@ function gethasclub_success(tx, results) {
 
 
       // alert($('#mainfore').attr('class'));
-            $('#basicModal').modal('show');
+            $('#basicModalnofav').modal('show');
 
     }
 
