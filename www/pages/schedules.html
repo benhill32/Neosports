@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/onoff.css" />
 
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../Bootstrap/js/bootstrap.js"></script>
@@ -19,13 +19,16 @@
     <script type="text/javascript" src="../js/functions.js"></script>
     <script type="text/javascript" src="../js/schedule.js"></script>
     <script type="text/javascript" src="../js/loaddata.js"></script>
+
     <style>
-        #btn1, #btn2{
-            padding:5px;
+    #btn1, #btn2{
+        padding-bottom:5px;
+        padding-top:5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-        }
-
-    </style>
+</style>
 
 <script type="text/javascript">
     $(function(){
@@ -54,17 +57,16 @@
     </div>
     <div class="mainheaderimgicon" id="filterswitch">
 
+
         <div class="btn-group btn-toggle">
-            <button id="btn1" class="btn btn-xs btn-default"  onclick="allowfilter(1)">ON</button>
-            <button id="btn2" class="btn btn-xs btn-primary active"   onclick="allowfilter(0)">OFF</button>
+        <button id="btn1" class="btn btn-xs btn-default"  onclick="allowfilter(1)">ON</button>
+        <button id="btn2" class="btn btn-xs btn-primary active"   onclick="allowfilter(0)">OFF</button>
 
-        </div>
+    </div>
 
 
     </div>
-    <div>
-        <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
-    </div>
+
 </div>
 <div class="container-fluid">
     <div class="modal" id="basicModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -145,6 +147,8 @@
         <img src="../img/neocom.jpg" Height="50px">
 
     </a>
+    <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
 </div>
+
 </body>
 </html>

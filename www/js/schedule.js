@@ -19,7 +19,7 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
    //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
     db.transaction(getfliter, errorCBfunc, successCBfunc);
-
+    $(".tooltip").draggable("enable");
 }
 
 db.transaction(getfliter, errorCBfunc, successCBfunc);
