@@ -377,12 +377,24 @@ body {
 #modelnews{
     padding:10px !important;
 }
-@media only screen and (max-width: 480px) {
-    .touch .modal .modal-body {
-        max-height: none;
-        -webkit-overflow-scrolling: touch;
+@media (max-width: 480px) {
+
+    .modal {
+        height: 500px; /* Set a default max height of the modal (adjusted later)*/
+        position: fixed; /* Display modal in the centre of your screen */
+        overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+        -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+    }
+    .modal.fade.in{
+        top: 5px; /* Use more screen real estate */
+    }
+    .modal-body{
+        /* Increase the max height of the modal body to try & avoid both it,
+         * and the modal container having scroll bars which results in odd behavior */
+        max-height: 2400px;
     }
 }
+
 .modal-body {
     -webkit-overflow-scrolling: touch;
 
