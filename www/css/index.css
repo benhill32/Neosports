@@ -712,6 +712,10 @@ height: 85px;
     border-bottom:1px solid #eee;
     border-right:1px solid #eee;
 }
+.facebook{
+
+    border-left-color: #336699;
+}
 
 .modal .modal-body {
     max-height: 420px;

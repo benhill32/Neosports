@@ -68,12 +68,26 @@ function getnewfeed_success(tx, results) {
 
         if(count !=3) {
             if (menu.URL != "") {
+                var imgicon = "";
+
+                if((menu.URL).search("facebook.com")!= 0){
+                    imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='20' align='left'>";
+
+                }else if((menu.URL).search(".pdf")!= 0){
+
+                    imgicon = "<img src='../img/adobe.png.png' style='padding-right: 10px' height='20' align='left'>";
+
+                }else{
+
+                    imgicon="<img src='../img/infohttp.png' style='padding-right: 10px' height='20' align='left'>";
+                }
+
 
                 if ((menu.Body).length <= 200){
 
                     $('#newsmain').append('<Div id="divnewmain"  align="left">' +
                         '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
-                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' +
+                         '' + imgicon +
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
@@ -87,7 +101,7 @@ function getnewfeed_success(tx, results) {
                 }else{
                     $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
                         '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
-                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' +
+                        '' + imgicon +
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
@@ -98,13 +112,15 @@ function getnewfeed_success(tx, results) {
                 }
 
             } else {
+                imgicon = "<img src='../img/info.png' style='padding-right: 10px' height='20' align='left'>";
+
 
                 if ((menu.Body).length <= 200) {
 
 
                     $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
                         '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
-                        '<img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' +
+                        '' + imgicon +
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
@@ -117,7 +133,7 @@ function getnewfeed_success(tx, results) {
 
                     $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
                         '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
-                        '<img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' +
+                        '' + imgicon +
                         '</Div>' +
 
 
