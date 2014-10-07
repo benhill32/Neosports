@@ -186,22 +186,22 @@ function chkmobiledata(id){
 
 function manualupdateben(){
 
+alert("dasdsad");
 
-
-    var xmlHttp = null;
-    xmlHttp = new XMLHttpRequest();
+    var xmlHttpp = null;
+    xmlHttpp = new XMLHttpRequest();
 
    // $('#busy').show();
-    xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
+    xmlHttpp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
+    console.log("http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0");
 
 
+    xmlHttpp.send();
 
-    xmlHttp.send();
+    var jsonn = xmlHttpp.responseText;
 
-    var json = xmlHttp.responseText;
+    var objj = JSON.parse(jsonn);
 
-    var obj = JSON.parse(json);
-
-    syncmaintables(obj);
+    syncmaintables(objj);
 
 }
