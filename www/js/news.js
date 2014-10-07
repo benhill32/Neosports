@@ -75,7 +75,12 @@ function getnewfeed_success(tx, results) {
 
                 }else if((menu.URL).search(".pdf")!= 0){
 
-                    imgicon = "<img src='../img/adobe.png.png' style='padding-right: 10px' height='20' align='left'>";
+                    imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='20' align='left'>";
+
+                }else if((menu.URL).search("youtube.com")!= 0){
+
+                    imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='20' align='left'>";
+
 
                 }else{
 
