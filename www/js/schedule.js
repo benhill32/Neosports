@@ -298,14 +298,14 @@ function addreminder(IDd){
     var year = split[0];
     var day = split[2];
 
-alert(res[1]);
+
     var split2 = res[1].split(":");
 
     var hours = split2[0]
     var mins = split2[1]
 
     var startDate = new Date(year,(month),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
-
+    alert(startDate);
     var endDate = new Date(year,(month),day,hours,mins,0,0,0);
     var title = text[0];
     var location = text[2];
