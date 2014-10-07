@@ -411,7 +411,7 @@ body {
     padding-top: 60px;
     color: #333 !important;
     text-decoration: none !important;
-    padding-bottom: 30px;
+    padding-bottom: 200px;
 }
 #loadnews{
     height: 50px;
@@ -693,20 +693,21 @@ text-align: center !important;
 }
 #divnew1{
 
-height: 85px;
+  //  min-height: 100px;
     width: 15%;
     float:left;
-    margin: 10px 0;
+    margin: 2px 0;
     border-top:1px solid #eee;
     border-bottom:1px solid #eee;
     border-right:0px;
 }
 #divnew2{
+   // min-height: 100px;
     float:left;
     width:85%;
-    height: 85px;
-    padding: 20px 0;
-    margin: 10px 0;
+
+    padding: 10px 0;
+    margin: 2px 0;
     padding-right: 10px;
     border-top:1px solid #eee;
     border-bottom:1px solid #eee;
