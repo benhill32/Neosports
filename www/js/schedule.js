@@ -305,12 +305,13 @@ function addreminder(IDd){
     var mins = split2[1]
 
     var startDate = new Date(year,(month),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
-    alert(startDate);
+   // alert(startDate);
     var endDate = new Date(year,(month),day,hours,mins,0,0,0);
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
+    var successremind = "";
+    //function(message) { alert("Success: " + JSON.stringify(message)); };
     var errorremind = function(message) { alert("Error: " + message); };
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
