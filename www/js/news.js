@@ -79,7 +79,7 @@ function getnewfeed_success(tx, results) {
                         '<div class="size11">' + menu.Body + '</div>' +
                         '</Div>');
 
-                  
+
                 }else{
                     $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=URLredirect(\'' + menu.URL + '\')"  >' +
                         '<div class="bold size13"   >' +
