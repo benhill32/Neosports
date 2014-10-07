@@ -71,6 +71,8 @@ function gethistory_success(tx, results) {
 
         var menu = results.rows.item(0);
         $('#modelhistory').empty();
+    $('#modelhistory').append( '<div>1</div>');
+    $('#modelhistory').empty();
         $('#modelhistory').append( '<div>' + menu.History + '</div>');
 }
 
