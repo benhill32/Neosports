@@ -182,3 +182,26 @@ function chkmobiledata(id){
 
 
 }
+
+
+function manualupdateben(){
+
+
+
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+
+   // $('#busy').show();
+    xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
+
+
+
+    xmlHttp.send();
+
+    var json = xmlHttp.responseText;
+
+    var obj = JSON.parse(json);
+
+    syncmaintables(obj);
+
+}

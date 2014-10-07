@@ -505,6 +505,7 @@ body {
 #modelhistory{
     padding: 10px !important;
     -webkit-overflow-scrolling:touch
+    overflow-y: scroll !important;
 }
 .mainmenuresult{
 
@@ -688,7 +689,10 @@ text-align: center !important;
     opacity:0.7;
 
 }
-
+.modal .modal-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
 #basicModaltime .modal-footer{
 
     text-align:left !important

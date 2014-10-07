@@ -264,8 +264,10 @@ function onclickresync(tx, results) {
         }
     }else{
         $('#busy').hide();
-        alert("no sync");
+      //  alert("no sync");
     }
 }
+
+
 
 
