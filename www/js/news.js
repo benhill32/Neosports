@@ -70,7 +70,7 @@ function getnewfeed_success(tx, results) {
             if (menu.URL != "") {
                 var imgicon = "";
 
-            
+
                 if((menu.URL).search("facebook.com")!= -1){
                     imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='20' align='left'>";
 
@@ -78,7 +78,7 @@ function getnewfeed_success(tx, results) {
 
                     imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='20' align='left'>";
 
-                }else if((menu.URL).search("youtube.com")!= -1){
+                }else if((menu.URL).search("youtu.be")!= -1){
 
                     imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='20' align='left'>";
 
