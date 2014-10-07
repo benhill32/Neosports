@@ -71,23 +71,29 @@ function getnewfeed_success(tx, results) {
 
                 if ((menu.Body).length <= 200){
 
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=URLredirect(\'' + menu.URL + '\')"   >' +
-                        '<div class="bold size13"   >' +
-                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
+                    $('#newsmain').append('<Div id="divnewmain"  align="left">' +
+                        '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
+                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' +
+                        '</Div>' +
 
-                        '</div>' +
+                        '<Div id="divnew2"> ' +
+                        '<div class="bold size13"   >' + menu.Title +'</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
+                        '</Div>' +
+
                         '</Div>');
 
 
                 }else{
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=URLredirect(\'' + menu.URL + '\')"  >' +
-                        '<div class="bold size13"   >' +
-                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
+                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
+                        '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
+                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' +
+                        '</Div>' +
 
-                        '</div>' +
+                        '<Div id="divnew2"> ' +
+                        '<div class="bold size13"   >' + menu.Title +'</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
-                        '  <span data-toggle="modal" class="size11" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
+                        '  <span data-toggle="modal"  class="size11 blue" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
                         '</Div>');
                 }
 
@@ -96,21 +102,30 @@ function getnewfeed_success(tx, results) {
                 if ((menu.Body).length <= 200) {
 
 
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-success" align="left"  >' +
-                        '<div class="bold size13"   ><img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
+                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
+                        '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
+                        '<img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' +
+                        '</Div>' +
 
-                        '</div>' +
+                        '<Div id="divnew2"> ' +
+                        '<div class="bold size13"   >' + menu.Title +'</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
+                        '</Div>' +
                         '</Div>');
 
                 }else{
 
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-success" align="left"  >' +
-                        '<div class="bold size13"   ><img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
+                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
+                        '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
+                        '<img src="../img/info.png" style="padding-right: 10px" height="20" align="left">' +
+                        '</Div>' +
 
-                        '</div>' +
+
+                        '<Div id="divnew2"> ' +
+                        '<div class="bold size13"   >' + menu.Title +'</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
-                        '  <span data-toggle="modal" class="size11 blue" data-target="#basicModal"  class="size11" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
+                        '  <span data-toggle="modal"  class="size11 blue" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
+                        '</Div>' +
                         '</Div>');
 
                 }
