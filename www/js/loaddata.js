@@ -27,7 +27,8 @@ function onDeviceReadyloaddata() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
-    getnetworkdetails();
+
+   // getnetworkdetails();
 
 
 }
@@ -82,7 +83,7 @@ function loadnewtable(){
 
 
 function populateDB1(tx,results) {
-    getnetworkdetails();
+    //getnetworkdetails();
         var row = results.rows.item(0);
         //alert(row.Count);
     if(row.Count ==0){
@@ -200,7 +201,7 @@ function onclicksyncloaddata(){
 }
 
 function onclicksyncloaddata2(tx){
-    getnetworkdetails();
+  //  getnetworkdetails();
 
     var sql = "select Datesecs,datemenus,syncwifi,token,isadmin from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
