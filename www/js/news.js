@@ -71,22 +71,24 @@ function getnewfeed_success(tx, results) {
 
                 if ((menu.Body).length <= 200){
 
-                    $('#newsmain').append('<a href="' + menu.URL + '" target="_blank"><Div class=" bs-callout bs-callout-info" align="left"   >' +
-                        '<div class="bold size13"   ><img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Body +
+                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=redirectplayersystem("' + menu.URL + '")"   >' +
+                        '<div class="bold size13"   >' +
+                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
 
                         '</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
-                        '</Div></a>');
+                        '</Div>');
 
 
                 }else{
-                    $('#newsmain').append('<a href="' + menu.URL + '" target="_blank"><Div class=" bs-callout bs-callout-info" align="left"   >' +
-                        '<div class="bold size13"   ><img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Body +
+                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=redirectplayersystem("' + menu.URL + '")"  >' +
+                        '<div class="bold size13"   >' +
+                        '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
 
                         '</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
                         '  <span data-toggle="modal" class="size11" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
-                        '</Div></a>');
+                        '</Div>');
                 }
 
             } else {
@@ -132,6 +134,11 @@ function getnewfeed_success(tx, results) {
 function redirectplayer(ID){
 
     window.open(ID);
+}
+
+function redirectplayersystem(ID){
+
+    window.open(ID, '_system');
 }
 
 function getsponsors(tx) {
