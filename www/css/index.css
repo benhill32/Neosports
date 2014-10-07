@@ -383,7 +383,10 @@ body {
         -webkit-overflow-scrolling: touch;
     }
 }
+.modal-body {
+    -webkit-overflow-scrolling: touch;
 
+}
 
 #newsmain,a:hover, a:focus{
     padding-top: 60px;

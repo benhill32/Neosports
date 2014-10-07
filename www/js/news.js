@@ -162,6 +162,7 @@ function getsponsors_success(tx, results) {
 
 function loadnewfeed(ID) {
     IDNews = ID;
+   // $('body').css('position','fixed');
     db.transaction(loadnewfeed2, errorCBfunc, successCBfunc);
 }
 

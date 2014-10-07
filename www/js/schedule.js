@@ -298,7 +298,7 @@ function addreminder(IDd){
     var year = split[0];
     var day = split[2];
 
-
+alert(res[1]);
     var split2 = res[1].split(":");
 
     var hours = split2[0]
@@ -321,16 +321,9 @@ function addreminder(IDd){
         window.plugins.calendar.createCalendar("Neosportz",successremind,errorremind);
         // if you want to create a calendar with a specific color, pass in a JS object like this:
         calOptions.calendarName = "Neosportz";
-
-        window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
-
-
-    }else{
-
-        window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
     }
 
-
+    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,successremind,errorremind);
 
 
 }
