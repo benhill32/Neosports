@@ -91,8 +91,8 @@ function getnewfeed_success(tx, results) {
 
                 if ((menu.Body).length <= 200){
 
-                    $('#newsmain').append('<Div id="divnewmain"  align="left">' +
-                        '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
+                    $('#newsmain').append('<Div id="divnewmain" class=" bs-callout bs-callout-info"  align="left">' +
+                        '<Div id="divnew1"   onclick="URLredirect(\'' + menu.URL + '\')"> ' +
                          '' + imgicon +
                         '</Div>' +
 
@@ -105,8 +105,8 @@ function getnewfeed_success(tx, results) {
 
 
                 }else{
-                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
-                        '<Div id="divnew1" class=" bs-callout bs-callout-info"  onclick="URLredirect(\'' + menu.URL + '\')"> ' +
+                    $('#newsmain').append('<Div  id="divnewmain" class=" bs-callout bs-callout-info" align="left"  >' +
+                        '<Div id="divnew1"   onclick="URLredirect(\'' + menu.URL + '\')"> ' +
                         '' + imgicon +
                         '</Div>' +
 
@@ -124,8 +124,8 @@ function getnewfeed_success(tx, results) {
                 if ((menu.Body).length <= 200) {
 
 
-                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
-                        '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
+                    $('#newsmain').append('<Div  id="divnewmain" align="left"  class=" bs-callout bs-callout-success"  >' +
+                        '<Div id="divnew1"> ' +
                         '' + imgicon +
                         '</Div>' +
 
@@ -137,8 +137,8 @@ function getnewfeed_success(tx, results) {
 
                 }else{
 
-                    $('#newsmain').append('<Div  id="divnewmain" align="left"  >' +
-                        '<Div id="divnew1" class=" bs-callout bs-callout-success"> ' +
+                    $('#newsmain').append('<Div  id="divnewmain" align="left"  class=" bs-callout bs-callout-success"  >' +
+                        '<Div id="divnew1" > ' +
                         '' + imgicon +
                         '</Div>' +
 

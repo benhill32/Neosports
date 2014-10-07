@@ -347,6 +347,6 @@ function syncmaintables(obj){
 
 function URLredirect(ID){
 
-    alert(ID);
+
     window.open(ID, '_system');
 }
