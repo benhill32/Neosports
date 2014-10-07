@@ -71,7 +71,7 @@ function getnewfeed_success(tx, results) {
 
                 if ((menu.Body).length <= 200){
 
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=redirectplayersystem("' + menu.URL + '")"   >' +
+                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=URLredirect(\'' + menu.URL + '\')"   >' +
                         '<div class="bold size13"   >' +
                         '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
 
@@ -79,9 +79,9 @@ function getnewfeed_success(tx, results) {
                         '<div class="size11">' + menu.Body + '</div>' +
                         '</Div>');
 
-
+                  
                 }else{
-                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=redirectplayersystem("' + menu.URL + '")"  >' +
+                    $('#newsmain').append('<Div class=" bs-callout bs-callout-info" align="left" onclick=URLredirect(\'' + menu.URL + '\')"  >' +
                         '<div class="bold size13"   >' +
                         '<img src="../img/infohttp.png" style="padding-right: 10px" height="20" align="left">' + menu.Title +
 
@@ -154,14 +154,14 @@ function getsponsors_success(tx, results) {
         var menu = results.rows.item(0);
 
         if (menu.Base64 != "null") {
-            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" >';
+            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
         }
 
      //   alert('#spondiv'+ spon + ' - ' + menu.Website);
 
-        $('#spondiv' + spon).append('<Div  align="left"  >' +
+        $('#spondiv' + spon).append('<Div  align="left" onclick="URLredirect(\'' + menu.Website + '\')" >' +
 
-            '<a href="http://' + menu.Website + '" target="_blank">' + imgg + '</a></div>');
+            + imgg + '</div>');
 
         spon++;
     }
