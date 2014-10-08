@@ -120,7 +120,9 @@
                     xmlHttpt = new XMLHttpRequest();
 
                     $('#busy').show();
-                    xmlHttpt.open("GET", 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion + '&regid=' + e.regid,false);
+                    var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion + '&regid=' + e.regid;
+                    xmlHttpt.open("GET",strur ,false);
+                    alert(strur);
                     xmlHttpt.send();
                     var json = xmlHttp.responseText;
 
