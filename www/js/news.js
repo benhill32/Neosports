@@ -79,6 +79,7 @@ function getnewfeed_success(tx, results) {
 
                     imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
+
                 }else if((menu.URL).search("youtu.be")!= -1){
 
                     imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='30' align='left'>";

@@ -108,7 +108,7 @@ function populateDB1(tx,results) {
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#busy').hide();
-           alert("no sync");
+         //  alert("no sync");
         }
 
 

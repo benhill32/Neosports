@@ -33,10 +33,10 @@ function onBackKeyDown() {
 var page = $(location).attr('pathname');
 
     if(page =="/neosportz/www/index.html"){
-        alert("close");
+      //  alert("close");
         navigator.app.exitApp();
     }else{
-        alert("other");
+      //  alert("other");
         parent.history.back();
     }
 

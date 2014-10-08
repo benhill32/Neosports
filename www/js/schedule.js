@@ -205,6 +205,7 @@ function getMenu_success(tx, results) {
 
 
                 '</div>' +
+
                 '<div class="size11">' + ampm + '  ' + day + '/' +  month + '/' + year + '</div>' +
                 '<div class="size11">' + menu.TournamentName + '</div>' +
                 '<div class="size11">' + menu.Field + '</div>' +
