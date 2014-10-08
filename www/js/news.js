@@ -72,24 +72,24 @@ function getnewfeed_success(tx, results) {
                 var URLnow = "";
 
                 if((menu.URL).search("facebook.com")!= -1){
-                    imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='20' align='left'>";
+                    imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = (menu.URL).replace("http","fb");
 
                 }else if((menu.URL).search(".pdf")!= -1){
 
-                    imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='20' align='left'>";
+                    imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
                 }else if((menu.URL).search("youtu.be")!= -1){
 
-                    imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='20' align='left'>";
+                    imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
 
                 }else{
 
-                    imgicon="<img src='../img/infohttp.png' style='padding-right: 10px' height='20' align='left'>";
+                    imgicon="<img src='../img/infohttp.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
                 }
-     
+
 
                 if ((menu.Body).length <= 200){
 
@@ -120,7 +120,7 @@ function getnewfeed_success(tx, results) {
                 }
 
             } else {
-                imgicon = "<img src='../img/info.png' style='padding-right: 10px' height='20' align='left'>";
+                imgicon = "<img src='../img/info.png' style='padding-right: 10px' height='30' align='left'>";
 
 
                 if ((menu.Body).length <= 200) {
