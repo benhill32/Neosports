@@ -317,7 +317,7 @@ function syncmaintables(obj){
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO Mobilesponsorsclub(ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64  ) VALUES (' + obj.ID + ',"' + obj.Datetime + '",' + obj.Club + ',"' + obj.Name + '","' + obj.Website + '","' + obj.Image + '","' + obj.UserID + '",' + obj.OrderBy + ',"' + obj.Base64 + '","' + obj.CreatedateUTC + '","' + obj.UpdatedateUTC + '","' + obj.DeletedateUTC + '","' + obj.UpdatedateUTCBase64 + '")');
-            console.log("INSERT INTO Mobilesponsorsclub is created");
+            console.log("INSERT INTO Mobilesponsorsclub is created " + obj.DeletedateUTC);
         });
     });
 

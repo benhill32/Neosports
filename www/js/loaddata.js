@@ -161,6 +161,7 @@ function getchecksync(tx, results) {
         var dif = (timenow/1000)-(datenowsecsync);
 
 
+
     // forcing sync from new page
     if(document.getElementById("newsmain")!=null){
         dif = 100000000;

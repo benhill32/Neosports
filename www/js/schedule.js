@@ -146,12 +146,13 @@ function getdata(tx) {
     var d = new Date();
     var secondsnow  = (d.getTime())/1000;
 
-    var month = (d.getMonth())+1;
+    var month = d.getMonth();
     var year = d.getFullYear();
     var day = d.getDate();
 
-    var midnight = new Date(year,month,day,"23","59","59","00");
-    var midnightsec = (midnight.getTime())/1000;
+    var midnight = new Date(year,month,day,"01","00","00","00");
+    var midnightsec = ((midnight.getTime())/1000);
+
 
 
     if(fliter == 0){
