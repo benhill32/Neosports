@@ -452,7 +452,7 @@ body {
 }
 .sponsordiv{
 
-    padding-left: 20px;
+   // padding-left: 20px;
 }
 #mainbackground{
     background-repeat: no-repeat;
@@ -581,11 +581,22 @@ body {
 {
     float:left;
 
-    min-width: 30%;
+    min-width: 25%;
     align-content: center;
     padding-top:10px;
     padding-bottom: 10px;
     //padding-left: 5px;
+    padding-right: 5px;
+
+}
+.modelfloatleftfirst{
+    float:left;
+
+    min-width: 30%;
+    align-content: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+//padding-left: 5px;
     padding-right: 5px;
 
 }

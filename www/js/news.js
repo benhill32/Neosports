@@ -181,7 +181,7 @@ function redirectplayersystem(ID){
 }
 
 function getsponsors(tx) {
-    var sql = "select ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64   from Mobilesponsorsclub where Club=" + clubidtop + " and OrderBy =" + spon + " and DeletedateUTC != null";
+    var sql = "select ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64   from Mobilesponsorsclub where Club=" + clubidtop + " and OrderBy =" + spon + " and DeletedateUTC == 'null'";
    // alert(sql);
     tx.executeSql(sql, [], getsponsors_success);
 }
