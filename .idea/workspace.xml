@@ -26,8 +26,8 @@
       <file leaf-file-name="loaddata.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39240506" vertical-offset="6651" max-vertical-offset="7395">
-              <caret line="404" column="4" selection-start-line="404" selection-start-column="4" selection-end-line="404" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.30018082" vertical-offset="6753" max-vertical-offset="7412">
+              <caret line="407" column="61" selection-start-line="407" selection-start-column="61" selection-end-line="407" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -370,14 +370,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5584" max-vertical-offset="14399">
-          <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/res/screen/android/screen-hdpi-portrait.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -726,10 +718,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33215547" vertical-offset="19447" max-vertical-offset="64872">
+          <caret line="1155" column="17" selection-start-line="1155" selection-start-column="17" selection-end-line="1155" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39240506" vertical-offset="6651" max-vertical-offset="7395">
-          <caret line="404" column="4" selection-start-line="404" selection-start-column="4" selection-end-line="404" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.30018082" vertical-offset="6753" max-vertical-offset="7412">
+          <caret line="407" column="61" selection-start-line="407" selection-start-column="61" selection-end-line="407" selection-end-column="61" />
           <folding />
         </state>
       </provider>

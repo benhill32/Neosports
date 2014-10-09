@@ -331,6 +331,8 @@ function pushnotifiy() {
 
 function onNotification(e) {
  //   $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+    var xmlHttpt = null;
+    xmlHttpt = new XMLHttpRequest();
 
     switch( e.event )
     {
@@ -341,15 +343,14 @@ function onNotification(e) {
                 // Your GCM push server needs to know the regID before it can push to this device
                 // here is where you might want to send it the regID for later use.
                 console.log("regID = " + e.regid);
-                var xmlHttpt = null;
-                xmlHttpt = new XMLHttpRequest();
+
 
                 $('#busy').show();
                 var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
                 xmlHttpt.open("GET",strur ,false);
              //   alert(strur);
                 xmlHttpt.send();
-
+                $('#busy').hide();
 
              //   alert(json);
             }
@@ -399,10 +400,19 @@ function onNotification(e) {
 }
 
 function onNotificationAPN(e) {
+    var xmlHttpt = null;
+    xmlHttpt = new XMLHttpRequest();
+
     if (e.alert) {
-        $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+       // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
         navigator.notification.alert(e.alert);
+        $('#busy').show();
+        var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.alert;
+        navigator.notification.alert(strur);
+        xmlHttpt.open("GET",strur ,false);
+        xmlHttpt.send();
+        $('#busy').hide();
     }
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
