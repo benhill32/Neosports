@@ -288,6 +288,12 @@ function errorHandler (error) {
 
 function tokenHandler (result) {
     alert('token: '+ result);
+    $('#busy').show();
+    var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
+    navigator.notification.alert(strur);
+    xmlHttptt.open("GET",strur ,false);
+    xmlHttptt.send();
+    $('#busy').hide();
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
 }
@@ -318,15 +324,15 @@ function pushnotifiy() {
             });
     } else {
         pushNotification.register(
-            tokenHandler,
-            errorHandler,
-            {
-                "badge":"true",
-                "sound":"true",
-                "alert":"true",
-                "ecb":"onNotificationAPN"
-            });
-    }
+        tokenHandler,
+        errorHandler,
+        {
+            "badge":"true",
+            "sound":"true",
+            "alert":"true",
+            "ecb":"onNotificationAPN"
+        });
+}
 }
 
 function onNotification(e) {
@@ -400,19 +406,14 @@ function onNotification(e) {
 }
 
 function onNotificationAPN(e) {
-    var xmlHttpt = null;
-    xmlHttpt = new XMLHttpRequest();
+    var xmlHttptt = null;
+    xmlHttptt = new XMLHttpRequest();
 
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
         navigator.notification.alert(e.alert);
-        $('#busy').show();
-        var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.alert;
-        navigator.notification.alert(strur);
-        xmlHttpt.open("GET",strur ,false);
-        xmlHttpt.send();
-        $('#busy').hide();
+
     }
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
