@@ -4,13 +4,15 @@ var id = getUrlVars()["id"];
 var clubidtop =0;
 var listfollow = 0;
 var fliter = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyresult, false);
 
-function onDeviceReady() {
+function onDeviceReadyresult() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }
+
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function allowfilter(id){
 
@@ -51,7 +53,7 @@ function allowfilter(id){
 
 function getfliter(tx) {
     var sql = "select fliterON from MobileApp_LastUpdatesec";
-    //alert(sql);
+    alert(sql);
     tx.executeSql(sql, [], getfliter_success);
 }
 
