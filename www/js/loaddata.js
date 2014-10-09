@@ -28,7 +28,7 @@ function onDeviceReadyloaddata() {
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
     document.addEventListener("online", getnetworkdetails, false);
-    pushnotifiy();
+
 
 }
 
@@ -75,10 +75,10 @@ function loadnewtable(){
     $('#busy').show();
 
 
-  //  golbaltoken = token;
+
 
     blankLastUpdatesec();
-
+    pushnotifiy();
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
 
     //registers the device
@@ -97,7 +97,7 @@ function populateDB1(tx,results) {
 
 
        blankLastUpdatesec();
-
+        pushnotifiy();
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
