@@ -23,12 +23,12 @@ document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 //
 
 function onDeviceReadyloaddata() {
-    pushnotifiy();
+
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
     document.addEventListener("online", getnetworkdetails, false);
-
+    pushnotifiy();
 
 }
 
@@ -287,6 +287,9 @@ function errorHandler (error) {
 }
 
 function tokenHandler (result) {
+    var xmlHttptt = null;
+    xmlHttptt = new XMLHttpRequest();
+
     alert('tokenB: '+ result);
     $('#busy').show();
     var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
@@ -297,6 +300,8 @@ function tokenHandler (result) {
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
 }
+
+
 function pushnotifiy() {
     pushNotification = window.plugins.pushNotification;
 
@@ -406,8 +411,6 @@ function onNotification(e) {
 }
 
 function onNotificationAPN(e) {
-    var xmlHttptt = null;
-    xmlHttptt = new XMLHttpRequest();
 
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
