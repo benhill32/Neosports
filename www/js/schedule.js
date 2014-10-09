@@ -324,8 +324,7 @@ function addreminder(IDd){
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var successremind = "";
-    //function(message) { alert("Success: " + JSON.stringify(message)); };
+    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
     var errorremind = function(message) { alert("Error: " + message); };
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
