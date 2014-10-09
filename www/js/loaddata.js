@@ -75,8 +75,6 @@ function loadnewtable(){
     $('#busy').show();
 
 
-
-
     blankLastUpdatesec();
     pushnotifiy();
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
@@ -290,10 +288,10 @@ function tokenHandler (result) {
     var xmlHttptt = null;
     xmlHttptt = new XMLHttpRequest();
 
-    alert('tokenB: '+ result);
+   // alert('tokenB: '+ result);
     $('#busy').show();
     var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
-    navigator.notification.alert(strur);
+  //  navigator.notification.alert(strur);
     xmlHttptt.open("GET",strur ,false);
     xmlHttptt.send();
     $('#busy').hide();

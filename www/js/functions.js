@@ -19,7 +19,7 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
 
 
-
+    appAvailability();
 }
 
 
@@ -350,3 +350,35 @@ function URLredirect(ID){
     window.open(ID, '_system');
 }
 
+
+function appAvailability(){
+    if(devicePlatformfunc == "iOS"){
+        appAvailability.check(
+            'fb://', // URI Scheme
+            function() {           // Success callback
+                alert('facebook is available');
+            },
+            function() {           // Error callback
+                alert('facebook is not available');
+            }
+        );
+
+    }else  if(devicePlatformfunc == "Android"){
+        appAvailability.check(
+            'com.facebook.katana', // URI Scheme
+            function() {           // Success callback
+                alert('facebook is available');
+            },
+            function() {           // Error callback
+                alert('facebook is not available');
+            }
+        );
+
+    }else{
+
+
+    }
+
+
+
+}
