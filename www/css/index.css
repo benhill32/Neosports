@@ -299,6 +299,7 @@ body {
     padding-bottom: 50px;
   //  padding-left:15px;
   //  padding-right: 15px;
+  //  overflow: scroll;
 }
 
 .mainmenuresultcancel{
@@ -437,6 +438,7 @@ body {
     background:rgba(255,255,255,0.75);
     top: 60px;
     bottom: 60px;
+    overflow-y: scroll;
     
  }
 
