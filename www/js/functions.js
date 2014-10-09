@@ -356,10 +356,10 @@ function appAvailability(){
         appAvailability.check(
             'fb://', // URI Scheme
             function() {           // Success callback
-                alert('facebook is available');
+                alert("facebook is available");
             },
             function() {           // Error callback
-                alert('facebook is not available');
+                alert("facebook is not available");
             }
         );
 
@@ -367,10 +367,10 @@ function appAvailability(){
         appAvailability.check(
             'com.facebook.katana', // URI Scheme
             function() {           // Success callback
-                alert('facebook is available');
+                alert("facebook is available");
             },
             function() {           // Error callback
-                alert('facebook is not available');
+                alert("facebook is not available");
             }
         );
 
