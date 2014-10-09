@@ -287,7 +287,7 @@ function errorHandler (error) {
 }
 
 function tokenHandler (result) {
-    alert('token: '+ result);
+    alert('tokenB: '+ result);
     $('#busy').show();
     var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
     navigator.notification.alert(strur);
