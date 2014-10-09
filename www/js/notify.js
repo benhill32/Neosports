@@ -1,4 +1,4 @@
-var gcm = require('node-gcm');
+var gcm = require('../lib/node-gcm');
 var message = new gcm.Message();
 
 //API Server Key
