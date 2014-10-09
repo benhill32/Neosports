@@ -53,7 +53,7 @@ function allowfilter(id){
 
 function getfliter(tx) {
     var sql = "select fliterON from MobileApp_LastUpdatesec";
-    alert(sql);
+    //alert(sql);
     tx.executeSql(sql, [], getfliter_success);
 }
 
