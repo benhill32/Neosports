@@ -351,5 +351,9 @@ function URLredirect(ID){
     window.open(ID, '_system');
 }
 
+function URLredirectFacebook(ID){
 
+
+    window.open(ID, '_system','location=yes');
+}
 

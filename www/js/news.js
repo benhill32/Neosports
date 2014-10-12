@@ -115,7 +115,7 @@ function getnewfeed_success(tx, results) {
 
                 if((menu.URL).search("facebook.com")!= -1){
                     imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
-                    URLnow = "fb://feed";
+                    URLnow = menu.URL;
 
                 }else if((menu.URL).search(".pdf")!= -1){
 
@@ -137,7 +137,7 @@ function getnewfeed_success(tx, results) {
                 if ((menu.Body).length <= 200){
 
                     $('#newsmain').append('<Div id="divnewmain" class=" bs-callout bs-callout-info"  align="left">' +
-                        '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
+                            '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
                          '' + imgicon +
                         '</Div>' +
 
