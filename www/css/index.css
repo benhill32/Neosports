@@ -426,6 +426,10 @@ body {
     height:100%;
 
 }
+
+.mainforeground::-webkit-scrollbar { width: 0 !important }
+
+
 .mainforeground{
      position: fixed;
      width:100%;

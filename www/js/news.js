@@ -22,11 +22,11 @@ function checkfb(){
         appAvailability.check(
             'fb://', // URI Scheme
             function() {           // Success callback
-                alert("facebook is available");
+               // alert("facebook is available");
                 facebookchk = 1;
             },
             function() {           // Error callback
-                alert("facebook is not available");
+              //  alert("facebook is not available");
                 facebookchk = 0;
             }
         );
