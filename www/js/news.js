@@ -5,6 +5,7 @@ var IDhist = 0;
 var IDcon = 0;
 var spon= 1;
 var spon2= 1;
+var facebookchk= 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
@@ -12,7 +13,6 @@ function onDeviceReadynews() {
     console.log("LOCALDB - Database ready");
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
     checkfb();
-
 }
 
 function checkfb(){
@@ -22,9 +22,11 @@ function checkfb(){
             'fb://', // URI Scheme
             function() {           // Success callback
                 alert("facebook is available");
+                facebookchk = 1;
             },
             function() {           // Error callback
                 alert("facebook is not available");
+                facebookchk = 0;
             }
         );
 
@@ -32,10 +34,12 @@ function checkfb(){
         appAvailability.check(
             'com.facebook.katana', // URI Scheme
             function() {           // Success callback
-                alert("facebook is available");
+               // alert("facebook is available");
+                facebookchk = 1;
             },
             function() {           // Error callback
-                alert("facebook is not available");
+               // alert("facebook is not available");
+                facebookchk = 0;
             }
         );
 
@@ -111,7 +115,7 @@ function getnewfeed_success(tx, results) {
 
                 if((menu.URL).search("facebook.com")!= -1){
                     imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
-                    URLnow = (menu.URL).replace("http","fb");
+                    URLnow = "fb://feed";
 
                 }else if((menu.URL).search(".pdf")!= -1){
 
