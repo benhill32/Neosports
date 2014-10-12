@@ -9,6 +9,42 @@ var spon2= 1;
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
 db.transaction(getdatanews, errorCBfunc, successCBfunc);
+checkfb();
+
+
+
+function checkfb(){
+
+    if(device.platform == "iOS"){
+        appAvailability.check(
+            'fb://', // URI Scheme
+            function() {           // Success callback
+                alert("facebook is available");
+            },
+            function() {           // Error callback
+                alert("facebook is not available");
+            }
+        );
+
+    }else  if(device.platform == "Android"){
+        appAvailability.check(
+            'com.facebook.katana', // URI Scheme
+            function() {           // Success callback
+                alert("facebook is available");
+            },
+            function() {           // Error callback
+                alert("facebook is not available");
+            }
+        );
+
+    }else{
+
+
+    }
+}
+
+
+
 
 
 
