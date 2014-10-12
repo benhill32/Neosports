@@ -5,13 +5,15 @@ var IDhist = 0;
 var IDcon = 0;
 var spon= 1;
 var spon2= 1;
+document.addEventListener("deviceready", onDeviceReadynews, false);
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(getdatanews, errorCBfunc, successCBfunc);
-checkfb();
+function onDeviceReadynews() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
+    db.transaction(getdatanews, errorCBfunc, successCBfunc);
+    checkfb();
 
-
+}
 
 function checkfb(){
 
