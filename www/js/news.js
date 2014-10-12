@@ -15,6 +15,7 @@ function onDeviceReadynews() {
     checkfb();
 }
 
+
 function checkfb(){
 
     if(device.platform == "iOS"){
