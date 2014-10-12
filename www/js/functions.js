@@ -18,8 +18,34 @@ function onDeviceReady() {
 
     document.addEventListener("backbutton", onBackKeyDown, false);
 
+    if(device.platform == "iOS"){
+        appAvailability.check(
+            'fb://', // URI Scheme
+            function() {           // Success callback
+                alert("facebook is available");
+            },
+            function() {           // Error callback
+                alert("facebook is not available");
+            }
+        );
 
-    appAvailability();
+    }else  if(device.platform == "Android"){
+        appAvailability.check(
+            'com.facebook.katana', // URI Scheme
+            function() {           // Success callback
+                alert("facebook is available");
+            },
+            function() {           // Error callback
+                alert("facebook is not available");
+            }
+        );
+
+    }else{
+
+
+    }
+
+
 }
 
 
@@ -351,34 +377,4 @@ function URLredirect(ID){
 }
 
 
-function appAvailability(){
-    if(devicePlatformfunc == "iOS"){
-        appAvailability.check(
-            'fb://', // URI Scheme
-            function() {           // Success callback
-                alert("facebook is available");
-            },
-            function() {           // Error callback
-                alert("facebook is not available");
-            }
-        );
 
-    }else  if(devicePlatformfunc == "Android"){
-        appAvailability.check(
-            'com.facebook.katana', // URI Scheme
-            function() {           // Success callback
-                alert("facebook is available");
-            },
-            function() {           // Error callback
-                alert("facebook is not available");
-            }
-        );
-
-    }else{
-
-
-    }
-
-
-
-}
