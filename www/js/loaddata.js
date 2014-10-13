@@ -29,9 +29,14 @@ function onDeviceReadyloaddata() {
     deviceIDfunc = device.uuid;
     document.addEventListener("online", getnetworkdetails, false);
 
-
+    document.addEventListener("offline", onOffline, false);
 }
 
+
+function onOffline()
+{
+    $('#busy').hide();
+}
 
 
 
