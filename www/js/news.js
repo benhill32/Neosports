@@ -12,8 +12,10 @@ function onDeviceReadynews() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
-    checkfb();
+  //  checkfb();
 }
+
+db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
 
 function checkfb(){
@@ -101,13 +103,12 @@ function getnewfeed_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
 
-
     var count = 0;
 
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
         var imgg = "";
-
+       // alert(menu.Body.substring(0, 200));
 
         if(count !=3) {
             if (menu.URL != "") {
@@ -199,6 +200,8 @@ function getnewfeed_success(tx, results) {
                 }
 
             }
+
+
         }else{
 
             $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
@@ -206,10 +209,10 @@ function getnewfeed_success(tx, results) {
             spon2++;
             db.transaction(getsponsors, errorCBfunc, successCBfunc);
             count = -1;
-
+            i= i-1;
         }
-
         count++;
+
     }
 
 }
