@@ -602,6 +602,18 @@ body {
     padding-right: 5px;
 
 }
+.modelfloatright
+{
+    float:right;
+
+    min-width: 27%;
+    align-content: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+//padding-left: 5px;
+    padding-right: 5px;
+
+}
 .modelfloatleftfirst{
     float:left;
 

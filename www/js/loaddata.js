@@ -75,8 +75,8 @@ function loadnewtable(){
     $('#busy').show();
 
 
-    blankLastUpdatesec();
-    pushnotifiy();
+     blankLastUpdatesec();
+      pushnotifiy();
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
 
     //registers the device
@@ -175,7 +175,7 @@ function getchecksync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-     //   xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
+      //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
 
        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
@@ -247,7 +247,8 @@ function onclickresync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+       // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
 
    // alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
 
