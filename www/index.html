@@ -102,25 +102,27 @@
                       It appears to be that you haven't set your favourite club yet. Would you like to set it now?
                        You can do this anythime by viewing the teams of a club an pressing the star button in the
                         navigation bar.
+
+
                     </div>
+                    <div class="modal-footer"  data-dismiss="modal" align="center">
 
-                    <div class="modal-footer" data-dismiss="modal" align="center">
-
-                        <div class="modelfloatleftfirst left"  align="center" onclick="hadclubfunction()">
+                        <div class="modelfloatleftfirst left" id="dontshow"  align="center" onclick="hadclubfunction()">
 
                             Don't show this again
                         </div>
 
-                        <div class="modelfloatleft left" align="center"  onclick="hadclubchecklater()">
+                        <div class="modelfloatleft left" id="notnow" align="center"  onclick="hadclubchecklater()">
                             Not now
                         </div>
-                        <div class="modelfloatleft"  align="center" onclick="showclubsfun()">
+                        <div class="modelfloatleft" id="indexyes"  align="center" onclick="showclubsfun()">
                             Yes
                         </div>
 
 
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -168,7 +170,7 @@
 
     </div>
     </div>
-    <div class="footer">
+    <div class="footer" data-toggle="modal"  data-target="#basicModalnofav">
         <img src="img/neocom.jpg" Height="50px" onclick="URLredirect('http://www.neocom.co.nz')">
         <img src="img/Loading.gif" id="busy" align="right"  height="40px" >
     </div>

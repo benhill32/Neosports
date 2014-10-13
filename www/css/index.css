@@ -534,12 +534,22 @@ body {
     color: white;
     opacity:0.7;
 }
-.modal-footer:hover{
+
+
+#basicModal .modal-footer:hover{
     background-color: #339900;
     color: white;
     opacity:0.7;
 
 }
+#basicModalContact .modal-footer:hover{
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
+
+}
+
+
 .modelfloat50:hover{
     background-color: #339900;
     color: white;
@@ -753,6 +763,14 @@ text-align: center !important;
     color: white;
     opacity:0.7;
 }
+
+#dontshow:hover,#notnow:hover,#indexyes:hover{
+
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
+}
+
 
 #settingdeleteall:hover
 {

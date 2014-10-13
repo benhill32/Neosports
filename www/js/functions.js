@@ -338,11 +338,11 @@ function syncmaintables(obj){
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');
             console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
-            $('#busy').hide();
+
         });
     });
 
-
+    $('#busy').hide();
 }
 
 function URLredirect(ID){
