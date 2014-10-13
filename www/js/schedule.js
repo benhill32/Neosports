@@ -212,7 +212,7 @@ function getMenu_success(tx, results) {
                 '</div>' +
 
                 '<div  id="schright" onclick="loadinfo(' + menu.ID + ')" data-toggle="modal" data-target="#basicModal">' +
-                '<img height="20px" class="imagesch"  align="right" >' +
+                '<img height="30px" class="imagesch"  align="right" >' +
                 '</div>' +
 
                 '</Div>');
