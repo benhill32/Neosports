@@ -99,7 +99,7 @@ function populateDB1(tx,results) {
 
 
     if(row.Count ==0){
-        navigator.splashscreen.show();
+       // navigator.splashscreen.show();
 
        blankLastUpdatesec();
         pushnotifiy();
@@ -207,7 +207,7 @@ function getchecksync(tx, results) {
 
     }else{
 
-        navigator.splashscreen.hide();
+      //  navigator.splashscreen.hide();
     }
 }
 

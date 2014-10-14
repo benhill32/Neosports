@@ -85,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loaddata.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="loaddata.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25635105" vertical-offset="4207" max-vertical-offset="5321">
-              <caret line="254" column="35" selection-start-line="254" selection-start-column="35" selection-end-line="254" selection-end-column="35" />
+            <state vertical-scroll-proportion="-5.76" vertical-offset="1573" max-vertical-offset="5321">
+              <caret line="101" column="32" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="32" />
               <folding>
                 <element signature="n#!!block;n#successHandler#0" expanded="false" />
                 <element signature="n#!!block;n#errorHandler#0" expanded="false" />
@@ -130,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="functions.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.76" vertical-offset="5687" max-vertical-offset="6222">
-              <caret line="343" column="3" selection-start-line="343" selection-start-column="3" selection-end-line="343" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.29330254" vertical-offset="3171" max-vertical-offset="6256">
+              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -379,7 +379,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -762,14 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/mainindex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.16" vertical-offset="2185" max-vertical-offset="2618">
-          <caret line="142" column="88" selection-start-line="142" selection-start-column="88" selection-end-line="142" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/news.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="12.92" vertical-offset="2397" max-vertical-offset="4607">
@@ -786,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.76" vertical-offset="5687" max-vertical-offset="6222">
-          <caret line="343" column="3" selection-start-line="343" selection-start-column="3" selection-end-line="343" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="1411">
@@ -802,10 +786,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/mainindex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.16" vertical-offset="2185" max-vertical-offset="2618">
+          <caret line="142" column="88" selection-start-line="142" selection-start-column="88" selection-end-line="142" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25635105" vertical-offset="4207" max-vertical-offset="5321">
-          <caret line="254" column="35" selection-start-line="254" selection-start-column="35" selection-end-line="254" selection-end-column="35" />
+        <state vertical-scroll-proportion="-5.76" vertical-offset="1573" max-vertical-offset="5321">
+          <caret line="101" column="32" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="32" />
           <folding>
             <element signature="n#!!block;n#successHandler#0" expanded="false" />
             <element signature="n#!!block;n#errorHandler#0" expanded="false" />
@@ -814,6 +806,14 @@
             <element signature="n#!!block;n#onNotification#0" expanded="false" />
             <element signature="n#!!block;n#onNotificationAPN#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29330254" vertical-offset="3171" max-vertical-offset="6256">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

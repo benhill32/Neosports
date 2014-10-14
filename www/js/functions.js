@@ -151,6 +151,8 @@ var randfunc = function() {
 
 function updatemenutables(obj){
 
+
+
     db.transaction(function(tx) {
         tx.executeSql('Drop TABLE MobileApp_Results_Menu ');
         console.log("MobileApp_Results_Menu table is Dropped");
@@ -191,7 +193,7 @@ function syncmaintables(obj){
     var datenow = new Date();
     var timenow = datenow.getTime();
 
-
+    navigator.splashscreen.show();
 
     $.each(obj.App_Results, function (idx, obj) {
         db.transaction(function (tx) {
