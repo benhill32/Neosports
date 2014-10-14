@@ -30,7 +30,8 @@ function getstandings_success(tx, results) {
     var len = results.rows.length;
 //alert(orientationstand);
     $('#divstandings').empty();
-    $('#divstandings').append('<Div align="left" id="divmenustandings" style="float: left;" ></Div>');
+    $('#divstandingsheader').empty();
+    $('#divstandingsheader').append('<Div align="left" id="divmenustandings" style="float: left;" ></Div>');
 
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
