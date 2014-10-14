@@ -95,7 +95,8 @@ function getClubID_success(tx, results) {
 }
 
 function getdata2(tx) {
-    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC from MobilevwApp_News_v_2 where ClubID=" + clubidtop + "and DeletedateUTC = 'null' order by DisplayDateUTC Desc";
+    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC,DeletedateUTC from MobilevwApp_News_v_2 where ClubID=" + clubidtop + " and DeletedateUTC = 'null' order by DisplayDateUTC Desc";
+//alert(sql);
     tx.executeSql(sql, [], getnewfeed_success);
 }
 
@@ -104,7 +105,7 @@ function getdata2(tx) {
 function getnewfeed_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
-
+//alert(len);
     var count = 0;
     $('#newsmain').empty();
     for (var i=0; i<len; i++) {
