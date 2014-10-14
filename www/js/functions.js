@@ -341,6 +341,7 @@ function syncmaintables(obj){
 
         });
     });
+    navigator.splashscreen.hide();
 
     $('#busy').hide();
 }
