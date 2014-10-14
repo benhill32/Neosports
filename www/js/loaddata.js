@@ -81,7 +81,7 @@ function loadnewtable(){
 
 
      blankLastUpdatesec();
-      pushnotifiy();
+ //     pushnotifiy();
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
 
     //registers the device
@@ -102,7 +102,7 @@ function populateDB1(tx,results) {
        // navigator.splashscreen.show();
 
        blankLastUpdatesec();
-       pushnotifiy();
+      // pushnotifiy();
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
 
@@ -183,10 +183,10 @@ function getchecksync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-      //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
 
-       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+     //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
@@ -258,8 +258,8 @@ function onclickresync(tx, results) {
         xmlHttp = new XMLHttpRequest();
 
         $('#busy').show();
-       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
-       // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
+     //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
 
    // alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
 
