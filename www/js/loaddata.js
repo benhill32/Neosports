@@ -35,6 +35,7 @@ function onDeviceReadyloaddata() {
 
 function onOffline()
 {
+
     $('#busy').hide();
 }
 
@@ -180,7 +181,7 @@ function getchecksync(tx, results) {
 
     if(dif >= "600") {
 
-
+        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
@@ -206,6 +207,7 @@ function getchecksync(tx, results) {
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
 
+        window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     }else{
 
@@ -242,7 +244,7 @@ function onclickresync(tx, results) {
    // alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
-
+        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
