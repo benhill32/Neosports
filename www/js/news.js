@@ -95,7 +95,7 @@ function getClubID_success(tx, results) {
 }
 
 function getdata2(tx) {
-    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC from MobilevwApp_News_v_2 where ClubID=" + clubidtop + " order by DisplayDateUTC Desc";
+    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC from MobilevwApp_News_v_2 where ClubID=" + clubidtop + "and DeletedateUTC == 'null' order by DisplayDateUTC Desc";
     tx.executeSql(sql, [], getnewfeed_success);
 }
 
