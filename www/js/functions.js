@@ -308,6 +308,8 @@ function syncmaintables(obj){
     });
 
 
+
+    
     $.each(obj.Standings, function (idx, obj) {
 
         db.transaction(function (tx) {
