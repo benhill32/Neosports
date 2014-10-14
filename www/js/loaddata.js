@@ -105,6 +105,7 @@ function populateDB1(tx,results) {
         pushnotifiy();
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
+        navigator.splashscreen.hide();
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
 //alert(row.syncwifi + " - " + networkconnection);
