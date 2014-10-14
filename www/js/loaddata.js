@@ -214,6 +214,8 @@ function getchecksync(tx, results) {
 
 function onclicksyncloaddata(){
 
+
+
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
 
 }
