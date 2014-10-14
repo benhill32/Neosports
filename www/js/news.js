@@ -6,6 +6,8 @@ var IDcon = 0;
 var spon= 1;
 var spon2= 1;
 var facebookchk= 0;
+var sponsorexist = 0;
+var ii = 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
@@ -15,7 +17,7 @@ function onDeviceReadynews() {
   //  checkfb();
 }
 
-db.transaction(getdatanews, errorCBfunc, successCBfunc);
+//db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
 
 function checkfb(){
@@ -104,13 +106,14 @@ function getnewfeed_success(tx, results) {
     var len = results.rows.length;
 
     var count = 0;
-
+    $('#newsmain').empty();
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
         var imgg = "";
        // alert(menu.Body.substring(0, 200));
 
-        if(count !=3) {
+
+           // console.log("ii=" + ii + " -" + menu.Title);
             if (menu.URL != "") {
                 var imgicon = "";
                 var URLnow = "";
@@ -202,14 +205,14 @@ function getnewfeed_success(tx, results) {
             }
 
 
-        }else{
-
+        if(count ==2) {
+            console.log("ii=" + ii + " -" + menu.Title);
             $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
 
             spon2++;
+
             db.transaction(getsponsors, errorCBfunc, successCBfunc);
             count = -1;
-            i= i-1;
         }
         count++;
 
@@ -250,7 +253,10 @@ function getsponsors_success(tx, results) {
           ''  + imgg + '</div>');
 
         spon++;
+
+
     }
+
 }
 
 function loadnewfeed(ID) {

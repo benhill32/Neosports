@@ -19,12 +19,12 @@ function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
    //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
-
+    db.transaction(getfliter, errorCBfunc, successCBfunc);
     $(".tooltip").draggable("enable");
     devicePlatformsch = device.platform;
 }
 
-db.transaction(getfliter, errorCBfunc, successCBfunc);
+//db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
