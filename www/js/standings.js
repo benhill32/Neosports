@@ -7,7 +7,7 @@ document.addEventListener("deviceready", onDeviceReadystand(), false);
 function onDeviceReadystand() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-   // db.transaction(getstandings, errorCBfunc, successCBfunc);
+    db.transaction(getstandings, errorCBfunc, successCBfunc);
 
 
 }
@@ -35,15 +35,15 @@ function getstandings_success(tx, results) {
     $('#divstandings').append('<Div align="left" id="idteamname" style="float: left;" ></Div>');
 
     if (orientationstand == "landscape") {
-        $('#divmenustandings').append('<Div  class="standheaderteam" >Team name</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >P</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >W</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >D</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >L</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >F</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >A</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >GD</Div>');
-        $('#divmenustandings').append('<Div  class="standheader" >PTS</Div>');
+        $('#divmenustandings').append('<Div  class="standheaderteam bold" >Team name</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >P</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >W</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >D</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >L</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >F</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >A</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >GD</Div>');
+        $('#divmenustandings').append('<Div  class="standheader bold" >PTS</Div>');
 
     $('#divstandings').append('<Div align="left" id="idgamesp" class="score1"  style="float: left;" ></Div>');
     $('#divstandings').append('<Div align="left" id="idgamesW" class="score1"  style="float: left;" ></Div>');
@@ -55,12 +55,12 @@ function getstandings_success(tx, results) {
     $('#divstandings').append('<Div align="right" id="idgamesFP" class="score1"  style="float: left;" ></Div>');
     }
     if (orientationstand == "portrait") {
-        $('#divmenustandings').append('<Div  class="standheaderteam" >Team name</Div>');
-        $('#divmenustandings').append('<Div  class="standheader2" >P</Div>');
-        $('#divmenustandings').append('<Div  class="standheader2" >W</Div>');
-        $('#divmenustandings').append('<Div  class="standheader2" >D</Div>');
-        $('#divmenustandings').append('<Div  class="standheader2" >L</Div>');
-        $('#divmenustandings').append('<Div  class="standheader2" >PTS</Div>');
+        $('#divmenustandings').append('<Div  class="standheaderteam  bold" >Team name</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2  bold" >P</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2 bold" >W</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2  bold" >D</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2  bold" >L</Div>');
+        $('#divmenustandings').append('<Div  class="standheader2  bold" >PTS</Div>');
 
         $('#divstandings').append('<Div align="left" id="idgamesp" class="score2"  style="float: left;" ></Div>');
         $('#divstandings').append('<Div align="left" id="idgamesW" class="score2"  style="float: left;" ></Div>');
@@ -74,7 +74,7 @@ function getstandings_success(tx, results) {
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
 
-        $('#idteamname').append('<Div class="score3"  >' + menu.Name + '</Div>');
+        $('#idteamname').append('<Div class="score3  bold"  >' + menu.Name + '</Div>');
         $('#idgamesp').append('<Div class="score3"  >' + menu.Games + '</Div>');
         $('#idgamesW').append('<Div class="score3" >' + menu.Won + '</Div>');
         $('#idgamesD').append('<Div class="score3"  >' + menu.Drawn + '</Div>');
