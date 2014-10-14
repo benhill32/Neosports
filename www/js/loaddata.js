@@ -98,7 +98,6 @@ function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
         //alert(row.Count);
-    window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     if(row.Count ==0){
@@ -153,7 +152,7 @@ function passdatatoserver(){
 function getchecksync(tx, results) {
     $('#busy').hide();
     var row = results.rows.item(0);
-
+   
 
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
