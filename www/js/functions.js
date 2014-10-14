@@ -193,7 +193,7 @@ function syncmaintables(obj){
     var datenow = new Date();
     var timenow = datenow.getTime();
 
-    navigator.splashscreen.show();
+  //  navigator.splashscreen.show();
 
     $.each(obj.App_Results, function (idx, obj) {
         db.transaction(function (tx) {
@@ -343,7 +343,7 @@ function syncmaintables(obj){
 
         });
     });
-    navigator.splashscreen.hide();
+  //  navigator.splashscreen.hide();
 
     $('#busy').hide();
 }
