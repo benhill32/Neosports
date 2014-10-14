@@ -92,6 +92,7 @@ function loadnewtable(){
 
 
 
+
 function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
