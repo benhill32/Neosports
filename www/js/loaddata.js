@@ -214,7 +214,8 @@ function getchecksync(tx, results) {
 
 function onclicksyncloaddata(){
 
-    window.plugins.toast.showShortTop('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showlongcenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 
 
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
@@ -285,6 +286,10 @@ function onclickresync(tx, results) {
         if(document.getElementById("settingsync")!=null){
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
+
+        window.plugins.toast.showlongcenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+
     }else{
         $('#busy').hide();
        // alert("no sync");
