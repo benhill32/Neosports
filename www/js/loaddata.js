@@ -96,10 +96,10 @@ function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
         //alert(row.Count);
-    navigator.splashscreen.show();
+
 
     if(row.Count ==0){
-
+        navigator.splashscreen.show();
 
        blankLastUpdatesec();
         pushnotifiy();
