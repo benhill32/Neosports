@@ -102,7 +102,7 @@ function populateDB1(tx,results) {
        // navigator.splashscreen.show();
 
        blankLastUpdatesec();
-        pushnotifiy();
+       pushnotifiy();
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
 
