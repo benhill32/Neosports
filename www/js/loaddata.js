@@ -214,7 +214,7 @@ function getchecksync(tx, results) {
 
 function onclicksyncloaddata(){
 
-        window.plugins.toast.showlongcenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
@@ -287,7 +287,7 @@ function onclickresync(tx, results) {
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
 
-        window.plugins.toast.showlongcenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     }else{
