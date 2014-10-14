@@ -7,6 +7,9 @@ db.transaction(createDB, errorCBfunc, successCBfunc);
 
 function droptables(){
 
+    window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+
     db.transaction(function(tx) {
         tx.executeSql('Drop TABLE MobileApp_Results_Menu ');
         console.log("MobileApp_Results_Menu table is Dropped");
@@ -70,7 +73,11 @@ function droptables(){
 }
 
 function createDB(tx) {
-  //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');
+
+    window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+
+    //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');
   //  console.log("MobileApp_LastUpdatesec table is Dropped");
     tx.executeSql('CREATE TABLE IF NOT EXISTS MobileApp_LastUpdatesec ( Datesecs TEXT NULL, datemenus TEXT NULL,syncwifi INTEGER NOT NULL,isadmin INTERGER NOT NULL,token TEXT NOT NULL,hasclub INTERGER NOT NULL,hasclubdate TEXT NULL,fliterON INTERGER  NULL)');
     console.log("MobileApp_LastUpdatesec table is created");

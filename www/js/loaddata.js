@@ -97,6 +97,7 @@ function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
         //alert(row.Count);
+    window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     if(row.Count ==0){

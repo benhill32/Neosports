@@ -192,6 +192,7 @@ function syncmaintables(obj){
 
     var datenow = new Date();
     var timenow = datenow.getTime();
+    window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
   //  navigator.splashscreen.show();
 
@@ -350,7 +351,9 @@ function syncmaintables(obj){
         });
     });
   //  navigator.splashscreen.hide();
+    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
+  
     $('#busy').hide();
 }
 
