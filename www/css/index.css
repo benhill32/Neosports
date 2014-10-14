@@ -167,8 +167,9 @@ body {
 }
 #divstandings{
 
-  // padding-top:40px;
- clear: both;
+  //padding-top:40px;
+    clear: both;
+    margin: 42px 0;
 }
 .standheader{
 
@@ -195,6 +196,12 @@ body {
     width:100%;
     clear:both;
     //position: fixed;
+}
+#divstandingsheader{
+    width:100%;
+    clear:both;
+position: fixed;
+
 }
 .score1{
     width:7.5%;
