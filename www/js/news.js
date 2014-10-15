@@ -223,7 +223,7 @@ function getnewfeed_success(tx, results) {
             console.log("ii=" + ii + " -" + menu.Title);
             $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
 
-           // spon2++;
+            spon2++;
 
            //
             count = -1;
@@ -253,26 +253,23 @@ function getsponsors(tx) {
 function getsponsors_success(tx, results) {
 
     var len = results.rows.length;
-//alert(len);
+    //alert(len);
     var count = 1;
-    $('#spondiv' + count).empty();
-    for (var i=0; i<len; i++) {
 
+
+    for (var i=0; i<len; i++) {
+        $('#spondiv' + count).empty();
         if (len != 0) {
             var menu = results.rows.item(i);
 
             if (menu.Base64 != "null") {
                 imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
             }
-
             $('#spondiv' + count).append('<Div  align="center" onclick="URLredirect(\'' + menu.Website + '\')" >' + imgg + '</div>');
 
             count++;
-
-
         }
     }
-
 }
 
 function loadnewfeed(ID) {
