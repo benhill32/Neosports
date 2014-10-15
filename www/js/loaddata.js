@@ -152,7 +152,7 @@ function passdatatoserver(){
 function getchecksync(tx, results) {
     $('#busy').hide();
     var row = results.rows.item(0);
-   
+
 
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
