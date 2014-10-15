@@ -172,9 +172,9 @@ function getchecksync(tx, results) {
 
 
     // forcing sync from new page
-    //if(document.getElementById("newsmain")!=null){
-   //     dif = 100000000;
-   // }
+    if(document.getElementById("newsmain")!=null){
+        dif = 100000000;
+    }
 
     console.log(new Date((row.Datesecs)*1000) + "\n\r" + dif);
   //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);

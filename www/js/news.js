@@ -8,6 +8,7 @@ var spon2= 1;
 var facebookchk= 0;
 var sponsorexist = 0;
 var ii = 0;
+var nospor = 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
@@ -86,12 +87,30 @@ function getClubID_success(tx, results) {
     if(len != 0) {
         var menu = results.rows.item(0);
         clubidtop = menu.ID;
-        db.transaction(getdata2, errorCBfunc, successCBfunc);
+      //  db.transaction(getdata2, errorCBfunc, successCBfunc);
+        db.transaction(numbersponsers, errorCBfunc, successCBfunc);
+
      }else{
 
         showclubsfun();
     }
 
+
+}
+
+
+function numbersponsers(tx) {
+    var sql = "select ID  from Mobilesponsorsclub where Club=" + clubidtop + " and DeletedateUTC == 'null'";
+   //  alert(sql);
+    tx.executeSql(sql, [], numbersponsers_success);
+}
+
+function numbersponsers_success(tx, results) {
+    var len = results.rows.length;
+
+    nospor = len;
+   // alert(nospor);
+    db.transaction(getdata2, errorCBfunc, successCBfunc);
 }
 
 function getdata2(tx) {
@@ -114,7 +133,7 @@ function getnewfeed_success(tx, results) {
        // alert(menu.Body.substring(0, 200));
 
 
-           // console.log("ii=" + ii + " -" + menu.Title);
+      //  alert("i=" + i + " -" + menu.Title);
             if (menu.URL != "") {
                 var imgicon = "";
                 var URLnow = "";
@@ -122,19 +141,13 @@ function getnewfeed_success(tx, results) {
                 if((menu.URL).search("facebook.com")!= -1){
                     imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-
                 }else if((menu.URL).search(".pdf")!= -1){
-
                     imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-
                 }else if((menu.URL).search("youtu.be")!= -1){
-
                     imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-
                 }else{
-
                     imgicon="<img src='../img/infohttp.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
                 }
@@ -210,15 +223,15 @@ function getnewfeed_success(tx, results) {
             console.log("ii=" + ii + " -" + menu.Title);
             $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
 
-            spon2++;
+           // spon2++;
 
-            db.transaction(getsponsors, errorCBfunc, successCBfunc);
+           //
             count = -1;
         }
         count++;
 
     }
-
+    db.transaction(getsponsors, errorCBfunc, successCBfunc);
 }
 
 function redirectplayer(ID){
@@ -232,30 +245,32 @@ function redirectplayersystem(ID){
 }
 
 function getsponsors(tx) {
-    var sql = "select ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64   from Mobilesponsorsclub where Club=" + clubidtop + " and OrderBy =" + spon + " and DeletedateUTC == 'null'";
-   // alert(sql);
+    var sql = "select ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64   from Mobilesponsorsclub where Club=" + clubidtop + " and DeletedateUTC == 'null' Order by OrderBy";
+    // alert(sql);
     tx.executeSql(sql, [], getsponsors_success);
 }
 
 function getsponsors_success(tx, results) {
-    $('#busy').hide();
+
     var len = results.rows.length;
-    if(len != 0) {
-        var menu = results.rows.item(0);
+//alert(len);
+    var count = 1;
+    $('#spondiv' + count).empty();
+    for (var i=0; i<len; i++) {
 
-        if (menu.Base64 != "null") {
-            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
+        if (len != 0) {
+            var menu = results.rows.item(i);
+
+            if (menu.Base64 != "null") {
+                imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
+            }
+
+            $('#spondiv' + count).append('<Div  align="center" onclick="URLredirect(\'' + menu.Website + '\')" >' + imgg + '</div>');
+
+            count++;
+
+
         }
-
-     //   alert('#spondiv'+ spon + ' - ' + menu.Website);
-
-        $('#spondiv' + spon).append('<Div  align="center" onclick="URLredirect(\'' + menu.Website + '\')" >' +
-
-          ''  + imgg + '</div>');
-
-        spon++;
-
-
     }
 
 }
