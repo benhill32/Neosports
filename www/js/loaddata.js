@@ -36,7 +36,8 @@ function onDeviceReadyloaddata() {
 function onOffline()
 {
 
-    $('#busy').hide();
+    window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 }
 
 
@@ -184,7 +185,7 @@ function getchecksync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-        $('#busy').show();
+       // $('#busy').show();
       //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
 
@@ -237,7 +238,7 @@ function onclicksyncloaddata2(tx){
 
 function onclickresync(tx, results) {
 
-    $('#busy').hide();
+  //  $('#busy').hide();
     var row = results.rows.item(0);
   //  alert(row.isadmin);
    // alert(row.syncwifi + " - " + networkconnection);
@@ -264,7 +265,7 @@ function onclickresync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-        $('#busy').show();
+      //  $('#busy').show();
        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
        // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
 
@@ -293,7 +294,7 @@ function onclickresync(tx, results) {
 
 
     }else{
-        $('#busy').hide();
+      //  $('#busy').hide();
        // alert("no sync");
     }
 }
@@ -312,12 +313,12 @@ function tokenHandler (result) {
     xmlHttptt = new XMLHttpRequest();
 
    // alert('tokenB: '+ result);
-    $('#busy').show();
+    //$('#busy').show();
     var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
   //  navigator.notification.alert(strur);
     xmlHttptt.open("GET",strur ,false);
     xmlHttptt.send();
-    $('#busy').hide();
+   // $('#busy').hide();
     // Your iOS push server needs to know the token before it can push to this device
     // here is where you might want to send it the token for later use.
 }
@@ -377,12 +378,12 @@ function onNotification(e) {
                 console.log("regID = " + e.regid);
 
 
-                $('#busy').show();
+              //  $('#busy').show();
                 var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
                 xmlHttpt.open("GET",strur ,false);
              //   alert(strur);
                 xmlHttpt.send();
-                $('#busy').hide();
+             //   $('#busy').hide();
 
              //   alert(json);
             }

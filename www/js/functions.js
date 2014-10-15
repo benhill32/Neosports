@@ -130,7 +130,7 @@ function blankLastUpdatesec(){
     var xmlHttp = null;
     xmlHttp = new XMLHttpRequest();
 
-    $('#busy').show();
+   // $('#busy').show();
     xmlHttp.open("GET", 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion,false);
     xmlHttp.send();
   //  alert('http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&databasever=' + databaseversion + '&appver=' + appversion);
@@ -354,7 +354,7 @@ function syncmaintables(obj){
     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
-    $('#busy').hide();
+   // $('#busy').hide();
 }
 
 function URLredirect(ID){

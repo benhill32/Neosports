@@ -132,7 +132,7 @@ function getclubsfav(tx) {
 
 
 function getclubsfav_success(tx, results) {
-    $('#busy').hide();
+   // $('#busy').hide();
     var len = results.rows.length;
 //alert(len);
     for (var i=0; i<len; i++) {
