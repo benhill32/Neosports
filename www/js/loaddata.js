@@ -404,6 +404,11 @@ function onNotification(e) {
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
 
+                db.transaction(function(tx) {
+                    tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = Datesecs- 900 ');
+                    console.log("Update INTO MobileApp_LastUpdatesec Datesecs = Datesecs- 600 ");
+
+                });
 
             }
             else
@@ -417,7 +422,7 @@ function onNotification(e) {
               //      $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
-            onclicksyncloaddata();
+
         //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
         //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
