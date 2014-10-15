@@ -172,9 +172,9 @@ function getchecksync(tx, results) {
 
 
     // forcing sync from new page
-    if(document.getElementById("newsmain")!=null){
-        dif = 100000000;
-    }
+    //if(document.getElementById("newsmain")!=null){
+   //     dif = 100000000;
+   // }
 
     console.log(new Date((row.Datesecs)*1000) + "\n\r" + dif);
   //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
@@ -392,7 +392,7 @@ function onNotification(e) {
         case 'message':
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
-            refreshdata();
+
             if ( e.foreground )
             {
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
@@ -403,6 +403,7 @@ function onNotification(e) {
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
+
 
             }
             else
@@ -416,7 +417,7 @@ function onNotification(e) {
               //      $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
-
+            onclicksyncloaddata();
         //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
         //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
