@@ -392,6 +392,7 @@ function onNotification(e) {
         case 'message':
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+            refreshdata();
             if ( e.foreground )
             {
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
@@ -402,6 +403,7 @@ function onNotification(e) {
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
+
             }
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
