@@ -61,7 +61,7 @@ function checkonline(){
     states[Connection.NONE]     = '0';
 
     networkconnection = states[networkState];
-alert(states[networkState]);
+//alert(states[networkState]);
 
 }
 
@@ -173,7 +173,7 @@ function getchecksync(tx, results) {
 
         var dif = (timenow/1000)-(datenowsecsync);
 
-    alert(row.syncwifi + " - " + networkconnection);
+    //alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
 
@@ -258,7 +258,7 @@ function onclickresync(tx, results) {
    // alert(row.syncwifi + " - " + networkconnection);
     //alert(networkconnection);
 
-    alert(row.syncwifi + " - " + networkconnection);
+    //alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
         window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
@@ -386,7 +386,7 @@ function onNotification(e) {
  //   $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
     var xmlHttpt = null;
     xmlHttpt = new XMLHttpRequest();
-alert(e.event);
+   //alert(e.event);
     switch( e.event )
     {
         case 'registered':
