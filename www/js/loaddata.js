@@ -393,10 +393,11 @@ alert(e.event);
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
-          //  db.transaction(function(tx) {
-         //       tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
-          //  });
+            db.transaction(function(tx) {
+                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
+            });
 
+            alert("fdsfs");
             var o = JSON.parse(e.payload.message);
            alert(e.payload.message);
 
