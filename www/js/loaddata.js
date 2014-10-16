@@ -401,11 +401,11 @@ alert(e.event);
             var o = JSON.parse(e.payload.message);
            alert(e.payload.message);
 
-           // navigator.notification.alert(
-           //     o.message,  // message
-           //     'testing',            // title
-           //     'Done'                  // buttonName
-           // );
+            navigator.notification.alert(
+                o.message,  // message
+                'testing',            // title
+                'Done'                  // buttonName
+            );
 
 
             if ( e.foreground )
