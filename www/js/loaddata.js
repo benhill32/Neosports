@@ -98,7 +98,7 @@ function loadnewtable(){
 
 
 function populateDB1(tx,results) {
-    getnetworkdetails();
+    checkonline();
         var row = results.rows.item(0);
      //   alert(row.Datesecs);
 
@@ -229,7 +229,7 @@ function onclicksyncloaddata(){
 }
 
 function onclicksyncloaddata2(tx){
-    getnetworkdetails();
+    checkonline();
 
     var sql = "select Datesecs,datemenus,syncwifi,token,isadmin from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
