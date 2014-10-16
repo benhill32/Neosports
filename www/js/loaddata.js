@@ -397,16 +397,19 @@ function onNotification(e) {
                 tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
             });
 
+            var o = JSON.parse(e.payload.message)
+            alert(e.payload.message);
+
+            navigator.notification.alert(
+                o.message,  // message
+                'testing',            // title
+                'Done'                  // buttonName
+            );
+
+
             if ( e.foreground )
             {
-                var o = JSON.parse(e.payload.message)
 
-
-                navigator.notification.alert(
-                    o.message,  // message
-                    'testing',            // title
-                    'Done'                  // buttonName
-                );
 
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
