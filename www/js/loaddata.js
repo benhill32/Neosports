@@ -44,7 +44,7 @@ function onOffline()
 
 function getnetworkdetails(){
 
-    document.addEventListener("online", checkonline, false);
+ checkonline();
 }
 
 function checkonline(){
@@ -221,7 +221,6 @@ function getchecksync(tx, results) {
 
 function onclicksyncloaddata(){
 
-        window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
@@ -249,6 +248,8 @@ function onclickresync(tx, results) {
     //alert(networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
+        window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
         window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
