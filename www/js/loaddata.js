@@ -98,7 +98,7 @@ function loadnewtable(){
 function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
-        //alert(row.Count);
+        alert(row.Datesecs);
 
 
     if(row.Count ==0){
@@ -128,7 +128,7 @@ function populateDB1(tx,results) {
 
 function populateDB(tx){
     $('#busy').show();
-    var sql = "select Count(Datesecs) as Count,syncwifi from MobileApp_LastUpdatesec";
+    var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
 }
