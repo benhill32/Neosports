@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loaddata.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="loaddata.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78031635" vertical-offset="3228" max-vertical-offset="7990">
-              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+            <state vertical-scroll-proportion="-82.36" vertical-offset="1664" max-vertical-offset="7990">
+              <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -93,18 +93,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="news.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/news.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3605" max-vertical-offset="5559">
-              <caret line="256" column="18" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.42929292" vertical-offset="2958" max-vertical-offset="5559">
+              <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
               <folding>
                 <element signature="n#!!block;n#checkfb#0" expanded="false" />
-                <marker date="1413417820157" expanded="true" signature="3475:3494" placeholder="..." />
-                <marker date="1413417820157" expanded="true" signature="3687:3706" placeholder="..." />
-                <marker date="1413417820157" expanded="true" signature="3905:3924" placeholder="..." />
-                <marker date="1413417820157" expanded="true" signature="4083:4102" placeholder="..." />
-                <marker date="1413417820157" expanded="true" signature="5623:5642" placeholder="..." />
+                <marker date="1413418227237" expanded="true" signature="3475:3494" placeholder="..." />
+                <marker date="1413418227237" expanded="true" signature="3687:3706" placeholder="..." />
+                <marker date="1413418227237" expanded="true" signature="3905:3924" placeholder="..." />
+                <marker date="1413418227237" expanded="true" signature="4083:4102" placeholder="..." />
+                <marker date="1413418227237" expanded="true" signature="5623:5642" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -744,26 +744,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/news.js">
+    <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3605" max-vertical-offset="5559">
-          <caret line="256" column="18" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#checkfb#0" expanded="false" />
-            <marker date="1413417820157" expanded="true" signature="3475:3494" placeholder="..." />
-            <marker date="1413417820157" expanded="true" signature="3687:3706" placeholder="..." />
-            <marker date="1413417820157" expanded="true" signature="3905:3924" placeholder="..." />
-            <marker date="1413417820157" expanded="true" signature="4083:4102" placeholder="..." />
-            <marker date="1413417820157" expanded="true" signature="5623:5642" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-82.36" vertical-offset="1664" max-vertical-offset="7990">
+          <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
+    <entry file="file://$PROJECT_DIR$/www/js/news.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78031635" vertical-offset="3228" max-vertical-offset="7990">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.42929292" vertical-offset="2958" max-vertical-offset="5559">
+          <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!block;n#checkfb#0" expanded="false" />
+            <marker date="1413418227237" expanded="true" signature="3475:3494" placeholder="..." />
+            <marker date="1413418227237" expanded="true" signature="3687:3706" placeholder="..." />
+            <marker date="1413418227237" expanded="true" signature="3905:3924" placeholder="..." />
+            <marker date="1413418227237" expanded="true" signature="4083:4102" placeholder="..." />
+            <marker date="1413418227237" expanded="true" signature="5623:5642" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
