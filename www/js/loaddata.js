@@ -393,6 +393,12 @@ function onNotification(e) {
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
+            db.transaction(function(tx) {
+                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = Datesecs- 900 ');
+                console.log("Update INTO MobileApp_LastUpdatesec Datesecs = Datesecs- 600 ");
+
+            });
+
             if ( e.foreground )
             {
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
@@ -409,11 +415,7 @@ function onNotification(e) {
             }
             else
             {
-                db.transaction(function(tx) {
-                    tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = Datesecs- 900 ');
-                    console.log("Update INTO MobileApp_LastUpdatesec Datesecs = Datesecs- 600 ");
 
-                });
 
 
             // otherwise we were launched because the user touched a notification in the notification tray.
