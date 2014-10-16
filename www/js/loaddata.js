@@ -397,16 +397,6 @@ alert(e.event);
                 tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
             });
 
-            alert("fdsfs");
-            var o = JSON.parse(e.payload.message);
-           alert(e.payload.message);
-
-            navigator.notification.alert(
-                o.message,  // message
-                'testing',            // title
-                'Done'                  // buttonName
-            );
-
 
             if ( e.foreground )
             {

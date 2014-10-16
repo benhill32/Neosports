@@ -31,10 +31,10 @@ function onBackKeyDown() {
 var page = $(location).attr('pathname');
 
     if(page =="/neosportz/www/index.html"){
-      //  alert("close");
+        alert("close " + page);
         navigator.app.exitApp();
     }else{
-      //  alert("other");
+        alert("other " + page);
         parent.history.back();
     }
 
