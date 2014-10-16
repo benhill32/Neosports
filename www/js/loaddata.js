@@ -366,7 +366,7 @@ function onNotification(e) {
  //   $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
     var xmlHttpt = null;
     xmlHttpt = new XMLHttpRequest();
-
+alert(e.event);
     switch( e.event )
     {
         case 'registered':
@@ -393,18 +393,18 @@ function onNotification(e) {
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
-            db.transaction(function(tx) {
-                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
-            });
+          //  db.transaction(function(tx) {
+         //       tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
+          //  });
 
-            var o = JSON.parse(e.payload.message)
-            alert(e.payload.message);
+            var o = JSON.parse(e.payload.message);
+           alert(e.payload.message);
 
-            navigator.notification.alert(
-                o.message,  // message
-                'testing',            // title
-                'Done'                  // buttonName
-            );
+           // navigator.notification.alert(
+           //     o.message,  // message
+           //     'testing',            // title
+           //     'Done'                  // buttonName
+           // );
 
 
             if ( e.foreground )
