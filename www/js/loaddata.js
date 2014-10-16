@@ -98,7 +98,7 @@ function loadnewtable(){
 function populateDB1(tx,results) {
     getnetworkdetails();
         var row = results.rows.item(0);
-        alert(row.Datesecs);
+     //   alert(row.Datesecs);
 
 
     if(row.Count ==0){
@@ -403,19 +403,13 @@ function onNotification(e) {
 
                 // on Android soundname is outside the payload.
                 // On Amazon FireOS all custom attributes are contained within payload
-                var soundfile = e.soundname || e.payload.sound;
+             //   var soundfile = e.soundname || e.payload.sound;
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
-
-
-
             }
             else
             {
-
-
-
             // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
@@ -427,7 +421,6 @@ function onNotification(e) {
               //      $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
-
         //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
         //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
