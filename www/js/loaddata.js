@@ -404,7 +404,7 @@ function onNotification(e) {
 
                 navigator.notification.alert(
                     o.message,  // message
-                    o.title,            // title
+                    'testing',            // title
                     'Done'                  // buttonName
                 );
 
