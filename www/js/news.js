@@ -221,7 +221,7 @@ function getnewfeed_success(tx, results) {
 
         if(count ==2) {
             console.log("ii=" + ii + " -" + menu.Title);
-            $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
+            $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv" style="display:none;"></div>');
 
             spon2++;
 
@@ -265,6 +265,8 @@ function getsponsors_success(tx, results) {
             if (menu.Base64 != "null") {
                 imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
             }
+            $('#spondiv' + count).css("display","block");
+
             $('#spondiv' + count).append('<Div  align="center" onclick="URLredirect(\'' + menu.Website + '\')" >' + imgg + '</div>');
 
             count++;
