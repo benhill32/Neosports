@@ -61,6 +61,8 @@ function checkonline(){
     states[Connection.NONE]     = '0';
 
     networkconnection = states[networkState];
+
+
 }
 
 
@@ -154,7 +156,7 @@ function getchecksync(tx, results) {
     $('#busy').hide();
     var row = results.rows.item(0);
 
-
+    alert(networkconnection);
     // only runs while on the index.html page.
     if(document.getElementById("indexdiv")!=null){
 
@@ -242,6 +244,7 @@ function onclickresync(tx, results) {
     var row = results.rows.item(0);
   //  alert(row.isadmin);
    // alert(row.syncwifi + " - " + networkconnection);
+    alert(networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
         window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
