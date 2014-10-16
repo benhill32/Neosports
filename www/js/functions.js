@@ -30,7 +30,7 @@ function onDeviceReady() {
 function onBackKeyDown() {
 var page = $(location).attr('pathname');
 
-    if(page =="/neosportz/www/index.html"){
+    if(page =="/android_asset/www/index.html"){
         alert("close " + page);
         navigator.app.exitApp();
     }else{
