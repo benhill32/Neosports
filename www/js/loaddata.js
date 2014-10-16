@@ -175,7 +175,7 @@ function getchecksync(tx, results) {
 
     //alert(row.syncwifi + " - " + networkconnection);
 
-    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
+
 
         // forcing sync from new page
         if (document.getElementById("newsmain") != null) {
@@ -227,7 +227,7 @@ function getchecksync(tx, results) {
 
             //  navigator.splashscreen.hide();
         }
-    }
+    
 }
 
 function onclicksyncloaddata(){
