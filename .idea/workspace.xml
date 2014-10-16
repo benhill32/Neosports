@@ -96,15 +96,15 @@
       <file leaf-file-name="news.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/news.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7441077" vertical-offset="2856" max-vertical-offset="5559">
-              <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.57239056" vertical-offset="0" max-vertical-offset="5559">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding>
                 <element signature="n#!!block;n#checkfb#0" expanded="false" />
-                <marker date="1413419115928" expanded="true" signature="3475:3494" placeholder="..." />
-                <marker date="1413419115928" expanded="true" signature="3687:3706" placeholder="..." />
-                <marker date="1413419115928" expanded="true" signature="3905:3924" placeholder="..." />
-                <marker date="1413419115928" expanded="true" signature="4083:4102" placeholder="..." />
-                <marker date="1413419115928" expanded="true" signature="5623:5642" placeholder="..." />
+                <marker date="1413419262633" expanded="true" signature="3477:3496" placeholder="..." />
+                <marker date="1413419262633" expanded="true" signature="3689:3708" placeholder="..." />
+                <marker date="1413419262633" expanded="true" signature="3907:3926" placeholder="..." />
+                <marker date="1413419262633" expanded="true" signature="4085:4104" placeholder="..." />
+                <marker date="1413419262633" expanded="true" signature="5625:5644" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -754,15 +754,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/news.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7441077" vertical-offset="2856" max-vertical-offset="5559">
-          <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.57239056" vertical-offset="0" max-vertical-offset="5559">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding>
             <element signature="n#!!block;n#checkfb#0" expanded="false" />
-            <marker date="1413419115928" expanded="true" signature="3475:3494" placeholder="..." />
-            <marker date="1413419115928" expanded="true" signature="3687:3706" placeholder="..." />
-            <marker date="1413419115928" expanded="true" signature="3905:3924" placeholder="..." />
-            <marker date="1413419115928" expanded="true" signature="4083:4102" placeholder="..." />
-            <marker date="1413419115928" expanded="true" signature="5623:5642" placeholder="..." />
+            <marker date="1413419262633" expanded="true" signature="3477:3496" placeholder="..." />
+            <marker date="1413419262633" expanded="true" signature="3689:3708" placeholder="..." />
+            <marker date="1413419262633" expanded="true" signature="3907:3926" placeholder="..." />
+            <marker date="1413419262633" expanded="true" signature="4085:4104" placeholder="..." />
+            <marker date="1413419262633" expanded="true" signature="5625:5644" placeholder="..." />
           </folding>
         </state>
       </provider>

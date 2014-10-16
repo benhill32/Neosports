@@ -18,7 +18,7 @@ function onDeviceReadynews() {
   //  checkfb();
 }
 
-db.transaction(getdatanews, errorCBfunc, successCBfunc);
+//db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
 
 function checkfb(){
