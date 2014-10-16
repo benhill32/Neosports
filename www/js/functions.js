@@ -17,27 +17,15 @@ function onDeviceReady() {
     databaseversion = db.database_version;
 
     document.addEventListener("backbutton", onBackKeyDown, false);
-
-
-
-
 }
-
-
-
-
 
 function onBackKeyDown() {
 var page = $(location).attr('pathname');
-
     if(page =="/android_asset/www/index.html"){
-        alert("close " + page);
         navigator.app.exitApp();
     }else{
-        alert("other " + page);
         parent.history.back();
     }
-
 }
 
 
