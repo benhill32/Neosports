@@ -24,7 +24,7 @@ function onDeviceReady() {
     devicePlatformsch = device.platform;
 }
 
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
@@ -150,8 +150,9 @@ function getdata(tx) {
     var year = d.getFullYear();
     var day = d.getDate();
 
-    var midnight = new Date(year,month,day,"01","00","00","00");
+    var midnight = new Date(Date.UTC(year,month,day,"00","00","00","01"));
     var midnightsec = ((midnight.getTime())/1000);
+
 
 
 
@@ -195,6 +196,7 @@ function getMenu_success(tx, results) {
 
         var h = res[1].substring(0,2)
 
+     //   alert(menu.DatetimeStartSeconds);
 
         var ampm = h > 12 ? h-12 +'PM' : h +'AM';
 

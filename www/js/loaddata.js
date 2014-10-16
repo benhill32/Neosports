@@ -227,7 +227,7 @@ function getchecksync(tx, results) {
 
             //  navigator.splashscreen.hide();
         }
-    
+
 }
 
 function onclicksyncloaddata(){
