@@ -258,7 +258,7 @@ function getsponsors_success(tx, results) {
 
 
     for (var i=0; i<len; i++) {
-        $('#spondiv' + count).empty();
+
         if (len != 0) {
             var menu = results.rows.item(i);
 
