@@ -408,10 +408,6 @@ function onNotification(e) {
                     'Done'                  // buttonName
                 );
 
-
-
-
-
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
                 // on Android soundname is outside the payload.
