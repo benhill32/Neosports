@@ -404,18 +404,23 @@ function onNotification(e) {
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
 
+
+
+            }
+            else
+            {
                 db.transaction(function(tx) {
                     tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = Datesecs- 900 ');
                     console.log("Update INTO MobileApp_LastUpdatesec Datesecs = Datesecs- 600 ");
 
                 });
 
-            }
-            else
-            {  // otherwise we were launched because the user touched a notification in the notification tray.
+
+            // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
              //       $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+
                 }
                 else
                 {
