@@ -399,13 +399,26 @@ function onNotification(e) {
 
             if ( e.foreground )
             {
+                var o = JSON.parse(e.payload.message)
+
+
+                navigator.notification.alert(
+                    o.message,  // message
+                    o.title,            // title
+                    'Done'                  // buttonName
+                );
+
+
+
+
+
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
                 // on Android soundname is outside the payload.
                 // On Amazon FireOS all custom attributes are contained within payload
-            //    var soundfile = e.soundname || e.payload.sound;
+                var soundfile = e.soundname || e.payload.sound;
                 // if the notification contains a soundname, play it.
-            //    var my_media = new Media("/android_asset/www/"+ soundfile);
+              //  var my_media = new Media("/android_asset/www/"+ soundfile);
               //  my_media.play();
             }
             else
