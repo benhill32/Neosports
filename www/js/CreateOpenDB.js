@@ -1,13 +1,15 @@
 var db;
 var dbCreated = false;
-
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(createDB, errorCBfunc, successCBfunc);
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
+    db.transaction(createDB, errorCBfunc, successCBfunc);
+}
 
 function droptables(){
 
-    window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 
 
     db.transaction(function(tx) {
@@ -74,7 +76,6 @@ function droptables(){
 
 function createDB(tx) {
 
-    window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');

@@ -134,13 +134,14 @@ function cleardata(){
 
     $("#settingsync").attr('disabled','disabled');
 
-
+    window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     db.transaction(droptables, errorCBfunc, createtables);
 }
 
 function createtables(){
-    $('#busy').show();
+    window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
     db.transaction(createDB, errorCBfunc, loadnewtable);
 }
 
