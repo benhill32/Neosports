@@ -423,6 +423,8 @@ alert(e.event);
               //      $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
+            alert(e.payload.message);
+            alert(e.payload.msgcnt);
         //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
         //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
