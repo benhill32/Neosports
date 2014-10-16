@@ -265,7 +265,7 @@ function getsponsors_success(tx, results) {
             if (menu.Base64 != "null") {
                 imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
             }
-
+            alert(menu.Name);
 
             $('#spondiv' + count).append('<Div  align="center" onclick="URLredirect(\'' + menu.Website + '\')" >' + imgg + '</div>');
 
