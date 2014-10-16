@@ -247,10 +247,12 @@ function onclickresync(tx, results) {
    // alert(row.syncwifi + " - " + networkconnection);
     //alert(networkconnection);
 
+    alert(row.syncwifi + " - " + networkconnection);
+
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
         window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 
 
 
@@ -268,6 +270,7 @@ function onclickresync(tx, results) {
 
     var dif = timenow-(datenowsecsync);
 
+        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
