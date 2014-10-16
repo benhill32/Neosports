@@ -36,7 +36,7 @@ function onDeviceReadyloaddata() {
 function onOffline()
 {
 
-    window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+  //  window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 }
 
@@ -173,49 +173,60 @@ function getchecksync(tx, results) {
 
         var dif = (timenow/1000)-(datenowsecsync);
 
+    alert(row.syncwifi + " - " + networkconnection);
 
+    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
 
-    // forcing sync from new page
-    if(document.getElementById("newsmain")!=null){
-        dif = 100000000;
-    }
-
-    console.log(new Date((row.Datesecs)*1000) + "\n\r" + dif);
-  //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
-
-    if(dif >= "600") {
-
-        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-        var xmlHttp = null;
-        xmlHttp = new XMLHttpRequest();
-
-       // $('#busy').show();
-      //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
-
-
-       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
-        xmlHttp.send();
-
-        var json = xmlHttp.responseText;
-
-        var obj = JSON.parse(json);
-
-        //if(datemenus != datenow) {
-        if(datemenus != datemenus) {
-            updatemenutables(obj);
+        // forcing sync from new page
+        if (document.getElementById("newsmain") != null) {
+            dif = 100000000;
         }
 
-        syncmaintables(obj);
+        console.log(new Date((row.Datesecs) * 1000) + "\n\r" + dif);
+        //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
-        if(document.getElementById("settingsync")!=null){
-            db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+        if (dif >= "600") {
+
+            window.plugins.toast.showShortCenter('Syncing data!', function (a) {
+                console.log('toast success: ' + a)
+            }, function (b) {
+                alert('toast error: ' + b)
+            });
+            var xmlHttp = null;
+            xmlHttp = new XMLHttpRequest();
+
+            // $('#busy').show();
+            //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
+
+
+            xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
+            xmlHttp.send();
+
+            var json = xmlHttp.responseText;
+
+            var obj = JSON.parse(json);
+
+            //if(datemenus != datenow) {
+            if (datemenus != datemenus) {
+                updatemenutables(obj);
+            }
+
+            syncmaintables(obj);
+
+            if (document.getElementById("settingsync") != null) {
+                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+            }
+
+            window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {
+                console.log('toast success: ' + a)
+            }, function (b) {
+                alert('toast error: ' + b)
+            });
+
+        } else {
+
+            //  navigator.splashscreen.hide();
         }
-
-        window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
-    }else{
-
-      //  navigator.splashscreen.hide();
     }
 }
 
