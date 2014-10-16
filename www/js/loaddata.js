@@ -403,7 +403,7 @@ function onNotification(e) {
 
                 // on Android soundname is outside the payload.
                 // On Amazon FireOS all custom attributes are contained within payload
-             //   var soundfile = e.soundname || e.payload.sound;
+                var soundfile = e.soundname || e.payload.sound;
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
@@ -448,8 +448,8 @@ function onNotificationAPN(e) {
     }
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
-        var snd = new Media(e.sound);
-        snd.play();
+      //  var snd = new Media(e.sound);
+      // snd.play();
     }
     if (e.badge) {
         pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
