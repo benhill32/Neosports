@@ -394,9 +394,7 @@ function onNotification(e) {
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
             db.transaction(function(tx) {
-                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = Datesecs- 900 ');
-                console.log("Update INTO MobileApp_LastUpdatesec Datesecs = Datesecs- 600 ");
-
+                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
             });
 
             if ( e.foreground )
