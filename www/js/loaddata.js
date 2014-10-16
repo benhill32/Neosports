@@ -27,7 +27,7 @@ function onDeviceReadyloaddata() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
-    document.addEventListener("online", getnetworkdetails, false);
+     getnetworkdetails();
 
     document.addEventListener("offline", onOffline, false);
 }
@@ -44,7 +44,7 @@ function onOffline()
 
 function getnetworkdetails(){
 
- checkonline();
+    document.addEventListener("online", checkonline, false);
 }
 
 function checkonline(){
