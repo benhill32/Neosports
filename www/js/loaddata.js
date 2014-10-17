@@ -386,7 +386,7 @@ function onNotification(e) {
  //   $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
     var xmlHttpt = null;
     xmlHttpt = new XMLHttpRequest();
-   //alert(e.event);
+   alert(e.event);
     switch( e.event )
     {
         case 'registered':
