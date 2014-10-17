@@ -127,7 +127,7 @@ function clearfavteam(){
 
 function cleardata(){
 
-    //window.plugins.toast.showShortCenter('Clearing Data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    window.plugins.toast.showShortCenter('Clearing Data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     //$('#maindeleteall').enable
     $("#settingdeleteall").attr('disabled','disabled');
