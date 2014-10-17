@@ -418,6 +418,8 @@ function onNotification(e) {
             });
 
 
+            
+
             if ( e.foreground )
             {
                 alert(e.payload.msgcnt);
