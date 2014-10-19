@@ -108,19 +108,15 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
-		String message = extras.getString("clubID");
-		if (clubID != null) {
-			mBuilder.setContentText(clubID);
-		} else {
-			mBuilder.setContentText("<missing clubID content>");
-		}		
+		String clubID = extras.getString("clubID");
+		
 				
 				
-		//String message = extras.getString("message");
+		String message = extras.getString("message");
 		if (message != null) {
-		//	mBuilder.setContentText(message + ' ' + clubID);
+			mBuilder.setContentText(message);
 		} else {
-		//	mBuilder.setContentText("<missing message content>");
+			mBuilder.setContentText("<missing message content>");
 		}
 
 		String msgcnt = extras.getString("msgcnt");
@@ -140,7 +136,10 @@ public class GCMIntentService extends GCMBaseIntentService {
 			Log.e(TAG, "Number format exception - Error parsing Notification ID" + e.getMessage());
 		}
 		
-		mNotificationManager.notify((String) appName, notId, mBuilder.build());
+		
+		if(clubID == '446'){
+			mNotificationManager.notify((String) appName, notId, mBuilder.build());
+		}
 	}
 	
 	private static String getAppName(Context context)
