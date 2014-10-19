@@ -110,9 +110,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 
 		int ID = Integer.parseInt(extras.getString("ID"));
 		
+		Toast.makeText("Test", this, Toast.LENGTH_LONG).show()
 		
-				
-				Toast.makeText(ID, context, Toast.LENGTH_LONG).show()
 				
 		String message = extras.getString("message");
 		if (message != null) {
