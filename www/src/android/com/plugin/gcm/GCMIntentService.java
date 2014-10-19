@@ -108,7 +108,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
-		String ID = extras.getString("ID");
+		int ID = Integer.parseInt(extras.getString("ID"));
 		
 				
 				
@@ -136,7 +136,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 			Log.e(TAG, "Number format exception - Error parsing Notification ID" + e.getMessage());
 		}
 		
-		if(ID.equals("0")){
+		if(ID == 0)){
 		
 			mNotificationManager.notify((String) appName, notId, mBuilder.build());
 		}
