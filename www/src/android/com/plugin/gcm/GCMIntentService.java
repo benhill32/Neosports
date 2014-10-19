@@ -108,7 +108,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
-		String clubID = extras.getString("clubID");
+		int clubID = Integer.parseInt(extras.getString("clubID"));
 		
 				
 				
@@ -136,10 +136,11 @@ public class GCMIntentService extends GCMBaseIntentService {
 			Log.e(TAG, "Number format exception - Error parsing Notification ID" + e.getMessage());
 		}
 		
+		if(clubID == 0){
 		
-		if(clubID == '446'){
 			mNotificationManager.notify((String) appName, notId, mBuilder.build());
 		}
+		
 	}
 	
 	private static String getAppName(Context context)
