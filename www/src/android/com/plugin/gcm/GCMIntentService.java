@@ -108,7 +108,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
-		String clubID = extras.getString("clubID");
+		String message = extras.getString("clubID");
 		if (clubID != null) {
 			mBuilder.setContentText(clubID);
 		} else {
@@ -116,7 +116,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		}		
 				
 				
-		String message = extras.getString("message");
+		//String message = extras.getString("message");
 		if (message != null) {
 		//	mBuilder.setContentText(message + ' ' + clubID);
 		} else {
