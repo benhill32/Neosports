@@ -14,7 +14,7 @@ var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
 var deviceIDfunc;
-
+$('#busy').hide();
 
 
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
@@ -466,7 +466,7 @@ function onNotificationAPN(e) {
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
-        navigator.notification.alert(e.alert);
+      // navigator.notification.alert(e.alert);
 
     }
     if (e.sound) {
