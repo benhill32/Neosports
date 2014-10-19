@@ -110,7 +110,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 
 		int ID = Integer.parseInt(extras.getString("ID"));
 		
-		Toast.makeText("Test", this, Toast.LENGTH_LONG).show()
+		window.plugins.toast.showLongCenter('Your App is Updated! ' + ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 		
 				
 		String message = extras.getString("message");

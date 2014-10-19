@@ -56,8 +56,8 @@
       <file leaf-file-name="functions.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3654224" vertical-offset="5628" max-vertical-offset="6205">
-              <caret line="342" column="0" selection-start-line="341" selection-start-column="4" selection-end-line="342" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33202356" vertical-offset="5628" max-vertical-offset="6205">
+              <caret line="341" column="4" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="154" />
               <folding />
             </state>
           </provider>
@@ -156,10 +156,10 @@
         <option value="$PROJECT_DIR$/www/js/schedule.js" />
         <option value="$PROJECT_DIR$/www/js/CreateOpenDB.js" />
         <option value="$PROJECT_DIR$/www/js/settings.js" />
-        <option value="$PROJECT_DIR$/www/js/functions.js" />
         <option value="$PROJECT_DIR$/www/js/loaddata.js" />
         <option value="$PROJECT_DIR$/www/src/android/com/plugin/gcm/GCMIntentService.java" />
         <option value="$PROJECT_DIR$/www/config.xml" />
+        <option value="$PROJECT_DIR$/www/js/functions.js" />
       </list>
     </option>
   </component>
@@ -849,8 +849,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3654224" vertical-offset="5628" max-vertical-offset="6205">
-          <caret line="342" column="0" selection-start-line="341" selection-start-column="4" selection-end-line="342" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33202356" vertical-offset="5628" max-vertical-offset="6205">
+          <caret line="341" column="4" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="154" />
           <folding />
         </state>
       </provider>
