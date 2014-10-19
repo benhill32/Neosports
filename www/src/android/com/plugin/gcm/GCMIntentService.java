@@ -110,17 +110,17 @@ public class GCMIntentService extends GCMBaseIntentService {
 
 		String clubID = extras.getString("clubID");
 		if (clubID != null) {
-			//mBuilder.setContentText(clubID);
+			mBuilder.setContentText(clubID);
 		} else {
-		//	mBuilder.setContentText("<missing clubID content>");
+			mBuilder.setContentText("<missing clubID content>");
 		}		
 				
 				
 		String message = extras.getString("message");
 		if (message != null) {
-			mBuilder.setContentText(message + ' ' + clubID);
+		//	mBuilder.setContentText(message + ' ' + clubID);
 		} else {
-			mBuilder.setContentText("<missing message content>");
+		//	mBuilder.setContentText("<missing message content>");
 		}
 
 		String msgcnt = extras.getString("msgcnt");
