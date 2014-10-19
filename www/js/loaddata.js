@@ -81,7 +81,7 @@ function refreshdata(){
 
 
 function loadnewtable(){
-    $('#busy').show();
+ //   $('#busy').show();
 
 
      blankLastUpdatesec();
@@ -118,7 +118,7 @@ function populateDB1(tx,results) {
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
-            $('#busy').hide();
+          //  $('#busy').hide();
          //  alert("no sync");
         }
 
@@ -129,7 +129,7 @@ function populateDB1(tx,results) {
 
 
 function populateDB(tx){
-    $('#busy').show();
+   // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
@@ -153,7 +153,7 @@ function passdatatoserver(){
 }
 
 function getchecksync(tx, results) {
-    $('#busy').hide();
+  //  $('#busy').hide();
     var row = results.rows.item(0);
 
     //alert(networkconnection);
@@ -413,16 +413,12 @@ function onNotification(e) {
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
-            db.transaction(function(tx) {
-                tx.executeSql('Update MobileApp_LastUpdatesec set Datesecs = 1000 ');
-            });
+            refreshdata();
 
-
-            
 
             if ( e.foreground )
             {
-                alert(e.payload.msgcnt);
+              //  alert(e.payload.msgcnt);
 
              //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
@@ -430,15 +426,16 @@ function onNotification(e) {
                 // On Amazon FireOS all custom attributes are contained within payload
                 var soundfile = e.soundname || e.payload.sound;
                 // if the notification contains a soundname, play it.
-              //  var my_media = new Media("/android_asset/www/"+ soundfile);
-              //  my_media.play();
+                var my_media = new Media("/android_asset/www/"+ soundfile);
+                my_media.play();
             }
             else
             {
             // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
-             //       $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+
+             //  $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
                 }
                 else
                 {
@@ -447,11 +444,11 @@ function onNotification(e) {
             }
 
 
-        //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+            //    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
-        //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+            //    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
             //Only works on Amazon Fire OS
-          //  $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+            //  $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
             break;
 
         case 'error':
@@ -475,10 +472,10 @@ function onNotificationAPN(e) {
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
       //  var snd = new Media(e.sound);
-       snd.play();
+     //  snd.play();
     }
     if (e.badge) {
-        pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+      //  pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
     }
 }
 
