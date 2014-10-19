@@ -108,10 +108,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
-		int ID = Integer.parseInt(extras.getString("ID"));
-		
-		window.plugins.toast.showLongCenter('Your App is Updated! ' + ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-		
+		int IDC = Integer.parseInt(extras.getString("IDC"));
+
 				
 		String message = extras.getString("message");
 		if (message != null) {
