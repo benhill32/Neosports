@@ -14,7 +14,6 @@ var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
 var deviceIDfunc;
-$('#busy').hide();
 
 
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
@@ -28,6 +27,7 @@ function onDeviceReadyloaddata() {
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
      getnetworkdetails();
+    $('#busy').hide();
 
     document.addEventListener("offline", onOffline, false);
 }
@@ -466,16 +466,16 @@ function onNotificationAPN(e) {
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
-      // navigator.notification.alert(e.alert);
+       navigator.notification.alert(e.alert);
 
     }
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
-      //  var snd = new Media(e.sound);
-     //  snd.play();
+        var snd = new Media(e.sound);
+       snd.play();
     }
     if (e.badge) {
-      //  pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+        pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
     }
 }
 

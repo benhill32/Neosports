@@ -108,9 +108,17 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setContentIntent(contentIntent)
 				.setAutoCancel(true);
 
+		String clubID = extras.getString("clubID");
+		if (clubID != null) {
+			//mBuilder.setContentText(clubID);
+		} else {
+		//	mBuilder.setContentText("<missing clubID content>");
+		}		
+				
+				
 		String message = extras.getString("message");
 		if (message != null) {
-			mBuilder.setContentText(message);
+			mBuilder.setContentText(message + ' ' + clubID);
 		} else {
 			mBuilder.setContentText("<missing message content>");
 		}
