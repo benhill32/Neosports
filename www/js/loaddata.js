@@ -161,8 +161,11 @@ function passdatatoserver(){
 function getchecksync(tx, results) {
   //  $('#busy').hide();
     var row = results.rows.item(0);
-
-    //alert(networkconnection);
+    window.plugins.toast.showShortCenter('Looking for Updates!', function (a) {
+        console.log('toast success: ' + a)
+    }, function (b) {
+        alert('toast error: ' + b)
+    });
 
 
     // only runs while on the index.html page.
