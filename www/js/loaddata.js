@@ -256,9 +256,8 @@ function onclickresync(tx, results) {
     //alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
-        window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-
+        sendtoast('Checking!');
 
 
 
@@ -275,8 +274,8 @@ function onclickresync(tx, results) {
     var timenow = datenow.getTime();
 
     var dif = timenow-(datenowsecsync);
+        sendtoast('Syncing data!');
 
-        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
