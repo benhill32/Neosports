@@ -56,20 +56,19 @@ function updatefollow(){
         favtop = 0;
         followtop = 1;
     }else if(favtop == 1 && followtop ==0){
-        db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_clubs set Fav = 0,Follow= 0 where ID=' + id);
-            console.log("Update INTO MobileApp_clubs");
-        });
+        clearcurrentfavteam(id)
 
-        clearhaveclub()
+        db.transaction(function(tx) {
+            tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0');
+            console.log("Update MobileApp_LastUpdatesec");
+        });
 
         favtop = 0;
         followtop = 0;
     }else if(favtop == 0 && followtop ==1){
-        addfavteam();
+        addfavteam(id);
         //force only one fav
-        clearotherfavteam(id);
-
+        clearotherfavteam(id)
 
         addfavclub();
 

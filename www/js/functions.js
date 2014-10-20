@@ -16,9 +16,11 @@ function onDeviceReady() {
     devicePlatformfunc = device.platform;
     deviceVersionfunc = device.version;
     databaseversion = db.database_version;
-
+    db.transaction(gettoken1, errorCBfunc, successCBfunc);
     document.addEventListener("backbutton", onBackKeyDown, false);
+
 }
+//db.transaction(gettoken1, errorCBfunc, successCBfunc);
 
 function onBackKeyDown() {
 var page = $(location).attr('pathname');
@@ -44,6 +46,20 @@ function clearfavteam(){
 
 
 }
+
+function clearcurrentfavteam(id){
+    db.transaction(gettoken1, errorCBfunc, successCBfunc);
+    db.transaction(function(tx) {
+        tx.executeSql('Update MobileApp_clubs set Fav = 0,Follow= 0 where ID=' + id);
+        console.log("Update INTO MobileApp_clubs");
+    });
+
+    passscoretoserver("Favclub=0&deviceid=" + deviceIDfunc + "&token=" + apptoken)
+
+   // alert("Favclub=0&deviceid=" + deviceIDfunc + "&token=" + apptoken)
+
+}
+
 
 function clearhaveclub(){
     db.transaction(function(tx) {
@@ -73,9 +89,9 @@ function addfavteam(ID){
         console.log("Update INTO MobileApp_clubs");
     });
 
-    passscoretoserver("Favclub=" + ID + "&deviceid=" + deviceIDscorecard + "&token=" + apptoken)
+    passscoretoserver("Favclub=" + ID + "&deviceid=" + deviceIDfunc + "&token=" + apptoken)
 
- alert("Favclub=" + ID + "&deviceid=" + deviceIDscorecard + "&token=" + apptoken)
+// alert("Favclub=" + ID + "&deviceid=" + deviceIDfunc + "&token=" + apptoken)
 }
 
 function addfavclub(){
