@@ -386,13 +386,15 @@ function syncmaintables(obj){
   //  navigator.splashscreen.hide();
 
 
-    sendtoastshort('Cleaning Tables!');
+
+    window.plugins.toast.showShortCenter('Cleaning Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
     db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
 
 
-    //window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-    sendtoastlong('Your App is Updated!');
+    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 
     $('#busy').hide();
 }
@@ -424,15 +426,9 @@ function gettoken1_success(tx, results) {
 
 }
 
-function sendtoastlong(ID){
+function sendtoast(ID){
 
 
     window.plugins.toast.showLongCenter(ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
-}
-
-function sendtoastshort(ID){
-
-    window.plugins.toast.showShortCenter(ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 }
