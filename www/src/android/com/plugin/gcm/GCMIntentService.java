@@ -135,7 +135,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 			Log.e(TAG, "Number format exception - Error parsing Notification ID" + e.getMessage());
 		}
 		
-		if(ID == 0)){
+		if(IDC != 0)){
 		
 			mNotificationManager.notify((String) appName, notId, mBuilder.build());
 		}
