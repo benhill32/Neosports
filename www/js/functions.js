@@ -386,12 +386,14 @@ function syncmaintables(obj){
   //  navigator.splashscreen.hide();
 
     console.log("Cleaning Tables2!");
-    sendtoast('Cleaning Tables!');
+
+    window.plugins.toast.showShortCenter('Cleaning Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
 
-    sendtoastlong('Your App is Updated!');
+
+    window.plugins.toast.showShortCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     $('#busy').hide();

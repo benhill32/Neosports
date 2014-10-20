@@ -126,21 +126,24 @@ function clearfavteam(){
 }
 
 function cleardata(){
+    window.plugins.toast.showShortCenter('Clearing Data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-    sendtoast('Clearing Data!');
+
     //$('#maindeleteall').enable
     $("#settingdeleteall").attr('disabled','disabled');
 
     $("#settingsync").attr('disabled','disabled');
-    sendtoast('Deleting Tables!');
+
+    window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 
 
     db.transaction(droptables, errorCBfunc, createtables);
 }
 
 function createtables(){
-   // window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-    sendtoast('Creating Tables!');
+   window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
     db.transaction(createDB, errorCBfunc, loadnewtable);
 }
 
