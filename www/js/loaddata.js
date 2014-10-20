@@ -161,7 +161,7 @@ function passdatatoserver(){
 function getchecksync(tx, results) {
   //  $('#busy').hide();
     var row = results.rows.item(0);
-    window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+  //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
 
 
     // only runs while on the index.html page.
@@ -191,7 +191,7 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-
+            window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
             window.plugins.toast.showShortCenter('Syncing data!', function (a) { console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b) });
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
