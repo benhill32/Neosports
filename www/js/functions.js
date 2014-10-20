@@ -223,8 +223,8 @@ function updatemenutables(obj){
 
 function syncmaintables(obj){
 
-    var datenow = new Date();
-    var timenow = datenow.getTime();
+    var datenow1 = new Date();
+    var timenow = datenow1.getTime();
 
 
   //  navigator.splashscreen.show();
@@ -378,7 +378,7 @@ function syncmaintables(obj){
     $.each(obj.Isadmin, function (idx, obj) {
 
         db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow + '"');
+            tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
             console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
 
         });
@@ -395,6 +395,12 @@ function syncmaintables(obj){
 
     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
+
+// only runs while on the index.html page.
+    if(document.getElementById("indexdiv")!=null){
+
+        loadindexmessage();
+    }
 
     $('#busy').hide();
 }

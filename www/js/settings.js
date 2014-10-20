@@ -126,7 +126,7 @@ function clearfavteam(){
 }
 
 function cleardata(){
-    window.plugins.toast.showShortCenter('Clearing Data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+ //   window.plugins.toast.showShortCenter('Clearing Data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     //$('#maindeleteall').enable
@@ -134,7 +134,7 @@ function cleardata(){
 
     $("#settingsync").attr('disabled','disabled');
 
-    window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+ //   window.plugins.toast.showShortCenter('Deleting Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
@@ -142,7 +142,7 @@ function cleardata(){
 }
 
 function createtables(){
-   window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+   //window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     db.transaction(createDB, errorCBfunc, loadnewtable);
 }
