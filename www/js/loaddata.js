@@ -218,12 +218,6 @@ function getchecksync(tx, results) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
 
-
-
-
-
-
-
         } else {
 
             //  navigator.splashscreen.hide();
@@ -312,7 +306,7 @@ function onclickresync(tx, results) {
         }
 
 
-        sendtoast('Your App is Updated!');
+       // sendtoast('Your App is Updated!');
 
 
 
