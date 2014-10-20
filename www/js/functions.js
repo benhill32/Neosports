@@ -416,3 +416,9 @@ function gettoken1_success(tx, results) {
     apptoken = menu.token;
 
 }
+
+function sendtoast(string){
+
+    window.plugins.toast.showShortCenter(string, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+}
