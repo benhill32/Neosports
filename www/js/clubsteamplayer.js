@@ -12,7 +12,7 @@ function onDeviceReady() {
     db.transaction(getdata, errorCBfunc, successCBfunc);
 }
 
-db.transaction(getdata, errorCBfunc, successCBfunc);
+//db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
 function getdata(tx) {
