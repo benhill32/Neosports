@@ -384,7 +384,14 @@ function syncmaintables(obj){
         });
     });
   //  navigator.splashscreen.hide();
-    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+    console.log("Cleaning Tables2!");
+    sendtoast('Cleaning Tables!');
+
+    db.transaction(CleanDB, errorCBfunc, successCBfunc);
+
+
+    sendtoastlong('Your App is Updated!');
 
 
     $('#busy').hide();
@@ -417,8 +424,10 @@ function gettoken1_success(tx, results) {
 
 }
 
-function sendtoast(string){
-
+function sendtoastshort(string){
     window.plugins.toast.showShortCenter(string, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+}
 
+function sendtoastlong(string){
+    window.plugins.toast.showLongCenter(string, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 }

@@ -217,7 +217,11 @@ function getchecksync(tx, results) {
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
-            sendtoast('Your App is Updated!');
+
+
+
+
+
 
 
         } else {
@@ -307,7 +311,9 @@ function onclickresync(tx, results) {
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
 
-        window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+        sendtoast('Your App is Updated!');
+
 
 
     }else{
