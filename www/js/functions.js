@@ -91,7 +91,7 @@ function addfavteam(ID){
 
     passscoretoserver("Favclub=" + ID + "&deviceid=" + deviceIDfunc + "&token=" + apptoken)
 
-// alert("Favclub=" + ID + "&deviceid=" + deviceIDfunc + "&token=" + apptoken)
+// alert("favclub=" + ID + "&deviceid=" + deviceIDfunc + "&token=" + apptoken)
 }
 
 function addfavclub(){
@@ -134,8 +134,9 @@ function passscoretoserver(testvar){
     var http = new XMLHttpRequest();
     var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
     var params = "?" + testvar;
+    alert(url + params);
     http.open("POST", url + params, true);
-   // alert(url + params);
+
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             // alert(http.responseText);

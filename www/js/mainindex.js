@@ -1,6 +1,12 @@
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(getbackground, errorCBfunc, successCBfunc);
+document.addEventListener("deviceready", onDeviceReady, false);
+var deviceIDfunc;
+function onDeviceReady() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
+    db.transaction(getbackground, errorCBfunc, successCBfunc);
+    var deviceIDfunc;
+    deviceIDfunc = device.uuid;
+}
 
 function loadindexmessage()
 {
@@ -73,6 +79,9 @@ function hadclubfunction(){
         tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1');
         console.log("Update MobileApp_LastUpdatesec");
     });
+    clearcurrentfavteam(344);
+  //  passscoretoserver("Favclub=0&deviceid=" + deviceIDfunc + "&token=" + apptoken)
+
 
     $('#mainfore').removeClass('mainforeground2');
     $('#mainfore').addClass('mainforeground');
