@@ -506,7 +506,7 @@ position: fixed;
 }
 
 .mainmenuplayers{
-    height: 20%;
+    height: 90px;
     text-align: left;
     background-color: #ffffff;
     border-bottom: 1px solid gray;
@@ -514,7 +514,7 @@ position: fixed;
     margin-bottom: 10px;
     left:5%;
 //  width: 92%;
-    padding:15px;
+    padding:15px 1px;
     clear: both;
 
 }
@@ -650,7 +650,7 @@ position: fixed;
 }
 .mainmenuteam
 {
-    height: 20%;
+    height: 90px;
     text-align: center;
     background-color: #ffffff;
     border-bottom: 1px solid gray;
@@ -658,7 +658,7 @@ position: fixed;
     margin-bottom: 10px;
     left:5%;
 //  width: 92%;
-    padding:13px;
+    padding:13px 0px;
     clear: both;
 
 }

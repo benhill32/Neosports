@@ -88,11 +88,14 @@ function getteam_success(tx, results) {
         var menu = results.rows.item(i);
         var imgg = "";
         if(menu.Base64 != "null"){
-            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;"  align="left" height="40" >';
+            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;"  align="middle" height="80" >';
         }
        // alert(menu.DivisionName);
-        $('#teamsdiv').append('<Div class="mainmenuteam" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
-            '<div class="bold size13"  >' + imgg +  menu.DivisionName +
+        $('#teamsdiv').append('<Div class="mainmenuteam" align="middle" onclick="redirectplayer(' + menu.ID + ')" >' +
+            '<div style="float: left;"  >' + imgg +
+            '</div>' +
+
+            '<div class="bold size13" style="padding-top: 20px;"  >' + menu.DivisionName +
            '</div>' +
             '</Div>');
 

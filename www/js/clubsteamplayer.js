@@ -8,58 +8,18 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCBfunc, successCBfunc);
+   // db.transaction(getMenu, errorCBfunc, successCBfunc);
+    db.transaction(getdata, errorCBfunc, successCBfunc);
 }
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
+
 db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
 function getdata(tx) {
-    var sql = "select ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position from MobilevwApp_Base_Players where TeamID=" + teamID;
+    var sql = "select ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position from MobilevwApp_Base_Players where DeletedateUTC = 'null' and TeamID=" + teamID;
    // alert(sql);
     tx.executeSql(sql, [], getteamplayer_success);
 }
-
-
-
-
-function updatefollow(){
-    $("#imgfavfollow").attr('onclick','').unbind('click');
-    if(favtop == 0 && followtop ==0){
-    db.transaction(function(tx) {
-        tx.executeSql('Update MobileApp_clubs set Fav = 0,Follow= 1 where ID=' + id);
-        console.log("Update INTO MobileApp_clubs");
-    });
-        favtop = 0;
-        followtop = 1;
-    }else if(favtop == 1 && followtop ==0){
-        db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_clubs set Fav = 0,Follow= 0 where ID=' + id);
-            console.log("Update INTO MobileApp_clubs");
-        });
-        favtop = 0;
-        followtop = 0;
-    }else if(favtop == 0 && followtop ==1){
-        db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_clubs set Fav = 1,Follow= 0 where ID=' + id);
-            console.log("Update INTO MobileApp_clubs");
-        });
-        //force only one fav
-        db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_clubs set Fav = 0 where ID != ' + id);
-            console.log("Update INTO MobileApp_clubs");
-        });
-
-        favtop = 1;
-        followtop = 0;
-    }
-
-    db.transaction(getimgfav, errorCBfunc, successCBfunc);
-
-}
-
-
 
 
 
@@ -71,11 +31,13 @@ function getteamplayer_success(tx, results) {
         var menu = results.rows.item(i);
         var imgg = "";
         if(menu.Base64 != "null"){
-            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;margin-right: 15px;"  align="left" height="40" >';
+            imgg = '<img src="data:image/png;base64,' + menu.Base64 + '" style="margin-top: -10px;margin-right: 15px;"  align="left" height="80" >';
         }
 
         $('#teamsdiv').append('<Div class="mainmenuplayers" align="left" onclick="redirectplayer(' + menu.ID + ')" >' +
-            '<div class="bold size13"  >' + imgg +  menu.FullName + '</div><div class="size11"  >' + menu.Position + '</div>' +
+            '<div >' + imgg +
+            '</div>' +
+            '<div class="bold size13"  >' +  menu.FullName + '</div><div class="size11"  >' + menu.Position + '</div>' +
 
             '</Div>');
 
