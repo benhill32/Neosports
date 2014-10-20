@@ -49,8 +49,16 @@
 
 
         <script type="text/javascript"  charset="utf-8">
+
+    document.addEventListener("deviceready", onDeviceReadyindex, false);
     refreshdata();
-    //document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReadyindex() {
+        db.transaction(createDB, errorCBfunc, successCBfunc);
+        refreshdata();
+
+    }
+
+
 
         </script>
 <style>
