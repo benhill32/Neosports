@@ -402,6 +402,8 @@ function syncmaintables(obj){
         loadindexmessage();
     }
 
+    
+
     $('#busy').hide();
 }
 
