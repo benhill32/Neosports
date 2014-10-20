@@ -385,16 +385,14 @@ function syncmaintables(obj){
     });
   //  navigator.splashscreen.hide();
 
-    console.log("Cleaning Tables2!");
 
-    window.plugins.toast.showShortCenter('Cleaning Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
+    sendtoastshort('Cleaning Tables!');
     db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
 
 
-    window.plugins.toast.showShortCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
+    //window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    sendtoastlong('Your App is Updated!');
 
     $('#busy').hide();
 }
@@ -426,10 +424,15 @@ function gettoken1_success(tx, results) {
 
 }
 
-function sendtoastshort(string){
-    window.plugins.toast.showShortCenter(string, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+function sendtoastlong(ID){
+
+
+    window.plugins.toast.showLongCenter(ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 }
 
-function sendtoastlong(string){
-    window.plugins.toast.showLongCenter(string, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+function sendtoastshort(ID){
+
+    window.plugins.toast.showShortCenter(ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
 }

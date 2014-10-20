@@ -235,8 +235,6 @@ function getchecksync(tx, results) {
 function onclicksyncloaddata(){
 
 
-
-
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
 
 }
@@ -263,7 +261,8 @@ function onclickresync(tx, results) {
     //alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
-        window.plugins.toast.showLongCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+       // window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
