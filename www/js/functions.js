@@ -7,6 +7,7 @@ var devicePlatformfunc;
 var deviceVersionfunc;
 var databaseversion;
 var appversion = -1;
+var apptoken = 0;
 
 function onDeviceReady() {
     deviceIDfunc = device.uuid;
@@ -40,14 +41,41 @@ function clearfavteam(){
         tx.executeSql('Update MobileApp_clubs set Fav = 0');
         console.log("Update INTO MobileApp_clubs");
     });
+
+
 }
 
+function clearhaveclub(){
+    db.transaction(function(tx) {
+        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 0');
+        console.log("Update MobileApp_LastUpdatesec");
+    });
+
+}
+
+function clearotherfavteam(id){
+
+    db.transaction(function(tx) {
+        tx.executeSql('Update MobileApp_clubs set Fav = 0 where ID != ' + id);
+        console.log("Update INTO MobileApp_clubs");
+    });
+
+
+}
+
+
 function addfavteam(ID){
+
+    db.transaction(gettoken1, errorCBfunc, successCBfunc);
 
     db.transaction(function(tx) {
         tx.executeSql('Update MobileApp_clubs set Fav = 1,Follow= 0 where ID=' + ID);
         console.log("Update INTO MobileApp_clubs");
     });
+
+    passscoretoserver("Favclub=" + ID + "&deviceid=" + deviceIDscorecard + "&token=" + apptoken)
+
+ alert("Favclub=" + ID + "&deviceid=" + deviceIDscorecard + "&token=" + apptoken)
 }
 
 function addfavclub(){
@@ -357,3 +385,17 @@ function URLredirectFacebook(ID){
     window.open(ID, '_system','location=yes');
 }
 
+function gettoken1(tx) {
+    var sql = "select token from MobileApp_LastUpdatesec";
+    //  alert(sql);
+    tx.executeSql(sql, [], gettoken1_success);
+}
+
+function gettoken1_success(tx, results) {
+    $('#busy').hide();
+    var len = results.rows.length;
+    var menu = results.rows.item(0);
+
+    apptoken = menu.token;
+
+}

@@ -133,7 +133,7 @@ function getclubsfav(tx) {
 
 function getclubsfav_success(tx, results) {
    // $('#busy').hide();
-    var len = results.rows.length;
+    var len = results.rows.length;choosefacteam
 //alert(len);
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
