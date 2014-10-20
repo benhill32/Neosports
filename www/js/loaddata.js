@@ -191,9 +191,9 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-            window.plugins.toast.showShortCenter('Syncing data!', function (a) { console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b) });
-            var xmlHttp = null;
+            sendtoast('Checking System!');
+            sendtoast('Syncing data!');
+        var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
 
             // $('#busy').show();
@@ -217,12 +217,8 @@ function getchecksync(tx, results) {
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
+            sendtoast('Your App is Updated!');
 
-            window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {
-                console.log('toast success: ' + a)
-            }, function (b) {
-                alert('toast error: ' + b)
-            });
 
         } else {
 
