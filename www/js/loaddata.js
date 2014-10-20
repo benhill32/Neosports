@@ -164,7 +164,11 @@ function getchecksync(tx, results) {
   //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
 
 
+    // only runs while on the index.html page.
+    if(document.getElementById("indexdiv")!=null){
 
+        loadindexmessage();
+    }
 
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -237,6 +241,9 @@ function onclicksyncloaddata2(tx){
 
 }
 
+
+
+
 function onclickresync(tx, results) {
 
   //  $('#busy').hide();
@@ -252,6 +259,14 @@ function onclickresync(tx, results) {
         window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
+
+
+
+    // only runs while on the index.html page.
+    if(document.getElementById("indexdiv")!=null){
+
+        loadindexmessage();
+    }
 
     var datemenus= row.datemenus;
     var datenowsecsync = row.Datesecs;

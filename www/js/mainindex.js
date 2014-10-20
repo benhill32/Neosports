@@ -5,11 +5,26 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
     db.transaction(getbackground, errorCBfunc, successCBfunc);
     deviceIDfunc = device.uuid;
+
 }
 
-function loadindexmessage()
-{
-    db.transaction(gethasclub, errorCBfunc, successCBfunc);
+function loadindexmessage() {
+    db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);
+}
+
+function checkclubsinsert(tx){
+    var sql = "select ID from MobileApp_clubs";
+   //  alert(sql);
+    tx.executeSql(sql, [], checkclubsinsert_success);
+
+}
+
+function checkclubsinsert_success(tx, results) {
+    var len = results.rows.length;
+
+    if(len != 0) {
+        db.transaction(gethasclub, errorCBfunc, successCBfunc);
+    }
 }
 
 function getbackground(tx) {
@@ -49,25 +64,19 @@ function gethasclub_success(tx, results) {
     var hasclub = menu.hasclub;
     var hasclubdate =menu.hasclubdate;
 
-
-
-
     var da4 = new Date();
     var na4 = da4.getTime();
 
     var dif = na4-hasclubdate;
 
 
-
-    if(hasclub == 0 && dif > "600000"){
+    if(hasclub == 0){
+ //   if(hasclub == 0 && dif > "600000"){
       //  alert($('#mainfore').attr('class'));
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
-
-
       // alert($('#mainfore').attr('class'));
             $('#basicModalnofav').modal('show');
-
     }
 
 }

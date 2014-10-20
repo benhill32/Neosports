@@ -387,7 +387,7 @@ function syncmaintables(obj){
 
 
 
-    window.plugins.toast.showShortCenter('Cleaning Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
@@ -396,11 +396,7 @@ function syncmaintables(obj){
     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
-// only runs while on the index.html page.
-    if(document.getElementById("indexdiv")!=null){
 
-        loadindexmessage();
-    }
 
 
 
