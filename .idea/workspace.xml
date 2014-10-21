@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loaddata.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="loaddata.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.32" vertical-offset="2698" max-vertical-offset="8296">
-              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.25855514" vertical-offset="1326" max-vertical-offset="8330">
+              <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainindex.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mainindex.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/mainindex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25855514" vertical-offset="1020" max-vertical-offset="2907">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.44" vertical-offset="2381" max-vertical-offset="2907">
+              <caret line="151" column="14" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -81,8 +81,8 @@
       <file leaf-file-name="functions.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.6" vertical-offset="6426" max-vertical-offset="7531">
-              <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.32" vertical-offset="2545" max-vertical-offset="7531">
+              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,8 +111,8 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-67.34615" vertical-offset="544" max-vertical-offset="3366">
-              <caret line="135" column="46" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="46" />
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="544" max-vertical-offset="3366">
+              <caret line="56" column="19" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -121,8 +121,8 @@
       <file leaf-file-name="CreateOpenDB.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/CreateOpenDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.48" vertical-offset="1293" max-vertical-offset="3043">
-              <caret line="90" column="65" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="65" />
+            <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="3043">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -169,7 +169,6 @@
         <option value="$PROJECT_DIR$/www/js/news.js" />
         <option value="$PROJECT_DIR$/www/js/schedule.js" />
         <option value="$PROJECT_DIR$/www/src/android/com/plugin/gcm/GCMIntentService.java" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/clubsteams.js" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
         <option value="$PROJECT_DIR$/www/js/CreateOpenDB.js" />
@@ -177,8 +176,9 @@
         <option value="$PROJECT_DIR$/www/js/settings.js" />
         <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/functions.js" />
-        <option value="$PROJECT_DIR$/www/js/loaddata.js" />
         <option value="$PROJECT_DIR$/www/js/mainindex.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/js/loaddata.js" />
       </list>
     </option>
   </component>
@@ -403,7 +403,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="0" width="1662" height="1010" extended-state="1" />
+    <frame x="25" y="0" width="1662" height="1010" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -732,19 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/clubsteams.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1173">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!block;n#updatefollow#0" expanded="false" />
-            <element signature="n#!!block;n#getteam_success#0" expanded="false" />
-            <marker date="1413834384798" expanded="true" signature="2746:2758" placeholder="..." />
-            <marker date="1413834384798" expanded="true" signature="2842:2860" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/pages/standings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65241635" vertical-offset="516" max-vertical-offset="1207">
@@ -753,26 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-67.34615" vertical-offset="544" max-vertical-offset="3366">
-          <caret line="135" column="46" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
           <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="714" max-vertical-offset="1819">
-          <caret line="65" column="92" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -793,34 +764,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462" vertical-offset="714" max-vertical-offset="1819">
+          <caret line="65" column="92" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/clubsteams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1173">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#updatefollow#0" expanded="false" />
+            <element signature="n#!!block;n#getteam_success#0" expanded="false" />
+            <marker date="1413834384798" expanded="true" signature="2746:2758" placeholder="..." />
+            <marker date="1413834384798" expanded="true" signature="2842:2860" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/CreateOpenDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.48" vertical-offset="1293" max-vertical-offset="3043">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="65" />
+        <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="3043">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.6" vertical-offset="6426" max-vertical-offset="7531">
-          <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.32" vertical-offset="2698" max-vertical-offset="8296">
-          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="544" max-vertical-offset="3366">
+          <caret line="56" column="19" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/mainindex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25855514" vertical-offset="1020" max-vertical-offset="2907">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.44" vertical-offset="2381" max-vertical-offset="2907">
+          <caret line="151" column="14" selection-start-line="151" selection-start-column="12" selection-end-line="151" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.32" vertical-offset="2545" max-vertical-offset="7531">
+          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25855514" vertical-offset="1326" max-vertical-offset="8330">
+          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
           <folding />
         </state>
       </provider>

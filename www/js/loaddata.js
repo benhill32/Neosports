@@ -84,8 +84,10 @@ function loadnewtable(){
  //   $('#busy').show();
 
 
-     blankLastUpdatesec();
-      pushnotifiy();
+    blankLastUpdatesec();
+    pushnotifiy();
+
+
     db.transaction(populateDB, errorCBfunc, displayupdatenow);
 
     //registers the device
@@ -191,7 +193,7 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+         //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
             window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
         var xmlHttp = null;
