@@ -98,12 +98,12 @@ function populateDB1(tx,results) {
 
     if(row.Count ==0){
        // navigator.splashscreen.show();
-        window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+      //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+        window.plugins.toast.showShortCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
        blankLastUpdatesec();
        pushnotifiy();
-        window.plugins.toast.showShortCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
