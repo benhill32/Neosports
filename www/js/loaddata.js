@@ -185,7 +185,7 @@ function getchecksync(tx, results) {
             // $('#busy').show();
             //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
-    alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
+    //alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
             xmlHttp.send();
 
