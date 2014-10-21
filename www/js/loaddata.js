@@ -153,10 +153,7 @@ function getchecksync(tx, results) {
 
 
     // only runs while on the index.html page.
-    if(document.getElementById("indexdiv")!=null){
 
-        loadindexmessage();
-    }
 
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -200,7 +197,17 @@ function getchecksync(tx, results) {
                 updatemenutables(obj);
             }
 
+
+
+
+
             syncmaintables(obj);
+
+
+            if(document.getElementById("indexdiv")!=null){
+
+                loadindexmessage();
+            }
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
@@ -249,11 +256,8 @@ function onclickresync(tx, results) {
 
 
 
-    // only runs while on the index.html page.
-    if(document.getElementById("indexdiv")!=null){
 
-        loadindexmessage();
-    }
+
 
     var datemenus= row.datemenus;
     var datenowsecsync = row.Datesecs;
