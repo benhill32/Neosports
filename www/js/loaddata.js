@@ -103,6 +103,9 @@ function populateDB1(tx,results) {
 
        blankLastUpdatesec();
        pushnotifiy();
+        window.plugins.toast.showShortCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+
+
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
 
@@ -177,11 +180,10 @@ function getchecksync(tx, results) {
 
         if (dif >= "600") {
          //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-            window.plugins.toast.showShortCenter('Syncing New data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                       window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
         var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
-
             // $('#busy').show();
             //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
