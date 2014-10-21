@@ -84,11 +84,12 @@ function loadnewtable(){
  //   $('#busy').show();
 
 
+
     blankLastUpdatesec();
     pushnotifiy();
 
 
-    db.transaction(populateDB, errorCBfunc, displayupdatenow);
+    db.transaction(populateDB, errorCBfunc, successCBfunc);
 
     //registers the device
   //  passdatatoserver();
@@ -107,11 +108,7 @@ function populateDB1(tx,results) {
 
     if(row.Count ==0){
        // navigator.splashscreen.show();
-        window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {
-            console.log('toast success: ' + a)
-        }, function (b) {
-            alert('toast error: ' + b)
-        });
+        window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
        blankLastUpdatesec();
