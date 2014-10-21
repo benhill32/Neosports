@@ -108,13 +108,10 @@ function populateDB1(tx,results) {
 
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
-//alert(row.syncwifi + " - " + networkconnection);
-
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
-          //  $('#busy').hide();
-         //  alert("no sync");
+
         }
 
 
@@ -140,7 +137,6 @@ function passdatatoserver(){
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-           // alert(http.responseText);
         }
     }
     http.send();
