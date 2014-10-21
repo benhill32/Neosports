@@ -206,7 +206,7 @@ function getchecksync(tx, results) {
 
             if(document.getElementById("indexdiv")!=null){
 
-                loadindexmessage();
+             //   loadindexmessage();
             }
 
             if (document.getElementById("settingsync") != null) {
