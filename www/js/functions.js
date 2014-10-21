@@ -226,6 +226,7 @@ function syncmaintables(obj){
     var datenow1 = new Date();
     var timenow = datenow1.getTime();
 
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
   //  navigator.splashscreen.show();
 
@@ -254,6 +255,7 @@ function syncmaintables(obj){
             console.log("INSERT INTO MobileApp_clubs is created");
         });
     });
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     $.each(obj.App_Schedule, function (idx, obj) {
@@ -292,6 +294,7 @@ function syncmaintables(obj){
             console.log("INSERT INTO MobileApp_vwApp_Teams is created");
         });
     });
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     $.each(obj.vwApp_News_v_2, function (idx, obj) {
         db.transaction(function (tx) {
@@ -314,6 +317,8 @@ function syncmaintables(obj){
             console.log("INSERT INTO MobilevwApp_Base_Players is created");
         });
     });
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
     $.each(obj.App_Players_Images, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileApp_Players_Images where ID =' + obj.ID);
@@ -341,6 +346,7 @@ function syncmaintables(obj){
         console.log('Delete MobileStandings');
     });
 
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
@@ -373,6 +379,7 @@ function syncmaintables(obj){
             console.log("INSERT INTO Mobilescreenimage is created");
         });
     });
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     $.each(obj.Isadmin, function (idx, obj) {
@@ -383,7 +390,7 @@ function syncmaintables(obj){
 
         });
     });
-  //  navigator.splashscreen.hide();
+
 
 
 
