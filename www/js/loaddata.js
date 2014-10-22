@@ -206,14 +206,19 @@ function getchecksync(tx, results) {
             window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
+            $.when( syncmaintables(obj)).done(function() {
+                alert("finished");
+            });
 
-            syncmaintables(obj);
+
 
 
             if(document.getElementById("indexdiv")!=null){
 
              //   loadindexmessage();
             }
+
+
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
@@ -295,8 +300,9 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-         syncmaintables(obj);
-
+        $.when( syncmaintables(obj)).done(function() {
+    alert("finished");
+        });
 
         if(document.getElementById("settingsync")!=null){
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
