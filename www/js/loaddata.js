@@ -212,8 +212,10 @@ function getchecksync(tx, results) {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
 
+                setTimeout(function (){
+                    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-                window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                }, 5000);
 
             });
 
@@ -307,14 +309,19 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
+
+
         $.when( syncmaintables(obj)).done(function() {
+
             window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
             db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
 
+            setTimeout(function (){
+                window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-            window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            }, 5000);
 
         });
 
