@@ -400,7 +400,7 @@ function syncmaintables(obj){
 
 
 
-    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    window.plugins.toast.showLongBottom('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
