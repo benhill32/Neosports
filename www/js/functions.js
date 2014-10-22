@@ -241,7 +241,7 @@ function syncmaintables(obj){
     totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
 
 
-    alert(totalnew);
+   // alert(totalnew);
 
 
    // document.getElementById("ft-prog").value = percenttotal;
@@ -252,10 +252,8 @@ function syncmaintables(obj){
 
   //  window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-  //  navigator.splashscreen.show();
 
     $.each(obj.App_Results, function (idx, obj) {
-        percenttotal =+ percent;
         db.transaction(function (tx) {
 
             tx.executeSql('Delete from MobileApp_Results where ID =' + obj.ID);
