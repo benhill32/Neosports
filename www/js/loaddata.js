@@ -151,7 +151,7 @@ function getchecksync(tx, results) {
   //  $('#busy').hide();
     var row = results.rows.item(0);
   //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-
+    $('#progressdiv').hide();
 
     // only runs while on the index.html page.
 
@@ -177,8 +177,9 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
+            $('#progressdiv').show();
             //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
+            document.getElementById("ft-prog").value = 5;
             if (devicePlatformfunc == "Android"){
                 window.plugins.toast.showLongCenter('Getting New data!\nThis could take a few seconds.\nPlease wait!', function (a) {
                     console.log('toast success: ' + a)
@@ -191,7 +192,7 @@ function getchecksync(tx, results) {
             xmlHttp = new XMLHttpRequest();
             // $('#busy').show();
             //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
-
+            document.getElementById("ft-prog").value = 10;
     //alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
             xmlHttp.send();
@@ -200,11 +201,11 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-            //if(datemenus != datenow) {
+
             if (datemenus != datemenus) {
                 updatemenutables(obj);
             }
-
+            document.getElementById("ft-prog").value = 20;
 
             window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
