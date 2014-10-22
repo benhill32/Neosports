@@ -148,10 +148,10 @@ function passdatatoserver(){
 }
 
 function getchecksync(tx, results) {
-
+  //  $('#busy').hide();
     var row = results.rows.item(0);
   //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-    $('#progressdiv').hide();
+
 
     // only runs while on the index.html page.
 
@@ -173,10 +173,11 @@ function getchecksync(tx, results) {
             dif = 100000000;
         }
 
+        console.log(new Date((row.Datesecs) * 1000) + "\n\r" + dif);
+        //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            $('#busy').show();
-              window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
             if (devicePlatformfunc == "Android"){
                 window.plugins.toast.showLongCenter('Getting New data!\nThis could take a few seconds.\nPlease wait!', function (a) {
@@ -184,11 +185,11 @@ function getchecksync(tx, results) {
                 }, function (b) {
                     alert('toast error: ' + b)
                 });
-            }
+        }
 
         var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
-
+            // $('#busy').show();
             //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
 
     //alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
@@ -199,7 +200,7 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-
+            //if(datemenus != datenow) {
             if (datemenus != datemenus) {
                 updatemenutables(obj);
             }
