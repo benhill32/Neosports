@@ -100,7 +100,7 @@ function populateDB1(tx,results) {
     if(row.Count ==0){
        // navigator.splashscreen.show();
       //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-        window.plugins.toast.showShortCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
        blankLastUpdatesec();
@@ -177,17 +177,12 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-             //  window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
-            if (devicePlatformfunc == "Android"){
-                window.plugins.toast.showLongCenter('Getting New data!\nThis could take a few seconds.\nPlease wait!', function (a) {
-                    console.log('toast success: ' + a)
-                }, function (b) {
-                    alert('toast error: ' + b)
-                });
-        }
 
-        var xmlHttp = null;
+
+
+            var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
             // $('#busy').show();
             //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
@@ -203,7 +198,7 @@ function getchecksync(tx, results) {
 
 
 
-            window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
             $.when( syncmaintables(obj)).done(function() {
@@ -270,6 +265,7 @@ function onclickresync(tx, results) {
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
        // window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
      //   window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
 
@@ -278,7 +274,7 @@ function onclickresync(tx, results) {
 
 
 
-    var datemenus= row.datemenus;
+        var datemenus= row.datemenus;
     var datenowsecsync = row.Datesecs;
 
     var datenow = new Date();
@@ -286,7 +282,7 @@ function onclickresync(tx, results) {
 
     var dif = timenow-(datenowsecsync);
 
-        window.plugins.toast.showShortCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
@@ -311,9 +307,6 @@ function onclickresync(tx, results) {
 
 
         $.when( syncmaintables(obj)).done(function() {
-
-
-
 
 
             db.transaction(CleanDB, errorCBfunc, successCBfunc);
