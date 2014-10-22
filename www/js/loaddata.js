@@ -14,7 +14,7 @@ var datenowsec = Math.round((milliesecs/1000));
 var golbaltoken= "";
 var networkconnection = "";
 var deviceIDfunc;
-
+var devicePlatformfunc;
 
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
@@ -26,6 +26,7 @@ function onDeviceReadyloaddata() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
+    devicePlatformfunc = device.platform;
      getnetworkdetails();
     $('#busy').hide();
 
@@ -176,8 +177,15 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-         //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                       window.plugins.toast.showLongCenter('Getting New data!\nThis could take a few seconds.\nPlease wait!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+            if (devicePlatformfunc == "Android"){
+                window.plugins.toast.showLongCenter('Getting New data!\nThis could take a few seconds.\nPlease wait!', function (a) {
+                    console.log('toast success: ' + a)
+                }, function (b) {
+                    alert('toast error: ' + b)
+                });
+            }
 
         var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
