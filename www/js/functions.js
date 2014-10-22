@@ -241,18 +241,14 @@ var totalnew =0;
     totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
 
 
-   // alert(percent);
-
-
-   // document.getElementById("ft-prog").value = percenttotal;
 
 
     var datenow1 = new Date();
     var timenow = datenow1.getTime();
 
-  //  window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
-  //  navigator.splashscreen.show();
+
 
     $.each(obj.App_Results, function (idx, obj) {
         percenttotal =+ percent;
@@ -420,19 +416,21 @@ var totalnew =0;
 
 
 
-   window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+   window.plugins.toast.showLongCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
+    setTimeout(function(){
+        window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        $('#busy').hide();
+    }, 4000);
 
 
-    window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
 
 
-    $('#busy').hide();
 }
 
 function URLredirect(ID){
