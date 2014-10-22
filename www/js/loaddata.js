@@ -269,7 +269,7 @@ function onclickresync(tx, results) {
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
        // window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-        window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+     //   window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
