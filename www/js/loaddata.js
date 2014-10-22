@@ -148,7 +148,7 @@ function passdatatoserver(){
 }
 
 function getchecksync(tx, results) {
-  //  $('#busy').hide();
+
     var row = results.rows.item(0);
   //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
     $('#progressdiv').hide();
@@ -177,7 +177,7 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            $('#progressdiv').show();
+            $('#busy').show();
             //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
             document.getElementById("ft-prog").value = 5;
             if (devicePlatformfunc == "Android"){
