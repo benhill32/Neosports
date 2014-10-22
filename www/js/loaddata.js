@@ -200,10 +200,7 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-            //if(datemenus != datenow) {
-            if (datemenus != datemenus) {
-                updatemenutables(obj);
-            }
+
 
 
             window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});

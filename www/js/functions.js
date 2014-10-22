@@ -236,12 +236,12 @@ var checkintvalue = function (val){
 
 function syncmaintables(obj){
     $('#busy').hide();
-var totalnew =0;
+    var totalnew =0;
 
     totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
 
 
-   // alert(percent);
+    alert(totalnew);
 
 
    // document.getElementById("ft-prog").value = percenttotal;
