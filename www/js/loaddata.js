@@ -207,7 +207,12 @@ function getchecksync(tx, results) {
 
 
             $.when( syncmaintables(obj)).done(function() {
-                window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                
+                setTimeout(function (){
+                    window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+                }, 5000);
+
 
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
@@ -313,7 +318,12 @@ function onclickresync(tx, results) {
 
         $.when( syncmaintables(obj)).done(function() {
 
-            window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            setTimeout(function (){
+                window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+            }, 5000);
+
+
 
             db.transaction(CleanDB, errorCBfunc, successCBfunc);
 
