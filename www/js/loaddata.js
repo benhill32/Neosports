@@ -198,7 +198,7 @@ function getchecksync(tx, results) {
             }
 
 
-            window.plugins.toast.showLongCenter('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+            window.plugins.toast.showLongBottom('Syncing data!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
 
