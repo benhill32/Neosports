@@ -207,9 +207,9 @@ function getchecksync(tx, results) {
 
 
             $.when( syncmaintables(obj)).done(function() {
-                
+
                 setTimeout(function (){
-                    window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                    window.plugins.toast.showLongCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
                 }, 5000);
 
@@ -319,7 +319,7 @@ function onclickresync(tx, results) {
         $.when( syncmaintables(obj)).done(function() {
 
             setTimeout(function (){
-                window.plugins.toast.showShortCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                window.plugins.toast.showLongCenter('Cleaning Up!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
             }, 5000);
 
