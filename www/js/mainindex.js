@@ -5,7 +5,7 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
     db.transaction(getbackground, errorCBfunc, successCBfunc);
     deviceIDfunc = device.uuid;
-
+    loadindexmessage();
 }
 
 function loadindexmessage() {
