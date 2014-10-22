@@ -177,7 +177,7 @@ function getchecksync(tx, results) {
 
         if (dif >= "600") {
          //   window.plugins.toast.showShortCenter('Checking System!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                       window.plugins.toast.showShortCenter('Getting New data! \n This could take a few seconds.', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+                       window.plugins.toast.showShortCenter('Getting New data!\nThis could take a few seconds.\n Please wait!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
         var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
