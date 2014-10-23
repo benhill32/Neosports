@@ -391,12 +391,12 @@ function onNotification(e) {
 }
 
 function onNotificationAPN(e) {
-    onclicksyncloaddata();
+
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
        navigator.notification.alert(e.alert);
-
+        onclicksyncloaddata();
     }
     if (e.sound) {
 // playing a sound also requires the org.apache.cordova.media plugin
