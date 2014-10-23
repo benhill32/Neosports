@@ -33,15 +33,11 @@ function onDeviceReadyloaddata() {
     document.addEventListener("offline", onOffline, false);
 }
 
-
 function onOffline()
 {
-
   //  window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 }
-
-
 
 function getnetworkdetails(){
 
@@ -66,20 +62,10 @@ function checkonline(){
 
 }
 
-
-
-
-
-
-
 function refreshdata(){
 
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
-
-
-
-
 
 function loadnewtable(){
  //   $('#busy').show();
@@ -148,13 +134,8 @@ function passdatatoserver(){
 }
 
 function getchecksync(tx, results) {
-  //  $('#busy').hide();
+
     var row = results.rows.item(0);
-  //  window.plugins.toast.showShortBottom('Checking System!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-
-
-    // only runs while on the index.html page.
-
 
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -164,30 +145,18 @@ function getchecksync(tx, results) {
 
         var dif = (timenow/1000)-(datenowsecsync);
 
-    //alert(row.syncwifi + " - " + networkconnection);
-
-
-
-        // forcing sync from new page
         if (document.getElementById("newsmain") != null) {
             dif = 100000000;
         }
 
-        console.log(new Date((row.Datesecs) * 1000) + "\n\r" + dif);
+       // console.log(new Date((row.Datesecs) * 1000) + "\n\r" + dif);
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
-
-
-
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
-            // $('#busy').show();
-            //  xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=' + datenowsecsync,false);
-
-    //alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
             xmlHttp.send();
 
@@ -195,41 +164,25 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-
-
-
             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
             $.when( syncmaintables(obj)).done(function() {
-
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
-
-
                 setTimeout(function (){
                     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
                 }, 5000);
 
             });
 
-
-
-
             if(document.getElementById("indexdiv")!=null){
-
              //   loadindexmessage();
             }
-
-
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
 
-        } else {
-
-            //  navigator.splashscreen.hide();
         }
 
 }
@@ -243,35 +196,18 @@ function onclicksyncloaddata(){
 
 function onclicksyncloaddata2(tx){
     checkonline();
-
     var sql = "select Datesecs,datemenus,syncwifi,token,isadmin from MobileApp_LastUpdatesec";
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
 
 }
 
-
-
-
 function onclickresync(tx, results) {
 
-  //  $('#busy').hide();
     var row = results.rows.item(0);
-  //  alert(row.isadmin);
-   // alert(row.syncwifi + " - " + networkconnection);
-    //alert(networkconnection);
-
-    //alert(row.syncwifi + " - " + networkconnection);
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
-       // window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-     //   window.plugins.toast.showShortCenter('Checking for updates!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
         window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-
-
-
-
-
-
 
 
         var datemenus= row.datemenus;
@@ -286,35 +222,22 @@ function onclickresync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-      //  $('#busy').show();
        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
-       // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
-
-   // alert('http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync);
 
         xmlHttp.send();
 
         var json = xmlHttp.responseText;
 
         var obj = JSON.parse(json);
-        // alert(obj);
 
-        //if(datemenus != datenow) {
         if(datemenus != datemenus) {
             updatemenutables(obj);
         }
 
-
-
         $.when( syncmaintables(obj)).done(function() {
-
-
             db.transaction(CleanDB, errorCBfunc, successCBfunc);
-
-
             setTimeout(function (){
                 window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
             }, 5000);
 
         });
@@ -322,15 +245,6 @@ function onclickresync(tx, results) {
         if(document.getElementById("settingsync")!=null){
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
-
-
-
-
-
-
-    }else{
-      //  $('#busy').hide();
-       // alert("no sync");
     }
 }
 
@@ -428,7 +342,7 @@ function onNotification(e) {
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
-            refreshdata();
+            onclicksyncloaddata();
 
 
             if ( e.foreground )
@@ -477,7 +391,7 @@ function onNotification(e) {
 }
 
 function onNotificationAPN(e) {
-
+    onclicksyncloaddata();
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin

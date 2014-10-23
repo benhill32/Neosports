@@ -236,21 +236,12 @@ var checkintvalue = function (val){
 
 function syncmaintables(obj){
     $('#busy').hide();
-    var totalnew =0;
+   // var totalnew =0;
 
-    totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
-
-
-   // alert(totalnew);
-
-
-   // document.getElementById("ft-prog").value = percenttotal;
-
+  //  totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
 
     var datenow1 = new Date();
     var timenow = datenow1.getTime();
-
-  //  window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     $.each(obj.App_Results, function (idx, obj) {
@@ -279,8 +270,6 @@ function syncmaintables(obj){
             console.log("INSERT INTO MobileApp_clubs is created");
         });
     });
- //   window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
 
     $.each(obj.App_Schedule, function (idx, obj) {
         db.transaction(function (tx) {
@@ -341,7 +330,6 @@ function syncmaintables(obj){
             console.log("INSERT INTO MobilevwApp_Base_Players is created");
         });
     });
-  //  window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     $.each(obj.App_Players_Images, function (idx, obj) {
         db.transaction(function (tx) {
@@ -369,10 +357,6 @@ function syncmaintables(obj){
         tx.executeSql('Delete from MobileStandings');
         console.log('Delete MobileStandings');
     });
-
- //   window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-
-
 
     $.each(obj.Standings, function (idx, obj) {
 
@@ -403,7 +387,6 @@ function syncmaintables(obj){
             console.log("INSERT INTO Mobilescreenimage is created");
         });
     });
-   // window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
 
     $.each(obj.Isadmin, function (idx, obj) {
