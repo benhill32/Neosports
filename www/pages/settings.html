@@ -46,7 +46,36 @@
 
 </div>
 <div class="container-fluid">
-<Div class="mainmenuwifi" align="left" >
+    <div class="modal" id="indexloadingdata" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div style="height:50px; float:left;">
+                        <img src="../img/Loading.gif" id="busy1" align="left"  height="30px" style="padding-right:10px;" >
+
+                    </div>
+
+                    <div style="float:left;">
+                       Resyncing Data,<br>
+                        this may take a while if you aren't<br>
+                        on a high speed network.
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <Div class="mainmenuwifi" align="left" >
     <div class="floatleftsettings">
         <strong>Mobile Data</strong>
         <p>Only Sync on Wi-Fi network</p>
@@ -93,7 +122,7 @@
 
 
 </div>
-<div class="footer">
+<div class="footer" data-toggle="modal" data-target="#indexloadingdata">
     <img src="../img/neocom.jpg" Height="50px" onclick="URLredirect('http://www.neocom.co.nz')">
     <img src="../img/Loading.gif" id="busy" align="right"  height="40px" >
 </div>

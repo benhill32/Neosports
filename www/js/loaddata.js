@@ -69,8 +69,8 @@ function refreshdata(){
 
 function loadnewtable(){
  //   $('#busy').show();
-    blankLastUpdatesec();
-    pushnotifiy();
+  //  blankLastUpdatesec();
+  //  pushnotifiy();
 
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
@@ -87,16 +87,16 @@ function populateDB1(tx,results) {
        // navigator.splashscreen.show();
       //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
    //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-
-
-       blankLastUpdatesec();
-       pushnotifiy();
         if(document.getElementById("indexdiv")!=null) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
             // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
+
+       blankLastUpdatesec();
+       pushnotifiy();
+
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
