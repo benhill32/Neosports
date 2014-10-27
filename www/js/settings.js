@@ -5,8 +5,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var networkconnectionset = 0;
 
 function onDeviceReady() {
-    db.transaction(checkfavteam, errorCBfunc, successCBfunc);
-    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+
+    $.when( getnetworkdetailsset).done(function() {
+        db.transaction(checkfavteam, errorCBfunc, successCBfunc);
+        db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+
+    });
+
+
+
+
+
+}
+
+function getnetworkdetailsset(){
 
     document.addEventListener("online", onOfflinesetting, false);
 }
@@ -83,7 +95,7 @@ function displayupdatenow(){
 }
 
 function getsyncdate_success2(tx, results) {
-    $('#busy').show();
+
     var len = results.rows.length;
 
     var menu = results.rows.item(0);
@@ -110,7 +122,7 @@ function getsyncdate_success2(tx, results) {
     }
         console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
 
-
+alert(wifi + " - " + networkconnectionset);
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
@@ -159,7 +171,7 @@ function clearfavteam(){
 
 function cleardata(){
 
-   // $('#indexloadingdata').modal('show');
+    $('#indexloadingdata').modal('show');
 
     db.transaction(droptables, errorCBfunc, createtables);
 }
@@ -208,6 +220,7 @@ function chkmobiledata(id){
        $('#btn2').removeClass("btn btn-xs btn-default");
        $('#btn2').addClass("btn btn-xs btn-primary active");
    }
+
 
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
         $('#settingdeleteall').attr('disabled', false);
