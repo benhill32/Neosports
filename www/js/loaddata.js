@@ -75,7 +75,12 @@ function loadnewtable(){
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
 
+function populateDB(tx){
+    // $('#busy').show();
+    var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
+    tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
+}
 
 function populateDB1(tx,results) {
   //  checkonline();
@@ -115,12 +120,7 @@ function populateDB1(tx,results) {
 }
 
 
-function populateDB(tx){
-   // $('#busy').show();
-    var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
-    tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
-}
 
 function passdatatoserver(){
 
@@ -166,11 +166,9 @@ function getchecksync(tx, results) {
             xmlHttp.send();
 
             var json = xmlHttp.responseText;
-
             var obj = JSON.parse(json);
 
         //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-
 
             $.when( syncmaintables(obj)).done(function() {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
@@ -180,7 +178,6 @@ function getchecksync(tx, results) {
                     $('#mainfore').addClass('mainforeground');
                     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                 }, 5000);
-
             });
 
             if(document.getElementById("indexdiv")!=null){

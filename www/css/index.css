@@ -508,6 +508,14 @@ position: fixed;
 
     top: 40%;
 }
+#divhelp{
+    padding :8px;
+    padding-bottom: 80px;
+}
+#divhelp div{
+    margin-top:15px;
+
+}
 .mainmenuplayers{
     height: 90px;
     text-align: left;
