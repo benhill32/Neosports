@@ -114,11 +114,16 @@ function getsyncdate_success2(tx, results) {
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
+        $("#settingdeleteall").css('color', '#333');
+        $("#settingsync").css('color', '#333');
+
+
     }else{
             $('#settingdeleteall').attr('disabled', true);
             $('#settingsync').attr('disabled', true);
 
-        
+        $("#settingdeleteall").css('color', 'grey');
+        $("#settingsync").css('color', 'grey');
     }
 
     if(wifi==1) {
@@ -207,10 +212,13 @@ function chkmobiledata(id){
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
+        $("#settingdeleteall").css('color', '#333');
+        $("#settingsync").css('color', '#333');
     }else{
         $('#settingdeleteall').attr('disabled', true);
         $('#settingsync').attr('disabled', true);
-
+        $("#settingdeleteall").css('color', 'grey');
+        $("#settingsync").css('color', 'grey');
     }
 
 
