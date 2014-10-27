@@ -328,11 +328,11 @@ function onNotification(e) {
 
 
               //  $('#busy').show();
-                var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
+                             var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
                 xmlHttpt.open("GET",strur ,false);
-             //   alert(strur);
+                //   alert(strur);
                 xmlHttpt.send();
-             //   $('#busy').hide();
+                //   $('#busy').hide();
 
              //   alert(json);
             }
@@ -342,7 +342,6 @@ function onNotification(e) {
             // if this flag is set, this notification happened while we were in the foreground.
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
 
-            onclicksyncloaddata();
 
 
             if ( e.foreground )
