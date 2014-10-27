@@ -202,6 +202,13 @@ function chkmobiledata(id){
        $('#btn2').addClass("btn btn-xs btn-primary active");
    }
 
+    if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
+
+    }else{
+        $('#settingdeleteall').removeAttr('onclick');
+        $('#settingsync').removeAttr('onclick');
+    }
+
 
 }
 
