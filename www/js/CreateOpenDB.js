@@ -9,9 +9,6 @@ var dbCreated = false;
 
 function droptables(){
 
-
-
-
     db.transaction(function(tx) {
         tx.executeSql('Drop TABLE MobileApp_Results_Menu ');
         console.log("MobileApp_Results_Menu table is Dropped");
