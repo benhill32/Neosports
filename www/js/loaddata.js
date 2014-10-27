@@ -86,7 +86,7 @@ function populateDB1(tx,results) {
     if(row.Count ==0){
        // navigator.splashscreen.show();
       //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-       window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+   //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
        blankLastUpdatesec();
@@ -158,7 +158,7 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+          //  window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
@@ -169,13 +169,15 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-            window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+        //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
             $.when( syncmaintables(obj)).done(function() {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
                 setTimeout(function (){
                     $('#indexloadingdata').modal('hide')
+                    $('#mainfore').removeClass('mainforeground2');
+                    $('#mainfore').addClass('mainforeground');
                     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
                 }, 5000);
 
