@@ -86,7 +86,7 @@ function populateDB1(tx,results) {
     if(row.Count ==0){
        // navigator.splashscreen.show();
       //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+       window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
        blankLastUpdatesec();
@@ -95,7 +95,7 @@ function populateDB1(tx,results) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
             // alert($('#mainfore').attr('class'));
-            $('#basicModalnofav').modal('show');
+            $('#indexloadingdata').modal('show');
         }
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
