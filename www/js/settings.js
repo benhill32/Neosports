@@ -112,10 +112,13 @@ function getsyncdate_success2(tx, results) {
 
 
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
-
+        $('#settingdeleteall').attr('disabled', false);
+        $('#settingsync').attr('disabled', false);
     }else{
-        $('#settingdeleteall').removeAttr('onclick');
-        $('#settingsync').removeAttr('onclick');
+            $('#settingdeleteall').attr('disabled', true);
+            $('#settingsync').attr('disabled', true);
+
+        
     }
 
     if(wifi==1) {
@@ -134,8 +137,7 @@ function getsyncdate_success2(tx, results) {
 
 
     $('#busy').hide();
-    $("#settingdeleteall").removeAttr('disabled');
-    $("#settingsync").removeAttr('disabled');
+
 
 }
 
@@ -203,10 +205,12 @@ function chkmobiledata(id){
    }
 
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
-
+        $('#settingdeleteall').attr('disabled', false);
+        $('#settingsync').attr('disabled', false);
     }else{
-        $('#settingdeleteall').removeAttr('onclick');
-        $('#settingsync').removeAttr('onclick');
+        $('#settingdeleteall').attr('disabled', true);
+        $('#settingsync').attr('disabled', true);
+
     }
 
 
