@@ -36,6 +36,8 @@ function onDeviceReadyloaddata() {
 function onOffline()
 {
   //  window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    $('#settingdeleteall').removeAttr('onclick');
+    $('#settingsync').removeAttr('onclick');
 
 }
 
@@ -111,7 +113,9 @@ function populateDB1(tx,results) {
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
-
+            $('#indexloadingdata').modal('hide')
+            $('#mainfore').removeClass('mainforeground2');
+            $('#mainfore').addClass('mainforeground');
         }
 
 

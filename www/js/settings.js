@@ -2,13 +2,32 @@ db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 2000
 console.log("LOCALDB - Database ready");
 
 document.addEventListener("deviceready", onDeviceReady, false);
-
+var networkconnectionset = 0;
 
 function onDeviceReady() {
     db.transaction(checkfavteam, errorCBfunc, successCBfunc);
     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+
+    document.addEventListener("online", onOfflinesetting, false);
 }
 
+function onOfflinesetting(){
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = '0';
+    states[Connection.ETHERNET] = '2';
+    states[Connection.WIFI]     = '2';
+    states[Connection.CELL_2G]  = '1';
+    states[Connection.CELL_3G]  = '1';
+    states[Connection.CELL_4G]  = '1';
+    states[Connection.NONE]     = '0';
+
+    networkconnectionset = states[networkState];
+//alert(states[networkState]);
+
+}
 
 //https://www.google.co.nz/maps/dir/
 
@@ -92,6 +111,12 @@ function getsyncdate_success2(tx, results) {
         console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
 
 
+    if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
+
+    }else{
+        $('#settingdeleteall').removeAttr('onclick');
+        $('#settingsync').removeAttr('onclick');
+    }
 
     if(wifi==1) {
         $('#btn2').removeClass("btn btn-xs btn-primary active");
@@ -127,7 +152,7 @@ function clearfavteam(){
 
 function cleardata(){
 
-    $('#indexloadingdata').modal('show');
+   // $('#indexloadingdata').modal('show');
 
     db.transaction(droptables, errorCBfunc, createtables);
 }
