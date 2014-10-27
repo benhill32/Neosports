@@ -122,7 +122,7 @@ function getsyncdate_success2(tx, results) {
     }
         console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
 
-alert(wifi + " - " + networkconnectionset);
+
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
@@ -221,7 +221,7 @@ function chkmobiledata(id){
        $('#btn2').addClass("btn btn-xs btn-primary active");
    }
 
-
+    alert(id + " - " + networkconnectionset);
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
