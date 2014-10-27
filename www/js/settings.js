@@ -6,16 +6,11 @@ var networkconnectionset = 0;
 
 function onDeviceReady() {
 
-    $.when( getnetworkdetailsset).done(function() {
+    $.when(getnetworkdetailsset).done(function() {
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
     });
-
-
-
-
-
 }
 
 function getnetworkdetailsset(){
@@ -95,6 +90,7 @@ function displayupdatenow(){
 }
 
 function getsyncdate_success2(tx, results) {
+    getnetworkdetailsset();
 
     var len = results.rows.length;
 
@@ -193,6 +189,7 @@ var rand = function() {
 
 
 function chkmobiledata(id){
+    getnetworkdetailsset();
 
    if(id=="btn1")
    {
