@@ -164,6 +164,7 @@ function clearfavteam(){
 function cleardata(){
     onOfflinesetting();
 
+    alert(wifiallset + " - " + networkconnectionset);
     if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
 
         $('#indexloadingdata').modal('show');
