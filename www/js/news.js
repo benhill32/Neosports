@@ -125,57 +125,59 @@ function getnewfeed_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
 //alert(len);
-    var count = 0;
-    $('#newsmain').empty();
-    for (var i=0; i<len; i++) {
-        var menu = results.rows.item(i);
-        var imgg = "";
-       // alert(menu.Body.substring(0, 200));
+    if(len!= 0) {
+
+        var count = 0;
+        $('#newsmain').empty();
+        for (var i = 0; i < len; i++) {
+            var menu = results.rows.item(i);
+            var imgg = "";
+            // alert(menu.Body.substring(0, 200));
 
 
-      //  alert("i=" + i + " -" + menu.Title);
+            //  alert("i=" + i + " -" + menu.Title);
             if (menu.URL != "") {
                 var imgicon = "";
                 var URLnow = "";
 
-                if((menu.URL).search("facebook.com")!= -1){
+                if ((menu.URL).search("facebook.com") != -1) {
                     imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-                }else if((menu.URL).search(".pdf")!= -1){
+                } else if ((menu.URL).search(".pdf") != -1) {
                     imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-                }else if((menu.URL).search("youtu.be")!= -1){
+                } else if ((menu.URL).search("youtu.be") != -1) {
                     imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
-                }else{
-                    imgicon="<img src='../img/infohttp.png' style='padding-right: 10px' height='30' align='left'>";
+                } else {
+                    imgicon = "<img src='../img/infohttp.png' style='padding-right: 10px' height='30' align='left'>";
                     URLnow = menu.URL;
                 }
 
 
-                if ((menu.Body).length <= 200){
+                if ((menu.Body).length <= 200) {
 
                     $('#newsmain').append('<Div id="divnewmain" class=" bs-callout bs-callout-info"  align="left">' +
-                            '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
-                         '' + imgicon +
+                        '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
+                        '' + imgicon +
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
-                        '<div class="bold size13"   >' + menu.Title +'</div>' +
+                        '<div class="bold size13"   >' + menu.Title + '</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
                         '</Div>' +
 
                         '</Div>');
 
 
-                }else{
+                } else {
                     $('#newsmain').append('<Div  id="divnewmain" class=" bs-callout bs-callout-info" align="left"  >' +
                         '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
                         '' + imgicon +
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
-                        '<div class="bold size13"   >' + menu.Title +'</div>' +
+                        '<div class="bold size13"   >' + menu.Title + '</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
                         '  <span data-toggle="modal"  class="size11 blue" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
                         '</Div>');
@@ -194,12 +196,12 @@ function getnewfeed_success(tx, results) {
                         '</Div>' +
 
                         '<Div id="divnew2"> ' +
-                        '<div class="bold size13"   >' + menu.Title +'</div>' +
+                        '<div class="bold size13"   >' + menu.Title + '</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
                         '</Div>' +
                         '</Div>');
 
-                }else{
+                } else {
 
                     $('#newsmain').append('<Div  id="divnewmain" align="left"  class=" bs-callout bs-callout-success"  >' +
                         '<Div id="divnew1" > ' +
@@ -208,7 +210,7 @@ function getnewfeed_success(tx, results) {
 
 
                         '<Div id="divnew2"> ' +
-                        '<div class="bold size13"   >' + menu.Title +'</div>' +
+                        '<div class="bold size13"   >' + menu.Title + '</div>' +
                         '<div class="size11">' + menu.Body.substring(0, 200) +
                         '  <span data-toggle="modal"  class="size11 blue" data-target="#basicModal" onclick="loadnewfeed(' + menu.ID + ')"  >Read More</span></div>' +
                         '</Div>' +
@@ -219,19 +221,34 @@ function getnewfeed_success(tx, results) {
             }
 
 
-        if(count ==2 && spon2 <= nospor) {
-            console.log("ii=" + ii + " -" + menu.Title);
-            $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
+            if (count == 2 && spon2 <= nospor) {
+                console.log("ii=" + ii + " -" + menu.Title);
+                $('#newsmain').append('<Div id="spondiv' + spon2 + '" class="sponsordiv"></div>');
 
-            spon2++;
+                spon2++;
 
-           //
-            count = -1;
+                //
+                count = -1;
+            }
+            count++;
+
         }
-        count++;
+        db.transaction(getsponsors, errorCBfunc, successCBfunc);
 
+    }else{
+
+
+
+        $('#newsmain').append('<Div  id="divnewmain" align="left"  class=" bs-callout bs-callout-success"  >' +
+            '<Div id="divnew1" > ' +
+            '<img src="../img/infohttp.png" style="padding-right: 10px" height="30" align="left">' +
+            '</Div>' +
+
+
+            '<Div id="divnew2"> ' +
+            '<div class="bold size13"   >No News Yet!</div>' +
+            '</Div>');
     }
-    db.transaction(getsponsors, errorCBfunc, successCBfunc);
 }
 
 function redirectplayer(ID){
