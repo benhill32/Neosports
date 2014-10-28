@@ -1,9 +1,11 @@
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 console.log("LOCALDB - Database ready");
-
-document.addEventListener("deviceready", onDeviceReady, false);
 var networkconnectionset = 0;
 var wifiallset = 0;
+
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
 function onDeviceReady() {
@@ -99,7 +101,7 @@ function getsyncdate_success2(tx, results) {
  //   alert(menu.Datesecs);
     var dateme = new Date((menu.Datesecs)*1000);
     var wifi = menu.syncwifi;
-    wifiallset= menu.syncwifi;
+    wifiallset = wifi;
     var month = new Array();
     month[0] = "January";
     month[1] = "February";
@@ -206,7 +208,7 @@ function chkmobiledata(id){
        $('#btn2').addClass("btn btn-xs btn-default");
        $('#btn1').removeClass("btn btn-xs btn-default");
        $('#btn1').addClass("btn btn-xs btn-primary active");
-
+       wifiallset = 1;
    }
    else if(id== "btn2")
    {
@@ -214,7 +216,7 @@ function chkmobiledata(id){
            tx.executeSql('Update MobileApp_LastUpdatesec set syncwifi = 0');
            console.log("syncwifi off");
        });
-
+       wifiallset =0;
        $('#btn1').removeClass("btn btn-xs btn-primary active");
        $('#btn1').addClass("btn btn-xs btn-default");
        $('#btn2').removeClass("btn btn-xs btn-default");
