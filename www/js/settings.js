@@ -120,16 +120,9 @@ function getsyncdate_success2(tx, results) {
 
 
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
-        $('#settingdeleteall').prop('disabled', false);
-        $('#settingsync').prop('disabled', false);
         $("#settingdeleteall").css('color', '#333');
         $("#settingsync").css('color', '#333');
-
-
     }else{
-            $('#settingdeleteall').prop('disabled', true);
-            $('#settingsync').prop('disabled', true);
-
         $("#settingdeleteall").css('color', 'grey');
         $("#settingsync").css('color', 'grey');
     }
@@ -166,10 +159,14 @@ function clearfavteam(){
 }
 
 function cleardata(){
+    onOfflinesetting();
 
-    $('#indexloadingdata').modal('show');
+    if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))) {
 
-    db.transaction(droptables, errorCBfunc, createtables);
+        $('#indexloadingdata').modal('show');
+
+        db.transaction(droptables, errorCBfunc, createtables);
+    }
 }
 
 function createtables(){
@@ -220,13 +217,11 @@ function chkmobiledata(id){
 
 
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
-        $('#settingdeleteall').prop('disabled', false);
-        $('#settingsync').prop('disabled', false);
+
         $("#settingdeleteall").css('color', '#333');
         $("#settingsync").css('color', '#333');
     }else{
-        $('#settingdeleteall').prop('disabled', true);
-        $('#settingsync').prop('disabled', true);
+
         $("#settingdeleteall").css('color', 'grey');
         $("#settingsync").css('color', 'grey');
     }

@@ -36,8 +36,8 @@ function onDeviceReadyloaddata() {
 function onOffline()
 {
   //  window.plugins.toast.showShortCenter('You are offline', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-    $('#settingdeleteall').removeAttr('onclick');
-    $('#settingsync').removeAttr('onclick');
+    $('#settingdeleteall').prop('disabled', false);
+    $('#settingsync').prop('disabled', false);
 
 }
 
