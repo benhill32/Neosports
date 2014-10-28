@@ -8,11 +8,10 @@ var wifiallset = 0;
 
 function onDeviceReady() {
 
-    $.when(onOfflinesetting).done(function() {
+    onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
-    });
 }
 
 function getnetworkdetailsset(){
