@@ -6,7 +6,7 @@ var networkconnectionset = 0;
 
 function onDeviceReady() {
 
-    $.when(getnetworkdetailsset).done(function() {
+    $.when(onOfflinesetting).done(function() {
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
@@ -90,7 +90,7 @@ function displayupdatenow(){
 }
 
 function getsyncdate_success2(tx, results) {
-    getnetworkdetailsset();
+    onOfflinesetting();
 
     var len = results.rows.length;
 
@@ -189,7 +189,7 @@ var rand = function() {
 
 
 function chkmobiledata(id){
-    getnetworkdetailsset();
+    onOfflinesetting();
 
    if(id=="btn1")
    {
