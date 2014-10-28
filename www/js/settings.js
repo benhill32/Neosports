@@ -3,6 +3,8 @@ console.log("LOCALDB - Database ready");
 
 document.addEventListener("deviceready", onDeviceReady, false);
 var networkconnectionset = 0;
+var wifiallset = 0;
+
 
 function onDeviceReady() {
 
@@ -98,6 +100,7 @@ function getsyncdate_success2(tx, results) {
  //   alert(menu.Datesecs);
     var dateme = new Date((menu.Datesecs)*1000);
     var wifi = menu.syncwifi;
+    wifiallset= menu.syncwifi;
     var month = new Array();
     month[0] = "January";
     month[1] = "February";
@@ -161,7 +164,7 @@ function clearfavteam(){
 function cleardata(){
     onOfflinesetting();
 
-    if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))) {
+    if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
 
         $('#indexloadingdata').modal('show');
 
