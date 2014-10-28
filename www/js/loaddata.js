@@ -15,7 +15,7 @@ var golbaltoken= "";
 var networkconnection = "";
 var deviceIDfunc;
 var devicePlatformfunc;
-
+var chkrefreshdata = 0;
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
@@ -65,7 +65,7 @@ function checkonline(){
 }
 
 function refreshdata(){
-
+    chkrefreshdata =0;
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
 
@@ -107,11 +107,11 @@ function populateDB1(tx,results) {
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
-
+        chkrefreshdata = 1;
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
-            tx.executeSql(sql, [], getchecksync,errorCBfunc);
+             tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#indexloadingdata').modal('hide')
             $('#mainfore').removeClass('mainforeground2');
@@ -162,8 +162,9 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-          //  window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-
+           if(chkrefreshdata == 1){
+             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+           }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
@@ -172,7 +173,6 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-        //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
             $.when( syncmaintables(obj)).done(function() {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
