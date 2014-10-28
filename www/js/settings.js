@@ -157,20 +157,16 @@ function clearfavteam(){
         tx.executeSql('Update MobileApp_clubs set Fav = 0');
         console.log("Cleared Fav Team");
     });
-
-
     db.transaction(checkfavteam, errorCBfunc, successCBfunc);
 }
 
 function cleardata(){
     onOfflinesetting();
 
-    alert(wifiallset + " - " + networkconnectionset);
+   
     if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
-
         $('#indexloadingdata').modal('show');
         db.transaction(droptables, errorCBfunc, createtables);
-
     }
 
 
