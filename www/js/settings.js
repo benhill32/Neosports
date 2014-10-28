@@ -162,14 +162,17 @@ function clearfavteam(){
 
 function cleardata(){
     onOfflinesetting();
-
     alert(wifiallset + " - " + networkconnectionset);
     if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
+
+    }else{
 
         $('#indexloadingdata').modal('show');
 
         db.transaction(droptables, errorCBfunc, createtables);
     }
+
+
 }
 
 function createtables(){
