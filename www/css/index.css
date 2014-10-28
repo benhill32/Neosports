@@ -822,6 +822,14 @@ text-align: center !important;
 
 }
 
+
+#idhelp:hover
+{
+    background-color: #339900;
+    color: white;
+    opacity:0.7;
+
+}
 .footer
 {
     position: fixed;
