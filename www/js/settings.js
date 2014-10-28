@@ -218,7 +218,7 @@ function chkmobiledata(id){
        $('#btn2').addClass("btn btn-xs btn-primary active");
    }
 
-    alert(id + " - " + networkconnectionset);
+
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
         $('#settingdeleteall').attr('disabled', false);
         $('#settingsync').attr('disabled', false);
@@ -237,7 +237,7 @@ function chkmobiledata(id){
 
 function manualupdateben(){
 
-alert("dasdsad");
+
 
     var xmlHttpp = null;
     xmlHttpp = new XMLHttpRequest();
