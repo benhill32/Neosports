@@ -517,7 +517,7 @@ position: fixed;
 
 }
 .mainmenuplayers{
-    height: 90px;
+    height: 120px;
     text-align: left;
     background-color: #ffffff;
     border-bottom: 1px solid gray;
@@ -673,7 +673,10 @@ position: fixed;
     clear: both;
 
 }
+.padding2 {
+    padding:2px;
 
+}
 
 .bold{
     font-weight: bold;
@@ -709,7 +712,16 @@ position: fixed;
     clear: both;
     color: blue;
 }
+.divmainplayer{
+    height: 20%;
+    text-align: center;
+  //  border-bottom: 1px solid blue;
+    font-size:18px;
+  //  padding:15px;
+    clear: both;
+    color: blue;
 
+}
 .divmainheader a{
     text-decoration: none;
     text-align: center;

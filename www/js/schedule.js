@@ -24,7 +24,7 @@ function onDeviceReady() {
     devicePlatformsch = device.platform;
 }
 
-db.transaction(getfliter, errorCBfunc, successCBfunc);
+//db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +

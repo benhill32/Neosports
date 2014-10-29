@@ -18,7 +18,7 @@ function onDeviceReadynews() {
   //  checkfb();
 }
 
-//db.transaction(getdatanews, errorCBfunc, successCBfunc);
+db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
 
 function checkfb(){
@@ -125,10 +125,12 @@ function getnewfeed_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
 //alert(len);
+    $('#newsmain').empty();
+
     if(len!= 0) {
 
         var count = 0;
-        $('#newsmain').empty();
+
         for (var i = 0; i < len; i++) {
             var menu = results.rows.item(i);
             var imgg = "";
