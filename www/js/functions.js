@@ -24,6 +24,9 @@ function onDeviceReady() {
 }
 //db.transaction(gettoken1, errorCBfunc, successCBfunc);
 
+
+
+
 function checkonlinefunctions(){
 
     var networkState = navigator.connection.type;

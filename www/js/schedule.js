@@ -12,10 +12,12 @@ var devicePlatformsch =0;
 
 var remindtext = 0;
 var reminddate =0;
-
+var networkconnectionsch = 0;
 document.addEventListener("deviceready", onDeviceReady, false);
 
+
 function onDeviceReady() {
+    checkonlinesch();
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
    //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
@@ -23,8 +25,38 @@ function onDeviceReady() {
     $(".tooltip").draggable("enable");
     devicePlatformsch = device.platform;
 }
+function updateadmin() {
+    db.transaction(function (tx) {
+        tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
+        console.log("Update INTO MobileApp_LastUpdatesec");
+    });
 
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
+}
+db.transaction(getfliter, errorCBfunc, successCBfunc);
+
+
+
+
+function checkonlinesch(){
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = '0';
+    states[Connection.ETHERNET] = '2';
+    states[Connection.WIFI]     = '2';
+    states[Connection.CELL_2G]  = '1';
+    states[Connection.CELL_3G]  = '1';
+    states[Connection.CELL_4G]  = '1';
+    states[Connection.NONE]     = '0';
+
+    networkconnectionsch = states[networkState];
+//alert(states[networkState]);
+
+}
+
+
+
 
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
@@ -67,9 +99,16 @@ function allowfilter(id){
 
 
 function getfliter(tx) {
+
+  //  updateadmin();
+
+
     var sql = "select fliterON,isadmin from MobileApp_LastUpdatesec";
     //alert(sql);
     tx.executeSql(sql, [], getfliter_success);
+
+
+
 }
 
 
@@ -261,7 +300,7 @@ function loadinfo_success2(tx, results) {
     var d = new Date();
 
     var text =  menu.HomeName + ' vs ' + menu.AwayName +  "||" + menu.TournamentName + "||" + menu.Field;
-var text2 =menu.HomeName + ' vs ' + menu.AwayName;
+    var text2 =menu.HomeName + ' vs ' + menu.AwayName;
 
     // alert(("0" + (d.getMonth()+1)).slice(-2));
     $('#Directions').hide();
@@ -277,7 +316,7 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
             $('#cancell').empty().append('<Div  >Cancel Game!</div>');
             $("#cancell").click(function () {
                 navigator.notification.confirm(
-                    'Are you sure you want to Cancel this game!\n' + text,  // message
+                    'Are you sure you want to Cancel this game!\n' + text2,  // message
                     onConfirm,              // callback to invoke with index of button pressed
                     'Canceled Game',            // title
                     'Yes,No'          // buttonLabels
@@ -291,6 +330,7 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
     }else {
 
         $('#score').hide();
+        $('#cancell').hide();
         $('#remind').show();
         //$("#remind").click(addreminder(menu.ID,menu.DatetimeStart));
         $("#remind").empty().append('<Div data-toggle="modal" data-target="#basicModalyesno" onclick="createvarforremind(\'' + menu.DatetimeStart + '\',\'' + text + '\')" >  Remind Me</div>');
@@ -306,11 +346,18 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
     }
 }
 function onConfirm(button) {
+    checkonlinesch();
+    if(networkconnectionsch != 0){
+        if(button ==1){
 
-    if(button ==1){
+            alert('You selected button ' + button);
+        }
 
-        alert('You selected button ' + button);
+    }else{
+        alert("You don't have access to internet!");
+
     }
+
 
 
 }
