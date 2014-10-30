@@ -423,12 +423,24 @@ position: fixed;
     text-decoration: none !important;
     padding-bottom: 200px;
 }
+
+#addnewfeed,a:hover, a:focus{
+    padding-top: 60px;
+    color: #333 !important;
+    text-decoration: none !important;
+    padding-bottom: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #loadnews{
     height: 50px;
     top: 15px;
-    float:right;
-
-    
+    float:left;
+    padding-left: 30px;
+    padding-top: 12px;
+    padding-right: 30px;
+    min-height: 60px;
 }
 .container-fluid{
     padding-left:0px !important;

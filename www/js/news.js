@@ -14,11 +14,43 @@ document.addEventListener("deviceready", onDeviceReadynews, false);
 function onDeviceReadynews() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
+    db.transaction(getadmin, errorCBfunc, successCBfunc);
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
   //  checkfb();
 }
+//db.transaction(getadmin, errorCBfunc, successCBfunc);
+//db.transaction(getdatanews, errorCBfunc, successCBfunc);
 
-db.transaction(getdatanews, errorCBfunc, successCBfunc);
+
+function getadmin(tx) {
+
+    var sql = "select isadmin from MobileApp_LastUpdatesec";
+    //alert(sql);
+    tx.executeSql(sql, [], getadmin_success);
+}
+
+
+function getadmin_success(tx, results) {
+
+    var len = results.rows.length;
+
+
+      if(len != 0) {
+        var menu = results.rows.item(0);
+        if(menu.isadmin ==1){
+            $('#loadnews').empty();
+            $('#loadnews').append('<img src="../img/plus2.png"  style="height:30px;" title="Add New Feed">' +'</Div>');
+            $('#loadnews').click(function(){
+                weblink('../pages/addnewfeed.html')
+            });
+        }
+    }
+
+
+    db.transaction(getdatanews, errorCBfunc, successCBfunc);
+}
+
+
 
 
 function checkfb(){
@@ -118,6 +150,10 @@ function getdata2(tx) {
 //alert(sql);
     tx.executeSql(sql, [], getnewfeed_success);
 }
+
+
+
+
 
 
 
