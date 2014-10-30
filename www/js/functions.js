@@ -152,12 +152,9 @@ function passnewfeedtoserver(testvar){
     var http = new XMLHttpRequest();
     var url = "http://centralfootball.neosportz.com/apploadnewsfeed.aspx";
     var params = "?" + testvar;
-     alert(url + params);
-    $('#txttitle').val(url + params);
+   //  alert(url + params);
+   // $('#txttitle').val(url + params);
     http.open("POST", url + params, true);
-
-
-
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
@@ -166,7 +163,11 @@ function passnewfeedtoserver(testvar){
     }
     http.send();
 
+
+
+
 }
+
 
 function getUrlVarsfunc() {
     var vars = [], hash;
@@ -474,5 +475,6 @@ function sendnewfeed(){
     var drescription = $('#txtDescription').val();
 
     passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription)
-
+    
+    onclicksyncloaddata();
 }
