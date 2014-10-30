@@ -146,6 +146,27 @@ function passscoretoserver(testvar){
 
 }
 
+
+function passnewfeedtoserver(testvar){
+
+    var http = new XMLHttpRequest();
+    var url = "http://centralfootball.neosportz.com/apploadnewsfeed.aspx";
+    var params = "?" + testvar;
+     alert(url + params);
+    http.open("POST", url + params, true);
+
+
+
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            // alert(http.responseText);
+        }
+    }
+    http.send();
+
+}
+
 function getUrlVarsfunc() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -441,5 +462,16 @@ function sendtoast(ID){
 
 
     window.plugins.toast.showLongCenter(ID, function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+
+}
+
+
+function sendnewfeed(){
+
+    db.transaction(gettoken1, errorCBfunc, successCBfunc);
+    var title = $('#txttitle').val();
+    var drescription = $('#txtDescription').val();
+
+    passnewfeedtoserver("&deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title =" + title + "&drescription=" + drescription)
 
 }
