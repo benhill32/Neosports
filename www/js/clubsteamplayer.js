@@ -90,12 +90,19 @@ function loadplayerinfo2_success(tx, results) {
 
     }
 
+    var res = (menu.DOB).split("T");
+    var split = res[0].split("-");
+    var month = split[1];
+    var year = split[0];
+    var day = split[2];
+
+
     $('#playerinfodiv').append('<div class=" size11  bold padding2"  >Name:</div> <div class="size11 padding2"  > ' +  menu.FullName + '</div>' +
     '<div class="size11 bold padding2 "  >Nickname:</div> <div class="size11 padding2"  >' + menu.NickName + '</div>' +
     '<div class="size11 bold padding2"  >Height:</div> <div class="size11 padding2"  > ' + menu.Height + '</div>' +
     '<div class="size11 bold padding2"  >Weight:</div> <div class="size11 padding2"  > ' + menu.Weight + '</div>' +
     '<div class="size11 bold padding2"  >Postion:</div> <div class="size11 padding2"  > ' + menu.Position + '</div>' +
-    '<div class="size11 bold padding2"  >DOB:</div> <div class="size11 padding2"  > ' + menu.DOB + '</div>' +
+    '<div class="size11 bold padding2"  >DOB:</div> <div class="size11 padding2"  > ' + day + "/" + month + "/" + year + '</div>' +
     '<div class="size11 bold padding2"  >BirthPlace:</div> <div class="size11 padding2"  > ' + menu.BirthPlace + '</div>' +
     '<div class="size11 bold padding2"  >Weight:</div> <div class="size11 padding2"  > ' + menu.Weight + '</div>' +
     '<div class="size11 bold padding2"  >Playing Number:</div> <div class="size11 padding2"  > ' + menu.SquadNo + '</div>' +
