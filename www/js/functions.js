@@ -8,8 +8,10 @@ var deviceVersionfunc;
 var databaseversion;
 var appversion = -1;
 var apptoken = 0;
+var networkconnectionfun= 0;
 
 function onDeviceReady() {
+    checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;
     deviceCordovafunc = device.cordova;
@@ -21,6 +23,27 @@ function onDeviceReady() {
 
 }
 //db.transaction(gettoken1, errorCBfunc, successCBfunc);
+
+function checkonlinefunctions(){
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = '0';
+    states[Connection.ETHERNET] = '2';
+    states[Connection.WIFI]     = '2';
+    states[Connection.CELL_2G]  = '1';
+    states[Connection.CELL_3G]  = '1';
+    states[Connection.CELL_4G]  = '1';
+    states[Connection.NONE]     = '0';
+
+    networkconnectionfun = states[networkState];
+//alert(states[networkState]);
+
+}
+
+
+
 
 function onBackKeyDown() {
 var page = $(location).attr('pathname');
@@ -152,15 +175,14 @@ function passnewfeedtoserver(testvar){
     var http = new XMLHttpRequest();
     var url = "http://centralfootball.neosportz.com/apploadnewsfeed.aspx";
     var params = "?" + testvar;
-   //  alert(url + params);
-   // $('#txttitle').val(url + params);
     http.open("POST", url + params, true);
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-            // alert(http.responseText);
+             alert(http.responseText);
         }
     }
+
     http.send();
 
 
@@ -469,12 +491,20 @@ function sendtoast(ID){
 
 
 function sendnewfeed(){
+    checkonlinefunctions();
+    if(networkconnectionfun !=0) {
+        db.transaction(gettoken1, errorCBfunc, successCBfunc);
+        var title = $('#txttitle').val();
+        var drescription = $('#txtDescription').val();
 
-    db.transaction(gettoken1, errorCBfunc, successCBfunc);
-    var title = $('#txttitle').val();
-    var drescription = $('#txtDescription').val();
+     passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription);
 
-    passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription)
+        alert("New Feed has been added!");
 
-    onclicksyncloaddata();
+        onclicksyncloaddata();
+    }else{
+
+        alert("You don't have access to internet!");
+    }
+
 }

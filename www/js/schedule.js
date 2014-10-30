@@ -113,6 +113,7 @@ function getClubID_success(tx, results) {
 }
 
 
+
 function getdata2(tx) {
     var sql = "select ID from MobileApp_clubs where Follow = 1";
     //alert(sql);
@@ -321,13 +322,13 @@ function addreminder(IDd){
     var mins = split2[1]
 
     var startDate = new Date(year,(month),day,hours,mins,0,0,0); // beware: month 0 = january, 11 = december
-   // alert(startDate);
+    // alert(startDate);
     var endDate = new Date(year,(month),day,hours,mins,0,0,0);
     var title = text[0];
     var location = text[2];
     var notes = text[1];
-    var successremind = function(message) { alert("Success: " + JSON.stringify(message)); };
-    var errorremind = function(message) { alert("Error: " + message); };
+    var successremind = function(message) { alert("Event added to calendar!"); };
+    var errorremind =function(message) { alert("Something went wrong event not added to calendar!"); };
 
     var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
     calOptions.firstReminderMinutes = IDd; // default is 60, pass in null for no reminder (alarm)

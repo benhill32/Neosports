@@ -5,6 +5,7 @@ var id = getUrlVars()["ID"];
 var gtoken =0;
 
 var deviceIDscorecard;
+var networkconnectionscore = 0;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -14,6 +15,25 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
     db.transaction(getdata, errorCBfunc, successCBfunc);
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
+    checkonlinescore()
+}
+
+
+function checkonlinescore(){
+
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = '0';
+    states[Connection.ETHERNET] = '2';
+    states[Connection.WIFI]     = '2';
+    states[Connection.CELL_2G]  = '1';
+    states[Connection.CELL_3G]  = '1';
+    states[Connection.CELL_4G]  = '1';
+    states[Connection.NONE]     = '0';
+
+    networkconnectionscore = states[networkState];
+//alert(states[networkState]);
 
 }
 
@@ -77,17 +97,17 @@ function getscoredata_success(tx, results) {
 
 
 function getscore(team,value){
+if(networkconnectionscore != 0) {
+    if (team == 0) {
 
-    if(team == 0){
-
-        db.transaction(function(tx) {
+        db.transaction(function (tx) {
             tx.executeSql('Update MobileApp_Results set AwayScore = AwayScore+' + value + ' where ID = ' + id);
             console.log("Update INTO MobileApp_Results");
         });
 
-    }else if (team ==1){
+    } else if (team == 1) {
 
-        db.transaction(function(tx) {
+        db.transaction(function (tx) {
             tx.executeSql('Update MobileApp_Results set HomeScore = HomeScore+' + value + '  where ID = ' + id);
             console.log("Update INTO MobileApp_Results");
         });
@@ -99,8 +119,11 @@ function getscore(team,value){
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     //getting token for sync
     db.transaction(gettoken, errorCBfunc, successCBfunc);
-    db.transaction(getscorefromtable,errorCBfunc,successCBfunc);
+    db.transaction(getscorefromtable, errorCBfunc, successCBfunc);
+}else{
 
+    alert("You don't have access to internet!");
+}
 }
 
 function getscorefromtable(tx) {
@@ -110,6 +133,7 @@ function getscorefromtable(tx) {
 }
 
 function getscorefromtable_success(tx, results) {
+
     $('#busy').hide();
     var len = results.rows.length;
     var menu = results.rows.item(0);
