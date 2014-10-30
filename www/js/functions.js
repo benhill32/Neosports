@@ -475,6 +475,6 @@ function sendnewfeed(){
     var drescription = $('#txtDescription').val();
 
     passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription)
-    
+
     onclicksyncloaddata();
 }

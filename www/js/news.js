@@ -15,11 +15,11 @@ function onDeviceReadynews() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(getadmin, errorCBfunc, successCBfunc);
-    db.transaction(getdatanews, errorCBfunc, successCBfunc);
+
   //  checkfb();
 }
-//db.transaction(getadmin, errorCBfunc, successCBfunc);
-//db.transaction(getdatanews, errorCBfunc, successCBfunc);
+db.transaction(getadmin, errorCBfunc, successCBfunc);
+
 
 
 function getadmin(tx) {
@@ -318,7 +318,7 @@ function getsponsors_success(tx, results) {
             var menu = results.rows.item(i);
 
             if (menu.Base64 != "null") {
-                imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  >';
+                imgg = '<img src="data:image/png;base64,' + menu.Base64 + '"  height="80" >';
             }
          //   alert(menu.Name);
 
