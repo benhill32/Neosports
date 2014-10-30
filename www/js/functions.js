@@ -472,6 +472,6 @@ function sendnewfeed(){
     var title = $('#txttitle').val();
     var drescription = $('#txtDescription').val();
 
-    passnewfeedtoserver("&deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title =" + title + "&drescription=" + drescription)
+    passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title =" + title + "&drescription=" + drescription)
 
 }
