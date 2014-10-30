@@ -153,6 +153,7 @@ function passnewfeedtoserver(testvar){
     var url = "http://centralfootball.neosportz.com/apploadnewsfeed.aspx";
     var params = "?" + testvar;
      alert(url + params);
+    $('#txttitle').val(url + params);
     http.open("POST", url + params, true);
 
 
@@ -472,6 +473,6 @@ function sendnewfeed(){
     var title = $('#txttitle').val();
     var drescription = $('#txtDescription').val();
 
-    passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title =" + title + "&drescription=" + drescription)
+    passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription)
 
 }

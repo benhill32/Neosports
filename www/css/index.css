@@ -425,7 +425,7 @@ position: fixed;
 }
 
 #addnewfeed,a:hover, a:focus{
-    padding-top: 60px;
+    padding-top: 80px;
     color: #333 !important;
     text-decoration: none !important;
     padding-bottom: 200px;
