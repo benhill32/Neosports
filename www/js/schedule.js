@@ -261,9 +261,9 @@ function loadinfo_success2(tx, results) {
     var d = new Date();
 
     var text =  menu.HomeName + ' vs ' + menu.AwayName +  "||" + menu.TournamentName + "||" + menu.Field;
+var text2 =menu.HomeName + ' vs ' + menu.AwayName;
 
-
-   // alert(("0" + (d.getMonth()+1)).slice(-2));
+    // alert(("0" + (d.getMonth()+1)).slice(-2));
     $('#Directions').hide();
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
         if(isadmin==1) {
@@ -272,6 +272,19 @@ function loadinfo_success2(tx, results) {
             $("#score").click(function () {
                 window.open("scorecard.html?ID=" + menu.ID);
             });
+
+            $('#cancell').show();
+            $('#cancell').empty().append('<Div  >Cancel Game!</div>');
+            $("#cancell").click(function () {
+                navigator.notification.confirm(
+                    'Are you sure you want to Cancel this game!<br>' + text2,  // message
+                    onConfirm,              // callback to invoke with index of button pressed
+                    'Canceled Game',            // title
+                    ',Exit'          // buttonLabels
+                );
+            });
+
+
         }
         $('#remind').hide();
 
@@ -284,6 +297,7 @@ function loadinfo_success2(tx, results) {
 
     }
 
+
     if(menu.Latitude != "null" || menu.Longitude != "null" ) {
         $('#Directions').show();
         $("#Directions").click(function () {
@@ -291,6 +305,13 @@ function loadinfo_success2(tx, results) {
         });
     }
 }
+function onConfirm(button) {
+    alert('You selected button ' + button);
+}
+
+
+
+
 
 function getUrlVars() {
     var vars = [], hash;
