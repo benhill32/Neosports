@@ -280,7 +280,7 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
                     'Are you sure you want to Cancel this game!<br>' + text2,  // message
                     onConfirm,              // callback to invoke with index of button pressed
                     'Canceled Game',            // title
-                    ',Exit'          // buttonLabels
+                    'Yes,No'          // buttonLabels
                 );
             });
 
