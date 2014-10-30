@@ -277,7 +277,7 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
             $('#cancell').empty().append('<Div  >Cancel Game!</div>');
             $("#cancell").click(function () {
                 navigator.notification.confirm(
-                    'Are you sure you want to Cancel this game!<br>' + text2,  // message
+                    'Are you sure you want to Cancel this game!\n' + text,  // message
                     onConfirm,              // callback to invoke with index of button pressed
                     'Canceled Game',            // title
                     'Yes,No'          // buttonLabels
@@ -306,7 +306,13 @@ var text2 =menu.HomeName + ' vs ' + menu.AwayName;
     }
 }
 function onConfirm(button) {
-    alert('You selected button ' + button);
+
+    if(button ==1){
+
+        alert('You selected button ' + button);
+    }
+
+
 }
 
 
