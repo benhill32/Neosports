@@ -18,7 +18,7 @@ function onDeviceReadynews() {
 
   //  checkfb();
 }
-db.transaction(getadmin, errorCBfunc, successCBfunc);
+//db.transaction(getadmin, errorCBfunc, successCBfunc);
 
 
 
@@ -314,7 +314,7 @@ function getsponsors_success(tx, results) {
 
 
 
-    
+
     for (var i=0; i<len; i++) {
 
         if (len != 0) {
