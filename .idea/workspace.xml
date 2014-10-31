@@ -56,8 +56,8 @@
       <file leaf-file-name="schedule.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43302754" vertical-offset="393" max-vertical-offset="7174">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6036697" vertical-offset="5383" max-vertical-offset="7174">
+              <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
               <folding>
                 <element signature="n#!!block;n#checkonlinesch#0" expanded="false" />
               </folding>
@@ -848,8 +848,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43302754" vertical-offset="393" max-vertical-offset="7174">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6036697" vertical-offset="5383" max-vertical-offset="7174">
+          <caret line="352" column="50" selection-start-line="352" selection-start-column="50" selection-end-line="352" selection-end-column="50" />
           <folding>
             <element signature="n#!!block;n#checkonlinesch#0" expanded="false" />
           </folding>
