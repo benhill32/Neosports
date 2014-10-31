@@ -32,7 +32,7 @@ function updateadmin() {
     });
 
 }
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 
 
@@ -313,16 +313,8 @@ function loadinfo_success2(tx, results) {
             });
 
             $('#cancell').show();
-            $('#cancell').empty().append('<Div  >Cancel Game!</div>');
-            $("#cancell").click(function () {
-                var answer = confirm ("'Are you sure you want to Cancel this game!\n' + text2")
-                if (answer){
-                    alert ("Yes")
 
-                }else{
-                    alert ("No")
-                }
-            });
+            $('#divmainheadercancel').append('Do you want to cancel this game\n' + text2)
 
 
         }
