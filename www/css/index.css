@@ -777,13 +777,13 @@ text-align: center !important;
 
 }
 
-.cancelyes:hover{
+#cancelyes:hover{
     background-color: #339900;
     color: white;
     opacity:0.7;
 
 }
-.cancelno:hover{
+#cancelno:hover{
     background-color: #339900;
     color: white;
     opacity:0.7;
