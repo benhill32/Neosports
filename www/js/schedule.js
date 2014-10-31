@@ -315,12 +315,13 @@ function loadinfo_success2(tx, results) {
             $('#cancell').show();
             $('#cancell').empty().append('<Div  >Cancel Game!</div>');
             $("#cancell").click(function () {
-                navigator.notification.confirm(
-                    'Are you sure you want to Cancel this game!\n' + text2,  // message
-                    onConfirm,              // callback to invoke with index of button pressed
-                    'Canceled Game',            // title
-                    'Yes,Cancel'          // buttonLabels
-                );
+                var answer = confirm ("'Are you sure you want to Cancel this game!\n' + text2")
+                if (answer){
+                    alert ("Yes")
+
+                }else{
+                    alert ("No")
+                }
             });
 
 
