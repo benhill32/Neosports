@@ -314,7 +314,7 @@ function loadinfo_success2(tx, results) {
 
             $('#cancell').show();
 
-            $('#divmainheadercancel').append('Do you want to cancel this game\n' + text2)
+            $('#divmainheadercancel').empty().append('Do you want to cancel this game\n' + text2)
 
 
         }
