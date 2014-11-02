@@ -17,7 +17,8 @@ function onDeviceReady() {
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     checkonlinescore()
 }
-
+//db.transaction(getdata, errorCBfunc, successCBfunc);
+//db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
 function checkonlinescore(){
 

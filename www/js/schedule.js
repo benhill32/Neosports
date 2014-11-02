@@ -34,7 +34,10 @@ function updateadmin() {
 }
 //db.transaction(getfliter, errorCBfunc, successCBfunc);
 
-
+//db.transaction(function(tx) {
+//    tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
+//    console.log("Update MobileApp_LastUpdatesec");
+//});
 
 
 function checkonlinesch(){
@@ -272,7 +275,7 @@ function getMenu_success(tx, results) {
 
 function loadinfo(ID) {
     IDhist = ID;
-
+//alert(ID);
     db.transaction(loadinfo_success1, errorCBfunc, successCBfunc);
 
 }
@@ -302,6 +305,9 @@ function loadinfo_success2(tx, results) {
     var text =  menu.HomeName + ' vs ' + menu.AwayName +  "||" + menu.TournamentName + "||" + menu.Field;
     var text2 =menu.HomeName + ' vs ' + menu.AwayName;
 
+    $('#score').hide();
+    $('#cancell').hide();
+
     // alert(("0" + (d.getMonth()+1)).slice(-2));
     $('#Directions').hide();
     if (day == d.getDate() && month == ("0" + (d.getMonth()+1)).slice(-2) && year == d.getFullYear()){
@@ -309,7 +315,7 @@ function loadinfo_success2(tx, results) {
             $('#score').show();
             $('#score').empty().append('<Div >Score Card</div>');
             $("#score").click(function () {
-                window.open("scorecard.html?ID=" + menu.ID);
+                window.open("scorecard.html?ID=" + IDhist);
             });
 
             $('#cancell').show();
