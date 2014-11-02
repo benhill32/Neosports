@@ -196,7 +196,6 @@ function passcancelgametoserver(testvar){
     var url = "http://centralfootball.neosportz.com/apploadcancelgame.aspx";
     var params = "?" + testvar;
     http.open("POST", url + params, true);
-    alert(url + params);
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             //  alert(http.responseText);
@@ -534,6 +533,8 @@ function cancelgamenow(ID){
         alert("Game has been Canceled!");
 
         onclicksyncloaddata();
+
+        db.transaction(getfliter, errorCBfunc, successCBfunc);
     }else{
 
         alert("You don't have access to internet!");
