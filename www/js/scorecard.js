@@ -17,8 +17,8 @@ function onDeviceReady() {
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     checkonlinescore()
 }
-//db.transaction(getdata, errorCBfunc, successCBfunc);
-//db.transaction(getscoredata, errorCBfunc, successCBfunc);
+db.transaction(getdata, errorCBfunc, successCBfunc);
+db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
 function checkonlinescore(){
 
@@ -46,8 +46,8 @@ function getscoredata(tx) {
 
 
 function getdata(tx) {
-    var sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final from MobileApp_Results where ID = '" + id + "'";
-  //  alert(sql);
+    var sql = "select ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,halftime,fulltime from MobileApp_Results where ID = '" + id + "'";
+    //alert(sql);
     tx.executeSql(sql, [], getMenu_success);
 }
 
@@ -56,10 +56,8 @@ function getMenu_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
 //alert(len);
-
-
-
-        var menu = results.rows.item(0);
+    var menu = results.rows.item(0);
+var Gameid =menu.ID;
         var res = (menu.DatetimeStart).split("T");
 
             $('#scorecard').empty().append('<Div class="mainmenuscore" >' +
@@ -67,8 +65,48 @@ function getMenu_success(tx, results) {
                 '<div class="floatleft" align="center" id="homescore"  >' + menu.HomeScore + '</div><div class="floatleft"  align="center" id="awayscore"  >' + menu.AwayScore + '</div>' +
                 '' +
                 '<div id="divscore"  ></div>' +
+                '<div id="divhalffull" align="center"  >' +
+                '<button id="btnhalf" class="btn btn-warning" onclick="gamestate(1,' + Gameid + ')" >Its Halftime</button><br>' +
+                '<button id="btnfull" class="btn btn-warning" onclick="gamestate(2,' + Gameid + ')" >Its Fulltime</button>' +
+                '</div>' +
                 '</Div>');
 
+    if(menu.halftime !='null'){
+        if(menu.fulltime == 'null') {
+            $("#btnhalf").hide();
+        }else{
+            $("#btnfull").hide();
+        }
+    }
+
+    if(menu.halftime == 'null'){
+        $("#btnfull").hide();
+    }else{
+
+        $("#btnhalf").hide();
+    }
+}
+
+function gamestate(IDD,id){
+
+        if (IDD == 1) {
+            db.transaction(function (tx) {
+                tx.executeSql('Update MobileApp_Results set halftime = 1 where ID = ' + id);
+                console.log("Update INTO MobileApp_Results");
+            });
+
+
+        }else{
+
+            db.transaction(function (tx) {
+                tx.executeSql('Update MobileApp_Results set halftime = 1, fulltime= 1 where ID = ' + id);
+                console.log("Update INTO MobileApp_Results");
+            });
+        }
+    db.transaction(getdata, errorCBfunc, successCBfunc);
+    db.transaction(getscoredata, errorCBfunc, successCBfunc);
+
+    halftimefulltimenow(id,IDD);
 
 }
 
@@ -76,8 +114,6 @@ function getscoredata_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
         //alert(len);
-
-
 
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
@@ -98,6 +134,7 @@ function getscoredata_success(tx, results) {
 
 
 function getscore(team,value){
+    checkonlinescore();
 if(networkconnectionscore != 0) {
     if (team == 0) {
 
