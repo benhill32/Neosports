@@ -548,7 +548,7 @@ function halftimefulltimenow(GameID,outcome){
     if(networkconnectionfun !=0) {
         db.transaction(gettoken1, errorCBfunc, successCBfunc);
 
-        passscoretoserver("gameid=" + GameID + "&outcome=" + outcome  + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken)
+        passscoretoserver("gameid=" + GameID + "&outcome=" + outcome  + "&deviceid=" + deviceIDscorecard + "&token=" + apptoken)
 
         alert("Game has been Updated!");
     }else{
