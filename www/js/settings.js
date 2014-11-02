@@ -5,10 +5,10 @@ var wifiallset = 0;
 
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyset, false);
 
 
-function onDeviceReady() {
+function onDeviceReadyset() {
 
     onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
