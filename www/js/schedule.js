@@ -32,7 +32,7 @@ function updateadmin() {
     });
 
 }
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 //db.transaction(function(tx) {
 //    tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
@@ -320,7 +320,7 @@ function loadinfo_success2(tx, results) {
 
             $('#cancell').show();
 
-            $('#divmainheadercancel').empty().append('Do you want to cancel this game\n' + text2)
+            $('#divmainheadercancel').empty().append('Do you want to cancel this game </br> ' + text2)
 
 
         }
@@ -426,6 +426,13 @@ function createvarforremind(DatetimeStart,text){
 
     reminddate =DatetimeStart;
     remindtext = text;
+}
+
+function cancelgame(){
+
+
+
+    cancelgamenow(IDhist);
 }
 
 

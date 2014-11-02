@@ -188,8 +188,22 @@ function passnewfeedtoserver(testvar){
 
     http.send();
 
+}
 
+function passcancelgametoserver(testvar){
 
+    var http = new XMLHttpRequest();
+    var url = "http://centralfootball.neosportz.com/apploadcancelgame.aspx";
+    var params = "?" + testvar;
+    http.open("POST", url + params, true);
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            //  alert(http.responseText);
+        }
+    }
+
+    http.send();
 
 }
 
@@ -503,6 +517,21 @@ function sendnewfeed(){
      passnewfeedtoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&title=" + title + "&drescription=" + drescription);
 
         alert("New Feed has been added!");
+
+        onclicksyncloaddata();
+    }else{
+
+        alert("You don't have access to internet!");
+    }
+
+}
+
+function cancelgamenow(ID){
+    checkonlinefunctions();
+    if(networkconnectionfun !=0) {
+        db.transaction(gettoken1, errorCBfunc, successCBfunc);
+        passcancelgametoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&gameid = " + ID);
+        alert("Game has been Canceled!");
 
         onclicksyncloaddata();
     }else{
