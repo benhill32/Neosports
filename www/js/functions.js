@@ -162,7 +162,7 @@ function passscoretoserver(testvar){
     var params = "?" + testvar;
    // alert(url + params);
     http.open("POST", url + params, true);
-alert(url + params);
+//alert(url + params);
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
             // alert(http.responseText);
