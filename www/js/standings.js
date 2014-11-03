@@ -11,7 +11,7 @@ function onDeviceReadystand() {
 
 
 }
-db.transaction(getstandings, errorCBfunc, successCBfunc);
+//db.transaction(getstandings, errorCBfunc, successCBfunc);
 
 function getorient(strorein){
     orientationstand = strorein;

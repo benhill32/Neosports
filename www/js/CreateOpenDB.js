@@ -70,6 +70,11 @@ function droptables(){
         console.log("Mobilescreenimage table is Dropped");
     });
 
+    db.transaction(function(tx) {
+        tx.executeSql('Drop TABLE Mobilescoringbreakdown ');
+        console.log("Mobilescoringbreakdown table is Dropped");
+    });
+
 }
 
 function createDB(tx) {
@@ -117,6 +122,9 @@ function createDB(tx) {
 
     tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescreenimage (_id INTEGER NOT NULL,Base64 TEXT NULL,BackgroundColor TEXT NULL,SoftwareFade TEXT NULL,UpdateDateUTC TEXT NULL,TopText TEXT NULL,BottomText TEXT NULL)');
     console.log("Mobilescreenimage table is created");
+
+    tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescoringbreakdown (ID INTEGER NOT NULL,CreatedateUTC TEXT NULL,UpdatedateUTC TEXT NULL,DeletedateUTC TEXT NULL,TeamID INTEGER NOT NULL,GameID INTEGER NOT NULL,PlayerID INTEGER NOT NULL,ScoringID INTEGER NOT NULL,Time TEXT NULL)');
+    console.log("Mobilescoringbreakdown table is created");
 }
 
 

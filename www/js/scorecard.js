@@ -3,11 +3,16 @@ var dbCreated = false;
 var IDhist = 0;
 var id = getUrlVars()["ID"];
 var gtoken =0;
-
+var team1all = 0;
+var team2all = 0;
 var deviceIDscorecard;
 var networkconnectionscore = 0;
 document.addEventListener("deviceready", onDeviceReady, false);
-
+var playerhome = 0;
+var playeraway = 0;
+var timehome = 0;
+var timeaway = 0;
+var scoringname =0;
 function onDeviceReady() {
 
     deviceIDscorecard = device.uuid;
@@ -17,13 +22,9 @@ function onDeviceReady() {
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     checkonlinescore()
 }
-//db.transaction(getdata, errorCBfunc, successCBfunc);
-//db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
-//db.transaction(function (tx) {
-//    tx.executeSql('Update MobileApp_Results set halftime = "null", fulltime= "null" where ID =110');
- //   console.log("Update INTO MobileApp_Results");
-//});
+db.transaction(getdata, errorCBfunc, successCBfunc);
+db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
 
 function checkonlinescore(){
@@ -44,6 +45,22 @@ function checkonlinescore(){
 
 }
 
+function getbothteams(team1,team2){
+    team1all = team1;
+    team2all = team2;
+
+    db.transaction(getplayerinfo, errorCBfunc, successCBfunc);
+}
+
+
+
+function getplayerinfo(tx) {
+    var sql = "select ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position,DeletedateUTC,NickName,Height,Weight ,DOB ,BirthPlace,SquadNo,Nationality ,Honours,Previous_Clubs,memorable_match,Favourite_player ,Toughest_Opponent,Biggest_influence ,person_admire ,Best_goal_Scored ,Hobbies ,be_anyone_for_a_day from MobilevwApp_Base_Players where ClubID in (" + team1all + "," + team2all + ") order by FullName" ;
+
+     // alert(sql);
+    tx.executeSql(sql, [], getplayerinfo_success);
+}
+
 function getscoredata(tx) {
     var sql = "select Name,Value,UpdatedateUTC from MobileScoringTable";
    //  alert(sql);
@@ -57,6 +74,47 @@ function getdata(tx) {
     tx.executeSql(sql, [], getMenu_success);
 }
 
+function getplayerinfo_success(tx, results) {
+    $('#busy').hide();
+    var len = results.rows.length;
+    //alert(len);
+    $('#divplayers').empty().append('<Div class="mainmenuscore" >' +
+        '<div class="bold size13 floatleft2" align="center"  ><select id="drphometeam"></select></div>' +
+        '<div class="bold size13 floatleftnew" align="center"  >Players</div>' +
+        '<div class="bold size13 floatleft2" align="center"  ><select id="drpawayteam"></select></div>' +
+        '</Div>');
+    $('#divtime').empty().append('<Div class="mainmenuscore" >' +
+        '<div class="bold size13 floatleft2" align="center"  ><select id="drphometime"></select></div>' +
+        '<div class="bold size13 floatleftnew" align="center"  >Time</div>' +
+        '<div class="bold size13 floatleft2" align="center"  ><select id="drpawaytime"></select></div>' +
+        '</Div>');
+
+
+    $('#drphometeam').empty();
+    $('#drphometeam').empty();
+    $('#drphometime').empty();
+    $('#drpawaytime').empty();
+    $('#drphometeam').append(new Option("",0))
+    $('#drpawayteam').append(new Option("",0))
+    $('#drphometime').append(new Option("",0))
+    $('#drpawaytime').append(new Option("",0))
+
+    for (var i=0; i<len; i++) {
+        var menu = results.rows.item(i);
+
+        if(menu.ClubID == team1all){
+            $('#drphometeam').append(new Option(menu.FullName,menu.ID))
+        }else if(menu.ClubID == team2all) {
+            $('#drpawayteam').append(new Option(menu.FullName,menu.ID))
+        }
+    }
+
+    for (var i=1; i<95; i++) {
+
+        $('#drphometime').append(new Option(i,i))
+        $('#drpawaytime').append(new Option(i,i))
+    }
+}
 
 function getMenu_success(tx, results) {
     $('#busy').hide();
@@ -70,6 +128,8 @@ var Gameid =menu.ID;
                 '<div class="bold size13 floatleft" align="center"  >' + menu.HomeName + '</div><div class="bold size13 floatleft" align="center"  >' + menu.AwayName  + '</div>' +
                 '<div class="floatleft" align="center" id="homescore"  >' + menu.HomeScore + '</div><div class="floatleft"  align="center" id="awayscore"  >' + menu.AwayScore + '</div>' +
                 '' +
+                '<div id="divplayers"></div>' +
+                '<div id="divtime"></div>' +
                 '<div id="divscore"  ></div>' +
                 '<div id="divhalffull" align="center"  >' +
                 '<button id="btnhalf" class="btn btn-warning" onclick="gamestate(1,' + Gameid + ')" >Its Halftime</button><br>' +
@@ -91,6 +151,10 @@ var Gameid =menu.ID;
 
         $("#btnhalf").hide();
     }
+
+    getbothteams(menu.HomeClubID,menu.AwayClubID);
+
+
 }
 
 function gamestate(IDD,id){
@@ -127,36 +191,41 @@ function getscoredata_success(tx, results) {
         var minus =menu.Value*-1;
 
         $('#divscore').empty().append('<Div class="mainmenuscore" >' +
-            '<div class="bold size13 floatleft3" align="center"  ><img src="../img/minus.png" onclick="getscore(1,'+ minus +')" height="40">' +
-            '<img src="../img/plus.png"  height="40" onclick="getscore(1,'+ plus +')"> </div>' +
+            '<div class="bold size13 floatleft3" align="center"  ><img src="../img/minus.png" onclick="getscore(1,'+ minus +',\''+ menu.Name + '\')" height="40">' +
+            '<img src="../img/plus.png"  height="40" onclick="getscore(1,'+ plus +',\''+ menu.Name + '\')"> </div>' +
             '<div class="bold size13 floatleft3" align="center"  >' + menu.Name + '</div>' +
             '<div class="bold size13 floatleft3" align="center"  >' +
-            '<img src="../img/minus.png"  onclick="getscore(0,'+ minus +')" height="40">' +
-            '<img src="../img/plus.png"   onclick="getscore(0,'+ plus +')" height="40"></div>' +
+            '<img src="../img/minus.png"  onclick="getscore(0,'+ minus +',\''+ menu.Name + '\')" height="40">' +
+            '<img src="../img/plus.png"   onclick="getscore(0,'+ plus +',\''+ menu.Name + '\')" height="40"></div>' +
             '</Div>');
 
     }
 }
 
 
-function getscore(team,value){
+function getscore(team,value,name){
     checkonlinescore();
 if(networkconnectionscore != 0) {
-    if (team == 0) {
 
+    playerhome = $('#drphometeam').val();
+     playeraway = $('#drpawayteam').val();
+     timehome = $('#drphometime').val();
+     timeaway = $('#drpawaytime').val();
+    scoringname = name;
+
+
+    if (team == 0) {
         db.transaction(function (tx) {
             tx.executeSql('Update MobileApp_Results set AwayScore = AwayScore+' + value + ' where ID = ' + id);
             console.log("Update INTO MobileApp_Results");
         });
-
     } else if (team == 1) {
-
         db.transaction(function (tx) {
             tx.executeSql('Update MobileApp_Results set HomeScore = HomeScore+' + value + '  where ID = ' + id);
             console.log("Update INTO MobileApp_Results");
         });
-
     }
+
     //update score;
     db.transaction(getdata, errorCBfunc, successCBfunc);
     //update buttons
@@ -166,7 +235,7 @@ if(networkconnectionscore != 0) {
     db.transaction(getscorefromtable, errorCBfunc, successCBfunc);
 }else{
 
-    alert("You don't have access to internet!");
+ //   alert("You don't have access to internet!");
 }
 }
 
@@ -182,7 +251,11 @@ function getscorefromtable_success(tx, results) {
     var len = results.rows.length;
     var menu = results.rows.item(0);
   //  alert("gameid=" + menu.ID + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken);
-    passscoretoserver("gameid=" + menu.ID + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken)
+
+
+
+
+    passscoretoserver("gameid=" + menu.ID + "&scoringname=" + scoringname + "&homeplayer=" + playerhome + "&awayplayer=" + playeraway + "&hometime=" + timehome + "&awaytime=" + timeaway + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken)
 
 }
 

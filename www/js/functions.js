@@ -162,6 +162,7 @@ function passscoretoserver(testvar){
     var params = "?" + testvar;
 
     http.open("POST", url + params, true);
+   // console.log(url + params);
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
@@ -449,6 +450,19 @@ function syncmaintables(obj){
             console.log("INSERT INTO Mobilescreenimage is created");
         });
     });
+
+    $.each(obj.scoringbreakdown, function (idx, obj) {
+        db.transaction(function (tx) {
+            tx.executeSql('Delete from Mobilescoringbreakdown where _id =' + obj._id);
+            console.log('Delete Mobilesscoringbreakdown');
+        });
+        db.transaction(function (tx) {
+            tx.executeSql('INSERT INTO Mobilescoringbreakdown(ID,CreatedateUTC,UpdatedateUTC,DeletedateUTC,TeamID,GameID,PlayerID,ScoringID,Time) VALUES ("' + obj.ID + '","' + obj.CreatedateUTC + '","' + obj.UpdatedateUTC + '","' + obj.DeletedateUTC + '",' + obj.TeamID + ',' + obj.GameID + ',' + obj.PlayerID + ',' + obj.ScoringID + ',"' + obj.Time + '")');
+            console.log("INSERT INTO Mobilescoringbreakdown is created");
+        });
+    });
+
+
 
 
     $.each(obj.Isadmin, function (idx, obj) {

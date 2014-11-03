@@ -48,9 +48,16 @@ body {
 
 
 
+#divtime{
+    clear:both;
+    padding-top: 30px;
+}
 
 
-
+#divplayers{
+    clear:both;
+    padding-top: 30px;
+}
 
 #backicondiv{
     width: 20px;
@@ -115,7 +122,22 @@ body {
 
 
 }
+.mainmenuscore select{
+    width:80%;
 
+}
+.floatleftnew{
+    float:left;
+    width:15%;
+    padding:1px;
+}
+.floatleft2{
+
+    float:left;
+    width:40%;
+    padding:1px;
+
+}
 
 .floatleft3{
 

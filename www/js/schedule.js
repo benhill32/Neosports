@@ -32,7 +32,7 @@ function updateadmin() {
     });
 
 }
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
+db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 //db.transaction(function(tx) {
 //   tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
