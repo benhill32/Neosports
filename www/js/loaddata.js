@@ -190,7 +190,7 @@ function getchecksync(tx, results) {
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-            }
+           }
 
         }
 

@@ -20,6 +20,12 @@ function onDeviceReady() {
 //db.transaction(getdata, errorCBfunc, successCBfunc);
 //db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
+//db.transaction(function (tx) {
+//    tx.executeSql('Update MobileApp_Results set halftime = "null", fulltime= "null" where ID =110');
+ //   console.log("Update INTO MobileApp_Results");
+//});
+
+
 function checkonlinescore(){
 
     var networkState = navigator.connection.type;
