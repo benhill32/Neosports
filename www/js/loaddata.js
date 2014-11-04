@@ -162,7 +162,11 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-            $('#indexloadingdata').modal('show');
+            if($("indexloadingdata").data('bs.modal').isShown){
+                alert("is shown");
+            }else{
+                $('#indexloadingdata').modal('show');
+            }
 
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
