@@ -279,7 +279,7 @@ function onclicksyncloaddata(){
 
 
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
-    $('#indexloadingdata').modal('show');
+
 }
 
 function onclicksyncloaddata2(tx){
@@ -293,23 +293,23 @@ function onclickresync(tx, results) {
 
     var row = results.rows.item(0);
 
-    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
+    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
+        $('#indexloadingdata').modal('show');
 
 
+        var datemenus = row.datemenus;
+        var datenowsecsync = row.Datesecs;
 
-        var datemenus= row.datemenus;
-    var datenowsecsync = row.Datesecs;
+        var datenow = new Date();
+        var timenow = datenow.getTime();
 
-    var datenow = new Date();
-    var timenow = datenow.getTime();
+        var dif = timenow - (datenowsecsync);
 
-    var dif = timenow-(datenowsecsync);
-
-        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+        //   window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync,false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
 
         xmlHttp.send();
 
@@ -317,19 +317,19 @@ function onclickresync(tx, results) {
 
         var obj = JSON.parse(json);
 
-        if(datemenus != datemenus) {
+        if (datemenus != datemenus) {
             updatemenutables(obj);
         }
 
-        var totaljson  =  (countProperties(obj)/40)* 1000;
+        var totaljson = (countProperties(obj) / 40) * 1000;
 
 
-        $.when(syncmaintables(obj)).done(function() {
-            $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
+        $.when(syncmaintables(obj)).done(function () {
+            $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function () {
             });
         });
 
-        if(document.getElementById("indexdiv")!=null){
+        if (document.getElementById("indexdiv") != null) {
             //   loadindexmessage();
 
         }
@@ -339,11 +339,15 @@ function onclickresync(tx, results) {
         }
 
 
-        setTimeout( function(){
+        setTimeout(function () {
                 $('#indexloadingdata').modal('hide');
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {
+                    console.log('toast success: ' + a)
+                }, function (b) {
+                    alert('toast error: ' + b)
+                });
             }
-            , totaljson );
+            , totaljson);
 
 
     }
