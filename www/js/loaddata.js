@@ -176,12 +176,12 @@ function getchecksync(tx, results) {
 
             $.when( syncmaintables(obj)).done(function() {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
-                setTimeout(function (){
+
                     $('#indexloadingdata').modal('hide')
                     $('#mainfore').removeClass('mainforeground2');
                     $('#mainfore').addClass('mainforeground');
                     window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-                }, 5000);
+
             });
 
             if(document.getElementById("indexdiv")!=null){
@@ -245,10 +245,7 @@ function onclickresync(tx, results) {
 
         $.when( syncmaintables(obj)).done(function() {
             db.transaction(CleanDB, errorCBfunc, successCBfunc);
-            setTimeout(function (){
                 window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-            }, 5000);
-
         });
 
         if(document.getElementById("settingsync")!=null){
