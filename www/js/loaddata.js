@@ -190,10 +190,10 @@ function getchecksync(tx, results) {
             }
 
             if (document.getElementById("settingsync") != null) {
-                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-                $('#indexloadingdata').modal('hide')
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-
+                $.when( db.transaction(getsyncdate, errorCBfunc, successCBfunc)).done(function() {
+                    $('#indexloadingdata').modal('hide')
+                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                });
             }
 
         }
