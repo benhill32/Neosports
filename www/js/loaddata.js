@@ -102,7 +102,7 @@ function populateDB1(tx,results) {
         }
 
        blankLastUpdatesec();
-     //  pushnotifiy();
+       pushnotifiy();
 
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
@@ -163,7 +163,7 @@ function getchecksync(tx, results) {
 
         if (dif >= "600") {
            if(chkrefreshdata == 1){
-          //   window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
            }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
@@ -172,8 +172,11 @@ function getchecksync(tx, results) {
 
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
-            alert(countProperties(obj));
-            console.log(countProperties(obj));
+
+             var totaljson  =  (countProperties(obj)/50)* 1000;
+
+
+
             $.when(syncmaintables(obj)).done(function() {
                 $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
 
@@ -194,9 +197,9 @@ function getchecksync(tx, results) {
 
             setTimeout( function(){
                     $('#indexloadingdata').modal('hide')
-             //       window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
              }
-                , 20000 );
+                , totaljson );
 
         }
 

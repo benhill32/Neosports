@@ -161,13 +161,13 @@ function clearfavteam(){
 }
 
 function cleardata(){
-    //onOfflinesetting();
+    onOfflinesetting();
 
 
-  //  if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
+   if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
         $('#indexloadingdata').modal('show');
         db.transaction(droptables, errorCBfunc, createtables);
- //   }
+   }
 
 
 }
