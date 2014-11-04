@@ -58,9 +58,6 @@ function checkonlinesch(){
 
 }
 
-
-
-
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
@@ -381,9 +378,6 @@ function getUrlVars() {
 }
 
 function addreminder(IDd){
-
-
-
     var res = (reminddate).split("T");
     var text = (remindtext).split("||");
     var split = res[0].split("-");

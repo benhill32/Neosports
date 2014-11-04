@@ -204,7 +204,7 @@ function getscoredata_success(tx, results) {
 
 
 function getscore(team,value,name){
-    checkonlinescore();
+  checkonlinescore();
 if(networkconnectionscore != 0) {
 
     playerhome = $('#drphometeam').val();
@@ -256,6 +256,9 @@ function getscorefromtable_success(tx, results) {
 
 
     passscoretoserver("gameid=" + menu.ID + "&scoringname=" + scoringname + "&homeplayer=" + playerhome + "&awayplayer=" + playeraway + "&hometime=" + timehome + "&awaytime=" + timeaway + "&home=" + menu.HomeScore + "&away=" + menu.AwayScore + "&deviceid=" + deviceIDscorecard + "&token=" + gtoken)
+
+    onclicksyncloaddata();
+
 
 }
 
