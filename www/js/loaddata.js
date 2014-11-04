@@ -162,9 +162,8 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
-           if(chkrefreshdata == 1){
-             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-           }
+            $('#indexloadingdata').modal('show');
+
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
@@ -196,7 +195,7 @@ function getchecksync(tx, results) {
 
 
             setTimeout( function(){
-                    $('#indexloadingdata').modal('hide')
+                    $('#indexloadingdata').modal('hide');
                     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
              }
                 , totaljson );
