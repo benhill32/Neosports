@@ -462,9 +462,6 @@ function syncmaintables(obj){
         });
     });
 
-
-
-
     $.each(obj.Isadmin, function (idx, obj) {
 
         db.transaction(function(tx) {
@@ -473,12 +470,6 @@ function syncmaintables(obj){
 
         });
     });
-
-
-
-
-
-
 
 
 

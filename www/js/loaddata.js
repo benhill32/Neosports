@@ -176,20 +176,25 @@ function getchecksync(tx, results) {
 
             $.when(syncmaintables(obj)).done(function() {
                 $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
-                    $('#indexloadingdata').modal('hide')
+
                     $('#mainfore').removeClass('mainforeground2');
                     $('#mainfore').addClass('mainforeground');
-                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-                });
+                        });
             });
 
             if(document.getElementById("indexdiv")!=null){
              //   loadindexmessage();
+                $('#indexloadingdata').modal('hide')
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+
             }
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-           }
+                $('#indexloadingdata').modal('hide')
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+
+            }
 
         }
 
