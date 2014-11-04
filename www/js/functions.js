@@ -310,11 +310,11 @@ function syncmaintables(obj){
         db.transaction(function (tx) {
 
             tx.executeSql('Delete from MobileApp_Results where ID =' + obj.ID);
-            console.log('Delete MobileApp_Results where ID');
+          //  console.log('Delete MobileApp_Results where ID');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileApp_Results(ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,DeletedateUTC,halftime ,fulltime  ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.DatetimeStart + '","' + obj.HomeName + '","' + obj.AwayName + '","' + obj.Field + '","' + obj.Latitude + '","' + obj.Longitude + '", ' + obj.DivisionID + ',"' + obj.DivisionName + '", ' + obj.HomeClubID + ', ' + obj.AwayClubID + ', ' + obj.HomeTeamID + ', ' + obj.AwayTeamID + ', ' + obj.HomeScore + ',' + obj.AwayScore + ' , "' + obj.UpdateDateUTC + '", "' + obj.TournamentName + '",' + obj.TournamentID + ', "' + obj.DatetimeStartSeconds + '",' + obj.DivisionOrderID + ',' + obj.ShowToAll + ',' + obj.Final + ',"' + obj.DeletedateUTC + '","' + obj.halftime + '","' + obj.fulltime + '" )');
-            console.log('INSERT INTO MobileApp_Results(ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,DeletedateUTC ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.DatetimeStart + '","' + obj.HomeName + '","' + obj.AwayName + '","' + obj.Field + '","' + obj.Latitude + '","' + obj.Longitude + '", ' + obj.DivisionID + ',"' + obj.DivisionName + '", ' + obj.HomeClubID + ', ' + obj.AwayClubID + ', ' + obj.HomeTeamID + ', ' + obj.AwayTeamID + ', ' + obj.HomeScore + ',' + obj.AwayScore + ' , "' + obj.UpdateDateUTC + '", "' + obj.TournamentName + '",' + obj.TournamentID + ', "' + obj.DatetimeStartSeconds + '",' + obj.DivisionOrderID + ',' + obj.ShowToAll + ',' + obj.Final + ',"' + obj.DeletedateUTC + '" )');
+          //  console.log('INSERT INTO MobileApp_Results(ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID,HomeScore ,AwayScore ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,DeletedateUTC ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.DatetimeStart + '","' + obj.HomeName + '","' + obj.AwayName + '","' + obj.Field + '","' + obj.Latitude + '","' + obj.Longitude + '", ' + obj.DivisionID + ',"' + obj.DivisionName + '", ' + obj.HomeClubID + ', ' + obj.AwayClubID + ', ' + obj.HomeTeamID + ', ' + obj.AwayTeamID + ', ' + obj.HomeScore + ',' + obj.AwayScore + ' , "' + obj.UpdateDateUTC + '", "' + obj.TournamentName + '",' + obj.TournamentID + ', "' + obj.DatetimeStartSeconds + '",' + obj.DivisionOrderID + ',' + obj.ShowToAll + ',' + obj.Final + ',"' + obj.DeletedateUTC + '" )');
 
         });
 
@@ -325,11 +325,11 @@ function syncmaintables(obj){
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileApp_clubs where ID =' + obj.ID);
         });
-        console.log('Delete MobileApp_clubs where ID');
+       // console.log('Delete MobileApp_clubs where ID');
         db.transaction(function (tx) {
 
             tx.executeSql('INSERT INTO MobileApp_clubs(ID,_id ,name,UpdateDateUTC,UpdateDateUTCBase64 ,Base64,History,Contacts,UpdateSecondsUTC,UpdateSecondsUTCBase64,Color,Fav,Follow,DeletedateUTC) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.name + '","' + obj.UpdateDateUTC + '","' + obj.UpdateDateUTCBase64 + '","' + obj.Base64 + '","' + obj.History + '","' + obj.Contacts + '","' + obj.UpdateSecondsUTC + '","' + obj.UpdateSecondsUTCBase64 + '", "' + obj.Color + '",0,0,"' + obj.DeletedateUTC + '")');
-            console.log("INSERT INTO MobileApp_clubs is created");
+        //    console.log("INSERT INTO MobileApp_clubs is created");
         });
     });
 
@@ -337,12 +337,12 @@ function syncmaintables(obj){
         db.transaction(function (tx) {
 
             tx.executeSql('Delete from MobileApp_Schedule where ID =' + obj.ID);
-            console.log('Delete MobileApp_Schedule where ID');
+         //   console.log('Delete MobileApp_Schedule where ID');
         });
         db.transaction(function (tx) {
 
             tx.executeSql('INSERT INTO MobileApp_Schedule(ID,_id,DatetimeStart,HomeName,AwayName,Field,Latitude,Longitude,DivisionID ,DivisionName,HomeClubID,AwayClubID,HomeTeamID,AwayTeamID ,UpdateDateUTC ,TournamentName,TournamentID ,DatetimeStartSeconds ,DivisionOrderID,ShowToAll,Final,Cancel,DeletedateUTC,halftime ,fulltime  ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.DatetimeStart + '","' + obj.HomeName + '","' + obj.AwayName + '","' + obj.Field + '","' + obj.Latitude + '","' + obj.Longitude + '", ' + obj.DivisionID + ',"' + obj.DivisionName + '", ' + obj.HomeClubID + ', ' + obj.AwayClubID + ', ' + obj.HomeTeamID + ', ' + obj.AwayTeamID + ',"' + obj.UpdateDateUTC + '", "' + obj.TournamentName + '",' + obj.TournamentID + ', "' + obj.DatetimeStartSeconds + '",' + obj.DivisionOrderID + ',' + obj.ShowToAll + ',' + obj.Final + ',' + obj.Cancel + ',"' + obj.DeletedateUTC + '","' + obj.halftime + '","' + obj.fulltime + '" )');
-            console.log("INSERT INTO MobileApp_Schedule is created");
+         //   console.log("INSERT INTO MobileApp_Schedule is created");
         });
     });
 
@@ -350,11 +350,11 @@ function syncmaintables(obj){
     $.each(obj.clubsimages, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileApp_clubsimages where ID =' + obj.ID);
-            console.log('Delete MobileApp_clubsimages where ID');
+        //    console.log('Delete MobileApp_clubsimages where ID');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileApp_clubsimages(ID,_id,UpdateDateUTCBase64,Base64,UpdateSecondsUTCBase64) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.UpdateDateUTCBase64 + '","' + obj.Base64 + '","' + obj.UpdateSecondsUTCBase64 + '")');
-            console.log("INSERT INTO MobileApp_clubsimages is created");
+        //    console.log("INSERT INTO MobileApp_clubsimages is created");
         });
 
     });
@@ -362,11 +362,11 @@ function syncmaintables(obj){
     $.each(obj.vwApp_Teams, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileApp_vwApp_Teams where ID =' + obj.ID);
-            console.log('Delete MobileApp_vwApp_Teams where ID');
+        //    console.log('Delete MobileApp_vwApp_Teams where ID');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileApp_vwApp_Teams(ID,_id,Name,Base64,ClubID,DivisionID,DivisionName,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,DeletedateUTC ) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.Name + '","' + obj.Base64 + '",' + obj.ClubID + ',' + obj.DivisionID + ',"' + obj.DivisionName + '","' + obj.UpdateSecondsUTC + '","' + obj.UpdateSecondsUTCBase64 + '","' + obj.UpdateDateUTC + '","' + obj.UpdateDateUTCBase64 + '","' + obj.DeletedateUTC + '")');
-            console.log("INSERT INTO MobileApp_vwApp_Teams is created");
+        //    console.log("INSERT INTO MobileApp_vwApp_Teams is created");
         });
     });
 //    window.plugins.toast.showShortCenter('Updating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
@@ -374,91 +374,91 @@ function syncmaintables(obj){
     $.each(obj.vwApp_News_v_2, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobilevwApp_News_v_2 where ID =' + obj.ID);
-            console.log('Delete MobilevwApp_News_v_2 where ID');
+        //    console.log('Delete MobilevwApp_News_v_2 where ID');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobilevwApp_News_v_2(ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC,DeletedateUTC) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.UpdateDateUTC + '","' + obj.Title + '","' + obj.Body + '",' + obj.ClubID + ',"' + obj.TeamID + '","' + obj.Hide + '","' + obj.IsAd + '","' + obj.Base64 + '","' + obj.URL + '","' + obj.Hint + '","' + obj.DisplayDateUTC + '","' + obj.DisplaySecondsUTC + '","' + obj.DeletedateUTC + '")');
-            console.log("INSERT INTO MobilevwApp_News_v_2 is created");
+         //   console.log("INSERT INTO MobilevwApp_News_v_2 is created");
         });
     });
 
     $.each(obj.App_Players, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobilevwApp_Base_Players where ID =' + obj.ID);
-            console.log('Delete MobilevwApp_Base_Players where ID');
+         //   console.log('Delete MobilevwApp_Base_Players where ID');
         });
 
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobilevwApp_Base_Players(ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position,DeletedateUTC,NickName,Height,Weight ,DOB ,BirthPlace,SquadNo,Nationality ,Honours ,Previous_Clubs,memorable_match,Favourite_player ,Toughest_Opponent,Biggest_influence ,person_admire ,Best_goal_Scored ,Hobbies ,be_anyone_for_a_day) VALUES (' + obj.ID + ',' + obj._id + ',' + obj.ClubID + ',"' + obj.FullName + '","' + obj.Base64 + '","' + obj.TeamID + '","' + obj.UpdateSecondsUTC + '","' + obj.UpdateSecondsUTCBase64 + '","' + obj.UpdateDateUTC + '","' + obj.UpdateDateUTCBase64 + '","' + obj.Position + '","' + obj.DeletedateUTC + '","' + obj.NickName + '","' + obj.Height + '","' + obj.Weight + '","' + obj.DOB + '","' + obj.BirthPlace + '","' + obj.SquadNo + '","' + obj.Nationality + '","' + obj.Honours + '","' + obj.Previous_Clubs + '","' + obj.memorable_match + '","' + obj.Favourite_player + '","' + obj.Toughest_Opponent + '","' + obj.Biggest_influence + '","' + obj.person_admire + '","' + obj.Best_goal_Scored + '","' + obj.Hobbies + '","' + obj.be_anyone_for_a_day + '")');
-            console.log("INSERT INTO MobilevwApp_Base_Players is created");
+        //    console.log("INSERT INTO MobilevwApp_Base_Players is created");
         });
     });
 
     $.each(obj.App_Players_Images, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileApp_Players_Images where ID =' + obj.ID);
-            console.log('Delete MobileApp_Players_Images where ID');
+        //    console.log('Delete MobileApp_Players_Images where ID');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileApp_Players_Images(ID,_id,Base64,UpdateDateUTCBase64,UpdateSecondsUTCBase64,DeletedateUTC) VALUES (' + obj.ID + ',' + obj._id + ',"' + obj.Base64 + '","' + obj.UpdateDateUTCBase64 + '","' + obj.UpdateSecondsUTCBase64 + '","' + obj.DeletedateUTC + '")');
-            console.log("INSERT INTO MobileApp_Players_Images is created");
+         //   console.log("INSERT INTO MobileApp_Players_Images is created");
         });
     });
 
     $.each(obj.ScoringTable, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from MobileScoringTable where Name =' + obj.Name);
-            console.log('Delete MobileScoringTable');
+         //   console.log('Delete MobileScoringTable');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileScoringTable(Name,Value,UpdatedateUTC) VALUES ("' + obj.Name + '","' + obj.Value + '","' + obj.UpdatedateUTC + '")');
-            console.log("INSERT INTO MobileScoringTable is created");
+         //   console.log("INSERT INTO MobileScoringTable is created");
         });
     });
 
     db.transaction(function (tx) {
         tx.executeSql('Delete from MobileStandings');
-        console.log('Delete MobileStandings');
+    //    console.log('Delete MobileStandings');
     });
 
     $.each(obj.Standings, function (idx, obj) {
 
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO MobileStandings(_id,Games,Won,Drawn,Lost,ForScore,AgainstScore,Difference,ClubID,Name,TournamentID,FlagPoints,UpdateDateUTC ,TournamentName,DeletedateUTC ) VALUES (' + obj._id + ',' + obj.Games + ',' + obj.Won + ',' + obj.Drawn + ',' + obj.Lost + ',' + obj.ForScore + ',' + obj.AgainstScore + ',' + obj.Difference + ',' + obj.ClubID + ',"' + obj.Name + '",' + obj.TournamentID + ',' + obj.FlagPoints + ',"' + obj.UpdateDateUTC + '","' + obj.TournamentName + '","' + obj.DeletedateUTC + '")');
-            console.log("INSERT INTO MobileStandings is created");
+       //     console.log("INSERT INTO MobileStandings is created");
         });
     });
 
     $.each(obj.sponsorsclub, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from Mobilesponsorsclub where ID =' + obj.ID);
-            console.log('Delete Mobilesponsorsclub');
+         //   console.log('Delete Mobilesponsorsclub');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO Mobilesponsorsclub(ID ,Datetime,Club,Name,Website,Image,UserID,OrderBy,Base64,CreatedateUTC,UpdatedateUTC ,DeletedateUTC ,UpdatedateUTCBase64  ) VALUES (' + obj.ID + ',"' + obj.Datetime + '",' + obj.Club + ',"' + obj.Name + '","' + obj.Website + '","' + obj.Image + '","' + obj.UserID + '",' + obj.OrderBy + ',"' + obj.Base64 + '","' + obj.CreatedateUTC + '","' + obj.UpdatedateUTC + '","' + obj.DeletedateUTC + '","' + obj.UpdatedateUTCBase64 + '")');
-            console.log("INSERT INTO Mobilesponsorsclub is created " + obj.DeletedateUTC);
+         //   console.log("INSERT INTO Mobilesponsorsclub is created " + obj.DeletedateUTC);
         });
     });
 
     $.each(obj.screenimage, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from Mobilescreenimage where _id =' + obj._id);
-            console.log('Delete Mobilescreenimage');
+         //   console.log('Delete Mobilescreenimage');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO Mobilescreenimage(_id,Base64 ,BackgroundColor ,SoftwareFade ,UpdateDateUTC ,TopText ,BottomText ) VALUES ("' + obj._id + '","' + obj.Base64 + '","' + obj.BackgroundColor + '","' + obj.SoftwareFade + '","' + obj.UpdateDateUTC + '","' + obj.TopText + '","' + obj.BottomText + '")');
-            console.log("INSERT INTO Mobilescreenimage is created");
+         //   console.log("INSERT INTO Mobilescreenimage is created");
         });
     });
 
     $.each(obj.scoringbreakdown, function (idx, obj) {
         db.transaction(function (tx) {
             tx.executeSql('Delete from Mobilescoringbreakdown where ID =' + obj.ID);
-            console.log('Delete Mobilesscoringbreakdown');
+         //   console.log('Delete Mobilesscoringbreakdown');
         });
         db.transaction(function (tx) {
             tx.executeSql('INSERT INTO Mobilescoringbreakdown(ID,CreatedateUTC,UpdatedateUTC,DeletedateUTC,TeamID,GameID,PlayerID,ScoringID,Time) VALUES ("' + obj.ID + '","' + obj.CreatedateUTC + '","' + obj.UpdatedateUTC + '","' + obj.DeletedateUTC + '",' + obj.TeamID + ',' + obj.GameID + ',' + obj.PlayerID + ',' + obj.ScoringID + ',"' + obj.Time + '")');
-            console.log("INSERT INTO Mobilescoringbreakdown is created");
+         //   console.log("INSERT INTO Mobilescoringbreakdown is created");
         });
     });
 
