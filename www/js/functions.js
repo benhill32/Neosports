@@ -453,7 +453,7 @@ function syncmaintables(obj){
 
     $.each(obj.scoringbreakdown, function (idx, obj) {
         db.transaction(function (tx) {
-            tx.executeSql('Delete from Mobilescoringbreakdown where _id =' + obj.ID);
+            tx.executeSql('Delete from Mobilescoringbreakdown where ID =' + obj.ID);
             console.log('Delete Mobilesscoringbreakdown');
         });
         db.transaction(function (tx) {
