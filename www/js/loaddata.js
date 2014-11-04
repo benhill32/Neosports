@@ -102,7 +102,7 @@ function populateDB1(tx,results) {
         }
 
        blankLastUpdatesec();
-       pushnotifiy();
+     //  pushnotifiy();
 
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
@@ -163,7 +163,7 @@ function getchecksync(tx, results) {
 
         if (dif >= "600") {
            if(chkrefreshdata == 1){
-             window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+          //   window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
            }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
@@ -172,8 +172,8 @@ function getchecksync(tx, results) {
 
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
-
-
+            alert(countProperties(obj));
+            console.log(countProperties(obj));
             $.when(syncmaintables(obj)).done(function() {
                 $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
 
@@ -184,8 +184,6 @@ function getchecksync(tx, results) {
 
             if(document.getElementById("indexdiv")!=null){
              //   loadindexmessage();
-                $('#indexloadingdata').modal('hide')
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
 
             }
 
@@ -196,14 +194,84 @@ function getchecksync(tx, results) {
 
             setTimeout( function(){
                     $('#indexloadingdata').modal('hide')
-                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-
+             //       window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
              }
                 , 20000 );
 
         }
 
 }
+
+function countProperties(obj) {
+
+    var prop;
+    var prop2;
+    var propCount = 0;
+
+    $.each(obj.App_Results, function (idx, obj) {
+        propCount++;
+    });
+
+
+    $.each(obj.clubs, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.App_Schedule, function (idx, obj) {
+        propCount++;
+    });
+
+
+    $.each(obj.clubsimages, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.vwApp_Teams, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.vwApp_News_v_2, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.App_Players, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.App_Players_Images, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.ScoringTable, function (idx, obj) {
+        propCount++;
+    });
+
+    db.transaction(function (tx) {
+        propCount++;
+    });
+
+    $.each(obj.Standings, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.sponsorsclub, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.screenimage, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.scoringbreakdown, function (idx, obj) {
+        propCount++;
+    });
+
+    $.each(obj.Isadmin, function (idx, obj) {
+        propCount++;
+    });
+    return propCount;
+}
+
 
 function onclicksyncloaddata(){
 
