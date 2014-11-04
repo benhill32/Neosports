@@ -39,11 +39,11 @@ var img = "";
     }else if(favtop == 0 && followtop ==1){
         $("#imgfavfollow").attr("src","../img/halfstar.png");
     }
-    $("#imgfavfollow").click(updatefollow);
+    $("#duvimgfollow").click(updatefollow);
 }
 
 function updatefollow(){
-    $("#imgfavfollow").attr('onclick','').unbind('click');
+    $("#duvimgfollow").attr('onclick','').unbind('click');
     if(favtop == 0 && followtop ==0){
 
 
