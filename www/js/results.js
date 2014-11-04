@@ -4,6 +4,9 @@ var id = getUrlVars()["id"];
 var clubidtop =0;
 var listfollow = 0;
 var fliter = 0;
+var gameid = 0;
+var homeid = 0;
+var awayid = 0;
 document.addEventListener("deviceready", onDeviceReadyresult, false);
 
 function onDeviceReadyresult() {
@@ -46,11 +49,6 @@ function allowfilter(id){
 
 }
 
-
-
-
-
-
 function getfliter(tx) {
     var sql = "select fliterON from MobileApp_LastUpdatesec";
     //alert(sql);
@@ -71,9 +69,6 @@ function getfliter_success(tx, results) {
 
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
 }
-
-
-
 
 function getdatanews(tx) {
     var sql = "select ID from MobileApp_clubs where Fav = 1";
@@ -123,11 +118,6 @@ function getdata2_success(tx, results) {
     db.transaction(getdata, errorCBfunc, successCBfunc);
 
 }
-
-
-
-
-
 
 function getdata(tx) {
     var sql = "";
@@ -183,14 +173,69 @@ function getMenu_success(tx, results) {
 
         var date2 = new Date(menu.DatetimeStart);
        // alert(date2);
-        $('#divresults').append('<Div class="mainmenuresult" align="left" >' +
+        $('#divresults').append('<Div class="mainmenuresult" align="left" data-toggle="modal" data-target="#basicModalresults" onclick="resultshowmore('+menu.ID+',\''+menu.HomeName+'\',\''+menu.AwayName+'\','+menu.HomeScore+','+menu.AwayScore+','+menu.HomeTeamID+','+menu.AwayTeamID+')"  >' +
             '<div class="bold size13"  >' + menu.HomeName + ' vs ' + menu.AwayName + '</div>' +
             '<div class="bold size13" >' + menu.HomeScore + ' - ' + menu.AwayScore + '  ' + action + '</div>' +
             '<div class="size11"  >' + menu.DivisionName + '</div>' +
             '<div class="size11">' + menu.TournamentName + '</div>' +
             '<div class="size11">' + ampm  + " " + day + '/' + month + '/' + year + '</div>' +
+            '<div class="size11 blue" style="text-align: center!important;">More</div>' +
+
             '</Div>');
     }
+
+
+}
+
+function resultshowmore(ID,hometeam,awayteam,homescore,awayscore,homeidd,awayidd){
+
+    gameid =ID;
+    homeid = homeidd;
+    awayid = awayidd;
+    $('#resulthometeam').empty().append(hometeam);
+    $('#resultawayteam').empty().append(awayteam);
+    $('#resultscore').empty().append(homescore + '-' + awayscore);
+
+    db.transaction(getgoals, errorCBfunc, successCBfunc);
+
+}
+
+function getgoals(tx){
+   var sql= "select m.ID,m.CreatedateUTC,m.UpdatedateUTC,m.DeletedateUTC,m.TeamID,m.GameID,m.PlayerID,m.ScoringID,m.Time,p.FullName from Mobilescoringbreakdown as m INNER JOIN " +
+       "MobilevwApp_Base_Players as p  ON p.ID = m.PlayerID " +
+       "where GameID = " + gameid;
+// alert(sql);
+    tx.executeSql(sql, [], getgoals_success);
+}
+
+
+function getgoals_success(tx, results) {
+    var len = results.rows.length;
+
+    $('#resulthomegoals').empty();
+    $('#resultawaygoals').empty();
+
+    for (var i=0; i<len; i++) {
+        var menu = results.rows.item(i);
+    var time = menu.Time + "\'";
+
+        if(menu.TeamID == homeid){
+            $('#resulthomegoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " " + time + '<br>');
+        }
+        if(menu.TeamID == awayid){
+            $('#resultawaygoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " "  + time + '<br>');
+        }
+    }
+
+
+    if(len==0){
+        $('#divscorers').hide();
+
+    }else{
+        $('#divscorers').show();
+
+    }
+
 
 
 }
