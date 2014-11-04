@@ -279,7 +279,7 @@ function onclicksyncloaddata(){
 
 
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
-
+    $('#indexloadingdata').modal('show');
 }
 
 function onclicksyncloaddata2(tx){
@@ -295,7 +295,6 @@ function onclickresync(tx, results) {
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
 
-        window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
 
 
         var datemenus= row.datemenus;
@@ -322,14 +321,31 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        $.when( syncmaintables(obj)).done(function() {
-            db.transaction(CleanDB, errorCBfunc, successCBfunc);
-                window.plugins.toast.showLongCenter('Your App is Updated!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+        var totaljson  =  (countProperties(obj)/40)* 1000;
+
+
+        $.when(syncmaintables(obj)).done(function() {
+            $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
+            });
         });
 
-        if(document.getElementById("settingsync")!=null){
+        if(document.getElementById("indexdiv")!=null){
+            //   loadindexmessage();
+
+        }
+
+        if (document.getElementById("settingsync") != null) {
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
+
+
+        setTimeout( function(){
+                $('#indexloadingdata').modal('hide');
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+            }
+            , totaljson );
+
+
     }
 }
 
