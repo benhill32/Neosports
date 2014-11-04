@@ -190,11 +190,16 @@ function getchecksync(tx, results) {
             }
 
             if (document.getElementById("settingsync") != null) {
-                $.when( db.transaction(getsyncdate, errorCBfunc, successCBfunc)).done(function() {
+               db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+            }
+
+
+            setTimeout( function(){
                     $('#indexloadingdata').modal('hide')
                     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-                });
-            }
+
+             }
+                , 20000 );
 
         }
 
