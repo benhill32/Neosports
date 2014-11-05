@@ -98,7 +98,7 @@ function populateDB1(tx,results) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
             // alert($('#mainfore').attr('class'));
-            $('#indexloadingdata').modal('show');
+         //   $('#indexloadingdata').modal('show');
         }
 
        blankLastUpdatesec();
@@ -180,8 +180,7 @@ function getchecksync(tx, results) {
             $.when(syncmaintables(obj)).done(function() {
                 $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
 
-                    $('#mainfore').removeClass('mainforeground2');
-                    $('#mainfore').addClass('mainforeground');
+
                         });
             });
 
@@ -196,6 +195,8 @@ function getchecksync(tx, results) {
 
 
             setTimeout( function(){
+                    $('#mainfore').removeClass('mainforeground2');
+                    $('#mainfore').addClass('mainforeground');
                     $('#indexloadingdata').modal('hide');
                     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
              }
