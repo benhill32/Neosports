@@ -85,27 +85,20 @@ function populateDB(tx){
 }
 
 function populateDB1(tx,results) {
-  //  checkonline();
-        var row = results.rows.item(0);
-     //   alert(row.Datesecs);
-
+    checkonline();
+    var row = results.rows.item(0);
 
     if(row.Count ==0){
-       // navigator.splashscreen.show();
-      //  window.plugins.toast.showShortCenter('Welcome to NeoSportz', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-   //    window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
-        if(document.getElementById("indexdiv")!=null) {
+      if(document.getElementById("indexdiv")!=null) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
             // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
-
-       blankLastUpdatesec();
+      blankLastUpdatesec();
       pushnotifiy();
 
-
-        db.transaction(populateDB, errorCBfunc, successCBfunc);
+    db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
         chkrefreshdata = 1;
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
@@ -117,14 +110,8 @@ function populateDB1(tx,results) {
             $('#mainfore').removeClass('mainforeground2');
             $('#mainfore').addClass('mainforeground');
         }
-
-
     }
-
 }
-
-
-
 
 function passdatatoserver(){
 
@@ -206,7 +193,7 @@ function getchecksync(tx, results) {
                     $('#mainfore').removeClass('mainforeground2');
                     $('#mainfore').addClass('mainforeground');
                     $('#indexloadingdata').modal('hide');
-                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                   window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
              }
                 , totaljson );
 

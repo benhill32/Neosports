@@ -146,7 +146,7 @@ function numbersponsers_success(tx, results) {
 }
 
 function getdata2(tx) {
-    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC,DeletedateUTC from MobilevwApp_News_v_2 where ClubID=" + clubidtop + " and DeletedateUTC = 'null' order by DisplayDateUTC Desc";
+    var sql = "select ID,_id,UpdateDateUTC,Title,Body,ClubID,TeamID,Hide,IsAd,Base64,URL,Hint,DisplayDateUTC,DisplaySecondsUTC,DeletedateUTC,FromPhone from MobilevwApp_News_v_2 where ClubID=" + clubidtop + " and DeletedateUTC = 'null' order by DisplayDateUTC Desc";
 //alert(sql);
     tx.executeSql(sql, [], getnewfeed_success);
 }
@@ -192,7 +192,6 @@ function getnewfeed_success(tx, results) {
                     URLnow = menu.URL;
                 }
 
-
                 if ((menu.Body).length <= 200) {
 
                     $('#newsmain').append('<Div id="divnewmain" class=" bs-callout bs-callout-info"  align="left">' +
@@ -223,7 +222,9 @@ function getnewfeed_success(tx, results) {
 
             } else {
                 imgicon = "<img src='../img/info.png' style='padding-right: 10px' height='30' align='left'>";
-
+                if(menu.FromPhone == 'true'){
+                    imgicon = "<img src='../img/phone.png' style='padding-right: 10px' height='30' align='left'>";
+                }
 
                 if ((menu.Body).length <= 200) {
 
