@@ -128,52 +128,7 @@ function createDB(tx) {
 }
 
 
-function CleanDB() {
 
-        db.transaction(function (tx) {
-            tx.executeSql('Delete from MobileApp_Results where DeletedateUTC != "null"');
-            console.log('Clean MobileApp_Results where ID');
-        });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobileApp_clubs where DeletedateUTC != "null"');
-            console.log('Clean MobileApp_clubs where ID');
-    });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobileApp_Schedule where DeletedateUTC != "null"');
-            console.log('Clean MobileApp_Schedule where ID');
-    });
-
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobileApp_vwApp_Teams where DeletedateUTC != "null"');
-            console.log('Clean MobileApp_vwApp_Teams where ID');
-    });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobilevwApp_News_v_2 where DeletedateUTC != "null"');
-            console.log('Clean MobilevwApp_News_v_2 where ID');
-    });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobilevwApp_Base_Players where DeletedateUTC != "null"');
-            console.log('Clean MobilevwApp_Base_Players where ID');
-    });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from MobileApp_Players_Images where DeletedateUTC != "null"');
-            console.log('Clean MobileApp_Players_Images where ID');
-    });
-
-    db.transaction(function(tx) {
-            tx.executeSql('Delete from Mobilesponsorsclub where DeletedateUTC != "null"');
-            console.log('Clean Mobilesponsorsclub');
-        });
-
-
-
-}
 
 
 

@@ -102,7 +102,7 @@ function populateDB1(tx,results) {
         }
 
        blankLastUpdatesec();
-       pushnotifiy();
+      pushnotifiy();
 
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
@@ -158,9 +158,6 @@ function getchecksync(tx, results) {
             dif = 100000000;
         }
 
-       // console.log(new Date((row.Datesecs) * 1000) + "\n\r" + dif);
-        //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
-
         if (dif >= "600") {
             if(document.getElementById("indexdiv")!=null) {
 
@@ -185,13 +182,8 @@ function getchecksync(tx, results) {
 
              var totaljson  =  (countProperties(obj)/40)* 1000;
 
-
-
             $.when(syncmaintables(obj)).done(function() {
-                $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function() {
-
-
-                        });
+                db.transaction(CleanDB, errorCBfunc, successCBfunc);
             });
 
             if(document.getElementById("indexdiv")!=null){
@@ -203,6 +195,12 @@ function getchecksync(tx, results) {
                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
 
+            if (document.getElementById("divschedules") != null) {
+                db.transaction(getfliter, errorCBfunc, successCBfunc);
+            }
+            if (document.getElementById("divresults") != null) {
+                db.transaction(getfliter, errorCBfunc, successCBfunc);
+            }
 
             setTimeout( function(){
                     $('#mainfore').removeClass('mainforeground2');
@@ -337,8 +335,7 @@ function onclickresync(tx, results) {
 
 
         $.when(syncmaintables(obj)).done(function () {
-            $.when(db.transaction(CleanDB, errorCBfunc, successCBfunc)).done(function () {
-            });
+            db.transaction(CleanDB, errorCBfunc, successCBfunc);
         });
 
         if (document.getElementById("indexdiv") != null) {
@@ -350,14 +347,18 @@ function onclickresync(tx, results) {
             db.transaction(getsyncdate, errorCBfunc, successCBfunc);
         }
 
+    if (document.getElementById("divschedules") != null) {
+        db.transaction(getfliter, errorCBfunc, successCBfunc);
+    }
+    if (document.getElementById("divresults") != null) {
+            db.transaction(getfliter, errorCBfunc, successCBfunc);
+    }
+
 
         setTimeout(function () {
                 $('#indexloadingdata').modal('hide');
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {
-                        console.log('toast success: ' + a)
-                    }, function (b) {
-                    alert('toast error: ' + b)
-                });
+
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
             }
             , totaljson);
 
