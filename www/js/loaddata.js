@@ -354,8 +354,8 @@ function onclickresync(tx, results) {
         setTimeout(function () {
                 $('#indexloadingdata').modal('hide');
                 window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {
-                    console.log('toast success: ' + a)
-                }, function (b) {
+                        console.log('toast success: ' + a)
+                    }, function (b) {
                     alert('toast error: ' + b)
                 });
             }

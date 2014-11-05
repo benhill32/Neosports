@@ -537,9 +537,14 @@ function cancelgamenow(ID){
         passcancelgametoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&gameid=" + ID);
         alert("Game has been Canceled!");
 
-        onclicksyncloaddata();
+        $.when(onclicksyncloaddata()).done(function () {
+            db.transaction(getfliter, errorCBfunc, successCBfunc);
+        });
 
-        db.transaction(getfliter, errorCBfunc, successCBfunc);
+
+
+
+
     }else{
 
         alert("You don't have access to internet!");
