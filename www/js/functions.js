@@ -535,12 +535,12 @@ function cancelgamenow(ID){
     if(networkconnectionfun !=0) {
         db.transaction(gettoken1, errorCBfunc, successCBfunc);
         passcancelgametoserver("deviceid=" + deviceIDfunc + "&token=" + apptoken + "&gameid=" + ID);
-        alert("Game has been Canceled!");
+
 
         $.when(onclicksyncloaddata()).done(function () {
             db.transaction(getfliter, errorCBfunc, successCBfunc);
+          
         });
-
 
 
 
