@@ -510,8 +510,9 @@ position: fixed;
     z-index: 10;
  //   background:#7f7f7f;
     background:rgba(255,255,255,0.75);
-    top: 40px;
-
+    top: 60px;
+    bottom: 60px;
+    overflow-y: scroll;
 }
 .sponsordiv{
 

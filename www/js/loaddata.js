@@ -98,7 +98,7 @@ function populateDB1(tx,results) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
             // alert($('#mainfore').attr('class'));
-         //   $('#indexloadingdata').modal('show');
+            $('#indexloadingdata').modal('show');
         }
 
        blankLastUpdatesec();
@@ -162,9 +162,19 @@ function getchecksync(tx, results) {
         //  alert(new Date((row.Datesecs)*1000) + "\n\r" + datenowsecsync  + "\n\r" + dif);
 
         if (dif >= "600") {
+            if(document.getElementById("indexdiv")!=null) {
 
-            $('#indexloadingdata').modal('show');
+                if($("#mainfore").hasClass("mainforeground2")){
 
+                }else{
+                    $('#mainfore').removeClass('mainforeground');
+                    $('#mainfore').addClass('mainforeground2');
+                    $('#indexloadingdata').modal('show');
+                }
+
+            }else{
+                $('#indexloadingdata').modal('show');
+            }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
