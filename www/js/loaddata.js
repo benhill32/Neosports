@@ -175,7 +175,7 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/30)* 1000;
+             var totaljson  =  (countProperties(obj)/10)* 1000;
 alert(totaljson);
 
             $.when(syncmaintables(obj)).done(function() {
@@ -324,7 +324,7 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        var totaljson = (countProperties(obj) / 30) * 1000;
+        var totaljson = (countProperties(obj) / 10) * 1000;
 
 
         $.when(syncmaintables(obj)).done(function () {
