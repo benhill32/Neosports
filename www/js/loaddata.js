@@ -357,8 +357,8 @@ function checktime2_success(tx, results) {
     var row = results.rows.item(0);
     var datenowcheck = new Date();
     var timenowcheck = datenowcheck.getTime();
-    var secnowcheck =  Math.round((timenowcheck/1000)).trim();
-    var rowdatesecs = row.Datesecs.trim();
+    var secnowcheck =  Math.round((timenowcheck/1000));
+    var rowdatesecs = row.Datesecs;
 
     alert('A' + parseInt(secnowcheck) + 'A-A' + parseInt(rowdatesecs) + 'A');
 

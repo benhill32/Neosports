@@ -46,8 +46,8 @@
       <file leaf-file-name="loaddata.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5050676" vertical-offset="4699" max-vertical-offset="8075">
-              <caret line="362" column="68" selection-start-line="362" selection-start-column="68" selection-end-line="362" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.22972973" vertical-offset="4573" max-vertical-offset="8075">
+              <caret line="345" column="9" selection-start-line="345" selection-start-column="9" selection-end-line="345" selection-end-column="20" />
               <folding>
                 <element signature="n#!!block;n#countProperties#0" expanded="false" />
               </folding>
@@ -886,8 +886,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/loaddata.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5050676" vertical-offset="4699" max-vertical-offset="8075">
-          <caret line="362" column="68" selection-start-line="362" selection-start-column="68" selection-end-line="362" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.22972973" vertical-offset="4573" max-vertical-offset="8075">
+          <caret line="345" column="9" selection-start-line="345" selection-start-column="9" selection-end-line="345" selection-end-column="20" />
           <folding>
             <element signature="n#!!block;n#countProperties#0" expanded="false" />
           </folding>
