@@ -65,7 +65,7 @@ function checkonline(){
 }
 
 function refreshdata(){
-    chkrefreshdata =0;
+
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
 
@@ -100,7 +100,7 @@ function populateDB1(tx,results) {
 
     db.transaction(populateDB, errorCBfunc, successCBfunc);
     }else{
-        chkrefreshdata = 1;
+
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
@@ -167,16 +167,23 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/40)* 1000;
+             var totaljson  =  (countProperties(obj)/30)* 1000;
 
             $.when(syncmaintables(obj)).done(function() {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
             });
 
-           
+
+            setTimeout( function(){
+                    $('#mainfore').removeClass('mainforeground2');
+                    $('#mainfore').addClass('mainforeground');
+                    $('#indexloadingdata').modal('hide');
+                   window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+             }
+                , totaljson );
 
             if (document.getElementById("settingsync") != null) {
-               db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
             }
 
             if (document.getElementById("divschedules") != null) {
@@ -186,13 +193,6 @@ function getchecksync(tx, results) {
                 db.transaction(getfliter, errorCBfunc, successCBfunc);
             }
 
-            setTimeout( function(){
-                    $('#mainfore').removeClass('mainforeground2');
-                    $('#mainfore').addClass('mainforeground');
-                    $('#indexloadingdata').modal('hide');
-                   window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-             }
-                , totaljson );
 
         }
 
@@ -315,7 +315,7 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        var totaljson = (countProperties(obj) / 40) * 1000;
+        var totaljson = (countProperties(obj) / 30) * 1000;
 
 
         $.when(syncmaintables(obj)).done(function () {
