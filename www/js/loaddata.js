@@ -357,10 +357,10 @@ function checktime2_success(tx, results) {
     var row = results.rows.item(0);
     var datenowcheck = new Date();
     var timenowcheck = datenowcheck.getTime();
-    var secnowcheck =  Math.round((timenowcheck/1000));
-    var rowdatesecs = row.Datesecs;
+    var secnowcheck =  Math.round((timenowcheck/1000)).trim();
+    var rowdatesecs = row.Datesecs.trim();
 
-    alert(parseInt(secnowcheck) + '-' + parseInt(rowdatesecs));
+    alert('A' + parseInt(secnowcheck) + 'A-A' + parseInt(rowdatesecs) + 'A');
 
         if(parseInt(secnowcheck) >= parseInt(rowdatesecs)){
             clearInterval(t);
