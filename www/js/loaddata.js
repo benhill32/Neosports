@@ -95,10 +95,15 @@ function populateDB1(tx,results) {
             // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
-      blankLastUpdatesec();
-      pushnotifiy();
+        $.when(blankLastUpdatesec()).done(function() {
+            $.when( pushnotifiy()).done(function() {
+                db.transaction(populateDB, errorCBfunc, successCBfunc);
+            });
+        });
 
-    db.transaction(populateDB, errorCBfunc, successCBfunc);
+
+
+
     }else{
 
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";

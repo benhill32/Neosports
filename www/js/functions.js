@@ -234,6 +234,7 @@ function blankLastUpdatesec(){
     db.transaction(function(tx) {
         tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub,fliterON) VALUES ("0", "0",0,0,"' + json + '",0,0)');
         console.log("INSERT INTO MobileApp_LastUpdatesec");
+        alert('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus,syncwifi,isadmin,token,hasclub,fliterON) VALUES ("0", "0",0,0,"' + json + '",0,0)');
     });
 
 
@@ -556,12 +557,12 @@ function syncmaintables(obj){
 
     $.each(obj.Isadmin, function (idx, obj) {
 
-        db.transaction(function(tx) {
-            tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
-          //  console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
-            alert('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
+            db.transaction(function(tx) {
+                tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
+                //  console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
+                alert('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
 
-        });
+            });
     });
 
 
