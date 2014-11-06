@@ -358,15 +358,16 @@ function checktime2_success(tx, results) {
     var datenowcheck = new Date();
     var timenowcheck = datenowcheck.getTime();
     var secnowcheck =  Math.round((timenowcheck/1000));
+    var rowdatesecs = row.Datesecs;
 
+    alert(parseInt(secnowcheck) + '-' + parseInt(rowdatesecs));
 
-
-        if(secnowcheck >= row.Datesecs){
+        if(parseInt(secnowcheck) >= parseInt(rowdatesecs)){
             clearInterval(t);
             closemodel();
         }else{
 
-            alert(secnowcheck + '-' + row.Datesecs);
+
         }
 
 }
