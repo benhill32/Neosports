@@ -354,10 +354,10 @@ function checktime(){
 
 function checktime2(tx){
     var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-    tx.executeSql(sql, [], checktime2,errorCBfunc);
+    tx.executeSql(sql, [], checktime2_success,errorCBfunc);
 
 }
-function onclickresync(tx, results) {
+function checktime2_success(tx, results) {
     var row = results.rows.item(0);
     var datenowcheck = new Date();
     var timenowcheck = datenowcheck.getTime();
