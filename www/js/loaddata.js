@@ -131,7 +131,7 @@ function passdatatoserver(){
 
 function getchecksync(tx, results) {
 
-    var row = results.rows.item(0);
+        var row = results.rows.item(0);
 
         var datemenus= row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -168,30 +168,30 @@ function getchecksync(tx, results) {
             var obj = JSON.parse(json);
 
              var totaljson  =  (countProperties(obj)/30)* 1000;
-
+            
             $.when(syncmaintables(obj)).done(function() {
+                if (document.getElementById("settingsync") != null) {
+                    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+                }
 
-                setTimeout( function(){
-                        $('#mainfore').removeClass('mainforeground2');
-                        $('#mainfore').addClass('mainforeground');
-                        $('#indexloadingdata').modal('hide');
-                        window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-                    }
-                    , totaljson );
+                if (document.getElementById("divschedules") != null) {
+                    db.transaction(getfliter, errorCBfunc, successCBfunc);
+                }
+                if (document.getElementById("divresults") != null) {
+                    db.transaction(getfliter, errorCBfunc, successCBfunc);
+                }
+
             });
 
+            setTimeout( function(){
+                    $('#mainfore').removeClass('mainforeground2');
+                    $('#mainfore').addClass('mainforeground');
+                    $('#indexloadingdata').modal('hide');
+                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                }
+                , totaljson );
 
 
-            if (document.getElementById("settingsync") != null) {
-                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-            }
-
-            if (document.getElementById("divschedules") != null) {
-                db.transaction(getfliter, errorCBfunc, successCBfunc);
-            }
-            if (document.getElementById("divresults") != null) {
-                db.transaction(getfliter, errorCBfunc, successCBfunc);
-            }
 
 
         }
