@@ -141,8 +141,7 @@ function getchecksync(tx, results) {
         var datemenus= row.datemenus;
 
         var datenowsecsync = row.Datesecs;
-   // alert(datemenus);
-   // alert(datenowsecsync);
+
 
         var datenow = new Date();
         var timenow = datenow.getTime();
@@ -154,6 +153,7 @@ function getchecksync(tx, results) {
         }
 
         if (dif >= "600") {
+            var t=setInterval(function(){checktime()},1000);
             if(document.getElementById("indexdiv")!=null) {
 
                 if($("#mainfore").hasClass("mainforeground2")){
@@ -176,32 +176,20 @@ function getchecksync(tx, results) {
             var obj = JSON.parse(json);
 
              var totaljson  =  (countProperties(obj)/18)* 1000;
-            alert(totaljson);
 
-           // setTimeout( function(){
-          //         }
-          //      , totaljson );
-
-
-            $.when(syncmaintables(obj)).done(function() {
-                randomfunctions();
-
-            });
-
-
-
-
-
-
+            syncmaintables(obj);
         }
 
 }
+
+
+
 function closemodel(){
     $('#mainfore').removeClass('mainforeground2');
     $('#mainfore').addClass('mainforeground');
     $('#indexloadingdata').modal('hide');
     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-
+    randomfunctions();
 
 }
 
@@ -312,7 +300,7 @@ function onclickresync(tx, results) {
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
         $('#indexloadingdata').modal('show');
-
+        var t=setInterval(function(){checktime()},1000);
 
         var datemenus = row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -359,7 +347,32 @@ function onclickresync(tx, results) {
     }
 }
 
+function checktime(){
 
+    db.transaction(checktime2, errorCBfunc, successCBfunc)
+}
+
+function checktime2(tx){
+    var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
+    tx.executeSql(sql, [], checktime2,errorCBfunc);
+
+}
+function onclickresync(tx, results) {
+    var row = results.rows.item(0);
+    var datenowcheck = new Date();
+    var timenowcheck = datenowcheck.getTime();
+    var secnowcheck =  Math.round((timenowcheck/1000));
+    alert(secnowcheck + ' - ' + row.Datesecs);
+    if(row.Count ==0) {
+
+    }else{
+
+        if(row.Datesecs >= secnowcheck){
+            clearInterval(t);
+            closemodel();
+        }
+    }
+}
 function successHandler (result) {
  //   alert('result = ' + result);
 }
