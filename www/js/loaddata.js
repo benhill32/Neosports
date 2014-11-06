@@ -175,8 +175,17 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/15)* 1000;
-alert(totaljson);
+             var totaljson  =  (countProperties(obj)/20)* 1000;
+            alert(totaljson);
+            
+            setTimeout( function(){
+                    $('#mainfore').removeClass('mainforeground2');
+                    $('#mainfore').addClass('mainforeground');
+                    $('#indexloadingdata').modal('hide');
+                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                }
+                , totaljson );
+
 
             $.when(syncmaintables(obj)).done(function() {
                 if (document.getElementById("settingsync") != null) {
@@ -192,13 +201,7 @@ alert(totaljson);
 
             });
 
-            setTimeout( function(){
-                    $('#mainfore').removeClass('mainforeground2');
-                    $('#mainfore').addClass('mainforeground');
-                    $('#indexloadingdata').modal('hide');
-                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-                }
-                , totaljson );
+
 
 
 
@@ -324,7 +327,14 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        var totaljson = (countProperties(obj) / 15) * 1000;
+        var totaljson = (countProperties(obj) / 20) * 1000;
+
+        setTimeout(function () {
+                $('#indexloadingdata').modal('hide');
+
+                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+            }
+            , totaljson);
 
 
         $.when(syncmaintables(obj)).done(function () {
@@ -341,12 +351,7 @@ function onclickresync(tx, results) {
         });
 
 
-        setTimeout(function () {
-                $('#indexloadingdata').modal('hide');
 
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-            }
-            , totaljson);
 
 
     }
