@@ -175,29 +175,16 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/20)* 1000;
+             var totaljson  =  (countProperties(obj)/18)* 1000;
             alert(totaljson);
-            
-            setTimeout( function(){
-                    $('#mainfore').removeClass('mainforeground2');
-                    $('#mainfore').addClass('mainforeground');
-                    $('#indexloadingdata').modal('hide');
-                    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-                }
-                , totaljson );
+
+           // setTimeout( function(){
+          //         }
+          //      , totaljson );
 
 
             $.when(syncmaintables(obj)).done(function() {
-                if (document.getElementById("settingsync") != null) {
-                    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-                }
-
-                if (document.getElementById("divschedules") != null) {
-                    db.transaction(getfliter, errorCBfunc, successCBfunc);
-                }
-                if (document.getElementById("divresults") != null) {
-                    db.transaction(getfliter, errorCBfunc, successCBfunc);
-                }
+                randomfunctions();
 
             });
 
@@ -209,6 +196,30 @@ function getchecksync(tx, results) {
         }
 
 }
+function closemodel(){
+    $('#mainfore').removeClass('mainforeground2');
+    $('#mainfore').addClass('mainforeground');
+    $('#indexloadingdata').modal('hide');
+    window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+
+
+}
+
+
+function randomfunctions(){
+    if (document.getElementById("settingsync") != null) {
+        db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+    }
+
+    if (document.getElementById("divschedules") != null) {
+        db.transaction(getfliter, errorCBfunc, successCBfunc);
+    }
+    if (document.getElementById("divresults") != null) {
+        db.transaction(getfliter, errorCBfunc, successCBfunc);
+    }
+
+}
+
 
 function countProperties(obj) {
 
@@ -327,27 +338,18 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        var totaljson = (countProperties(obj) / 20) * 1000;
+        var totaljson = (countProperties(obj) / 18) * 1000;
 
-        setTimeout(function () {
-                $('#indexloadingdata').modal('hide');
+      //  setTimeout(function () {
+      //          $('#indexloadingdata').modal('hide');
 
-                window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-            }
-            , totaljson);
+      //          window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+      //      }
+      //      , totaljson);
 
 
         $.when(syncmaintables(obj)).done(function () {
-            if (document.getElementById("settingsync") != null) {
-                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-            }
-
-            if (document.getElementById("divschedules") != null) {
-                db.transaction(getfliter, errorCBfunc, successCBfunc);
-            }
-            if (document.getElementById("divresults") != null) {
-                db.transaction(getfliter, errorCBfunc, successCBfunc);
-            }
+            randomfunctions();
         });
 
 
