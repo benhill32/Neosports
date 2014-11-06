@@ -100,10 +100,6 @@ function populateDB1(tx,results) {
                 db.transaction(populateDB, errorCBfunc, successCBfunc);
             });
         });
-
-
-
-
     }else{
 
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
@@ -363,11 +359,14 @@ function checktime2_success(tx, results) {
     var timenowcheck = datenowcheck.getTime();
     var secnowcheck =  Math.round((timenowcheck/1000));
 
-    alert(secnowcheck + ' - ' + row.Datesecs);
+
 
         if(secnowcheck >= row.Datesecs){
             clearInterval(t);
             closemodel();
+        }else{
+
+            alert(secnowcheck + '-' + row.Datesecs);
         }
 
 }
