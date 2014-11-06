@@ -85,7 +85,7 @@ function populateDB(tx){
 }
 
 function populateDB1(tx,results) {
-    checkonline();
+    //checkonline();
     var row = results.rows.item(0);
 
     if(row.Count ==0){
@@ -170,17 +170,17 @@ function getchecksync(tx, results) {
              var totaljson  =  (countProperties(obj)/30)* 1000;
 
             $.when(syncmaintables(obj)).done(function() {
-                db.transaction(CleanDB, errorCBfunc, successCBfunc);
+
+                setTimeout( function(){
+                        $('#mainfore').removeClass('mainforeground2');
+                        $('#mainfore').addClass('mainforeground');
+                        $('#indexloadingdata').modal('hide');
+                        window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+                    }
+                    , totaljson );
             });
 
 
-            setTimeout( function(){
-                    $('#mainfore').removeClass('mainforeground2');
-                    $('#mainfore').addClass('mainforeground');
-                    $('#indexloadingdata').modal('hide');
-                   window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-             }
-                , totaljson );
 
             if (document.getElementById("settingsync") != null) {
                 db.transaction(getsyncdate, errorCBfunc, successCBfunc);
