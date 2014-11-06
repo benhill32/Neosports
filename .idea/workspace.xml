@@ -87,14 +87,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clubs.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="clubs.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/clubs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3603306" vertical-offset="1214" max-vertical-offset="1819">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1214" max-vertical-offset="1819">
               <caret line="23" column="24" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <marker date="1415309832793" expanded="false" signature="1107:1126" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.028099174" vertical-offset="0" max-vertical-offset="1462">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,16 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.62" vertical-offset="2812" max-vertical-offset="12155">
               <caret line="179" column="67" selection-start-line="179" selection-start-column="52" selection-end-line="179" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/settings.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2587" max-vertical-offset="4454">
-              <caret line="164" column="4" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -174,7 +174,6 @@
         <option value="$PROJECT_DIR$/www/js/news.js" />
         <option value="$PROJECT_DIR$/www/js/CreateOpenDB.js" />
         <option value="$PROJECT_DIR$/www/pages/schedules.html" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/settings.js" />
         <option value="$PROJECT_DIR$/www/js/loaddata.js" />
         <option value="$PROJECT_DIR$/www/js/functions.js" />
@@ -183,6 +182,7 @@
         <option value="$PROJECT_DIR$/www/js/results.js" />
         <option value="$PROJECT_DIR$/www/pages/addnewfeed.html" />
         <option value="$PROJECT_DIR$/www/js/clubs.js" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -786,14 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/pages/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.607843" vertical-offset="870" max-vertical-offset="2244">
@@ -880,11 +872,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/clubs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3603306" vertical-offset="1214" max-vertical-offset="1819">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1214" max-vertical-offset="1819">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="24" />
           <folding>
             <marker date="1415309832793" expanded="false" signature="1107:1126" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.028099174" vertical-offset="0" max-vertical-offset="1462">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
