@@ -149,7 +149,6 @@ function getchecksync(tx, results) {
         }
 
         if (dif >= "600") {
-            var t=setInterval(function(){checktime()},1000);
             if(document.getElementById("indexdiv")!=null) {
 
                 if($("#mainfore").hasClass("mainforeground2")){
@@ -296,7 +295,6 @@ function onclickresync(tx, results) {
 
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
         $('#indexloadingdata').modal('show');
-        var t=setInterval(function(){checktime()},1000);
 
         var datemenus = row.datemenus;
         var datenowsecsync = row.Datesecs;
@@ -343,34 +341,7 @@ function onclickresync(tx, results) {
     }
 }
 
-function checktime(){
 
-    db.transaction(checktime2, errorCBfunc, successCBfunc)
-}
-
-function checktime2(tx){
-    var sql = "select Datesecs,datemenus from MobileApp_LastUpdatesec";
-    tx.executeSql(sql, [], checktime2_success,errorCBfunc);
-
-}
-function checktime2_success(tx, results) {
-    var row = results.rows.item(0);
-    var datenowcheck = new Date();
-    var timenowcheck = datenowcheck.getTime();
-    var secnowcheck =  Math.round((timenowcheck/1000));
-    var rowdatesecs = row.Datesecs;
-
-    alert('A' + parseInt(secnowcheck) + 'A-A' + parseInt(rowdatesecs) + 'A');
-
-        if(parseInt(secnowcheck) >= parseInt(rowdatesecs)){
-            clearInterval(t);
-            closemodel();
-        }else{
-
-
-        }
-
-}
 function successHandler (result) {
  //   alert('result = ' + result);
 }
