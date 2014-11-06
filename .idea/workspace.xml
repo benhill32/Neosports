@@ -90,10 +90,10 @@
       <file leaf-file-name="clubs.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/clubs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19669421" vertical-offset="0" max-vertical-offset="1836">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state vertical-scroll-proportion="-1.3603306" vertical-offset="1214" max-vertical-offset="1819">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="24" />
               <folding>
-                <marker date="1415308493741" expanded="false" signature="1118:1137" placeholder="..." />
+                <marker date="1415309832793" expanded="false" signature="1107:1126" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -880,10 +880,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/clubs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19669421" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state vertical-scroll-proportion="-1.3603306" vertical-offset="1214" max-vertical-offset="1819">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="24" />
           <folding>
-            <marker date="1415308493741" expanded="false" signature="1118:1137" placeholder="..." />
+            <marker date="1415309832793" expanded="false" signature="1107:1126" placeholder="..." />
           </folding>
         </state>
       </provider>

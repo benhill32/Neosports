@@ -3,15 +3,14 @@ var db;
 
 var IDhist = 0;
 var IDcon = 0;
-document.addEventListener("deviceready", onDeviceReadynews, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReadynews() {
+function onDeviceReady() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCBfunc, successCBfunc);
     db.transaction(getdata, errorCBfunc, successCBfunc);
 }
-
+//db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
 
