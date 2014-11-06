@@ -168,7 +168,8 @@ function getchecksync(tx, results) {
             var obj = JSON.parse(json);
 
              var totaljson  =  (countProperties(obj)/30)* 1000;
-            
+alert(totaljson);
+
             $.when(syncmaintables(obj)).done(function() {
                 if (document.getElementById("settingsync") != null) {
                     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
