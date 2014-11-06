@@ -141,7 +141,7 @@ function getchecksync(tx, results) {
         var datemenus= row.datemenus;
 
         var datenowsecsync = row.Datesecs;
-    alert(datemenus);
+   // alert(datemenus);
    // alert(datenowsecsync);
 
         var datenow = new Date();
@@ -175,7 +175,7 @@ function getchecksync(tx, results) {
             var json = xmlHttp.responseText;
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/10)* 1000;
+             var totaljson  =  (countProperties(obj)/15)* 1000;
 alert(totaljson);
 
             $.when(syncmaintables(obj)).done(function() {
@@ -324,28 +324,21 @@ function onclickresync(tx, results) {
             updatemenutables(obj);
         }
 
-        var totaljson = (countProperties(obj) / 10) * 1000;
+        var totaljson = (countProperties(obj) / 15) * 1000;
 
 
         $.when(syncmaintables(obj)).done(function () {
-            db.transaction(CleanDB, errorCBfunc, successCBfunc);
+            if (document.getElementById("settingsync") != null) {
+                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+            }
+
+            if (document.getElementById("divschedules") != null) {
+                db.transaction(getfliter, errorCBfunc, successCBfunc);
+            }
+            if (document.getElementById("divresults") != null) {
+                db.transaction(getfliter, errorCBfunc, successCBfunc);
+            }
         });
-
-        if (document.getElementById("indexdiv") != null) {
-            //   loadindexmessage();
-
-        }
-
-        if (document.getElementById("settingsync") != null) {
-            db.transaction(getsyncdate, errorCBfunc, successCBfunc);
-        }
-
-    if (document.getElementById("divschedules") != null) {
-        db.transaction(getfliter, errorCBfunc, successCBfunc);
-    }
-    if (document.getElementById("divresults") != null) {
-            db.transaction(getfliter, errorCBfunc, successCBfunc);
-    }
 
 
         setTimeout(function () {
