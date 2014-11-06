@@ -173,10 +173,7 @@ function getchecksync(tx, results) {
                 db.transaction(CleanDB, errorCBfunc, successCBfunc);
             });
 
-            if(document.getElementById("indexdiv")!=null){
-             //   loadindexmessage();
-
-            }
+           
 
             if (document.getElementById("settingsync") != null) {
                db.transaction(getsyncdate, errorCBfunc, successCBfunc);
