@@ -365,15 +365,11 @@ function checktime2_success(tx, results) {
 
     alert(secnowcheck + ' - ' + row.Datesecs);
 
-    if(row.Count ==0) {
-
-    }else{
-
-        if(secnowcheck >=  row.Datesecs){
+        if(secnowcheck >= row.Datesecs){
             clearInterval(t);
             closemodel();
         }
-    }
+
 }
 function successHandler (result) {
  //   alert('result = ' + result);
