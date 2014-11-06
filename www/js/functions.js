@@ -558,7 +558,8 @@ function syncmaintables(obj){
 
         db.transaction(function(tx) {
             tx.executeSql('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
-            console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
+          //  console.log("Update INTO MobileApp_LastUpdatesec " + Math.round((timenow/1000)));
+            alert('Update MobileApp_LastUpdatesec set isadmin= ' + obj.Isadmin + ', Datesecs = "' + Math.round((timenow/1000)) + '",datemenus= "' + datenow1 + '"');
 
         });
     });

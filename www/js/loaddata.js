@@ -136,9 +136,9 @@ function getchecksync(tx, results) {
         var datemenus= row.datemenus;
 
         var datenowsecsync = row.Datesecs;
-    alert(datemenus);
-    alert(datenowsecsync);
-    
+   // alert(datemenus);
+   // alert(datenowsecsync);
+
         var datenow = new Date();
         var timenow = datenow.getTime();
 
