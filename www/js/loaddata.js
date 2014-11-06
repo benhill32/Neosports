@@ -362,12 +362,14 @@ function checktime2_success(tx, results) {
     var datenowcheck = new Date();
     var timenowcheck = datenowcheck.getTime();
     var secnowcheck =  Math.round((timenowcheck/1000));
+
     alert(secnowcheck + ' - ' + row.Datesecs);
+
     if(row.Count ==0) {
 
     }else{
 
-        if(row.Datesecs >= secnowcheck){
+        if(secnowcheck >=  row.Datesecs){
             clearInterval(t);
             closemodel();
         }
