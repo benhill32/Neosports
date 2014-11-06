@@ -5,9 +5,10 @@ console.log("LOCALDB - Database ready");
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
-   // db.transaction(getbackground, errorCBfunc, successCBfunc);
+
     loadindexmessage();
 }
+db.transaction(getbackground, errorCBfunc, successCBfunc);
 
 function loadindexmessage() {
     db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);
@@ -39,6 +40,7 @@ function getbackground(tx) {
 function getbackground_success(tx, results) {
 
     var len = results.rows.length;
+    //alert(len);
     if(len != 0) {
         var menu = results.rows.item(0);
 
@@ -78,9 +80,7 @@ function gethasclub_success(tx, results) {
         $('#mainfore').addClass('mainforeground2');
         // alert($('#mainfore').attr('class'));
         $('#basicModalnofav').modal('show');
-    }else{
 
-        db.transaction(getbackground, errorCBfunc, successCBfunc);
     }
 
 }
