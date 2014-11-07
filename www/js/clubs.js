@@ -15,6 +15,8 @@ function onDeviceReady() {
 
 
 
+
+
 function getdata(tx) {
     var sql = "select ID,_id ,name,UpdateDateUTC ,Base64,History,Contacts,UpdateSecondsUTC,Color from MobileApp_clubs order by name";
     //alert(sql);
