@@ -37,8 +37,8 @@ function getMenu_success(tx, results) {
                 '<img src="../img/info.png" height="25" align="right" data-toggle="modal" data-target="#basicModalContact" onclick="loadcontacts(' + menu.ID + ')">' +
                 '<img src="../img/team.png" onclick="redirectplayer(' + menu.ID + ')"    align="right" height="25">' +
                 '</div>' +
-                '<div class="size11" data-target="#basicModal" onclick="loadhistory(' + menu.ID + ')">' + menu.History.substring(0,200) + '....<span' +
-                'data-toggle="modal" class="size11 blue" data-target="#basicModal" onclick="loadhistory(' + menu.ID + ')"  >Read More</span></div>' +
+                '<div class="size11" data-toggle="modal" data-target="#basicModalclub" onclick="loadhistory(' + menu.ID + ')">' + menu.History.substring(0,200) + '....<span' +
+                'data-toggle="modal" class="size11 blue" data-target="#basicModalclub" onclick="loadhistory(' + menu.ID + ')"  >Read More</span></div>' +
                 '</Div>');
     }
 
