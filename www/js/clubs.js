@@ -10,7 +10,7 @@ function onDeviceReady() {
     console.log("LOCALDB - Database ready");
     db.transaction(getdata, errorCBfunc, successCBfunc);
 }
-//db.transaction(getdata, errorCBfunc, successCBfunc);
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
 

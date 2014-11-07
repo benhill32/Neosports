@@ -397,7 +397,7 @@ position: fixed;
 //    margin-bottom: 5px;
     left:5%;
 //  width:80%;
-    padding:6px;
+    padding:10px;
 
 
 }
@@ -431,6 +431,7 @@ position: fixed;
         position: fixed; /* Display modal in the centre of your screen */
         overflow-y: scroll; /*  Ensure that the modal is scroll-able */
         -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+
     }
     .modal.fade.in{
         top: 5px; /* Use more screen real estate */
@@ -441,7 +442,10 @@ position: fixed;
         max-height: 2400px;
     }
 }
+.modal{
 
+
+}
 /* Now adjust the height so it handles various screen sizes & orientations */
 /* You could make this as granular as you like, or have it more granular at common screen sizes
  * but it should start at the height we set on .modal (i.e. 500px) & work down */
