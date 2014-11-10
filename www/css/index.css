@@ -442,10 +442,16 @@ position: fixed;
         max-height: 2400px;
     }
 }
-.modal{
+@media (max-width: 480px) {
+    #divstandings{
+        font-size:12px;
 
-
+    }
 }
+
+
+
+
 /* Now adjust the height so it handles various screen sizes & orientations */
 /* You could make this as granular as you like, or have it more granular at common screen sizes
  * but it should start at the height we set on .modal (i.e. 500px) & work down */

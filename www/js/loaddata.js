@@ -85,7 +85,7 @@ function populateDB(tx){
 }
 
 function populateDB1(tx,results) {
-    //checkonline();
+    checkonline();
     var row = results.rows.item(0);
 
     if(row.Count ==0){

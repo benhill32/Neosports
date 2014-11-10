@@ -225,6 +225,15 @@ function getgoals_success(tx, results) {
         if(menu.TeamID == awayid){
             $('#resultawaygoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " "  + time + '<br>');
         }
+
+        if( $('#resulthomegoals').is(':empty') ) {
+
+            $('#resulthomegoals').append('&nbsp;');
+        }
+        if( $('#resultawaygoals').is(':empty') ) {
+            $('#resultawaygoals').append('&nbsp;');
+        }
+
     }
 
 
