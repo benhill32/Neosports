@@ -125,11 +125,11 @@ function getresultids(tx) {
 function getresultids_success(tx, results) {
 
     var len = results.rows.length;
+    stringresultID =0;
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
         stringresultID = stringresultID + menu.ID + ",";
     }
-    alert(stringresultID);
 }
 
 
