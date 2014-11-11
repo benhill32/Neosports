@@ -7,7 +7,7 @@ var day = d.getDate();
 var month = d.getMonth();
 var year = d.getFullYear();
 var hours= d.getHours();
-
+var stringresultID = 0;
 var datenow = (day + '' + month+ '' + year);
 var milliesecs = d.getTime();
 var datenowsec = Math.round((milliesecs/1000));
@@ -31,7 +31,9 @@ function onDeviceReadyloaddata() {
     $('#busy').hide();
 
     document.addEventListener("offline", onOffline, false);
+    db.transaction(getresultids, errorCBfunc, successCBfunc);
 }
+//db.transaction(getresultids, errorCBfunc, successCBfunc);
 
 function onOffline()
 {
@@ -105,6 +107,7 @@ function populateDB1(tx,results) {
         var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
 
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
+
              tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#indexloadingdata').modal('hide')
@@ -113,6 +116,22 @@ function populateDB1(tx,results) {
         }
     }
 }
+
+function getresultids(tx) {
+    sql = "select ID from MobileApp_Results";
+    tx.executeSql(sql, [], getresultids_success);
+}
+
+function getresultids_success(tx, results) {
+
+    var len = results.rows.length;
+    for (var i=0; i<len; i++) {
+        var menu = results.rows.item(i);
+        stringresultID = stringresultID + menu.ID + ",";
+    }
+    alert(stringresultID);
+}
+
 
 function passdatatoserver(){
 
@@ -164,7 +183,7 @@ function getchecksync(tx, results) {
             }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
+            xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
             xmlHttp.send();
 
             var json = xmlHttp.responseText;
@@ -276,10 +295,7 @@ function countProperties(obj) {
 
 
 function onclicksyncloaddata(){
-
-
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
-
 }
 
 function onclicksyncloaddata2(tx){
@@ -308,7 +324,7 @@ function onclickresync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync, false);
+        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
 
         xmlHttp.send();
 
@@ -333,10 +349,6 @@ function onclickresync(tx, results) {
         $.when(syncmaintables(obj)).done(function () {
             randomfunctions();
         });
-
-
-
-
 
     }
 }

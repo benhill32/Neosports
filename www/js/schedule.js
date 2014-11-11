@@ -214,8 +214,6 @@ function getdata(tx) {
 
     }
 
-
-
    // alert(sql);
     tx.executeSql(sql, [], getMenu_success);
 }
