@@ -343,13 +343,11 @@ function onclickresync(tx, results) {
 
         var json = xmlHttp.responseText;
 
-        var obj = JSON.parse(json);
-
         if (json == "{'Error' : [{'Message': 'Something went wrong'}]") {
 
             errorclosemodel();
         } else {
-
+            var obj = JSON.parse(json);
             $.when(syncmaintables(obj)).done(function () {
                 randomfunctions();
             });
