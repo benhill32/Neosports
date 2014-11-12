@@ -168,35 +168,51 @@ function getchecksync(tx, results) {
         }
 
         if (dif >= "600") {
-            if(document.getElementById("indexdiv")!=null) {
+            if (document.getElementById("indexdiv") != null) {
 
-                if($("#mainfore").hasClass("mainforeground2")){
+                if ($("#mainfore").hasClass("mainforeground2")) {
 
-                }else{
+                } else {
                     $('#mainfore').removeClass('mainforeground');
                     $('#mainfore').addClass('mainforeground2');
                     $('#indexloadingdata').modal('show');
                 }
 
-            }else{
+            } else {
                 $('#indexloadingdata').modal('show');
             }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
+           // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx', false);
             xmlHttp.send();
 
             var json = xmlHttp.responseText;
+
+            if (json == "{'Error' : [{'Message': 'Something went wrong'}]") {
+
+                errorclosemodel();
+            } else {
+
             var obj = JSON.parse(json);
 
-             var totaljson  =  (countProperties(obj)/18)* 1000;
+            var totaljson = (countProperties(obj) / 18) * 1000;
 
             syncmaintables(obj);
+            }
         }
 
 }
 
+function errorclosemodel(){
+    $('#mainfore').removeClass('mainforeground2');
+    $('#mainfore').addClass('mainforeground');
+    $('#indexloadingdata').modal('hide');
+    window.plugins.toast.showLongCenter('Something went wrong! Please sync data again\n If problem persists contact helpdesk@neocom.co.nz', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+   // alert("error");
+    randomfunctions();
 
+}
 
 function closemodel(){
     $('#mainfore').removeClass('mainforeground2');
@@ -324,7 +340,8 @@ function onclickresync(tx, results) {
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
-        xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
+       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
+    //xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx', false);
 
         xmlHttp.send();
 
@@ -332,23 +349,22 @@ function onclickresync(tx, results) {
 
         var obj = JSON.parse(json);
 
-        if (datemenus != datemenus) {
-            updatemenutables(obj);
+        if (json == "{'Error' : [{'Message': 'Something went wrong'}]") {
+
+            errorclosemodel();
+        } else {
+            //  setTimeout(function () {
+            //          $('#indexloadingdata').modal('hide');
+
+            //          window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
+            //      }
+            //      , totaljson);
+
+
+            $.when(syncmaintables(obj)).done(function () {
+                randomfunctions();
+            });
         }
-
-        var totaljson = (countProperties(obj) / 18) * 1000;
-
-      //  setTimeout(function () {
-      //          $('#indexloadingdata').modal('hide');
-
-      //          window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-      //      }
-      //      , totaljson);
-
-
-        $.when(syncmaintables(obj)).done(function () {
-            randomfunctions();
-        });
 
     }
 }

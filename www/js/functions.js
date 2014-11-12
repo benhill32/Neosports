@@ -303,6 +303,11 @@ function syncmaintables(obj){
 
   //  totalnew =  checkintvalue(obj.App_Results.length) + checkintvalue(obj.clubs.length) + checkintvalue(obj.App_Schedule.length)+ checkintvalue(obj.clubsimages.length)+ checkintvalue(obj.vwApp_Teams.length)+ checkintvalue(obj.vwApp_News_v_2.length)+ checkintvalue(obj.App_Players.length)+ checkintvalue(obj.App_Players_Images.length)+ checkintvalue(obj.ScoringTable.length)+ checkintvalue(obj.Standings.length)+ checkintvalue(obj.sponsorsclub.length)+ checkintvalue(obj.screenimage.length);
 
+   // $.each(obj.Error, function (idx, obj) {
+
+    //    errorclosemodel();
+
+   // });
 
     $.each(obj.App_Results2, function (idx, obj) {
 
