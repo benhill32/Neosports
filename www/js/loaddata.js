@@ -196,7 +196,7 @@ function getchecksync(tx, results) {
 
             var obj = JSON.parse(json);
 
-            var totaljson = (countProperties(obj) / 18) * 1000;
+
 
             syncmaintables(obj);
             }
@@ -208,10 +208,8 @@ function errorclosemodel(){
     $('#mainfore').removeClass('mainforeground2');
     $('#mainfore').addClass('mainforeground');
     $('#indexloadingdata').modal('hide');
-    window.plugins.toast.showLongCenter('Something went wrong! Please sync data again\n If problem persists contact helpdesk@neocom.co.nz', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-   // alert("error");
+    window.plugins.toast.showLongCenter('Something went wrong! Please sync data again \n If problem persists contact helpdesk@neocom.co.nz', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
     randomfunctions();
-
 }
 
 function closemodel(){
@@ -220,7 +218,6 @@ function closemodel(){
     $('#indexloadingdata').modal('hide');
     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
     randomfunctions();
-
 }
 
 
@@ -235,7 +232,6 @@ function randomfunctions(){
     if (document.getElementById("divresults") != null) {
         db.transaction(getfliter, errorCBfunc, successCBfunc);
     }
-
 }
 
 
@@ -353,13 +349,6 @@ function onclickresync(tx, results) {
 
             errorclosemodel();
         } else {
-            //  setTimeout(function () {
-            //          $('#indexloadingdata').modal('hide');
-
-            //          window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
-            //      }
-            //      , totaljson);
-
 
             $.when(syncmaintables(obj)).done(function () {
                 randomfunctions();
