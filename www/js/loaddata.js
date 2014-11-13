@@ -22,13 +22,18 @@ document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 //
 
 function onDeviceReadyloaddata() {
-
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
     devicePlatformfunc = device.platform;
      getnetworkdetails();
     $('#busy').hide();
+
+    if (url.indexOf("localhost") === true) {
+        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    }else{
+        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    }
+
 
     document.addEventListener("offline", onOffline, false);
     db.transaction(getresultids, errorCBfunc, successCBfunc);
@@ -37,11 +42,7 @@ function onDeviceReadyloaddata() {
 var url = window.location.href;
 
 
-if (url.indexOf("localhost") === true) {
-    alert("true");
-}else{
-    alert("false");
-}
+
 
 
 function onOffline()
