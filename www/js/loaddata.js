@@ -40,7 +40,7 @@ var url = window.location.href;
 if (url.indexOf("localhost") === true) {
     alert("true");
 }else{
-    alert("true");
+    alert("false");
 }
 
 
