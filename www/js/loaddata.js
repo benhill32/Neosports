@@ -20,6 +20,7 @@ document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
 //
+var url = window.location.href;
 
 function onDeviceReadyloaddata() {
     console.log("LOCALDB - Database ready");
@@ -28,18 +29,19 @@ function onDeviceReadyloaddata() {
      getnetworkdetails();
     $('#busy').hide();
 
-    if (url.indexOf("localhost") === true) {
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }else{
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
-
 
     document.addEventListener("offline", onOffline, false);
     db.transaction(getresultids, errorCBfunc, successCBfunc);
 }
-//db.transaction(getresultids, errorCBfunc, successCBfunc);
-var url = window.location.href;
+
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    db.transaction(getresultids, errorCBfunc, successCBfunc);
+}
+
 
 
 

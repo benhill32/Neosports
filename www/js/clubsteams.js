@@ -3,12 +3,26 @@ var id = getUrlVars()["ID"];
 var favtop  = 0;
 var followtop =0;
 
+document.addEventListener("deviceready", onDeviceReadycteam, false);
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCBfunc, successCBfunc);
+function onDeviceReadycteam() {
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
+    console.log("LOCALDB - Database ready");
+    db.transaction(getdata, errorCBfunc, successCBfunc);
 
-db.transaction(getimgfav, errorCBfunc, successCBfunc);
+    db.transaction(getimgfav, errorCBfunc, successCBfunc);
+}
+
+
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    db.transaction(getdata, errorCBfunc, successCBfunc);
+
+    db.transaction(getimgfav, errorCBfunc, successCBfunc);
+
+}
 
 
 

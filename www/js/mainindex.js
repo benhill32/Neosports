@@ -1,14 +1,20 @@
 document.addEventListener("deviceready", onDeviceReadymainindex, false);
 var deviceIDfunc;
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
+var db;
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
-
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
     loadindexmessage();
 }
 
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    loadindexmessage();
+
+}
 
 function loadindexmessage() {
     db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);

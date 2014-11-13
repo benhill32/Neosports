@@ -18,13 +18,23 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     checkonlinesch();
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
-   //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
     db.transaction(getfliter, errorCBfunc, successCBfunc);
     $(".tooltip").draggable("enable");
     devicePlatformsch = device.platform;
 }
+
+if (url.indexOf("localhost") != 0){
+    //checkonlinesch();
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    db.transaction(getfliter, errorCBfunc, successCBfunc);
+}
+
+
+
+
 function updateadmin() {
     db.transaction(function (tx) {
         tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
@@ -32,6 +42,9 @@ function updateadmin() {
     });
 
 }
+
+
+
 //db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 //db.transaction(function(tx) {

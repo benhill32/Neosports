@@ -7,24 +7,30 @@ var team1all = 0;
 var team2all = 0;
 var deviceIDscorecard;
 var networkconnectionscore = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadystandings, false);
 var playerhome = 0;
 var playeraway = 0;
 var timehome = 0;
 var timeaway = 0;
 var scoringname =0;
-function onDeviceReady() {
+
+function onDeviceReadystandings() {
 
     deviceIDscorecard = device.uuid;
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
     db.transaction(getdata, errorCBfunc, successCBfunc);
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     checkonlinescore()
 }
+if (url.indexOf("localhost") != 0){
+    //checkonlinesch();
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    //db.transaction(getdata, errorCBfunc, successCBfunc);
+ //   db.transaction(getscoredata, errorCBfunc, successCBfunc);
+}
 
-db.transaction(getdata, errorCBfunc, successCBfunc);
-db.transaction(getscoredata, errorCBfunc, successCBfunc);
 
 
 function checkonlinescore(){

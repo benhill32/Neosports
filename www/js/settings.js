@@ -1,20 +1,29 @@
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
+var db;
 var networkconnectionset = 0;
 var wifiallset = 0;
 
-
-
 document.addEventListener("deviceready", onDeviceReadyset, false);
 
-
 function onDeviceReadyset() {
-
-    onOfflinesetting();
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
+        onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 
 }
+
+
+
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    db.transaction(checkfavteam, errorCBfunc, successCBfunc);
+    db.transaction(getsyncdate, errorCBfunc, successCBfunc);
+}
+
+
+
 
 function getnetworkdetailsset(){
 
@@ -44,7 +53,7 @@ function onOfflinesetting(){
 
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
-   //  alert(sql);
+     //alert(sql);
     tx.executeSql(sql, [], getsyncdate_success2);
 }
 
@@ -93,15 +102,19 @@ function displayupdatenow(){
 }
 
 function getsyncdate_success2(tx, results) {
-    onOfflinesetting();
 
+    if (url.indexOf("localhost") == 0) {
+        onOfflinesetting();
+    }
     var len = results.rows.length;
 
     var menu = results.rows.item(0);
  //   alert(menu.Datesecs);
     var dateme = new Date((menu.Datesecs)*1000);
-    var wifi = menu.syncwifi;
-    wifiallset = wifi;
+
+        var wifi = menu.syncwifi;
+        wifiallset = wifi;
+
     var month = new Array();
     month[0] = "January";
     month[1] = "February";

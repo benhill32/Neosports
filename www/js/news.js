@@ -12,14 +12,19 @@ var nospor = 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
     db.transaction(getadmin, errorCBfunc, successCBfunc);
 
-  //  checkfb();
-}
-//db.transaction(getadmin, errorCBfunc, successCBfunc);
 
+}
+
+
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+     db.transaction(getadmin, errorCBfunc, successCBfunc);
+}
 
 
 function getadmin(tx) {

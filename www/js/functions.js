@@ -1,5 +1,5 @@
 document.addEventListener("deviceready", onDeviceReady, false);
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+var db;
 var deviceIDfunc;
 var devicemodelfunc;
 var deviceCordovafunc;
@@ -9,6 +9,7 @@ var databaseversion;
 var appversion = -1;
 var apptoken = 0;
 var networkconnectionfun= 0;
+var url = window.location.href;
 
 function onDeviceReady() {
     checkonlinefunctions();
@@ -21,8 +22,18 @@ function onDeviceReady() {
     db.transaction(gettoken1, errorCBfunc, successCBfunc);
     document.addEventListener("backbutton", onBackKeyDown, false);
 
+
+    if (url.indexOf("localhost") == 0){
+        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    }
+
+
 }
-//db.transaction(gettoken1, errorCBfunc, successCBfunc);
+if (url.indexOf("localhost") != 0){
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+   // db.transaction(gettoken1, errorCBfunc, successCBfunc);
+}
+
 
 
 
