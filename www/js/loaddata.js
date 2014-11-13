@@ -34,6 +34,15 @@ function onDeviceReadyloaddata() {
     db.transaction(getresultids, errorCBfunc, successCBfunc);
 }
 //db.transaction(getresultids, errorCBfunc, successCBfunc);
+var url = window.location.href;
+
+
+if (url.indexOf("localhost") === true) {
+    alert("true");
+}else{
+    alert("true");
+}
+
 
 function onOffline()
 {
