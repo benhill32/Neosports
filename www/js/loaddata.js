@@ -18,8 +18,7 @@ var devicePlatformfunc;
 var chkrefreshdata = 0;
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
-// Cordova is ready
-//
+
 
 function onDeviceReadyloaddata() {
 

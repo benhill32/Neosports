@@ -15,8 +15,6 @@ function onDeviceReadyresult() {
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }
 
-//db.transaction(getfliter, errorCBfunc, successCBfunc);
-
 function allowfilter(id){
 
     if(id==1)

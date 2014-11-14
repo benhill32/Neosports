@@ -8,12 +8,12 @@ document.addEventListener("deviceready", onDeviceReadyclub, false);
 function onDeviceReadyclub() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
-    db.transaction(getMenu, errorCBfunc, successCBfunc);
+    db.transaction(getdata, errorCBfunc, successCBfunc);
 }
 
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-console.log("LOCALDB - Database ready");
-db.transaction(getdata, errorCBfunc, successCBfunc);
+//db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+//console.log("LOCALDB - Database ready");
+//db.transaction(getdata, errorCBfunc, successCBfunc);
 
 
 function getdata(tx) {
