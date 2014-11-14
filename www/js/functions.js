@@ -22,7 +22,7 @@ function onDeviceReadyfunc() {
     db.transaction(gettoken1, errorCBfunc, successCBfunc);
     document.addEventListener("backbutton", onBackKeyDown, false);
 
-    alert(url);
+    alert(url.indexOf("localhost"));
     if (url.indexOf("localhost") == 0){
         alert("DB");
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
@@ -31,6 +31,7 @@ function onDeviceReadyfunc() {
 
 }
 if (url.indexOf("localhost") != 0){
+    alert()
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
    // db.transaction(gettoken1, errorCBfunc, successCBfunc);
 }
