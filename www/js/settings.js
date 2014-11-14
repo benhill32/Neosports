@@ -8,7 +8,7 @@ function onDeviceReadyset() {
     devicePlatformfunc = device.platform;
 
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    
+
         onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);
