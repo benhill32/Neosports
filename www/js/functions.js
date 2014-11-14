@@ -11,6 +11,7 @@ var apptoken = 0;
 var networkconnectionfun= 0;
 
 function onDeviceReady() {
+
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;

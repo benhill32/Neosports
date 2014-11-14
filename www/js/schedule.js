@@ -13,10 +13,10 @@ var devicePlatformsch =0;
 var remindtext = 0;
 var reminddate =0;
 var networkconnectionsch = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyschedule, false);
 
 
-function onDeviceReady() {
+function onDeviceReadyschedule() {
     checkonlinesch();
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");

@@ -7,13 +7,14 @@ var team1all = 0;
 var team2all = 0;
 var deviceIDscorecard;
 var networkconnectionscore = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyscorecard, false);
 var playerhome = 0;
 var playeraway = 0;
 var timehome = 0;
 var timeaway = 0;
 var scoringname =0;
-function onDeviceReady() {
+
+function onDeviceReadyscorecard() {
 
     deviceIDscorecard = device.uuid;
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);

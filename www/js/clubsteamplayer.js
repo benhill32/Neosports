@@ -3,9 +3,9 @@ var teamID = getUrlVars()["teamID"];
 var favtop  = 0;
 var followtop =0;
 var IDPlayer =0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyclubteamplayer, false);
 
-function onDeviceReady() {
+function onDeviceReadyclubteamplayer() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
    // db.transaction(getMenu, errorCBfunc, successCBfunc);
