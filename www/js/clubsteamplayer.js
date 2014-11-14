@@ -3,26 +3,17 @@ var teamID = getUrlVars()["teamID"];
 var favtop  = 0;
 var followtop =0;
 var IDPlayer =0;
-document.addEventListener("deviceready", onDeviceReadyctplayers, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReadyctplayers() {
-
-
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
-
-
+function onDeviceReady() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
    // db.transaction(getMenu, errorCBfunc, successCBfunc);
     db.transaction(getdata, errorCBfunc, successCBfunc);
 }
 
 //db.transaction(getdata, errorCBfunc, successCBfunc);
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(getdata, errorCBfunc, successCBfunc);
 
-}
 
 function getdata(tx) {
     var sql = "select ID,_id,ClubID,FullName,Base64,TeamID,UpdateSecondsUTC,UpdateSecondsUTCBase64,UpdateDateUTC,UpdateDateUTCBase64,Position,DeletedateUTC,NickName,Height,Weight ,DOB ,BirthPlace,SquadNo,Nationality ,Honours ,Previous_Clubs,memorable_match,Favourite_player ,Toughest_Opponent,Biggest_influence ,person_admire ,Best_goal_Scored ,Hobbies ,be_anyone_for_a_day from MobilevwApp_Base_Players where DeletedateUTC = 'null' and TeamID=" + teamID;

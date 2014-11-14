@@ -3,28 +3,12 @@ var id = getUrlVars()["ID"];
 var favtop  = 0;
 var followtop =0;
 
-document.addEventListener("deviceready", onDeviceReadycteam, false);
 
-function onDeviceReadycteam() {
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+console.log("LOCALDB - Database ready");
+db.transaction(getdata, errorCBfunc, successCBfunc);
 
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
-
-
-    console.log("LOCALDB - Database ready");
-    db.transaction(getdata, errorCBfunc, successCBfunc);
-
-    db.transaction(getimgfav, errorCBfunc, successCBfunc);
-}
-
-
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(getdata, errorCBfunc, successCBfunc);
-
-    db.transaction(getimgfav, errorCBfunc, successCBfunc);
-
-}
+db.transaction(getimgfav, errorCBfunc, successCBfunc);
 
 
 
@@ -55,11 +39,11 @@ var img = "";
     }else if(favtop == 0 && followtop ==1){
         $("#imgfavfollow").attr("src","../img/halfstar.png");
     }
-    $("#duvimgfollow").click(updatefollow);
+    $("#imgfavfollow").click(updatefollow);
 }
 
 function updatefollow(){
-    $("#duvimgfollow").attr('onclick','').unbind('click');
+    $("#imgfavfollow").attr('onclick','').unbind('click');
     if(favtop == 0 && followtop ==0){
 
 

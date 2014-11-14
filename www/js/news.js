@@ -12,20 +12,14 @@ var nospor = 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
-
-
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    console.log("LOCALDB - Database ready");
     db.transaction(getadmin, errorCBfunc, successCBfunc);
 
-
+  //  checkfb();
 }
+//db.transaction(getadmin, errorCBfunc, successCBfunc);
 
-
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-     db.transaction(getadmin, errorCBfunc, successCBfunc);
-}
 
 
 function getadmin(tx) {
@@ -55,6 +49,47 @@ function getadmin_success(tx, results) {
 
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
 }
+
+
+
+
+function checkfb(){
+
+    if(device.platform == "iOS"){
+        appAvailability.check(
+            'fb://', // URI Scheme
+            function() {           // Success callback
+               // alert("facebook is available");
+                facebookchk = 1;
+            },
+            function() {           // Error callback
+              //  alert("facebook is not available");
+                facebookchk = 0;
+            }
+        );
+
+    }else  if(device.platform == "Android"){
+        appAvailability.check(
+            'com.facebook.katana', // URI Scheme
+            function() {           // Success callback
+               // alert("facebook is available");
+                facebookchk = 1;
+            },
+            function() {           // Error callback
+               // alert("facebook is not available");
+                facebookchk = 0;
+            }
+        );
+
+    }else{
+
+
+    }
+}
+
+
+
+
 
 
 function getdatanews(tx) {

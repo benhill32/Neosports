@@ -20,33 +20,20 @@ document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
 //
-var url = window.location.href;
 
 function onDeviceReadyloaddata() {
+
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
     devicePlatformfunc = device.platform;
      getnetworkdetails();
     $('#busy').hide();
 
-
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
-
-
     document.addEventListener("offline", onOffline, false);
     db.transaction(getresultids, errorCBfunc, successCBfunc);
 }
-
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(getresultids, errorCBfunc, successCBfunc);
-}
-
-
-
-
-
+//db.transaction(getresultids, errorCBfunc, successCBfunc);
 
 function onOffline()
 {
@@ -95,7 +82,6 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
- //   alert(sql);
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
 }

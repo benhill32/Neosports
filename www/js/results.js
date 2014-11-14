@@ -10,18 +10,12 @@ var awayid = 0;
 document.addEventListener("deviceready", onDeviceReadyresult, false);
 
 function onDeviceReadyresult() {
-
-
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
+    console.log("LOCALDB - Database ready");
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }
 
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    db.transaction(getfliter, errorCBfunc, successCBfunc);
-}
-
+//db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 function allowfilter(id){
 

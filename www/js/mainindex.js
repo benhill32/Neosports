@@ -1,22 +1,14 @@
 document.addEventListener("deviceready", onDeviceReadymainindex, false);
 var deviceIDfunc;
-var db;
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+console.log("LOCALDB - Database ready");
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
-    devicePlatformfunc = device.platform;
-
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
 
     loadindexmessage();
 }
 
-if (url.indexOf("localhost") != -1){
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    loadindexmessage();
-
-}
 
 function loadindexmessage() {
     db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);
