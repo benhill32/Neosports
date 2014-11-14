@@ -59,47 +59,6 @@ function getadmin_success(tx, results) {
 }
 
 
-
-
-function checkfb(){
-
-    if(device.platform == "iOS"){
-        appAvailability.check(
-            'fb://', // URI Scheme
-            function() {           // Success callback
-               // alert("facebook is available");
-                facebookchk = 1;
-            },
-            function() {           // Error callback
-              //  alert("facebook is not available");
-                facebookchk = 0;
-            }
-        );
-
-    }else  if(device.platform == "Android"){
-        appAvailability.check(
-            'com.facebook.katana', // URI Scheme
-            function() {           // Success callback
-               // alert("facebook is available");
-                facebookchk = 1;
-            },
-            function() {           // Error callback
-               // alert("facebook is not available");
-                facebookchk = 0;
-            }
-        );
-
-    }else{
-
-
-    }
-}
-
-
-
-
-
-
 function getdatanews(tx) {
     var sql = "select ID from MobileApp_clubs where Fav = 1";
     //alert(sql);

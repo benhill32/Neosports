@@ -18,14 +18,11 @@ function onDeviceReadyset() {
 }
 
 
-
 if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(checkfavteam, errorCBfunc, successCBfunc);
     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
 }
-
-
 
 
 function getnetworkdetailsset(){
@@ -50,9 +47,6 @@ function onOfflinesetting(){
 //alert(states[networkState]);
 
 }
-
-//https://www.google.co.nz/maps/dir/
-
 
 function getsyncdate(tx) {
     var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
@@ -89,7 +83,6 @@ function checkfavteam_success(tx, results) {
 }
 function syncnewdata(){
     $('#busy').show();
-
 
     $("#settingdeleteall").attr('disabled','disabled');
     $("#settingsync").attr('disabled','disabled');
@@ -178,13 +171,13 @@ function clearfavteam(){
 
 function cleardata(){
 
-  //  onOfflinesetting();
+    onOfflinesetting();
 
 
-  // if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
+   if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
         $('#indexloadingdata').modal('show');
         db.transaction(droptables, errorCBfunc, createtables);
-  // }
+  }
 
 
 }

@@ -9,9 +9,9 @@ var databaseversion;
 var appversion = -1;
 var apptoken = 0;
 var networkconnectionfun= 0;
+var url = window.location.href;
 
 
-alert("Outside ready");
 
 function onDeviceReadyfunc() {
     checkonlinefunctions();
