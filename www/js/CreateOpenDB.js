@@ -2,6 +2,8 @@ var db;
 var dbCreated = false;
 document.addEventListener("deviceready", onDeviceReadycreateopen, false);
 var devicePlatformfunc;
+alert("outside");
+
 
 function onDeviceReadycreateopen() {
     alert("start");

@@ -33,7 +33,7 @@ function onDeviceReadyfunc() {
 
 }
 if (url.indexOf("localhost") != -1){
-    alert("db2")
+
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
    // db.transaction(gettoken1, errorCBfunc, successCBfunc);
 }
