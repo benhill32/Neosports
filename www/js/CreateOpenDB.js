@@ -1,27 +1,16 @@
-document.addEventListener("deviceready", onDeviceReadycreateopen, false);
+
 var db;
 var dbCreated = false;
 
-
-
-
-function onDeviceReadycreateopen() {
-
-    devicePlatformfunc = device.platform;
-
-
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
-
-
-    db.transaction(createDB, errorCBfunc, successCBfunc);
-}
-
-if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(createDB, errorCBfunc, successCBfunc);
 
-}
+
+//if (url.indexOf("localhost") != -1){
+//    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+//    db.transaction(createDB, errorCBfunc, successCBfunc);
+
+//}
 
 function droptables(){
 
