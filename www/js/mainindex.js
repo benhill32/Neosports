@@ -5,11 +5,9 @@ var db;
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
     devicePlatformfunc = device.platform;
-    if(devicePlatformfunc == "iOS"){
-        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }else{
+
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }
+
 
     loadindexmessage();
 }

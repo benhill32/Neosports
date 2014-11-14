@@ -1,4 +1,4 @@
-document.addEventListener("deviceready", onDeviceReadyfunc, false);
+
 var db;
 var deviceIDfunc;
 var devicemodelfunc;
@@ -11,9 +11,10 @@ var apptoken = 0;
 var networkconnectionfun= 0;
 var url = window.location.href;
 
-
+document.addEventListener("deviceready", onDeviceReadyfunc, false);
 
 function onDeviceReadyfunc() {
+
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;
@@ -25,15 +26,14 @@ function onDeviceReadyfunc() {
     document.addEventListener("backbutton", onBackKeyDown, false);
 
     alert("inside ready");
-    if(devicePlatformfunc == "iOS"){
-        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }else{
+  //  if(devicePlatformfunc == "iOS"){
+   //     db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+  //  }else{
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }
-
+   // }
     db.transaction(createDB, errorCBfunc, successCBfunc);
-
 }
+
 if (url.indexOf("localhost") != -1){
 
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);

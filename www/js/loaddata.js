@@ -29,11 +29,9 @@ function onDeviceReadyloaddata() {
      getnetworkdetails();
     $('#busy').hide();
 
-    if(devicePlatformfunc == "iOS"){
-        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }else{
+
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }
+
 
 
     document.addEventListener("offline", onOffline, false);
@@ -97,6 +95,7 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
+    alert(sql);
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
 }

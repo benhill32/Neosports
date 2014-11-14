@@ -6,11 +6,9 @@ document.addEventListener("deviceready", onDeviceReadyset, false);
 
 function onDeviceReadyset() {
     devicePlatformfunc = device.platform;
-    if(devicePlatformfunc == "iOS"){
-        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }else{
+
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    }
+    
         onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);

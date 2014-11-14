@@ -3,14 +3,12 @@ var db;
 
 var IDhist = 0;
 var IDcon = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("devicereadyclub", onDeviceReady, false);
 
-function onDeviceReady() {
-if(devicePlatformfunc == "iOS"){
-    db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-}else{
+function devicereadyclub() {
+
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-}
+
 
 
 
