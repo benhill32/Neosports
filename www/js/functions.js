@@ -24,6 +24,7 @@ function onDeviceReady() {
 
 
     if (url.indexOf("localhost") == 0){
+        alert(url);
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
 

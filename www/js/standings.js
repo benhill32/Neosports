@@ -5,10 +5,13 @@ var orientationstand = "";
 document.addEventListener("deviceready", onDeviceReadystand(), false);
 
 function onDeviceReadystand() {
+
     if (url.indexOf("localhost") == 0){
+
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getstandings, errorCBfunc, successCBfunc);
+
 }
 
 if (url.indexOf("localhost") != 0){
