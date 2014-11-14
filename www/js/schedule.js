@@ -18,7 +18,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     checkonlinesch();
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getfliter, errorCBfunc, successCBfunc);
@@ -26,7 +26,7 @@ function onDeviceReady() {
     devicePlatformsch = device.platform;
 }
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     //checkonlinesch();
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(getfliter, errorCBfunc, successCBfunc);

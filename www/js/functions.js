@@ -23,15 +23,15 @@ function onDeviceReadyfunc() {
     document.addEventListener("backbutton", onBackKeyDown, false);
 
     alert(url.indexOf("localhost"));
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         alert("DB");
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
 
 
 }
-if (url.indexOf("localhost") != 0){
-    alert()
+if (url.indexOf("localhost") != -1){
+    alert("db2")
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
    // db.transaction(gettoken1, errorCBfunc, successCBfunc);
 }

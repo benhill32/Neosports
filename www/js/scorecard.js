@@ -17,14 +17,14 @@ var scoringname =0;
 function onDeviceReadystandings() {
 
     deviceIDscorecard = device.uuid;
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getdata, errorCBfunc, successCBfunc);
     db.transaction(getscoredata, errorCBfunc, successCBfunc);
     checkonlinescore()
 }
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     //checkonlinesch();
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     //db.transaction(getdata, errorCBfunc, successCBfunc);

@@ -10,13 +10,13 @@ var awayid = 0;
 document.addEventListener("deviceready", onDeviceReadyresult, false);
 
 function onDeviceReadyresult() {
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }

@@ -6,7 +6,7 @@ var IDcon = 0;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     console.log("LOCALDB - Database ready");
@@ -15,7 +15,7 @@ function onDeviceReady() {
 
 
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(getdata, errorCBfunc, successCBfunc);
 

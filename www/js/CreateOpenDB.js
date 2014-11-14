@@ -3,14 +3,14 @@ var dbCreated = false;
 document.addEventListener("deviceready", onDeviceReadycreateopen, false);
 
 function onDeviceReadycreateopen() {
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     console.log("LOCALDB - Database ready");
     db.transaction(createDB, errorCBfunc, successCBfunc);
 }
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(createDB, errorCBfunc, successCBfunc);
 

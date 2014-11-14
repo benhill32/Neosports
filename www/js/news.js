@@ -12,7 +12,7 @@ var nospor = 0;
 document.addEventListener("deviceready", onDeviceReadynews, false);
 
 function onDeviceReadynews() {
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getadmin, errorCBfunc, successCBfunc);
@@ -21,7 +21,7 @@ function onDeviceReadynews() {
 }
 
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
      db.transaction(getadmin, errorCBfunc, successCBfunc);
 }

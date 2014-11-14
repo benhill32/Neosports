@@ -29,7 +29,7 @@ function onDeviceReadyloaddata() {
      getnetworkdetails();
     $('#busy').hide();
 
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
 
@@ -37,7 +37,7 @@ function onDeviceReadyloaddata() {
     db.transaction(getresultids, errorCBfunc, successCBfunc);
 }
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(getresultids, errorCBfunc, successCBfunc);
 }

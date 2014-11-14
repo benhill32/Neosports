@@ -4,13 +4,13 @@ var db;
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
     loadindexmessage();
 }
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     loadindexmessage();
 

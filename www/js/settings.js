@@ -5,7 +5,7 @@ var wifiallset = 0;
 document.addEventListener("deviceready", onDeviceReadyset, false);
 
 function onDeviceReadyset() {
-    if (url.indexOf("localhost") == 0){
+    if (url.indexOf("localhost") == -1){
         db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
     }
         onOfflinesetting();
@@ -16,7 +16,7 @@ function onDeviceReadyset() {
 
 
 
-if (url.indexOf("localhost") != 0){
+if (url.indexOf("localhost") != -1){
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     db.transaction(checkfavteam, errorCBfunc, successCBfunc);
     db.transaction(getsyncdate, errorCBfunc, successCBfunc);
