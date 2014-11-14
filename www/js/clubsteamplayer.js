@@ -6,6 +6,7 @@ var IDPlayer =0;
 document.addEventListener("deviceready", onDeviceReadyctplayers, false);
 
 function onDeviceReadyctplayers() {
+
     if(devicePlatformfunc == "iOS"){
         db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }else{
