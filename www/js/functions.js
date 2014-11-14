@@ -1,5 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+var db;
+
 var deviceIDfunc;
 var devicemodelfunc;
 var deviceCordovafunc;
@@ -9,9 +9,12 @@ var databaseversion;
 var appversion = -1;
 var apptoken = 0;
 var networkconnectionfun= 0;
+document.addEventListener("deviceready", onDeviceReadyfunctions, false);
 
-function onDeviceReady() {
 
+function onDeviceReadyfunctions() {
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    document.addEventListener("deviceready", onDeviceReady, false);
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;
