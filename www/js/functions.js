@@ -1,5 +1,5 @@
 var db;
-
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 var deviceIDfunc;
 var devicemodelfunc;
 var deviceCordovafunc;
@@ -13,7 +13,7 @@ document.addEventListener("deviceready", onDeviceReadyfunctions, false);
 
 
 function onDeviceReadyfunctions() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+  //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     document.addEventListener("deviceready", onDeviceReady, false);
     checkonlinefunctions();
     deviceIDfunc = device.uuid;

@@ -1,6 +1,6 @@
 var db;
 var dbCreated = false;
-
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 
 document.addEventListener("deviceready", onDeviceReadycreate, false);
 
