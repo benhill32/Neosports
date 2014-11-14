@@ -6,9 +6,13 @@ var followtop =0;
 document.addEventListener("deviceready", onDeviceReadycteam, false);
 
 function onDeviceReadycteam() {
-    if (url.indexOf("localhost") == -1){
-        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    if(devicePlatformfunc == "iOS"){
+        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    }else{
+        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }
+
+
     console.log("LOCALDB - Database ready");
     db.transaction(getdata, errorCBfunc, successCBfunc);
 

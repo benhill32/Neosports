@@ -6,9 +6,11 @@ document.addEventListener("deviceready", onDeviceReadystand(), false);
 
 function onDeviceReadystand() {
 
-    if (url.indexOf("localhost") == 0){
-
-        db =  window.sqlitePlugin.openDatabase("Neosportz_Football","1.1", "Neosportz_Football", 200000);
+    devicePlatformfunc = device.platform;
+    if(devicePlatformfunc == "iOS"){
+        db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+    }else{
+        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }
     db.transaction(getstandings, errorCBfunc, successCBfunc);
 
