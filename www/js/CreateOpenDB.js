@@ -3,6 +3,10 @@ var dbCreated = false;
 db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 
 document.addEventListener("deviceready", onDeviceReadycreate, false);
+db.transaction(createDB, errorCBfunc, successCBfunc);
+
+
+
 
 function onDeviceReadycreate() {
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
