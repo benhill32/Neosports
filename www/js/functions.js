@@ -25,7 +25,7 @@ function onDeviceReadyfunc() {
     db.transaction(gettoken1, errorCBfunc, successCBfunc);
     document.addEventListener("backbutton", onBackKeyDown, false);
 
-    alert("inside ready");
+
   //  if(devicePlatformfunc == "iOS"){
    //     db = window.openDatabase("../Library/Caches/myDB/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
   //  }else{

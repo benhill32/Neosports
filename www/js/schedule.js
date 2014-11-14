@@ -13,10 +13,10 @@ var devicePlatformsch =0;
 var remindtext = 0;
 var reminddate =0;
 var networkconnectionsch = 0;
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadysch, false);
 
 
-function onDeviceReady() {
+function onDeviceReadysch() {
     checkonlinesch();
     devicePlatformfunc = device.platform;
 

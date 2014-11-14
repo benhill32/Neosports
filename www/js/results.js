@@ -10,9 +10,9 @@ var awayid = 0;
 document.addEventListener("deviceready", onDeviceReadyresult, false);
 
 function onDeviceReadyresult() {
-    devicePlatformfunc = device.platform;
 
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+
+    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 
     db.transaction(getfliter, errorCBfunc, successCBfunc);
 }
