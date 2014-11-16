@@ -89,7 +89,6 @@ function populateDB(tx){
 
 function errorCreatetable(err) {
 
-    alert("Error processing SQL loaddata: "+err.code);
     createtables();
 
 }
