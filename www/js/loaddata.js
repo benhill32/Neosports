@@ -82,6 +82,7 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
+    alert(sql);
     tx.executeSql(sql, [], populateDB1,errorCBfunc);
 
 }
@@ -89,7 +90,8 @@ function populateDB(tx){
 function populateDB1(tx,results) {
     checkonline();
     var row = results.rows.item(0);
-
+    alert(row);
+    alert(row.Count);
     if(row.Count ==0){
       if(document.getElementById("indexdiv")!=null) {
             $('#mainfore').removeClass('mainforeground');
