@@ -75,7 +75,7 @@ function droptables(){
 
 function createDB(tx) {
 
-    alert("create tables 2");
+
 
 
     //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');

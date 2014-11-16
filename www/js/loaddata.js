@@ -95,9 +95,12 @@ function errorCreatetable(err) {
 }
 
 function createtables(){
-    alert("create tables");
-    db.transaction(createDB, errorCBfunc, successCBfunc);
-   // db.transaction(populateDB, errorCBfunc, successCBfunc);
+    $.when(db.transaction(createDB, errorCBfunc, successCBfunc)).done(function() {
+
+        db.transaction(populateDB, errorCBfunc, successCBfunc);
+    });
+
+
 
 }
 
