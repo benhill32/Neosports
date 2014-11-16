@@ -13,6 +13,7 @@ var playeraway = 0;
 var timehome = 0;
 var timeaway = 0;
 var scoringname =0;
+
 function onDeviceReady() {
 
     deviceIDscorecard = device.uuid;
