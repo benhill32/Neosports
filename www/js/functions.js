@@ -1,5 +1,5 @@
-
-var db;
+document.addEventListener("deviceready", onDeviceReady, false);
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
 var deviceIDfunc;
 var devicemodelfunc;
 var deviceCordovafunc;
@@ -9,12 +9,8 @@ var databaseversion;
 var appversion = -1;
 var apptoken = 0;
 var networkconnectionfun= 0;
-var url = window.location.href;
 
-document.addEventListener("deviceready", onDeviceReadyfunc, false);
-
-function onDeviceReadyfunc() {
-
+function onDeviceReady() {
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;
@@ -24,17 +20,9 @@ function onDeviceReadyfunc() {
     databaseversion = db.database_version;
     db.transaction(gettoken1, errorCBfunc, successCBfunc);
     document.addEventListener("backbutton", onBackKeyDown, false);
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-
 
 }
-
-if (url.indexOf("localhost") != -1){
-
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-   // db.transaction(gettoken1, errorCBfunc, successCBfunc);
-}
-
+//db.transaction(gettoken1, errorCBfunc, successCBfunc);
 
 
 
@@ -218,7 +206,6 @@ function passcancelgametoserver(testvar){
     http.send();
 
 }
-
 
 
 function getUrlVarsfunc() {
@@ -741,8 +728,3 @@ function CleanDB() {
 
 
 }
-
-
-
-
-

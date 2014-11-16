@@ -1,17 +1,7 @@
 document.addEventListener("deviceready", onDeviceReadymainindex, false);
 var deviceIDfunc;
-
-
-
-document.addEventListener("deviceready", onDeviceReadymainindex, false);
-
-function onDeviceReadymainindex() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
-}
-
-
-
+db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+console.log("LOCALDB - Database ready");
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;

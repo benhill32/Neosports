@@ -13,10 +13,10 @@ var devicePlatformsch =0;
 var remindtext = 0;
 var reminddate =0;
 var networkconnectionsch = 0;
-document.addEventListener("deviceready", onDeviceReadyschedule, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
-function onDeviceReadyschedule() {
+function onDeviceReady() {
     checkonlinesch();
     db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
@@ -25,13 +25,13 @@ function onDeviceReadyschedule() {
     $(".tooltip").draggable("enable");
     devicePlatformsch = device.platform;
 }
-//function updateadmin() {
-  //  db.transaction(function (tx) {
-  //      tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
-  //      console.log("Update INTO MobileApp_LastUpdatesec");
-  //  });
+function updateadmin() {
+    db.transaction(function (tx) {
+        tx.executeSql('Update MobileApp_LastUpdatesec set isadmin = 1');
+        console.log("Update INTO MobileApp_LastUpdatesec");
+    });
 
-//}
+}
 //db.transaction(getfliter, errorCBfunc, successCBfunc);
 
 //db.transaction(function(tx) {
