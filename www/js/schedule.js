@@ -104,7 +104,7 @@ function getfliter(tx) {
 
 
     var sql = "select fliterON,isadmin from MobileApp_LastUpdatesec";
-    //alert(sql);
+    alert(sql);
     tx.executeSql(sql, [], getfliter_success);
 
 
@@ -132,7 +132,7 @@ function getfliter_success(tx, results) {
 
 function getdatanews(tx) {
     var sql = "select ID from MobileApp_clubs where Fav = 1";
-   // alert(sql);
+    alert(sql);
     tx.executeSql(sql, [], getClubID_success);
 }
 
@@ -155,7 +155,7 @@ function getClubID_success(tx, results) {
 
 function getdata2(tx) {
     var sql = "select ID from MobileApp_clubs where Follow = 1";
-    //alert(sql);
+    alert(sql);
     tx.executeSql(sql, [], getdata2_success);
 }
 
@@ -214,7 +214,7 @@ function getdata(tx) {
 
     }
 
-   // alert(sql);
+    alert(sql);
     tx.executeSql(sql, [], getMenu_success);
 }
 
