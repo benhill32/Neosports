@@ -83,9 +83,15 @@ function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
     alert(sql);
-    tx.executeSql(sql, [], populateDB1,errorCBfunc);
+    tx.executeSql(sql, [], populateDB1,errorCreatetable);
 
 }
+
+function errorCreatetable(err) {
+    console.log("Error processing SQL: "+err.code);
+    alert("Error processing SQL loaddata: "+err.code);
+}
+
 
 function populateDB1(tx,results) {
     checkonline();
