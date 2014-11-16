@@ -1,4 +1,4 @@
-var db;
+
 var teamID = getUrlVars()["teamID"];
 var favtop  = 0;
 var followtop =0;

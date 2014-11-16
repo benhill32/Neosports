@@ -1,6 +1,3 @@
-var db;
-
-
 var IDhist = 0;
 var IDcon = 0;
 document.addEventListener("deviceready", onDeviceReady, false);

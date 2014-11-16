@@ -1,4 +1,4 @@
-
+var db;
 document.addEventListener("deviceready", onDeviceReadydbconn, false);
 
 

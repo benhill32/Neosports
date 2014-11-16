@@ -1,4 +1,4 @@
-var db;
+
 var dbCreated = false;
 
 var d = new Date();

@@ -1,4 +1,4 @@
-var db;
+
 var dbCreated = false;
 //document.addEventListener("deviceready", onDeviceReadycreate, false);
 //function onDeviceReadycreate() {

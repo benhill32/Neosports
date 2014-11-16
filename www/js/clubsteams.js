@@ -1,4 +1,4 @@
-var db;
+
 var id = getUrlVars()["ID"];
 var favtop  = 0;
 var followtop =0;

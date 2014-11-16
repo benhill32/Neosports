@@ -1,4 +1,4 @@
-var db;
+
 var dbCreated = false;
 var IDhist = 0;
 var id = getUrlVars()["ID"];
