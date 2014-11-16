@@ -7,10 +7,10 @@ function onDeviceReadydbconn() {
     deviceplatformdb = device.platform;
 
     if(deviceplatformdb == "iOS"){
-        alert(deviceplatformdb);
+      //  alert(deviceplatformdb);
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }else if(deviceplatformdb == "Android"){
-        alert(deviceplatformdb);
+       // alert(deviceplatformdb);
         db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }
 
