@@ -1,4 +1,4 @@
-
+var db;
 var networkconnectionset = 0;
 var wifiallset = 0;
 

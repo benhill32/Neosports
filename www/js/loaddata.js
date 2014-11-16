@@ -1,4 +1,4 @@
-
+var db;
 var dbCreated = false;
 
 var d = new Date();
@@ -97,6 +97,8 @@ function populateDB1(tx,results) {
             // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
+        db.transaction(createDB, errorCBfunc, successCBfunc);
+
         $.when(blankLastUpdatesec()).done(function() {
             $.when( pushnotifiy()).done(function() {
                 db.transaction(populateDB, errorCBfunc, successCBfunc);

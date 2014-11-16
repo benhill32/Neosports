@@ -1,4 +1,4 @@
-
+var db;
 var deviceIDfunc;
 
 

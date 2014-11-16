@@ -1,4 +1,4 @@
-
+var db;
 var clubidtop= 0;
 var IDNews = 0;
 var IDhist = 0;

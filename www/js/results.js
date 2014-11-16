@@ -1,4 +1,4 @@
-
+var db;
 var dbCreated = false;
 var id = getUrlVars()["id"];
 var clubidtop =0;
