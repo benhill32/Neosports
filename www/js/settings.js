@@ -8,8 +8,8 @@ document.addEventListener("deviceready", onDeviceReadyset, false);
 
 
 function onDeviceReadyset() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
+ //   db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+ //   console.log("LOCALDB - Database ready");
     onOfflinesetting();
         db.transaction(checkfavteam, errorCBfunc, successCBfunc);
         db.transaction(getsyncdate, errorCBfunc, successCBfunc);

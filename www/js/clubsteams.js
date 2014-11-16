@@ -6,7 +6,7 @@ var followtop =0;
 document.addEventListener("deviceready", onDeviceReadyct, false);
 
 function onDeviceReadyct() {
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+  //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     console.log("LOCALDB - Database ready");
     db.transaction(getdata, errorCBfunc, successCBfunc);
 

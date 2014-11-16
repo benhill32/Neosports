@@ -18,8 +18,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
     checkonlinesch();
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    console.log("LOCALDB - Database ready");
+  //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+  //  console.log("LOCALDB - Database ready");
    //  navigator.geolocation.getCurrentPosition(getgeolocation, onError);
     db.transaction(getfliter, errorCBfunc, successCBfunc);
     $(".tooltip").draggable("enable");
