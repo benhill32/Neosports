@@ -88,10 +88,18 @@ function populateDB(tx){
 }
 
 function errorCreatetable(err) {
-    console.log("Error processing SQL: "+err.code);
+
     alert("Error processing SQL loaddata: "+err.code);
+    createtables();
+
 }
 
+function createtables(){
+    alert("create tables");
+    db.transaction(createDB, errorCBfunc, successCBfunc);
+   // db.transaction(populateDB, errorCBfunc, successCBfunc);
+
+}
 
 function populateDB1(tx,results) {
     checkonline();
@@ -105,7 +113,7 @@ function populateDB1(tx,results) {
             // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
-        db.transaction(createDB, errorCBfunc, successCBfunc);
+
 
         $.when(blankLastUpdatesec()).done(function() {
             $.when( pushnotifiy()).done(function() {
