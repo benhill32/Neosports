@@ -427,12 +427,12 @@ position: fixed;
 @media (max-width: 480px) {
 
     .modal {
-        height: 500px; /* Set a default max height of the modal (adjusted later)*/
-        position: fixed; /* Display modal in the centre of your screen */
-        overflow-y: scroll; /*  Ensure that the modal is scroll-able */
-        -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+         height: 500px; /* Set a default max height of the modal (adjusted later)*/
+         position: fixed; /* Display modal in the centre of your screen */
+         overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+         -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
 
-    }
+     }
     .modal.fade.in{
         top: 5px; /* Use more screen real estate */
     }
