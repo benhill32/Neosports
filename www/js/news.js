@@ -376,6 +376,15 @@ function choosefacteam(ID){
 
     addfavteam(ID);
 
+
+    var daaa = new Date();
+    var naaa = daaa.getTime();
+
+    db.transaction(function(tx) {
+        tx.executeSql('Update MobileApp_LastUpdatesec set hasclub = 1, hasclubdate = "' + naaa + '"');
+        console.log("Update MobileApp_LastUpdatesec");
+    });
+
     db.transaction(getdatanews, errorCBfunc, successCBfunc);
 }
 
