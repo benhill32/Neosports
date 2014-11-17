@@ -8,12 +8,9 @@ function onDeviceReadydbconn() {
 
     if(deviceplatformdb == "iOS"){
       //  alert(deviceplatformdb);
-        db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+        db = window.sqlitePlugin.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }else if(deviceplatformdb == "Android"){
        // alert(deviceplatformdb);
-        db = window.openDatabase("../../../../mnt/sdcard0/Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+        db = window.sqlitePlugin.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }
-
-
-
 }
