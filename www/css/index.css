@@ -600,7 +600,7 @@ position: fixed;
     -webkit-overflow-scrolling:touch
 overflow-y: scroll !important;
     padding-bottom: 70px;
-
+    margin-bottom: 70px;
 }
 .mainmenuresult{
 
