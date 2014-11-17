@@ -594,6 +594,13 @@ position: fixed;
     -webkit-overflow-scrolling:touch
     overflow-y: scroll !important;
 }
+
+#clubfav{
+    padding: 10px !important;
+    -webkit-overflow-scrolling:touch
+overflow-y: scroll !important;
+
+}
 .mainmenuresult{
 
 
