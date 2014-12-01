@@ -11,10 +11,7 @@ var apptoken = 0;
 var networkconnectionfun= 0;
 
 function onDeviceReadyFunc() {
-    setTimeout( function(){
-            navigator.splashscreen.hide();
-        }
-        , 7000 );
+
 
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
