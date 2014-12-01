@@ -23,7 +23,10 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="7000" />
-    <preference name="splash-screen-duration" value="15000" />
+
+    <platform name="ios">
+        <preference name="SplashScreenDelay" value="15000" />
+    </platform>
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="13" />
