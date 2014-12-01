@@ -11,10 +11,11 @@ var apptoken = 0;
 var networkconnectionfun= 0;
 
 function onDeviceReadyFunc() {
+    setTimeout( function(){
+            navigator.splashscreen.hide();
+        }
+        , 7000 );
 
-
-
-    db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     checkonlinefunctions();
     deviceIDfunc = device.uuid;
     devicemodelfunc = device.model;
