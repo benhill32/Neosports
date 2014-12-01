@@ -8,10 +8,7 @@ function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
     loadindexmessage();
 
-    setTimeout( function(){
-            navigator.splashscreen.hide();
-        }
-        , 7000 );
+
 
 }
 

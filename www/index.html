@@ -57,9 +57,15 @@
     document.addEventListener("deviceready", onDeviceReadyindex, false);
 
     function onDeviceReadyindex() {
+        setTimeout( function(){
+                    navigator.splashscreen.hide();
+                }
+                , 7000 );
+
         //db.transaction(createDB, errorCBfunc, successCBfunc);
         refreshdata();
         db.transaction(getbackground, errorCBfunc, successCBfunc);
+
     }
 
 
