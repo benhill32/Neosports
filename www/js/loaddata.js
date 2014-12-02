@@ -82,7 +82,7 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
-    alert(sql);
+   // alert(sql);
     tx.executeSql(sql, [], populateDB1,errorCreatetable);
 
 }
@@ -98,21 +98,18 @@ function createtables(){
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     });
-
-
-
 }
 
 function populateDB1(tx,results) {
     checkonline();
     var row = results.rows.item(0);
  //   alert(row);
-    alert(row.Count);
+  //  alert(row.Count);
     if(row.Count ==0){
       if(document.getElementById("indexdiv")!=null) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
-            // alert($('#mainfore').attr('class'));
+             alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
 
