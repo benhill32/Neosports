@@ -58,6 +58,6 @@
     <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
 
 
-    <content src="../pages/splashscreen.html"/>
+    <content src="/pages/splashscreen.html"/>
     <access origin="*" />
 </widget>
