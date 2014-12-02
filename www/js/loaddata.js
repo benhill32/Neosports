@@ -24,7 +24,7 @@ document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 function onDeviceReadyloaddata() {
 
   //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
-    //console.log("LOCALDB - Database ready");
+    console.log("LOCALDB - Database ready");
     deviceIDfunc = device.uuid;
     devicePlatformfunc = device.platform;
      getnetworkdetails();
@@ -82,7 +82,7 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
-   // alert(sql);
+  //  alert(sql);
     tx.executeSql(sql, [], populateDB1,errorCreatetable);
 
 }
@@ -98,6 +98,9 @@ function createtables(){
 
         db.transaction(populateDB, errorCBfunc, successCBfunc);
     });
+
+
+
 }
 
 function populateDB1(tx,results) {
@@ -109,7 +112,7 @@ function populateDB1(tx,results) {
       if(document.getElementById("indexdiv")!=null) {
             $('#mainfore').removeClass('mainforeground');
             $('#mainfore').addClass('mainforeground2');
-             alert($('#mainfore').attr('class'));
+            // alert($('#mainfore').attr('class'));
             $('#indexloadingdata').modal('show');
         }
 
