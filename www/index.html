@@ -57,10 +57,23 @@
     document.addEventListener("deviceready", onDeviceReadyindex, false);
 
     function onDeviceReadyindex() {
-        setTimeout( function(){
-                    navigator.splashscreen.hide();
-                }
-                , 7000 );
+
+       if(device.platform == 'iOS'){
+           setTimeout( function(){
+                       navigator.splashscreen.hide();
+                   }
+                   , 5000 );
+
+       }else{
+
+           setTimeout( function(){
+                       navigator.splashscreen.hide();
+                   }
+                   , 7000 );
+       }
+
+
+
 
         //db.transaction(createDB, errorCBfunc, successCBfunc);
         refreshdata();
