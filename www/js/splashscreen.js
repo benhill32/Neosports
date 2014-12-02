@@ -1,5 +1,5 @@
 var db;
-var deviceIDfunc;
+
 
 
 document.addEventListener("deviceready", onDeviceReadysplashscreen, false);
@@ -7,27 +7,21 @@ document.addEventListener("deviceready", onDeviceReadysplashscreen, false);
 function onDeviceReadysplashscreen() {
     deviceIDfunc = device.uuid;
 
-    db.transaction(getbackground, errorCBfunc, createtables);
+    db.transaction(getbackground, errorCBfunc, successCBfunc);
 }
-
-
-
-
-
-
 
 function getbackground(tx) {
    // alert($('#mainbackground').css('opacity'));
 
     var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC desc LIMIT 1";
-     //alert(sql);
+     alert(sql);
     tx.executeSql(sql, [], getbackground_success);
 }
 
 function getbackground_success(tx, results) {
 
     var len = results.rows.length;
-    //alert(len);
+    alert(len);
     if(len != 0) {
         var menu = results.rows.item(0);
 
