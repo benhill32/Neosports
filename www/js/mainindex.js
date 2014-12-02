@@ -6,11 +6,8 @@ document.addEventListener("deviceready", onDeviceReadymainindex, false);
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
+
     loadindexmessage();
-
-
-
-
 }
 
 
