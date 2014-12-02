@@ -57,10 +57,9 @@
     document.addEventListener("deviceready", onDeviceReadyindex, false);
 
     function onDeviceReadyindex() {
-        if(document.referrer.indexOf(window.location.hostname) != -1){
-                var referrer =  document.referrer;
-            alert(referrer);
-             }
+
+            alert(history.previous + " dsds");
+
 
 
         //db.transaction(createDB, errorCBfunc, successCBfunc);
