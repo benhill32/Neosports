@@ -589,6 +589,16 @@ position: fixed;
     clear: both;
 
 }
+#splashscreen{
+    text-align: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+
+}
+
+
 #modelhistory{
     padding: 10px !important;
     -webkit-overflow-scrolling:touch
