@@ -58,21 +58,20 @@
 
     function onDeviceReadyindex() {
 
-       if(device.platform == 'iOS'){
-           setTimeout( function(){
-                       navigator.splashscreen.hide();
-                   }
-                   , 5000 );
+        var notime= 0;
 
+       if(device.platform == "iOS"){
+
+           notime = 5000;
        }else{
 
-           setTimeout( function(){
-                       navigator.splashscreen.hide();
-                   }
-                   , 7000 );
+           notime = 7000;
        }
 
-
+        setTimeout( function(){
+                    navigator.splashscreen.hide();
+                }
+                , notime );
 
 
         //db.transaction(createDB, errorCBfunc, successCBfunc);
