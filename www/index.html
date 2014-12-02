@@ -58,13 +58,9 @@
 
     function onDeviceReadyindex() {
 
-        var notime= 0;
+        var notime= 5000;
 
-       if(device.platform == "iOS"){
-
-           notime = 5000;
-       }else{
-
+       if(device.platform == "Android"){
            notime = 7000;
        }
 
