@@ -80,7 +80,7 @@ function createDB(tx) {
 
     //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');
     //  console.log("MobileApp_LastUpdatesec table is Dropped");
-    tx.executeSql('CREATE TABLE IF NOT EXISTS MobileApp_LastUpdatesec (Datesecs TEXT NULL, datemenus TEXT NULL,syncwifi INTEGER NOT NULL,isadmin INTERGER NOT NULL,token TEXT NOT NULL,hasclub INTERGER NOT NULL,hasclubdate TEXT NULL,fliterON INTERGER  NULL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS MobileApp_LastUpdatesec (Datesecs TEXT NULL, datemenus TEXT NULL,syncwifi INTEGER NOT NULL,isadmin INTERGER NOT NULL,token TEXT NOT NULL,hasclub INTERGER NOT NULL,hasclubdate TEXT NULL,fliterON INTERGER  NULL,splashimage TEXT NULL)');
     console.log("MobileApp_LastUpdatesec table is created");
     //   tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus) VALUES ("0", "0" )');
     //   console.log("INSERT INTO MobileApp_LastUpdatesec");

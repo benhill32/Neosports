@@ -10,10 +10,10 @@
         document.addEventListener("deviceready", onDeviceReadysplash, false);
 
         function onDeviceReadysplash() {
-
+alert("here");
             window.setTimeout(function(){
-                window.location.href='../index.html';
-            }, 7000);
+                parent.history.back();
+            }, 2000);
 
         }
 
