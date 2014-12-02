@@ -57,8 +57,8 @@
     document.addEventListener("deviceready", onDeviceReadyindex, false);
 
     function onDeviceReadyindex() {
-
-        Alert(parent.history);
+        var referrer =  document.referrer;
+        Alert(referrer);
 
         //db.transaction(createDB, errorCBfunc, successCBfunc);
         refreshdata();
