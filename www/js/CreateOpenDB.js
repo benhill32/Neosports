@@ -57,8 +57,8 @@ function droptables(){
     });
 
     db.transaction(function(tx) {
-        tx.executeSql('Drop TABLE Mobilesponsorsclub ');
-        console.log("Mobilesponsorsclub table is Dropped");
+        tx.executeSql('Drop TABLE Mobilescreenimage ');
+        console.log("Mobilescreenimage table is Dropped");
     });
 
     db.transaction(function(tx) {
