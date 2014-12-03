@@ -67,24 +67,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="splashscreen.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="splashscreen.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.5" vertical-offset="112" max-vertical-offset="1258">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.68362284" vertical-offset="452" max-vertical-offset="1258">
+              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
               <folding>
-                <marker date="1417565469890" expanded="true" signature="1377:1859" placeholder="{...}" />
-                <marker date="1417565469890" expanded="true" signature="1420:1489" placeholder="{...}" />
+                <marker date="1417568968424" expanded="true" signature="1377:1859" placeholder="{...}" />
+                <marker date="1417568968424" expanded="true" signature="1420:1489" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="splashscreen.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="splashscreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/splashscreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83774036" vertical-offset="0" max-vertical-offset="986">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+              <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -189,8 +189,8 @@
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
-        <option value="$PROJECT_DIR$/www/pages/splashscreen.html" />
         <option value="$PROJECT_DIR$/www/js/splashscreen.js" />
+        <option value="$PROJECT_DIR$/www/pages/splashscreen.html" />
       </list>
     </option>
   </component>
@@ -879,22 +879,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
+    <entry file="file://$PROJECT_DIR$/www/js/splashscreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5" vertical-offset="112" max-vertical-offset="1258">
-          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-          <folding>
-            <marker date="1417565469890" expanded="true" signature="1377:1859" placeholder="{...}" />
-            <marker date="1417565469890" expanded="true" signature="1420:1489" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/splashscreen.js">
+    <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83774036" vertical-offset="0" max-vertical-offset="986">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.68362284" vertical-offset="452" max-vertical-offset="1258">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding>
+            <marker date="1417568968424" expanded="true" signature="1377:1859" placeholder="{...}" />
+            <marker date="1417568968424" expanded="true" signature="1420:1489" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

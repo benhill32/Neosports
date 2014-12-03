@@ -38,10 +38,10 @@ function getbackground_success(tx, results) {
 
         var base64 = menu.Base64;
         var width = $( window ).width() + "px";
-alert(width);
-        
+//alert(width);
+
         $('#screensplashimg').attr('src',"data:image/png;base64," + menu.Base64);
-        $('#screensplashimg').css('width',width);
+      //  $('#screensplashimg').css('width',width);
     }
 }
 
