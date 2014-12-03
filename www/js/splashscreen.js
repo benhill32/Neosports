@@ -24,7 +24,7 @@ function getorientsplash(strorein){
 function getbackground(tx) {
    // alert($('#mainbackground').css('opacity'));
 
-    var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC desc LIMIT 1";
+    var sql = "select Base64,URL from Mobilescreenimage order by UpdateDateUTC desc LIMIT 1";
     // alert(sql);
     tx.executeSql(sql, [], getbackground_success);
 }
@@ -38,10 +38,9 @@ function getbackground_success(tx, results) {
 
         var base64 = menu.Base64;
         var width = $( window ).width() + "px";
-//alert(width);
 
-        $('#screensplashimg').attr('src',"data:image/png;base64," + menu.Base64);
-      //  $('#screensplashimg').css('width',width);
+        $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,"' + menu.Base64 + '">');
+
     }
 }
 

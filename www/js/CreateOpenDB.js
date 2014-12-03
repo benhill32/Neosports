@@ -80,7 +80,7 @@ function createDB(tx) {
 
     //  tx.executeSql('Drop TABLE MobileApp_LastUpdatesec ');
     //  console.log("MobileApp_LastUpdatesec table is Dropped");
-    tx.executeSql('CREATE TABLE IF NOT EXISTS MobileApp_LastUpdatesec (Datesecs TEXT NULL, datemenus TEXT NULL,syncwifi INTEGER NOT NULL,isadmin INTERGER NOT NULL,token TEXT NOT NULL,hasclub INTERGER NOT NULL,hasclubdate TEXT NULL,fliterON INTERGER  NULL,splashimage TEXT NULL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS MobileApp_LastUpdatesec (Datesecs TEXT NULL, datemenus TEXT NULL,syncwifi INTEGER NOT NULL,isadmin INTERGER NOT NULL,token TEXT NOT NULL,hasclub INTERGER NOT NULL,hasclubdate TEXT NULL,fliterON INTERGER  NULL)');
     console.log("MobileApp_LastUpdatesec table is created");
     //   tx.executeSql('INSERT INTO MobileApp_LastUpdatesec (Datesecs,datemenus) VALUES ("0", "0" )');
     //   console.log("INSERT INTO MobileApp_LastUpdatesec");
@@ -117,7 +117,7 @@ function createDB(tx) {
     console.log("Mobilesponsorsclub table is created");
 
 
-    tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescreenimage (_id INTEGER NOT NULL primary key,Base64 TEXT NULL,BackgroundColor TEXT NULL,SoftwareFade TEXT NULL,UpdateDateUTC TEXT NULL,TopText TEXT NULL,BottomText TEXT NULL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescreenimage (_id INTEGER NOT NULL primary key,Base64 TEXT NULL,BackgroundColor TEXT NULL,SoftwareFade TEXT NULL,UpdateDateUTC TEXT NULL,TopText TEXT NULL,BottomText TEXT NULL,URL TEXT NULL)');
     console.log("Mobilescreenimage table is created");
 
     tx.executeSql('CREATE TABLE IF NOT EXISTS Mobilescoringbreakdown (ID INTEGER NOT NULL primary key,CreatedateUTC TEXT NULL,UpdatedateUTC TEXT NULL,DeletedateUTC TEXT NULL,TeamID INTEGER NOT NULL,GameID INTEGER NOT NULL,PlayerID INTEGER NOT NULL,ScoringID INTEGER NOT NULL,Time TEXT NULL)');
