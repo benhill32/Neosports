@@ -35,6 +35,15 @@
                 window.location.href='../index.html';
             }, 7000);
 
+            $( window ).on( "orientationchange", function( event ) {
+                // orientation = event.orientation;
+                //    alert(event.orientation);
+                getorientsplash(event.orientation);
+            });
+            // You can also manually force this event to fire.
+            $( window ).orientationchange();
+        }
+
         }
 
 

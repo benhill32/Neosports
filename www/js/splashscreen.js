@@ -1,5 +1,5 @@
 var db;
-
+var orientationstand = "";
 
 
 document.addEventListener("deviceready", onDeviceReadysplashscreen, false);
@@ -9,6 +9,17 @@ function onDeviceReadysplashscreen() {
 
     db.transaction(getbackground, errorCBfunc, successCBfunc);
 }
+
+
+
+
+
+function getorientsplash(strorein){
+    orientationstand = strorein;
+    //  alert(orientationstand);
+    db.transaction(getbackground, errorCBfunc, successCBfunc);
+}
+
 
 function getbackground(tx) {
    // alert($('#mainbackground').css('opacity'));
