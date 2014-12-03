@@ -32,7 +32,7 @@ function getbackground(tx) {
 function getbackground_success(tx, results) {
 
     var len = results.rows.length;
-   // alert(len);
+   //- alert(len);
     if(len != 0) {
         var menu = results.rows.item(0);
         //alert('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,' + menu.Base64 + '">');
