@@ -39,7 +39,7 @@ function getbackground_success(tx, results) {
         var base64 = menu.Base64;
         var width = $( window ).width() + "px";
 
-        $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,"' + menu.Base64 + '">');
+        $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,' + menu.Base64 + '">');
 
     }
 }
