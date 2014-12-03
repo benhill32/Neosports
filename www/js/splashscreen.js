@@ -35,9 +35,11 @@ function getbackground_success(tx, results) {
     //alert(len);
     if(len != 0) {
         var menu = results.rows.item(0);
-
+        alert('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,' + menu.Base64 + '">');
         var base64 = menu.Base64;
         var width = $( window ).width() + "px";
+        $('#splashscreen').empty();
+
 
         $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URL + '\')" src="data:image/png;base64,' + menu.Base64 + '">');
 
