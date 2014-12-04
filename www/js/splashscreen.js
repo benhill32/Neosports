@@ -11,9 +11,6 @@ function onDeviceReadysplashscreen() {
 }
 
 
-
-
-
 function getorientsplash(strorein){
     orientationstand = strorein;
     //  alert(orientationstand);
@@ -33,10 +30,10 @@ function getbackground_success(tx, results) {
 
 
     var len = results.rows.length;
-   //- alert(len);
+   // alert(len);
     if(len != 0) {
         var menu = results.rows.item(0);
-        var Base64 = menu.Base64;
+        Base64 = menu.Base64;
         db.transaction(getbackground2, errorCBfunc, successCBfunc);
     }else{
         window.location.href='../index.html';
@@ -58,6 +55,11 @@ function getbackground_success2(tx, results) {
         $('#splashscreen').empty();
         $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" onclick="URLredirect(\'' + menu.URLLINK + '\')" src="data:image/png;base64,' + Base64 + '">');
 
+        window.setTimeout(function(){
+            window.location.href='../index.html';
+        }, 7000);
+
+
     }
 }
 
@@ -65,6 +67,11 @@ function getbackground_success2(tx, results) {
 function getbackground2_error(err) {
     $('#splashscreen').empty();
     $('#splashscreen').append('<img id="screensplashimg" style="max-height:100%;max-width:100%" src="data:image/png;base64,' + Base64 + '">');
+
+    window.setTimeout(function(){
+        window.location.href='../index.html';
+    }, 7000);
+
 }
 
 

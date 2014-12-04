@@ -37,8 +37,8 @@
       <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.4" vertical-offset="2298" max-vertical-offset="12495">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="152" selection-end-column="1" />
+            <state vertical-scroll-proportion="-4.64" vertical-offset="2298" max-vertical-offset="12495">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +47,8 @@
       <file leaf-file-name="splashscreen.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.730769" vertical-offset="299" max-vertical-offset="1258">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="53" />
+            <state vertical-scroll-proportion="-10.076923" vertical-offset="299" max-vertical-offset="1207">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,8 +57,8 @@
       <file leaf-file-name="splashscreen.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/splashscreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50961536" vertical-offset="239" max-vertical-offset="1326">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.65384614" vertical-offset="0" max-vertical-offset="1445">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -188,10 +188,10 @@
         <option value="$PROJECT_DIR$/www/js/loaddata.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
-        <option value="$PROJECT_DIR$/www/pages/splashscreen.html" />
         <option value="$PROJECT_DIR$/www/js/CreateOpenDB.js" />
         <option value="$PROJECT_DIR$/www/js/functions.js" />
         <option value="$PROJECT_DIR$/www/config.xml" />
+        <option value="$PROJECT_DIR$/www/pages/splashscreen.html" />
         <option value="$PROJECT_DIR$/www/js/splashscreen.js" />
       </list>
     </option>
@@ -857,26 +857,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
+    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.730769" vertical-offset="299" max-vertical-offset="1258">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="53" />
+        <state vertical-scroll-proportion="-4.64" vertical-offset="2298" max-vertical-offset="12495">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/www/pages/splashscreen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.4" vertical-offset="2298" max-vertical-offset="12495">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="152" selection-end-column="1" />
+        <state vertical-scroll-proportion="-10.076923" vertical-offset="299" max-vertical-offset="1207">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/splashscreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50961536" vertical-offset="239" max-vertical-offset="1326">
-          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.65384614" vertical-offset="0" max-vertical-offset="1445">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding />
         </state>
       </provider>
