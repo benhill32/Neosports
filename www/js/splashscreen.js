@@ -37,14 +37,8 @@ function getbackground_success(tx, results) {
     if(len != 0) {
         var menu = results.rows.item(0);
         var Base64 = menu.Base64;
-
-
-        db.transaction(getbackground, errorCBfunc, successCBfunc);
-
-
-
+        db.transaction(getbackground2, errorCBfunc, successCBfunc);
     }else{
-
         window.location.href='../index.html';
     }
 }
