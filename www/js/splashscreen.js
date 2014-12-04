@@ -23,7 +23,7 @@ function getbackground(tx) {
 
     var sql = "select Base64 from Mobilescreenimage order by UpdateDateUTC desc LIMIT 1";
      //alert(sql);
-    tx.executeSql(sql, [], getbackground_success);
+    tx.executeSql(sql, [], getbackground_success,getbackground_error);
 }
 
 function getbackground_success(tx, results) {
@@ -74,6 +74,12 @@ function getbackground2_error(err) {
 
 }
 
+function getbackground_error(err) {
 
+
+        window.location.href='../index.html';
+
+
+}
 
 
