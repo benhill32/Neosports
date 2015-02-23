@@ -13,7 +13,11 @@ function onDeviceReadydbconn() {
        // alert(deviceplatformdb);
         db = window.sqlitePlugin.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
     }
+<<<<<<< HEAD
 }
 
 
 //db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
+=======
+}
+>>>>>>> origin/master

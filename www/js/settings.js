@@ -1,8 +1,13 @@
 var db;
 var networkconnectionset = 0;
 var wifiallset = 0;
+<<<<<<< HEAD
 var regionID = 0;
 var setregionID = 0;
+=======
+
+
+>>>>>>> origin/master
 
 document.addEventListener("deviceready", onDeviceReadyset, false);
 
@@ -43,7 +48,11 @@ function onOfflinesetting(){
 
 
 function getsyncdate(tx) {
+<<<<<<< HEAD
     var sql = "select Datesecs, syncwifi,Region from MobileApp_LastUpdatesec";
+=======
+    var sql = "select Datesecs, syncwifi from MobileApp_LastUpdatesec";
+>>>>>>> origin/master
    //  alert(sql);
     tx.executeSql(sql, [], getsyncdate_success2);
 }
@@ -115,9 +124,12 @@ function getsyncdate_success2(tx, results) {
     month[9] = "October";
     month[10] = "November";
     month[11] = "December";
+<<<<<<< HEAD
     regionID =menu.Region;
 
 
+=======
+>>>>>>> origin/master
 
     $('#lastsyncdate').empty();
     if(dateme.getFullYear() != 1970) {
@@ -126,7 +138,11 @@ function getsyncdate_success2(tx, results) {
         console.log("Last sync time : " + dateme.getDate() + " " + month[dateme.getMonth()] + " " + dateme.getFullYear() + " " + (dateme.getHours()) + ":" + ("0" + dateme.getMinutes()).slice(-2) + ":" + ("0" + dateme.getSeconds()).slice(-2) );
 
 
+<<<<<<< HEAD
     if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0 &&  networkconnectionset!=0))){
+=======
+    if((wifi ==1 &&  networkconnectionset==2) || ((wifi ==0))){
+>>>>>>> origin/master
         $("#settingdeleteall").css('color', '#333');
         $("#settingsync").css('color', '#333');
     }else{
@@ -148,13 +164,17 @@ function getsyncdate_success2(tx, results) {
 
     }
 
+<<<<<<< HEAD
     db.transaction(getregionName2, errorCBfunc, successCBfunc);
+=======
+>>>>>>> origin/master
 
     $('#busy').hide();
 
 
 }
 
+<<<<<<< HEAD
 
 
 
@@ -178,6 +198,8 @@ function getregionName_success(tx, results) {
 
 
 }
+=======
+>>>>>>> origin/master
 function clearfavteam(){
 
     db.transaction(function(tx) {
@@ -187,11 +209,16 @@ function clearfavteam(){
     db.transaction(checkfavteam, errorCBfunc, successCBfunc);
 }
 
+<<<<<<< HEAD
 function cleardata4Changeregaion(){
+=======
+function cleardata(){
+>>>>>>> origin/master
 
     onOfflinesetting();
 
 
+<<<<<<< HEAD
     if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0 &&  networkconnectionset!=0))) {
        // $('#indexloadingdata').modal('show');
         db.transaction(droptables, errorCBfunc, createtables4Changeregaion);
@@ -220,6 +247,19 @@ function cleardata(){
 }
 
 function createtables(){
+=======
+   if((wifiallset ==1 &&  networkconnectionset==2) || ((wifiallset ==0))) {
+        $('#indexloadingdata').modal('show');
+        db.transaction(droptables, errorCBfunc, createtables);
+   }
+
+
+}
+
+function createtables(){
+  // window.plugins.toast.showShortCenter('Creating Tables!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+  //  window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
+>>>>>>> origin/master
 
     db.transaction(createDB, errorCBfunc, loadnewtable);
 }
@@ -264,9 +304,13 @@ function chkmobiledata(id){
    }
 
 
+<<<<<<< HEAD
 
 
     if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2" &&  networkconnectionset!=0))){
+=======
+    if((id=="btn1" &&  networkconnectionset==2) || ((id== "btn2"))){
+>>>>>>> origin/master
 
         $("#settingdeleteall").css('color', '#333');
         $("#settingsync").css('color', '#333');
@@ -288,8 +332,13 @@ function manualupdateben(){
     xmlHttpp = new XMLHttpRequest();
 
    // $('#busy').show();
+<<<<<<< HEAD
     xmlHttpp.open("GET", 'http://football.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
     console.log("http://football.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0");
+=======
+    xmlHttpp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0',false);
+    console.log("http://centralfootball.neosportz.com/databen.aspx?deviceID=a07883508d108e26&token=9D190637-2FEB-4A26-BA72-9A158A220A2A&sec=0");
+>>>>>>> origin/master
 
 
     xmlHttpp.send();

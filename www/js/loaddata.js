@@ -16,15 +16,21 @@ var networkconnection = "";
 var deviceIDfunc;
 var devicePlatformfunc;
 var chkrefreshdata = 0;
+<<<<<<< HEAD
 var archiveyear=0;
+=======
+>>>>>>> origin/master
 document.addEventListener("deviceready", onDeviceReadyloaddata, false);
 
 // Cordova is ready
 //
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> origin/master
 function onDeviceReadyloaddata() {
 
   //  db = window.openDatabase("Neosportz_Football", "1.1", "Neosportz_Football", 200000);
@@ -75,10 +81,13 @@ function refreshdata(){
     db.transaction(populateDB, errorCBfunc, successCBfunc);
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 function loadnewtable(){
  //   $('#busy').show();
   //  blankLastUpdatesec();
@@ -90,7 +99,11 @@ function loadnewtable(){
 function populateDB(tx){
     // $('#busy').show();
     var sql = "select Count(Datesecs) as Count,syncwifi,Datesecs from MobileApp_LastUpdatesec";
+<<<<<<< HEAD
     //alert(sql);
+=======
+  //  alert(sql);
+>>>>>>> origin/master
     tx.executeSql(sql, [], populateDB1,errorCreatetable);
 
 }
@@ -126,6 +139,7 @@ function populateDB1(tx,results) {
 
 
         $.when(blankLastUpdatesec()).done(function() {
+<<<<<<< HEAD
            $.when( pushnotifiy()).done(function() {
                // db.transaction(populateDB, errorCBfunc, successCBfunc);
                db.transaction(gettokenregion, errorCBfunc, successCBfunc);
@@ -142,14 +156,28 @@ function populateDB1(tx,results) {
         var sql = "select Datesecs,datemenus,token,Region from MobileApp_LastUpdatesec";
 
         if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0 &&  networkconnection!=0))){
+=======
+            $.when( pushnotifiy()).done(function() {
+                db.transaction(populateDB, errorCBfunc, successCBfunc);
+            });
+        });
+    }else{
+
+        var sql = "select Datesecs,datemenus,token from MobileApp_LastUpdatesec";
+
+        if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))){
+>>>>>>> origin/master
 
              tx.executeSql(sql, [], getchecksync,errorCBfunc);
         }else{
             $('#indexloadingdata').modal('hide')
             $('#mainfore').removeClass('mainforeground2');
             $('#mainfore').addClass('mainforeground');
+<<<<<<< HEAD
           //  window.plugins.toast.showShortCenter('Sorry couldnt update Server No Internet', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
 
+=======
+>>>>>>> origin/master
         }
     }
 }
@@ -174,7 +202,11 @@ function passdatatoserver(){
 
     var deviceid = "dsdsadsadasd";
     var http = new XMLHttpRequest();
+<<<<<<< HEAD
     var url = "http://football.neosportz.com/loaddatafromapp.aspx";
+=======
+    var url = "http://centralfootball.neosportz.com/loaddatafromapp.aspx";
+>>>>>>> origin/master
     var params = "?token=" + golbaltoken + "&deviceid=" + deviceid;
     http.open("POST", url + params, true);
 
@@ -194,10 +226,16 @@ function getchecksync(tx, results) {
 
         var datenowsecsync = row.Datesecs;
 
+<<<<<<< HEAD
         var region = row.Region;
         var datenow = new Date();
         var timenow = datenow.getTime();
         var yearnow = datenow.getFullYear()
+=======
+
+        var datenow = new Date();
+        var timenow = datenow.getTime();
+>>>>>>> origin/master
 
         var dif = (timenow/1000)-(datenowsecsync);
 
@@ -221,8 +259,13 @@ function getchecksync(tx, results) {
             }
             var xmlHttp = null;
             xmlHttp = new XMLHttpRequest();
+<<<<<<< HEAD
             xmlHttp.open("GET", 'http://football.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID + '&start=0&region=' + region + '&year=' + yearnow, false);
            // alert('http://football.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID + '&start=0&region=' + region + '&year=' + yearnow);
+=======
+            xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
+           // xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx', false);
+>>>>>>> origin/master
             xmlHttp.send();
 
             var json = xmlHttp.responseText;
@@ -236,7 +279,11 @@ function getchecksync(tx, results) {
 
 
 
+<<<<<<< HEAD
             syncmaintables(obj,yearnow);
+=======
+            syncmaintables(obj);
+>>>>>>> origin/master
             }
         }
 
@@ -257,6 +304,7 @@ function closemodel(){
     window.plugins.toast.showLongCenter('Your App is Updated!', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
     randomfunctions();
 }
+<<<<<<< HEAD
 function closemodelarchive(){
 
     $('#indexloadingdata').modal('hide');
@@ -276,6 +324,8 @@ function closemodelRegion(){
 
 }
 
+=======
+>>>>>>> origin/master
 
 
 function randomfunctions(){
@@ -289,10 +339,13 @@ function randomfunctions(){
     if (document.getElementById("divresults") != null) {
         db.transaction(getfliter, errorCBfunc, successCBfunc);
     }
+<<<<<<< HEAD
     if (document.getElementById("indexdiv") != null) {
         loadindexmessage();
     }
 
+=======
+>>>>>>> origin/master
 }
 
 
@@ -367,6 +420,7 @@ function countProperties(obj) {
 }
 
 
+<<<<<<< HEAD
 function onclickloadregion(){
     $('#basicModalregions2').modal('show');
     //db.transaction(onclickloadregiondata, errorCBfunc, successCBfunc)
@@ -395,26 +449,42 @@ function chooseregionloaddata(ID){
 
 function onclicksyncloaddata(){
     db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc);
+=======
+function onclicksyncloaddata(){
+    db.transaction(onclicksyncloaddata2, errorCBfunc, successCBfunc)
+>>>>>>> origin/master
 }
 
 function onclicksyncloaddata2(tx){
     checkonline();
+<<<<<<< HEAD
     var sql = "select Datesecs,datemenus,syncwifi,token,isadmin,Region from MobileApp_LastUpdatesec";
+=======
+    var sql = "select Datesecs,datemenus,syncwifi,token,isadmin from MobileApp_LastUpdatesec";
+>>>>>>> origin/master
     tx.executeSql(sql, [], onclickresync,errorCBfunc);
 
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 function onclickresync(tx, results) {
 
     var row = results.rows.item(0);
 
+<<<<<<< HEAD
     if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0 &&  networkconnection!=0))) {
+=======
+    if((row.syncwifi ==1 && networkconnection==2) || ((row.syncwifi ==0))) {
+>>>>>>> origin/master
         $('#indexloadingdata').modal('show');
 
         var datemenus = row.datemenus;
         var datenowsecsync = row.Datesecs;
+<<<<<<< HEAD
         var region = row.Region;
         var datenow = new Date();
         var timenow = datenow.getTime();
@@ -476,14 +546,25 @@ function loadarchiveyeardata2_sync(tx, results) {
         var datenow = new Date();
         var timenow = datenow.getTime();
         var yearnow = archiveyear;
+=======
+
+        var datenow = new Date();
+        var timenow = datenow.getTime();
+
+>>>>>>> origin/master
         var dif = timenow - (datenowsecsync);
 
         //   window.plugins.toast.showLongCenter('Please Wait While Data is Downloaded', function (a) {console.log('toast success: ' + a) }, function (b) { alert('toast error: ' + b)});
         var xmlHttp = null;
         xmlHttp = new XMLHttpRequest();
 
+<<<<<<< HEAD
         xmlHttp.open("GET", 'http://football.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID + '&start=0&region=' + region + '&year=' + yearnow, false);
 
+=======
+       xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx?deviceID=' + deviceIDfunc + '&token=' + row.token + '&sec=' + datenowsecsync + '&resultids=' + stringresultID, false);
+    //xmlHttp.open("GET", 'http://centralfootball.neosportz.com/databen.aspx', false);
+>>>>>>> origin/master
 
         xmlHttp.send();
 
@@ -494,6 +575,7 @@ function loadarchiveyeardata2_sync(tx, results) {
             errorclosemodel();
         } else {
             var obj = JSON.parse(json);
+<<<<<<< HEAD
             $.when(syncmaintables(obj,yearnow)).done(function () {
 
             });
@@ -503,12 +585,22 @@ function loadarchiveyeardata2_sync(tx, results) {
 
         window.plugins.toast.showShortCenter('Sorry couldnt update Server No Internet', function (a) {console.log('toast success: ' + a)}, function (b) {alert('toast error: ' + b)});
 
+=======
+            $.when(syncmaintables(obj)).done(function () {
+                randomfunctions();
+            });
+        }
+
+>>>>>>> origin/master
     }
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 function successHandler (result) {
  //   alert('result = ' + result);
 }
@@ -523,7 +615,11 @@ function tokenHandler (result) {
 
    // alert('tokenB: '+ result);
     //$('#busy').show();
+<<<<<<< HEAD
     var strur = 'http://football.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
+=======
+    var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + result;
+>>>>>>> origin/master
   //  navigator.notification.alert(strur);
     xmlHttptt.open("GET",strur ,false);
     xmlHttptt.send();
@@ -542,7 +638,11 @@ function pushnotifiy() {
             successHandler,
             errorHandler,
             {
+<<<<<<< HEAD
                 "senderID":"859509533098",
+=======
+                "senderID":"307714525175",
+>>>>>>> origin/master
                 "ecb":"onNotification"
             });
     } else if ( device.platform == 'blackberry10'){
@@ -588,7 +688,11 @@ function onNotification(e) {
 
 
               //  $('#busy').show();
+<<<<<<< HEAD
                              var strur = 'http://football.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
+=======
+                             var strur = 'http://centralfootball.neosportz.com/registerdevice.aspx?deviceID=' + deviceIDfunc + '&devicemodel=' + devicemodelfunc + '&deviceCordova=' + deviceCordovafunc + '&devicePlatform=' + devicePlatformfunc + '&deviceVersion=' + deviceVersionfunc + '&regid=' + e.regid;
+>>>>>>> origin/master
                 xmlHttpt.open("GET",strur ,false);
                 //   alert(strur);
                 xmlHttpt.send();
@@ -622,12 +726,19 @@ function onNotification(e) {
             // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
+<<<<<<< HEAD
                     onclicksyncloaddata();
+=======
+
+>>>>>>> origin/master
              //  $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
                 }
                 else
                 {
+<<<<<<< HEAD
                     onclicksyncloaddata();
+=======
+>>>>>>> origin/master
               //      $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
@@ -655,8 +766,12 @@ function onNotificationAPN(e) {
     if (e.alert) {
        // $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 // showing an alert also requires the org.apache.cordova.dialogs plugin
+<<<<<<< HEAD
       // navigator.notification.alert(e.alert);
         onclicksyncloaddata();
+=======
+       navigator.notification.alert(e.alert);
+>>>>>>> origin/master
 
     }
     if (e.sound) {

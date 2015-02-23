@@ -1,6 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
+<<<<<<< HEAD
 <widget id="neocom.neosportz" version="1.7.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Neosportz Rugby</name>
+=======
+<widget id="neocom.neosportz" version="1.7.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Neosportz Football</name>
+>>>>>>> origin/master
     <description>
         Neosports is a sports app
     </description>
@@ -20,10 +25,13 @@
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
+<<<<<<< HEAD
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="auto-hide-splash-screen" value="true" />
+=======
+>>>>>>> origin/master
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="13" />
     <preference name="android-installLocation" value="auto" />
@@ -37,7 +45,10 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
+<<<<<<< HEAD
     <gap:plugin name="org.apache.cordova.splashscreen" />
+=======
+>>>>>>> origin/master
     <gap:plugin name="org.apache.cordova.core.file-transfer" />
     <gap:plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
@@ -61,6 +72,7 @@
     <icon gap:platform="webos" src="res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="res/icon/windows-phone/icon-48.png" />
     <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
+<<<<<<< HEAD
     <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
@@ -72,6 +84,10 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
+=======
+
+
+>>>>>>> origin/master
     <content src="/pages/splashscreen.html"/>
     <access origin="*" />
 </widget>

@@ -201,7 +201,10 @@ function getMenu_success(tx, results) {
 
 function resultshowmore(ID,hometeam,awayteam,homescore,awayscore,homeidd,awayidd){
 
+<<<<<<< HEAD
    // alert(ID + " - " + hometeam + " - " +awayteam+ " - " +homescore+ " - " +awayscore+ " - " +homeidd+ " - " +awayidd);
+=======
+>>>>>>> origin/master
     gameid =ID;
     homeid = homeidd;
     awayid = awayidd;
@@ -217,7 +220,11 @@ function getgoals(tx){
    var sql= "select m.ID,m.CreatedateUTC,m.UpdatedateUTC,m.DeletedateUTC,m.TeamID,m.GameID,m.PlayerID,m.ScoringID,m.Time,p.FullName from Mobilescoringbreakdown as m INNER JOIN " +
        "MobilevwApp_Base_Players as p  ON p.ID = m.PlayerID " +
        "where GameID = " + gameid + " order by m.Time";
+<<<<<<< HEAD
  //alert(sql);
+=======
+// alert(sql);
+>>>>>>> origin/master
     tx.executeSql(sql, [], getgoals_success);
 }
 
@@ -233,6 +240,7 @@ function getgoals_success(tx, results) {
     var time = menu.Time + "\'";
 
         if(menu.TeamID == homeid){
+<<<<<<< HEAD
             if(menu.ScoringID == 2) {
                 $('#resulthomegoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " " + time + '<br>');
             }else if(menu.ScoringID == 5) {
@@ -255,6 +263,12 @@ function getgoals_success(tx, results) {
                 $('#resultawaygoals').append('<img src="../img/pen.png">' + ' ' + menu.FullName + " " + time + '<br>');
             }
 
+=======
+            $('#resulthomegoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " " + time + '<br>');
+        }
+        if(menu.TeamID == awayid){
+            $('#resultawaygoals').append('<img src="../img/image.php.png">' + ' ' + menu.FullName + " "  + time + '<br>');
+>>>>>>> origin/master
         }
 
         if( $('#resulthomegoals').is(':empty') ) {

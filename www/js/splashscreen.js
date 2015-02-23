@@ -57,7 +57,11 @@ function getbackground_success2(tx, results) {
 
         window.setTimeout(function(){
             window.location.href='../index.html';
+<<<<<<< HEAD
         }, 1000);
+=======
+        }, 7000);
+>>>>>>> origin/master
 
 
     }

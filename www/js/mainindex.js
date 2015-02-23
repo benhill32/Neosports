@@ -1,31 +1,57 @@
 var db;
 var deviceIDfunc;
+<<<<<<< HEAD
 var yearmainindex;
+=======
+
+>>>>>>> origin/master
 
 document.addEventListener("deviceready", onDeviceReadymainindex, false);
 
 function onDeviceReadymainindex() {
     deviceIDfunc = device.uuid;
 
+<<<<<<< HEAD
 
 }
 
 function loadindexmessage() {
     db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);
 }
+=======
+    loadindexmessage();
+}
+
+
+function loadindexmessage() {
+    db.transaction(checkclubsinsert, errorCBfunc, successCBfunc);
+}
+
+>>>>>>> origin/master
 function checkclubsinsert(tx){
     var sql = "select ID from MobileApp_clubs";
    //  alert(sql);
     tx.executeSql(sql, [], checkclubsinsert_success);
 
 }
+<<<<<<< HEAD
 function checkclubsinsert_success(tx, results) {
     var len = results.rows.length;
   //  alert(len);
+=======
+
+function checkclubsinsert_success(tx, results) {
+    var len = results.rows.length;
+
+>>>>>>> origin/master
     if(len != 0) {
         db.transaction(gethasclub, errorCBfunc, successCBfunc);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 function getbackground(tx) {
    // alert($('#mainbackground').css('opacity'));
 
@@ -47,12 +73,21 @@ function getbackground_success(tx, results) {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 function gethasclub(tx) {
     var sql = "select hasclub,hasclubdate from MobileApp_LastUpdatesec";
     //  alert(sql);
     tx.executeSql(sql, [], gethasclub_success);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 function gethasclub_success(tx, results) {
 
     var len = results.rows.length;
@@ -79,8 +114,11 @@ function gethasclub_success(tx, results) {
 
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 function hadclubfunction(){
 
     db.transaction(function(tx) {
@@ -128,6 +166,7 @@ function choosefacteam(ID){
 
 }
 
+<<<<<<< HEAD
 function showregion(){
 
     db.transaction(getshowregion, errorCBfunc, successCBfunc);
@@ -378,6 +417,8 @@ function chooseregion(ID){
 }
 
 
+=======
+>>>>>>> origin/master
 
 function showclubsfun(){
 
@@ -400,7 +441,11 @@ function getclubsfav(tx) {
 
 function getclubsfav_success(tx, results) {
    // $('#busy').hide();
+<<<<<<< HEAD
     var len = results.rows.length;
+=======
+    var len = results.rows.length;choosefacteam
+>>>>>>> origin/master
 //alert(len);
     for (var i=0; i<len; i++) {
         var menu = results.rows.item(i);
@@ -413,6 +458,7 @@ function getclubsfav_success(tx, results) {
             '</Div>');
     }
 
+<<<<<<< HEAD
 }
 
 
@@ -420,3 +466,6 @@ function getclubsfav_success(tx, results) {
 
 
 
+=======
+}
+>>>>>>> origin/master

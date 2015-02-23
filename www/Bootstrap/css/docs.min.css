@@ -620,7 +620,11 @@ h1[id]{
 }
 
 .bs-callout{
+<<<<<<< HEAD
    // padding:20px;
+=======
+    padding:20px;
+>>>>>>> origin/master
     margin:20px 0;
     border:1px solid #eee;
     border-left-width:5px;

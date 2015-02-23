@@ -93,7 +93,11 @@ body {
    // padding:8px;
     border-bottom: 1px solid grey;
     text-align: left;
+<<<<<<< HEAD
     font-size:16px;
+=======
+    font-size:18px;
+>>>>>>> origin/master
     background-color: #339900;
     color: #ffffff;
     vertical-align: middle;
@@ -189,10 +193,16 @@ body {
 }
 #idteamname{
     width:40%;
+<<<<<<< HEAD
    // border-right:1px solid lightgray;
    // padding:8px;
     text-align: left;
     height: 40px;
+=======
+    border-right:1px solid lightgray;
+   // padding:8px;
+    text-align: left;
+>>>>>>> origin/master
 }
 .standheaderteam{
     width: 40%;
@@ -202,14 +212,20 @@ body {
     float:left;
     padding:10px;
     border-right:1px solid lightgray;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }
 #divstandings{
 
   //padding-top:40px;
     clear: both;
     margin: 42px 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }
 .standheader{
 
@@ -218,7 +234,11 @@ body {
     padding:10px;
     background-color: lightgray;
     float:left;
+<<<<<<< HEAD
     width:6.4%;
+=======
+    width:7.5%;
+>>>>>>> origin/master
     border-right:1px solid lightgray;
 }
 .standheader2{
@@ -236,17 +256,26 @@ body {
     width:100%;
     clear:both;
     //position: fixed;
+<<<<<<< HEAD
     font-size:9px !important;
+=======
+>>>>>>> origin/master
 }
 #divstandingsheader{
     width:100%;
     clear:both;
 position: fixed;
 
+<<<<<<< HEAD
 
 }
 .score1{
     width:6.4%;
+=======
+}
+.score1{
+    width:7.5%;
+>>>>>>> origin/master
     border-right:1px solid lightgray;
   // padding:8px;
     text-align: center;
@@ -272,7 +301,10 @@ position: fixed;
     padding-left:2px;
     padding-top: 8px;
     padding-bottom: 8px;
+<<<<<<< HEAD
     height: 40px;
+=======
+>>>>>>> origin/master
 }
 .standfooter{
 
@@ -339,6 +371,7 @@ position: fixed;
     padding-right: 15px;
 }
 
+<<<<<<< HEAD
 .divmainmenunew{
     height: 20%;
     text-align: center;
@@ -419,6 +452,9 @@ position: fixed;
 
     padding:10px;
 }
+=======
+
+>>>>>>> origin/master
 #teamsdiv{
 // padding-top: 30px;
     padding-bottom: 50px;
@@ -524,22 +560,34 @@ position: fixed;
     .modal-body{
         /* Increase the max height of the modal body to try & avoid both it,
          * and the modal container having scroll bars which results in odd behavior */
+<<<<<<< HEAD
         max-height: 2700px;
+=======
+        max-height: 2400px;
+>>>>>>> origin/master
     }
 }
 @media (max-width: 480px) {
     #divstandings{
+<<<<<<< HEAD
         font-size:11px;
+=======
+        font-size:12px;
+>>>>>>> origin/master
 
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 640px) {
     #divstandings{
         font-size:12px;
 
     }
 }
+=======
+
+>>>>>>> origin/master
 
 
 /* Now adjust the height so it handles various screen sizes & orientations */
@@ -624,7 +672,10 @@ position: fixed;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+<<<<<<< HEAD
     background-position-y: 60%;
+=======
+>>>>>>> origin/master
    // opacity : 0.4;
     width:100%;
     height:100%;
@@ -680,6 +731,19 @@ position: fixed;
     clear: both;
 
 }
+<<<<<<< HEAD
+=======
+#splashscreen{
+    text-align: center;
+   // height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 30%;
+
+}
+
+
+>>>>>>> origin/master
 #modelhistory{
     padding: 10px !important;
     -webkit-overflow-scrolling:touch
@@ -952,11 +1016,16 @@ text-align: center !important;
     opacity:0.7;
 
 }
+<<<<<<< HEAD
 #divnewmain,.divnewmain{
+=======
+#divnewmain{
+>>>>>>> origin/master
     clear: both;
     width:100%;
    // padding-top: 10px;
    // margin: 5px 0;
+<<<<<<< HEAD
   //  padding-left: 5px;
     min-height: 110px;
     //position: relative;
@@ -1011,18 +1080,34 @@ text-align: center !important;
 padding: 20px 0px;
     min-height: 60px;
     width: 18%;
+=======
+    padding-left: 5px;
+}
+#divnew1{
+
+    min-height: 60px;
+    width: 15%;
+>>>>>>> origin/master
     float:left;
     margin: 0px 0;
     border-top:0px solid #eee;
     border-bottom:0px solid #eee;
     border-right:0px;
 }
+<<<<<<< HEAD
 #divnew2,.divnew2{
     padding: 20px 0px;
   //  min-height: 60px;
   //  float:left;
     width:100%;
     padding-left: 10px;
+=======
+#divnew2{
+  //  min-height: 60px;
+  //  float:left;
+    width:85%;
+
+>>>>>>> origin/master
  //   padding: 10px 0;
   //  margin: 2px 0;
   //  padding-right: 10px;

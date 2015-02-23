@@ -13,7 +13,11 @@ var playeraway = 0;
 var timehome = 0;
 var timeaway = 0;
 var scoringname =0;
+<<<<<<< HEAD
 var DIVid = getUrlVars()["divID"];
+=======
+
+>>>>>>> origin/master
 function onDeviceReady() {
 
     deviceIDscorecard = device.uuid;
@@ -24,6 +28,11 @@ function onDeviceReady() {
     checkonlinescore()
 }
 
+<<<<<<< HEAD
+=======
+db.transaction(getdata, errorCBfunc, successCBfunc);
+db.transaction(getscoredata, errorCBfunc, successCBfunc);
+>>>>>>> origin/master
 
 
 function checkonlinescore(){
@@ -182,6 +191,7 @@ function gamestate(IDD,id){
 function getscoredata_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
+<<<<<<< HEAD
       //  alert(len);
     $('#divscore').empty()
 
@@ -192,6 +202,16 @@ function getscoredata_success(tx, results) {
         var minus =menu.Value*-1;
 
         $('#divscore').append('<Div class="mainmenuscore" >' +
+=======
+        //alert(len);
+
+    for (var i=0; i<len; i++) {
+        var menu = results.rows.item(i);
+        var plus = menu.Value;
+        var minus =menu.Value*-1;
+
+        $('#divscore').empty().append('<Div class="mainmenuscore" >' +
+>>>>>>> origin/master
             '<div class="bold size13 floatleft3" align="center"  ><img src="../img/minus.png" onclick="getscore(1,'+ minus +',\''+ menu.Name + '\')" height="40">' +
             '<img src="../img/plus.png"  height="40" onclick="getscore(1,'+ plus +',\''+ menu.Name + '\')"> </div>' +
             '<div class="bold size13 floatleft3" align="center"  >' + menu.Name + '</div>' +

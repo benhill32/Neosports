@@ -132,8 +132,13 @@ function getClubID_success(tx, results) {
 
 
 function numbersponsers(tx) {
+<<<<<<< HEAD
     var sql = "select ID  from Mobilesponsorsclub where Club=" + clubidtop + " and DeletedateUTC = 'null'";
    // alert(sql);
+=======
+    var sql = "select ID  from Mobilesponsorsclub where Club=" + clubidtop + " and DeletedateUTC == 'null'";
+   //  alert(sql);
+>>>>>>> origin/master
     tx.executeSql(sql, [], numbersponsers_success);
 }
 
@@ -151,6 +156,15 @@ function getdata2(tx) {
     tx.executeSql(sql, [], getnewfeed_success);
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> origin/master
 function getnewfeed_success(tx, results) {
     $('#busy').hide();
     var len = results.rows.length;
@@ -172,6 +186,7 @@ function getnewfeed_success(tx, results) {
                 var imgicon = "";
                 var URLnow = "";
 
+<<<<<<< HEAD
                     if ((menu.URL).search("facebook.com") != -1) {
                         imgicon = "<img src='../img/fb.png' style='padding-right: 10px'  height='30'  align='left'>";
                         URLnow = menu.URL;
@@ -187,16 +202,37 @@ function getnewfeed_success(tx, results) {
                     }
 
 
+=======
+                if ((menu.URL).search("facebook.com") != -1) {
+                    imgicon = "<img src='../img/fb.png' style='padding-right: 10px' height='30' align='left'>";
+                    URLnow = menu.URL;
+                } else if ((menu.URL).search(".pdf") != -1) {
+                    imgicon = "<img src='../img/adobe.png' style='padding-right: 10px' height='30' align='left'>";
+                    URLnow = menu.URL;
+                } else if ((menu.URL).search("youtu.be") != -1) {
+                    imgicon = "<img src='../img/youtube.png' style='padding-right: 10px' height='30' align='left'>";
+                    URLnow = menu.URL;
+                } else {
+                    imgicon = "<img src='../img/infohttp.png' style='padding-right: 10px' height='30' align='left'>";
+                    URLnow = menu.URL;
+                }
+>>>>>>> origin/master
 
                 if ((menu.Body).length <= 200) {
 
                     $('#newsmain').append('<Div id="divnewmain" class=" bs-callout bs-callout-info"  align="left">' +
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
                         '<Div id="divnew1"   onclick="URLredirect(\'' + URLnow + '\')"> ' +
                         '' + imgicon +
                         '</Div>' +
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
                         '<Div id="divnew2"> ' +
                         '<div class="bold size13 blue"   >' + menu.Title + '</div>' +
                         '<div class="size11">' + menu.Body + '</div>' +
@@ -221,12 +257,18 @@ function getnewfeed_success(tx, results) {
             } else {
                 imgicon = "<img src='../img/info.png' style='padding-right: 10px' height='30' align='left'>";
                 if(menu.FromPhone == 'true'){
+<<<<<<< HEAD
                     imgicon = "<img src='../img/phone.png' style='padding-right: 10px'  height='30'  align='left'>";
 
                 }
 
 
 
+=======
+                    imgicon = "<img src='../img/phone.png' style='padding-right: 10px' height='30' align='left'>";
+                }
+
+>>>>>>> origin/master
                 if ((menu.Body).length <= 200) {
 
 
@@ -344,6 +386,10 @@ function loadnewfeed(ID) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 function loadnewfeed2(tx) {
 
     var sql = "select Title,Body from MobilevwApp_News_v_2 where ID=" + IDNews;
@@ -358,8 +404,12 @@ function loadnewfeed_success(tx, results) {
 
     var menu = results.rows.item(0);
 
+<<<<<<< HEAD
   //  $('#divimagenew').empty();
   //  $('#divimagenew').append( '<img src="data:image/png;base64,' + menu.Base64 + '" >');
+=======
+
+>>>>>>> origin/master
 
 
     $('#newtitle').empty();
